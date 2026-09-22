@@ -3,7 +3,7 @@
 One note per dataset, written in the loop's step 7. Each note is a high-level design for the engineering team, not a production build.
 The region is us-west-2, assumption A14. Costs come only from measurements or dated pricing pages, assumption A19.
 
-No note exists yet. The three notes will be `cyan.md`, `epa-cyanohab-forecast.md`, and `clms-lwq.md`.
+Notes: [cyan.md](cyan.md) holds the Discovery input on the two access routes. `epa-cyanohab-forecast.md` and `clms-lwq.md` do not exist yet.
 
 ## What every note contains
 

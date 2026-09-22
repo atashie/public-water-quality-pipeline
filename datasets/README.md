@@ -5,7 +5,7 @@ The rules for these folders are in [.claude/rules/datasets.md](../.claude/rules/
 
 | Folder | Dataset | Status |
 |---|---|---|
-| [cyan/](cyan/README.md) | CyAN cyanobacteria index | planned |
+| [cyan/](cyan/README.md) | CyAN cyanobacteria index | characterized, owner review pending |
 | [epa_cyanohab_forecast/](epa_cyanohab_forecast/README.md) | EPA experimental cyanoHAB forecast | planned |
 | [clms_lwq/](clms_lwq/README.md) | Copernicus Lake Water Quality 300 m, version 2 | planned |
 | `_common/` | Shared helpers: retrying HTTP session, credential resolution, cached and manifested downloads | ported with tests |
@@ -18,7 +18,7 @@ Every dataset follows the eight steps in [CLAUDE.md](../CLAUDE.md). Each step is
 ### 1. Characterize before you pull
 
 Write `METADATA.md` from the template. Every fact carries a status and, when `documented`, a verbatim quote, the page, and the access date.
-A research agent drafts. A separate checking agent confirms or corrects against the page. Only confirmed or corrected facts become `documented`.
+A research agent drafts. A separate checking agent on a different model confirms or corrects against the page. Codex is the preferred checker, per the owner's direction of 2026-09-22 in [CLAUDE.md](../CLAUDE.md). Only confirmed or corrected facts become `documented`.
 Preserve the primary documents under `reference/`, as the PDF and a text extraction, so the trail survives link rot.
 Answer at least these questions. What does each variable mean? What are the coverage, cadence, and gaps? What is the exact encoding, with nodata and below-detection codes? How is it accessed and authenticated? How large is the full archive, and what subset does assumption A16 allow? What are the producer's own caveats? How do versions and reprocessing behave? What are the license and attribution terms?
 

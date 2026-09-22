@@ -1,0 +1,947 @@
+
+===== PAGE 1 =====
+ 
+  
+  
+  
+  
+  
+Release notes for NASA-produced MERIS and OLCI 
+cyanobacteria index (CIcyano) data product to support the 
+Cyanobacteria Assessment Network (CyAN) Project  
+  
+ 
+  
+  
+  
+
+===== PAGE 2 =====
+Table of Contents  
+  
+Version History ................................ ................................ ................................ ............ 3 
+Introduction ................................ ................................ ................................ ................. 4 
+Overview of data files and processing ................................ ................................ ......... 4 
+Processing version and reprocessing schedule ................................ ...........................  7 
+Version 6 improvements/changes ................................ ................................ ................. 8 
+Summary of Analysis ................................ ................................ ................................ . 8 
+Examples of V5 vs. V6 ................................ ................................ ................................  8 
+Previous Versions ................................ ................................ ................................ ....... 12 
+Version 5 improvements/changes ................................ ................................ ............ 12 
+Summary of Analysis ................................ ................................ ............................  12 
+Examples of V5 vs. V4 ................................ ................................ ...........................  12 
+Version 4 improvements/changes ................................ ................................ ............ 16 
+Version 3 improvements/changes ................................ ................................ ............ 16 
+Known Issues................................ ................................ ................................ ............. 18 
+Difference CyAN and NOAA-produced products ................................ ...........................  19 
+References ................................ ................................ ................................ ................ 20 
+Appendix A:  CyAN daily merged OLCI metadata V6 ................................ ......................  23 
+Appendix B:  CyAN daily merged OLCI metadata V5 ................................ ......................  26 
+Appendix C:  CyAN MERIS metadata  V4 ................................ ................................ ....... 29 
+ 
+  
+ 
+ 
+  
+===== PAGE 3 =====
+Version History  
+  
+Release Notes   
+March 2022 – Version 4.0 Release notes published 
+May 2023 – Version 5.0 Release notes published  
+February 2025 – Version 6 Release notes published  
+August 2025 – Updates to known issues added to release notes*  
+  
+ 
+CyAN Dataset  
+March 2022 – CyAN dataset, Version 4.0 released 
+May 2023 – CyAN dataset, version 5.0 released 
+February 2025 – CyAN data, version 6.0 released*  
+  
+  
+ 
+ 
+ 
+ 
+ 
+* Current versions 
+  
+===== PAGE 4 =====
+Introduction  
+  
+Four U.S. federal agencies – EPA, NASA, NOAA, and USGS – collaborated to form the 
+Cyanobacteria Assessment Network (CyAN) Project. This work is supported by the NASA 
+Ocean Biology and Biogeochemistry Program/Applied Sciences Program (proposal 14-
+SMDUNSOL14-0001 and SMDSS20-0006) and by in-kind contributions from the U.S. EPA, 
+NOAA, and the U.S. Geological Survey Toxic Substances Hydrology Program [Schaeffer et al., 
+2015].  NASA’s principal role in CyAN is the production, validation, and distribution of 
+satellite-derived cyanobacteria index (CI-cyano) data products from the ESA Medium Resolution 
+Imaging Spectrometer onboard Envisat (MERIS; 2002-2012) and Ocean Colour Land Imager 
+onboard Sentinel-3A (OLCI; 2017-present) and Sentinel-3B (2018-present) for the continental 
+United States (CONUS) and Alaska (Table 1).  This document accompanies NASA’s production 
+of  CIcyano data products for MERIS and OLCI.  
+   
+Table 1.  Agency roles and responsibilities.  
+Agency  Role  
+EPA  Satellite application methods for management of freshwater HABs and water 
+quality  
+NASA  Satellite data processing, evaluation/validation, quality control  
+NOAA  Satellite algorithms to detect and forecast HABs for marine systems and Great 
+Lakes  
+USGS  Field freshwater HAB monitoring, ecological expertise, Landsat satellite 
+management   
+Overview of data files and processing  
+   
+As detailed metadata for each file can be found in Appendix A, this section provides only top-
+level details on file format and content.  Briefly, the NASA Ocean Biology Processing Group 
+(OBPG; https://oceancolor.gsfc.nasa.gov) at Goddard Space Flight Center (GSFC) generated the 
+MERIS and OLCI CIcyano data files.  The CIcyano algorithm is fully described in Wynne et al. 
+[2008], Wynne et al. [2010], and Coffer et al. [2020], Seegers et al. [2022].  Daily and 7-day 
+composites of CI_cyano are available at 300-m resolution.  These images were transformed to 
+Albers Equal Area projection with an area-weighted interpolation to match the projections of the 
+National Hydrography Dataset.  Shuttle Radar Topography Mission (SRTM) 60-meter data 
+provided the land mask (https://dds.cr.usgs.gov/srtm/version2_1/SWBD/).  The CIcyano value in 
+each pixel represents the maximum  CIcyano value for both the daily and 7-day composite periods.  
+CONUS and Alaska composites are divided into and delivered as a regional numbered tile 
+(Figure 1 and Figure 2), representing a spatial area made into a separate file.  The data file name 
+will use the column and row number to identify the tile location.  
+===== PAGE 5 =====
+    
+Figure 1.  Envisat and Sentinel-3 CONUS satellite tiles (9X6 tiles)  
+  
+  
+  
+Figure 2.  Envisat and Sentinel-3 Alaska satellite tiles (4x3 tiles). A lower resolution land mask is used for the Alaska 
+region ( landmask_GMT15ARC_AK_v2021.nc )  
+  
+Each data file is stored in 8-bit GeoTIFF, where values of:      
+  
+• 0 indicate below threshold  CIcyano detection limits  
+• 1-253 are data  
+• 254 is land   
+• 255 are no data (e.g., a cloudy pixel, ice cover)  
+  
+
+===== PAGE 6 =====
+Digital numbers (DN) can be converted to an estimated cyanobacteria abundance derived from  
+CIcyano.  CIcyano =  10**(DN * 0.011714 - 4.1870866)  
+  
+MERIS/OLCI data files follow this naming convention:  
+  
+sensoryyyydddyyyyddd.datalevel_temporalresolution_product_version_resolution_region   
+  
+A file named M20120642012070.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m_5_3, for 
+example, is decomposed as:   
+  
+sensor: M = MERIS, L=OLCI  
+yyyydddyyyddd: 20120642012070 = year 2012, day 064 to year 
+2012, calendar day 070  
+datalevel: L3m = satellite processing level-3, mapped image  
+temporalresolution: 7D = 7-day temporal composite, DAY = daily 
+maximum  
+product: Project identifier CI_cyano (CI cyanobacteria product), tc 
+(true color)  
+o CONUS products: CYAN_ CI_cyano, CyANTC_tc  
+o Alaska products: CYANAK_ CI_cyano, CYANAKTC_tc     
+version: CYAN_CONUS, CYAN_AK (Alaska)  
+resolution: 300m = pixel resolution  
+region: 5_3 = tile column(5) and row(3)  
+  
+ * The Alaska naming conventions follows a similar pattern with the single difference of “AK” 
+replacing “CONUS” in the file name.  
+  
+In addition to the 7-day composites and dailies for  CIcyano, daily true color images are also 
+provided. The OLCI products are merged Sentinel-3A and 3B from 2018-present. Data for 
+MERIS are provided as 14-day composites from 2002-2007, when the instrument irregularly 
+viewed the US and as 7-day composites and dailies from 2008-2012, when the instrument 
+regularly collected data over the US. Daily true color images are also provided for CONUS and 
+Alaska for MERIS and OLCI with 2018 true colors being a composite of OLCI Sentinel-3A and 
+3B.  
+  
+These data are validated Stage 2 of 4 on NASA’s data maturity level ranking.  This is defined as 
+“data product accuracy is estimated using a significant set (although not full US/global) of 
+independent measurements obtained from selected locations and time periods and ground-
+truth/field program efforts.  There have been some peer-reviewed publications on the accuracy, 
+but for limited spatial areas.”  Additional details on NASA’s data maturity levels can be found at  
+https://science.nasa.gov/earth-science/earth-science-data/data-maturity-levels.    
+===== PAGE 7 =====
+  
+For details on data product validation efforts and applications, see Binding et al. [2011], 
+Matthews et al. [2012], Moradi [2014], Lunetta et al. [2015], Matthews and Odermatt [2015], 
+Palmer et al. [2015a], Palmer et al. [2015b], Tomlinson et al. [2016], Urquhart et al. [2017, 
+2019],  
+ Clark et al. [2017], Schaeffer et al. [2018], Mishra et al. [2019], Coffer et al. [2020], Stroming 
+et al. [2020], Seegers et al. [2022], Whitman et al. [2022].  
+ 
+Processing version and reprocessing schedule  
+  
+All data are processing version 6 (February 2025).  Data are preliminary and to be used for 
+evaluation purposes only.  Known outstanding issues are listed below.  
+  
+The CyAN Project and OBPG will periodically reprocess and redistribute the MERIS and OLCI 
+CIcyano time-series.  Reprocessing will occur every 10 to 16 months.    
+  
+===== PAGE 8 =====
+Version 6 improvements/changes  
+The following improvements have been implemented in version 6 (February 2025).  
+  
+1. Updated processing to use the latest NASA S3A and S3B vicarious calibration with 
+minor adjustments to the 681 nm and 709 nm wavelengths   
+2. Implemented water vapor correction as part of atmospheric correction   
+3. Improved test for turbid waters, which reduces false positive CIcyano detection in turbid 
+environments  
+Summary of Analysis  
+• The changes have minor impact at the low-end and tends to slightly reduces 
+CIcyanovalues at the high-end.  
+• The turbid water change should reduce false positives in turbid waters.  
+  
+Examples of V5 vs. V6  
+The following imagery and analysis help highlight the impact of code and processing changes 
+from CyAN V5 to V6 on different regions around CONUS. The imagery may show the entire 
+tile or a selected region or body of water. The scatter plots comparing V5 to V6 CIcyano values are 
+data for the entire tile.  
+  
+  
+Difference maps from 5 August 2022 for the Lake Winnebago area (a) and Wisconsin Tile (b) highlighting changes 
+at the pixel level between V5 and V6. Red indicates a V6 increase in CIcyano. Corresponding CIcyano imagery maps 
+for V5 (b) and V6 (c) are shown. A scatterplot summarizing differences between V5 and V6 CIcyano values for the 
+Wisconsin tile with color indicating data density (e). True color (f).    
+
+===== PAGE 9 =====
+  
+  
+  
+ 
+Difference maps from 20 August 2022 for the Florida Tile (6_2; a) and a focus on the Lake Okeechobee area (d) 
+highlighting changes at the pixel level between V5 and V6. Red indicates a V6 increase in CIcyano. Corresponding 
+CIcyano imagery maps for V5 (b) and V6 (c) are shown. A scatterplot summarizing differences between V5 and V6 
+CIcyano values for the Florida tile with color indicating data density (e). True color (f).    
+  
+  
+ 
+
+===== PAGE 10 =====
+Difference maps from 24 August 2022 highlighting changes at the pixel level between V5 and V6 for Utah Lake (a) 
+and the full Utah region tile (d). Red indicates an increase in V6. Corresponding CIcyano imagery V5 map (b) and V6 
+map (c) are shown. A scatterplot summarizing differences between V5 and V6 CIcyano values for the Utah Lake tile 
+(3_3) the color indicates data density (e). True color (f).    
+  
+  
+ 
+Difference maps from 24 August 2022 highlighting changes at the pixel level between V5 and V6 for Lake Erie (a) 
+and the regional tile (d). Red indicates an increase in V6. Corresponding mapped CIcyano imagery for Lake Erie V5 
+(b) and V6 (c) are shown. The scatterplot summarizes differences between V5 and V6 CIcyano values for the 
+regional tile (7_2) with color indicating data density (e). True color (f).    
+  
+  
+  
+
+===== PAGE 11 =====
+Difference maps for 1 October 2022 highlighting changes at the pixel level between V5 and V6 for Lake 
+Pontchartrain (a) and the regional tile (d). Red indicates an increase in V6. Corresponding mapped CIcyano imagery 
+for Lake Pontchartrain and the surrounding area version 5 (b) and version 6 (c). The scatterplot summarizes 
+differences between V5 and V6 CIcyano values for the full regional tile (7_2) with color indicating data density (e). 
+True color (f).    
+  
+  
+ 
+Difference maps for 27 August 2022 for a region including San Francisco Bay (a) and the central California tile (d) 
+highlighting pixel level changes between V5 and V6. Red indicates a V6 increase in CIcyano. Corresponding CIcyano 
+imagery maps for V5 (b) and V6 (c). A scatterplot summarizing differences between V5 and V6 CIcyano values for 
+the central California tile with color indicating data density (e). True color (f).    
+  
+
+===== PAGE 12 =====
+Previous Versions  
+Version 5 improvements/changes  
+The following improvements have been implemented in version 5 (May 2023).  
+1. This version includes an improved filter for turbid water exclusion, which reduces 
+CIcyano values in highly turbid environments.  
+2. Correction to clear water correction when retrieved Kd is invalid.  
+3. Applied OLCI to MERIS inter-calibration for CI (Wynne et al., 2021)  
+4. Updated gains now using ESA’s Collection-3 vicarious calibration.  
+  
+Summary of Analysis  
+• The calibration changes should increase sensitivity at low-end and have limited 
+impact at high-end.  
+• A change in the binning process in how maximum values are selected has led to 
+general increase in CIcyano values, especially in the 7-day composite products.   
+•  Version 5 shows on average a 15-20% increase in  CIcyano values. This is driven by 
+gain changes (using updated ESA gains)  
+• The turbid water change should reduce false positives in turbid waters.  
+  
+Examples of V5 vs. V4  
+The following imagery and analysis help highlight the impact of code and processing changes 
+from CyAN V4 to V5 on different regions around CONUS. The imagery may show the entire 
+tile or a selected region or body of water. The scatter plots comparing V4 to V5 CIcyano values are 
+data for the entire tile.  
+  
+  
+===== PAGE 13 =====
+Central Wisconsin (6_2) August 5, 2022 (2022217)   
+  
+Difference maps from 5 August 2022 for the Lake Winnebago area (a) and Wisconsin Tile (b) highlighting changes 
+at the pixel level between V4 and V5. Red indicates a V5 increase in CIcyano. Corresponding CIcyano imagery maps 
+for V4 (b) and V5 (c) are shown. A scatterplot summarizing differences between V4 and V5 CIcyano values for the 
+Wisconsin tile with color indicating data density (e). True color (f).    
+  
+  
+Florida tile (7_5) August 20, 2022 (2022232)  
+ 
+Difference maps from 20 August 2022 for the Florida Tile (6_2; a) and a focus on the Lake Okeechobee area (d) 
+highlighting changes at the pixel level between V4 and V5. Red indicates a V5 increase in CIcyano. Corresponding 
+CIcyano imagery maps for V4 (b) and V5 (c) are shown. A scatterplot summarizing differences between V4 and V5 
+CIcyano values for the Florida tile with color indicating data density (e). True color (f).    
+
+===== PAGE 14 =====
+  
+Utah Lake (3_3) August 24, 2022 (2022236)   
+ 
+Difference maps from 24 August 2022 highlighting changes at the pixel level between V4 and V5 for Utah Lake (a) 
+and the full Utah region tile (d). Red indicates an increase in V5. Corresponding CIcyano imagery version 4 map (b) 
+and version 5 map (c) are shown. A scatterplot summarizing differences between V4 and V5 CIcyano values for the 
+Utah Lake tile (3_3) the color indicates data density (e). True color (f).    
+  
+  
+Lake Erie Tile (7_2) August 24, 2022 (2022236)  
+  
+Difference maps from 24 August 2022 highlighting changes at the pixel level between V4 and V5 for Lake Erie (a) 
+and the regional tile (d). Red indicates an increase in V5. Corresponding mapped CIcyano imagery for Lake Erie 
+version 4 (b) and version 5 (c) are shown. The scatterplot summarizes differences between V4 and V5 CIcyano 
+values for the regional tile (7_2) with color indicating data density (e). True color (f).    
+
+===== PAGE 15 =====
+  
+Central California Tile (1_3) August 27, 2022 (2022239)  
+  
+Difference maps for 24 August 2022 for a region including San Francisco Bay (a) and the central California tile (d) 
+highlighting pixel level changes between V4 and V5. Red indicates a V5 increase in CIcyano. Corresponding CIcyano 
+imagery maps for version 4 (b) and version 5 (c). A scatterplot summarizing differences between V4 and V5 CIcyano 
+values for the central California tile with color indicating data density (e). True color (f).    
+  
+ 
+Lake Pontchartrain Tile (6_5) October 1, 2022 (2022274)  
+  
+Difference maps for 1 October 2022 highlighting changes at the pixel level between V4 and V5 for Lake 
+Pontchartrain (a) and the regional tile (d). Red indicates an increase in V5. Corresponding mapped CIcyano imagery 
+for Lake Pontchartrain and the surrounding area version 4 (b) and version 5 (c). The scatterplot summarizes 
+differences between V4 and V5 CIcyano values for the full regional tile (7_2) with color indicating data density (e). 
+True color (f).    
+
+===== PAGE 16 =====
+  
+Version 4 improvements/changes  
+The following improvements have been implemented in version 4 (March 2022).  
+1. Improvements include detection of false positive CI's in highly turbid waters   
+2. Flagging high glint.  
+  
+V4 - An example from S3A on 3/15/2021 that highlights the difference between V3 and V4 with 
+the turbidity correction with old CI turbidity (left), the turbidity improvement (middle), and the 
+difference in red between detect and non-detect (right).  
+  
+ 
+  
+  
+Version 3 improvements/changes  
+The following improvements have been implemented in version 3.  
+  
+1. This version includes a merged OLCI CIcyano product combining the data from 
+Sentinel-3A and Sentinel-3B from 2018-present. The merged product is the 
+maximum value for each pixel.  The utilization of two satellites greatly increases 
+spatial and temporal coverage relative to the previous sentinel-3A coverage only.    
+  
+2. True color daily imagery from 2018-present uses a combined imagery from S3A and 
+S3B OLCI.  If there is sensor swath overlap the true color image shows the mean 
+value.   
+  
+3. The land mask has been updated with an improvement in Ohio and South Dakota 
+lakes.  
+  
+
+===== PAGE 17 =====
+4.  The GeoTIFFs now include product version information in metadata  
+  
+5. There was a switch made to area weighted binning. Area weighting uses the 
+intersection of the pixel geometry and the bin geometry (in lat/lon space) as a 
+weighting factor when adding the pixel value into the bin.  Each pixel is added to all 
+bins that it intersects.  The old binning scheme added the pixel to the closest bin using 
+the center lat/lon location of each.  Each pixel is only added to one bin.  The area 
+weighting makes a much nicer picture.  For example, if the pixel area is bigger than 
+the bin area, then you will end up with lots of empty bins using the old method.  
+  
+6. Code fixes have been made to improve masking, especially nearshore potentially 
+stray light contaminated pixels.  
+  
+7. The 39-degree zenith angle filter was removed for OLCI, which increased the number 
+of pixels recovered. The filter was put in place for MERIS but is not necessary for 
+OLCI.  
+  
+8. In the imagery non-detect values (e.g. below detection threshold) have been color-
+separated from no data values (e.g., a cloudy pixel). Non-detects are grey and no data 
+are black.  
+  
+9. Lake Pontchartrain coastal masking error removed resulting in full lake CI coverage.  
+  
+10. More nearshore CONUS coast will be processed.   
+  
+  
+===== PAGE 18 =====
+Known Issues  
+  
+The following issues will be addressed or resolved in future releases of these data.  
+  
+(1) A snow/flag that identifies ice has been applied but has not yet been verified.  Ice can 
+potentially register as high CI counts, so caution should be used where snow/ice might be visible.  
+It is currently unknown if CyAN could detect cyanobacteria under thin ice in lakes and 
+reservoirs.   
+  
+(2) The SRTM land mask may cover dry lakes and may exclude other lakes. There is a need for 
+an eroded landmask.  
+  
+(3) A flag has been added to identify mixed pixels that are potentially inclusive of land and 
+water.  The flag has not yet been verified, so caution should be used where mixed pixels may 
+occur at the land/water interface.  
+  
+(4) Undetected thin clouds can potentially register as high CI counts (elevating CI beyond the 
+minimum detect threshold value).  
+  
+(5) Retrievals are considered more robust for lakes ≥ 900 m window width as defined in Clark et 
+al. [2017].  
+  
+  This 900 m window width provides a minimum of a 3 x 3-pixel array in a water body. Smaller 
+water bodies and rivers are not masked and their data may be erroneous.   
+  
+(7) Satellite data processing does not account for changes in water levels due to cycles such as 
+drought and flood.  
+  
+(8) Published US validation locations are Lake Erie, Florida, Ohio, Vermont, New Hampshire, 
+Rhode Island, Connecticut, Massachusetts, Oregon, California, Indiana, New Jersey, New York,  
+Utah, New Hampshire, Vermont, Maine, California, Oregon, and Idaho.  
+   
+(9) Occasionally the 7-day mapped maximum product will have a value that is less than is seen 
+in the daily maximum values for a week.  This occurs because of reprojecting the round earth 
+onto the flat earth. The max values are contained in the 7-day products until the final mapping 
+step and then in reprojecting to Albers Equal Area projection there is an averaging that occurs 
+and therefore the 7-day max can be less than the individual days.  
+===== PAGE 19 =====
+Difference CyAN and NOAA-produced products   
+  
+We thought it may be worth including the following text regarding CyAN (NASA produced) and 
+NOAA produced product differences with the release:  
+   
+Known differences between NOAA/NCCOS and CyAN CI products  
+    - Flagging  
+        o NOAA/NCCOS land=252, invalid=251,253,254,255  
+        o CyAN land=254, invalid=255  
+    - Range of valid data values  
+        o NOAA/NCCOS 0-250  
+        o CyAN 0-253  
+  
+Differences in pixel values will also be noted due to differences in binning/mapping methods and 
+differences in land masks used.  
+  
+  
+===== PAGE 20 =====
+References  
+  
+Binding, C. E., T. A. Greenberg, J. H. Jerome, R. P. Bukata, and G. Letourneau (2011), An 
+assessment of MERIS algal products during an intense bloom in Lake of the Woods, Journal of 
+Plankton Research, 33(5), 793-806, doi: 10.1093/plankt/fbq133.   
+  
+Clark, J. M., B. A. Schaeffer, J. A. Darling, E. A. Urquhart, J. M. Johnston, A. R. Ignatius, M. H. 
+Myer, K. A. Loftin, P. J. Werdell, and R. P. Stumpf (2017), Satellite monitoring of 
+cyanobacterial harmful algal bloom frequency in recreational waters and drinking water sources, 
+Ecological Indicators, 80, 84-95, doi: 10.1016/j.ecolind.2017.04.046.   
+  
+Coffer, M.M, B.A. Schaeffer, J.A. Darling, E.A. Urquhart, W.B. Salls. (2020), Quantifying 
+national and regional cyanobacterial occurrence in US lakes using satellite remote sensing 
+Ecological Indicators, 111, 105976, doi: 10.1016/j.ecolind.2019.105976.  
+   
+Lunetta, R. S., B. A. Schaeffer, R. P. Stumpf, D. Keith, S. A. Jacobs, and M. S. Murphy (2015), 
+Evaluation of cyanobacteria cell count detection derived from MERIS imagery across the eastern 
+USA, Remote Sensing of Environment, 157, 24-34, doi: 10.1016/j.rse.2014.06.008.   
+  
+Matthews, M. W., S. Bernard, and L. Robertson (2012), An algorithm for detecting trophic status 
+(chlorophyll-a), cyanobacterial-dominance, surface scums and floating vegetation in inland and 
+coastal waters, Remote Sensing of Environment, 124, 637-652, doi: 10.1016/j.rse.2012.05.032.   
+  
+Matthews, M. W., and D. Odermatt (2015), Improved algorithm for routine monitoring of 
+cyanobacteria and eutrophication in inland and near-coastal waters, Remote Sensing of 
+Environment, 156, 374-382, doi: 10.1016/j.rse.2014.10.010.   
+  
+Mishra, S., R.P. Stumpf, B.A. Schaeffer, P.J. Werdell, K.A. Loftin and A. Meredith. (2019), 
+Measurement of Cyanobacterial Bloom Magnitude using Satellite Remote Sensing. Scientific 
+Report 9, 18310, doi: 10.1038/s41598-019-54453-y.   
+  
+Moradi, M. (2014), Comparison of the efficacy of MODIS and MERIS data for detecting 
+cyanobacterial blooms in the southern Caspian Sea, Marine Pollution Bulletin, 87(1-2), 311-322, 
+doi: 10.1016/j.marpolbul.2014.06.053.   
+  
+Palmer, S. C. J., et al. (2015a), Validation of Envisat MERIS algorithms for chlorophyll retrieval 
+in a large, turbid and optically-complex shallow lake, Remote Sensing of Environment, 157, 158-
+169, doi: 10.1016/j.rse.2014.07.024.   
+  
+===== PAGE 21 =====
+Palmer, S. C. J., D. Odermatt, P. D. Hunter, C. Brockmann, M. Presing, H. Balzter, and V. R. 
+Toth (2015b), Satellite remote sensing of phytoplankton phenology in Lake Balaton using 10 
+years of MERIS observations, Remote Sensing of Environment, 158, 441-452, doi: 
+10.1016/j.rse.2014.11.021.   
+  
+Schaeffer, B. A., K. Loftin, R. P. Stumpf, and P. J. Werdell (2015), Agencies collaborate, 
+develop a cyanobacteria assessment network, EOS Trans. AGU, 96(23), 16-20.   
+  
+Schaeffer, B. A., S.W. Bailey, R.N. Conmy, M. Galvin, A.R. Ignatius, J.M. Johnston, E.A. 
+Urquhart (2018), Mobile device application for monitoring cyanobacteria harmful algal blooms 
+using Sentinel-3 satellite Ocean and Land Colour Instruments. Environ. Model. Softw., 109: 93-
+103.  
+   
+Seegers, B. N., Werdell, P. J., Vandermeulen, R. A., Salls, W., Stumpf, R. P., Schaeffer, B. A., 
+Owens, T. J., Bailey, S. W., Scott, J. P., & Loftin, K. A. (2021). Satellites for long-term 
+monitoring of inland U.S. lakes: The MERIS time series and application for chlorophyll-a. 
+Remote Sens Environ, 266, 1-14, doi: 10.1016/j.rse.2021.112685.   
+   
+Stroming, S., Robertson, M., Mabee, B., Kuwayama, Y., & Schaeffer, B. (2020), Quantifying the 
+Human Health Benefits of Using Satellite Information to Detect Cyanobacterial Harmful Algal 
+Blooms and Manage Recreational Advisories in U.S. Lakes. GeoHealth, 4, e2020GH000254,  
+doi: 10.1029/2020GH000254.  
+  
+Tomlinson, M. C., R. P. Stumpf, T. T. Wynne, D. Dupuy, R. Burks, J. Hendrickson, and R. S. 
+Fulton (2016), Relating chlorophyll from cyanobacteria-dominated inland waters to a MERIS 
+bloom index, Remote Sensing Letters, 7(2), 141-149, doi:10.1080/2150704x.2015.1117155.  
+   
+Urquhart, E. A., B. A. Schaeffer, R. P. Stumpf, K. A. Loftin, and P. J. Werdell (2017), A method 
+for examining temporal changes in cyanobacterial harmful algal bloom spatial extent using 
+satellite remote sensing, Harmful Algae, 67, 144-152, doi: 10.1016/j.hal.2017.06.001.   
+  
+Urquhart, E.A., Schaeffer, B.A., (2019), Envisat MERIS and Sentinel-3 OLCI satellite lake 
+biophysical water quality flag dataset for the contiguous United States. Data in Brief, 104826., 
+doi: 10.1016/j.dib.2019.104826.    
+  
+Wynne, T. T., R. P. Stumpf, M. C. Tomlinson, and J. Dyble (2010), Characterizing a 
+cyanobacterial bloom in western Lake Erie using satellite imagery and meteorological data, 
+Limnology and Oceanography, 55(5), 2025-2036, doi:10.4319/lo.2010.55.5.2025.   
+  
+Wynne, T. T., R. P. Stumpf, M. C. Tomlinson, R. A. Warner, P. A. Tester, J. Dyble, and G. L. 
+Fahnenstiel (2008), Relating spectral shape to cyanobacterial blooms in the Laurentian Great 
+===== PAGE 22 =====
+Lakes, International Journal of Remote Sensing, 29(12), 3665-3672, 
+doi:10.1080/01431160802007640.   
+   
+Wynne, Timothy & Mishra, Sachi & Meredith, Andrew & Litaker, Richard & Stumpf, Richard. 
+(2021). Intercalibration of MERIS, MODIS, and OLCI Satellite Imagers for Construction of 
+Past, Present, and Future Cyanobacterial Biomass Time Series. Remote Sensing. 13. 2305. 
+10.3390/rs13122305.  
+  
+  
+  
+===== PAGE 23 =====
+Appendix A:  CyAN daily merged OLCI metadata V6    
+  
+// global attributes:  
+:product_name = "L2022206.L3b_DAY_CYANV6T.nc" ;  
+:temporal_range = "7-hour" ;  
+:start_orbit_number = 22127 ;  
+:end_orbit_number = 33524 ;  
+:date_created = "2025032023755000" ;  
+:processing_version = "6T" ;  
+:time_coverage_start = "2022-07-25T13:35:09.000Z" ;  
+:time_coverage_end = "2022-07-25T20:10:06.000Z" ;  
+:northernmost_latitude = 62.87891f ;  
+:southernmost_latitude = 8.350261f ;  
+:easternmost_longitude = -45.16392f ;  
+:westernmost_longitude = -154.366f ;  
+:geospatial_lat_max = 62.87890625 ;  
+:geospatial_lat_min = 8.35026073455811 ;  
+:geospatial_lon_max = -45.1639213562012 ;  
+:geospatial_lon_min = -154.365997314453 ;  
+:geospatial_lat_units = "degrees_north" ;  
+:geospatial_lon_units = "degrees_east" ;  
+:geospatial_lat_resolution = "289.894507 m" ;  
+:geospatial_lon_resolution = "289.894507 m" ;  
+:spatialResolution = "289.894507 m" ;  
+:data_bins = 7755402LL ;  
+:percent_data_bins = 0.1274931f ;  
+:units = "CI_stumpf:sr^-1,CI_cyano:sr^-1,CI_noncyano:sr^-1,MCI_stumpf:sr^-1,chl_mph:mg m^-
+3,flags_mph:undefined,flags_habs:undefined" ;  
+:binning_scheme = "Integerized Sinusoidal Grid" ;  
+:project = "Ocean Biology Processing Group (NASA/GSFC/OBPG)" ;  
+:institution = "NASA Goddard Space Flight Center, Ocean Ecology Laboratory, Ocean Biology 
+Processing Group" ;  
+:standard_name_vocabulary = "CF Standard Name Table v36" ;  
+:Conventions = "CF-1.6 ACDD-1.3" ;  
+:naming_authority = "gov.nasa.gsfc.sci.oceandata" ;  
+:id = "L2022206.L3b_DAY_CYANV6T.nc/L3/L2022206.L3b_DAY_CYANV6T.nc" ;  
+:license = "https://science.nasa.gov/earth-science/earth-science-data/data-information-policy/" ;  
+:creator_name = "NASA/GSFC/OBPG" ;  
+:publisher_name = "NASA/GSFC/OBPG" ;  
+:creator_email = "data@oceancolor.gsfc.nasa.gov" ;  
+:publisher_email = "data@oceancolor.gsfc.nasa.gov" ;  
+:creator_url = "https://oceandata.sci.gsfc.nasa.gov" ;  
+:publisher_url = "https://oceandata.sci.gsfc.nasa.gov" ;  
+:processing_level = "L3 Binned" ;  
+:cdm_data_type = "point" ;  
+:history = "l3bin par=L2022206.L3b_DAY_CYANV6T.param\n[2025-02-01T03:55:29] ncattredit.py 
+L2022206.L3b_DAY_CYANV6T.nc ./L3BATTRIB.txt" ;  
+:title = "Level-3 Binned Data" ;  
+===== PAGE 24 =====
+:instrument = "OLCI" ;  
+:platform = "Sentinel-3A,Sentinel-3B" ;  
+:source = "satellite observations from OLCI on Sentinel-3A & Sentinel-3B" ;  
+  
+group: level-3_binned_data {  
+  types:  
+    compound binListType {  
+      uint64 bin_num ;  
+      short nobs ;  
+      short nscenes ;  
+      float weights ;  
+      float time_rec ;  
+    }; // binListType  
+    compound binDataType {  
+      float sum ;  
+      float sum_squared ;  
+    }; // binDataType  
+    compound binIndexType {  
+      uint64 start_num ;  
+      uint64 begin ;  
+      uint extent ;  
+      uint64 max ;  
+    }; // binIndexType  
+  dimensions:  
+   binListDim = UNLIMITED ; // (7755402 currently)  
+   binDataDim = UNLIMITED ; // (7755402 currently)  
+   binIndexDim = UNLIMITED ; // (69120 currently)  
+  variables:  
+   binListType BinList(binListDim) ;  
+   binDataType CI_stumpf(binDataDim) ;  
+   binDataType CI_cyano(binDataDim) ;  
+   binDataType CI_noncyano(binDataDim) ;  
+   binDataType MCI_stumpf(binDataDim) ;  
+   binDataType chl_mph(binDataDim) ;  
+   binDataType flags_mph(binDataDim) ;  
+   binDataType flags_habs(binDataDim) ;  
+   binIndexType BinIndex(binIndexDim) ;  
+  } // group level-3_binned_data  
+  
+group: processing_control {  
+  
+  // group attributes:  
+    :software_name = "L3BIN" ;  
+    :software_version = "5.14" ;  
+    :input_sources = 
+"S3A_OLCI_EFRNT.20220725.L3b.DAY.CYANV6T.nc,S3B_OLCI_EFRNT.20220725.L3b.DAY.CYANV6T.nc
+" ;  
+    :l2_flag_names = "LAND,CLDICE,HISATZEN" ;  
+  
+===== PAGE 25 =====
+  group: input_parameters {  
+  
+    // group attributes:  
+              :infile = "/data2/sdpsoper/vdc/vpu1/workbuf/l3inlist.dat" ;  
+              :ofile = "L2022206.L3b_DAY_CYANV6T.nc" ;  
+              :pfile = "L2022206.L3b_DAY_CYANV6T.nc" ;  
+              :oformat = "netCDF4" ;  
+              :syear = "9999" ;  
+              :eyear = "9999" ;  
+              :sday = "1970001" ;  
+              :eday = "2038018" ;  
+              :sorbit = "-1" ;  
+              :eorbit = "-1" ;  
+              :out_parm = ":DEFAULT:" ;  
+              :processing_version = "6T" ;  
+              :reduce_fac = "1" ;  
+              :resolve = "" ;  
+              :merged = "" ;  
+              :loneast = "180.000000" ;  
+              :lonwest = "-180.000000" ;  
+              :latnorth = "90.000000" ;  
+              :latsouth = "-90.000000" ;  
+              :verbose = "0" ;  
+              :unit_wgt = "0" ;  
+              :median = "0" ;  
+              :deflate = "4" ;  
+              :composite_prod = "CI_cyano" ;  
+              :composite_scheme = "max" ;  
+              :doi = "10.5067/MERGED-S3/OLCI/L3B/CYAN/CI/6T" ;  
+    } // group input_parameters  
+  } // group processing_control  
+}  
+  
+  
+===== PAGE 26 =====
+Appendix B:  CyAN daily merged OLCI metadata V5    
+  
+netcdf L2022206.L3b_DAY_CYAN {  
+  
+// global attributes:  
+:product_name = "L2022206.L3b_DAY_CYAN.nc" ;  
+:temporal_range = "7-hour" ;  
+:start_orbit_number = 22127 ;  
+:end_orbit_number = 33524 ;  
+:date_created = "2022245032405000" ;  
+:processing_version = "CYAN-v4.0" ;  
+:source = "satellite observations from OLCI-Sentinel-3A" ;  
+:time_coverage_start = "2022-07-25T13:35:09.000Z" ;  
+:time_coverage_end = "2022-07-25T20:10:06.000Z" ;  
+:northernmost_latitude = 62.87891f ;  
+:southernmost_latitude = 8.279948f ;  
+:easternmost_longitude = -45.15788f ;  
+:westernmost_longitude = -154.3724f ;  
+:geospatial_lat_max = 62.87890625 ;  
+:geospatial_lat_min = 8.27994823455811 ;  
+:geospatial_lon_max = -45.1578750610352 ;  
+:geospatial_lon_min = -154.372421264648 ;  
+:geospatial_lat_units = "degrees_north" ;  
+:geospatial_lon_units = "degrees_east" ;  
+:geospatial_lat_resolution = "289.894507 m" ;  
+:geospatial_lon_resolution = "289.894507 m" ;  
+:spatialResolution = "289.894507 m" ;  
+:data_bins = 11381441LL ;  
+:percent_data_bins = 0.1871025f ;  
+:units = "CI_stumpf:sr^-1,CI_cyano:sr^-1,CI_noncyano:sr^-1,MCI_stumpf:sr^-1,chl_mph:mg m^-
+3,flags_mph:undefined,flags_habs:undefined" ;  
+:binning_scheme = "Integerized Sinusoidal Grid" ;  
+:project = "Ocean Biology Processing Group (NASA/GSFC/OBPG)" ;  
+:institution = "NASA Goddard Space Flight Center, Ocean Ecology Laboratory, Ocean Biology 
+Processing Group" ;  
+:standard_name_vocabulary = "CF Standard Name Table v36" ;  
+:Conventions = "CF-1.6 ACDD-1.3" ;  
+:naming_authority = "gov.nasa.gsfc.sci.oceandata" ;  
+:id = "L2022206.L3b_DAY_CYAN.nc/L3/L2022206.L3b_DAY_CYAN.nc" ;  
+:license = "https://science.nasa.gov/earth-science/earth-science-data/data-information-policy/" ;  
+:creator_name = "NASA/GSFC/OBPG" ;  
+:publisher_name = "NASA/GSFC/OBPG" ;  
+:creator_email = "data@oceancolor.gsfc.nasa.gov" ;  
+:publisher_email = "data@oceancolor.gsfc.nasa.gov" ;  
+:creator_url = "https://oceandata.sci.gsfc.nasa.gov" ;  
+:publisher_url = "https://oceandata.sci.gsfc.nasa.gov" ;  
+:processing_level = "L3 Binned" ;  
+:cdm_data_type = "point" ;  
+===== PAGE 27 =====
+:history = "l3bin par=L2022206.L3b_DAY_CYAN.param\n[2022-09-02T04:06:16] ncattredit.py 
+L2022206.L3b_DAY_CYAN.nc ./L3BATTRIB.txt" ;  
+:title = "Level-3 Binned Data" ;  
+:instrument = "OLCI" ;  
+:platform = "Sentinel-3A,Sentinel-3B" ;  
+  
+group: level-3_binned_data {  
+  types:  
+    compound binListType {  
+      uint64 bin_num ;  
+      short nobs ;  
+      short nscenes ;  
+      float weights ;  
+      float time_rec ;  
+    }; // binListType  
+    compound binDataType {  
+      float sum ;  
+      float sum_squared ;  
+    }; // binDataType  
+    compound binIndexType {  
+      uint64 start_num ;  
+      uint64 begin ;  
+      uint extent ;  
+      uint64 max ;  
+    }; // binIndexType  
+  dimensions:  
+   binListDim = UNLIMITED ; // (11381441 currently)  
+   binDataDim = UNLIMITED ; // (11381441 currently)  
+   binIndexDim = UNLIMITED ; // (69120 currently)  
+  variables:  
+   binListType BinList(binListDim) ;  
+   binDataType CI_stumpf(binDataDim) ;  
+   binDataType CI_cyano(binDataDim) ;  
+   binDataType CI_noncyano(binDataDim) ;  
+   binDataType MCI_stumpf(binDataDim) ;  
+   binDataType chl_mph(binDataDim) ;  
+   binDataType flags_mph(binDataDim) ;  
+   binDataType flags_habs(binDataDim) ;  
+   binIndexType BinIndex(binIndexDim) ;  
+  } // group level-3_binned_data  
+  
+group: processing_control {  
+  
+  // group attributes:  
+    :software_name = "L3BIN" ;  
+    :software_version = "5.13" ;  
+    :input_sources = 
+"S3A_OLCI_EFRNT.20220725.L3b.DAY.CYANV4.nc,S3B_OLCI_EFRNT.20220725.L3b.DAY.CYANV4.nc" ;  
+    :l2_flag_names = "LAND,CLDICE,HISATZEN" ;  
+===== PAGE 28 =====
+  
+  group: input_parameters {  
+  
+    // group attributes:  
+      :infile = "/data8/sdpsoper/vdc/vpu7/workbuf/l3inlist.dat" ;  
+      :ofile = "L2022206.L3b_DAY_CYAN.nc" ;  
+      :pfile = "L2022206.L3b_DAY_CYAN.nc" ;  
+      :oformat = "netCDF4" ;  
+      :syear = "9999" ;  
+      :eyear = "9999" ;  
+      :sday = "1970001" ;  
+      :eday = "2038018" ;  
+      :sorbit = "-1" ;  
+      :eorbit = "-1" ;  
+      :out_parm = ":DEFAULT:" ;  
+      :processing_version = "CYAN-v4.0" ;  
+      :reduce_fac = "1" ;  
+      :merged = "" ;  
+      :loneast = "180.000000" ;  
+      :lonwest = "-180.000000" ;  
+      :latnorth = "90.000000" ;  
+      :latsouth = "-90.000000" ;  
+      :verbose = "0" ;  
+      :unit_wgt = "0" ;  
+      :median = "0" ;  
+      :deflate = "4" ;  
+      :composite_prod = "CI_cyano" ;  
+      :composite_scheme = "max" ;  
+    } // group input_parameters  
+  } // group processing_control  
+}  
+  
+===== PAGE 29 =====
+Appendix C:  CyAN MERIS metadata  V4  
+  
+ netcdf M2010226.L3b_DAY_CYAN {  
+  
+// global attributes:  
+:product_name = "M2010226.L3b_DAY_CYAN.nc" ;  
+:title = "MERIS Level-3 Binned Data" ;  
+:instrument = "MERIS" ;  
+:platform = "Envisat" ;  
+:temporal_range = "6-hour" ;  
+:start_orbit_number = 44210 ;  
+:end_orbit_number = 44213 ;  
+:date_created = "2022-06-02T00:52:01.000Z" ;  
+:processing_version = "CYAN-v4.0" ;  
+:source = "satellite observations from MERIS-Envisat" ;  
+:history = "l2bin par=M2010226.L3b_DAY_CYAN.param" ;  
+:time_coverage_start = "2010-08-14T14:51:18.000Z" ;  
+:time_coverage_end = "2010-08-14T19:58:03.000Z" ;  
+:northernmost_latitude = 78.04557f ;  
+:southernmost_latitude = 23.89974f ;  
+:easternmost_longitude = -46.56836f ;  
+:westernmost_longitude = -143.8886f ;  
+:geospatial_lat_max = 78.0455703735352 ;  
+:geospatial_lat_min = 23.8997402191162 ;  
+:geospatial_lon_max = -46.568359375 ;  
+:geospatial_lon_min = -143.888610839844 ;  
+:geospatial_lat_units = "degrees_north" ;  
+:geospatial_lon_units = "degrees_east" ;  
+:geospatial_lat_resolution = "289.894507 m" ;  
+:geospatial_lon_resolution = "289.894507 m" ;  
+:spatialResolution = "289.894507 m" ;  
+:data_bins = 6940776LL ;  
+:percent_data_bins = 0.1141013f ;  
+:units = "CI_stumpf:sr^-1,CI_cyano:sr^-1,CI_noncyano:sr^-1,MCI_stumpf:sr^-1,chl_mph:mg m^-
+3,flags_mph:undefined,flags_habs:undefined,rhos_665:undefined,rhos_560:undefined,rhos_413:undefined" ;  
+:binning_scheme = "Integerized Sinusoidal Grid" ;  
+:project = "Ocean Biology Processing Group (NASA/GSFC/OBPG)" ;  
+:institution = "NASA Goddard Space Flight Center, Ocean Ecology Laboratory, Ocean Biology Processing Group" ;  
+:standard_name_vocabulary = "CF Standard Name Table v36" ;  
+:Conventions = "CF-1.6 ACDD-1.3" ;  
+:naming_authority = "gov.nasa.gsfc.sci.oceandata" ;  
+:id = "M2010226.L3b_DAY_CYAN.nc/L3/M2010226.L3b_DAY_CYAN.nc" ;  
+:license = "https://science.nasa.gov/earth-science/earth-science-data/data-information-policy/" ;  
+:creator_name = "NASA/GSFC/OBPG" ;  
+:publisher_name = "NASA/GSFC/OBPG" ;  
+:creator_email = "data@oceancolor.gsfc.nasa.gov" ;  
+:publisher_email = "data@oceancolor.gsfc.nasa.gov" ;  
+===== PAGE 30 =====
+:creator_url = "https://oceandata.sci.gsfc.nasa.gov" ;  
+:publisher_url = "https://oceandata.sci.gsfc.nasa.gov" ;  
+:processing_level = "L3 Binned" ;  
+:cdm_data_type = "point" ;  
+  
+group: level-3_binned_data {  
+  types:  
+    compound binListType {  
+      uint64 bin_num ;  
+      short nobs ;  
+      short nscenes ;  
+      float weights ;  
+      float time_rec ;  
+    }; // binListType  
+    compound binDataType {  
+      float sum ;  
+      float sum_squared ;  
+    }; // binDataType  
+    compound binIndexType {  
+      uint64 start_num ;  
+      uint64 begin ;  
+      uint extent ;  
+      uint64 max ;  
+    }; // binIndexType  
+  dimensions:  
+   binListDim = UNLIMITED ; // (6940776 currently)  
+   binDataDim = UNLIMITED ; // (6940776 currently)  
+   binIndexDim = UNLIMITED ; // (69120 currently)  
+  variables:  
+   binListType BinList(binListDim) ;  
+   binDataType CI_stumpf(binDataDim) ;  
+   binDataType CI_cyano(binDataDim) ;  
+   binDataType CI_noncyano(binDataDim) ;  
+   binDataType MCI_stumpf(binDataDim) ;  
+   binDataType chl_mph(binDataDim) ;  
+   binDataType flags_mph(binDataDim) ;  
+   binDataType flags_habs(binDataDim) ;  
+   binDataType rhos_665(binDataDim) ;  
+   binDataType rhos_560(binDataDim) ;  
+   binDataType rhos_413(binDataDim) ;  
+   binIndexType BinIndex(binIndexDim) ;  
+  } // group level-3_binned_data  
+  
+group: processing_control {  
+  
+  // group attributes:  
+    :software_name = "l2bin" ;  
+    :software_version = "7.0.3" ;  
+===== PAGE 31 =====
+    :input_sources = "ENVISAT_MERIS_FRS.20100813T170104.L2.CYAN_CONUS_CYAN-
+v4.0.nc,ENVISAT_MERIS_FRS.20100813T170959.L2.CYAN_CONUS_CYAN-
+v4.0.nc,ENVISAT_MERIS_FRS.20100813T171309.L2.CYAN_CONUS_CYAN-
+v4.0.nc,ENVISAT_MERIS_FRS.20100813T184037.L2.CYAN_CONUS_CYAN-
+v4.0.nc,ENVISAT_MERIS_FRS.20100813T184932.L2.CYAN_CONUS_CYAN-
+v4.0.nc,ENVISAT_MERIS_FRS.20100814T145118.L2.CYAN_CONUS_CYAN-
+v4.0.nc,ENVISAT_MERIS_FRS.20100814T150058.L2.CYAN_CONUS_CYAN-
+v4.0.nc,ENVISAT_MERIS_FRS.20100814T163054.L2.CYAN_CONUS_CYAN-
+v4.0.nc,ENVISAT_MERIS_FRS.20100814T163949.L2.CYAN_CONUS_CYAN-
+v4.0.nc,ENVISAT_MERIS_FRS.20100814T180913.L2.CYAN_CONUS_CYAN-
+v4.0.nc,ENVISAT_MERIS_FRS.20100814T181808.L2.CYAN_CONUS_CYAN-
+v4.0.nc,ENVISAT_MERIS_FRS.20100814T182125.L2.CYAN_CONUS_CYAN-
+v4.0.nc,ENVISAT_MERIS_FRS.20100814T194939.L2.CYAN_CONUS_CYAN-v4.0.nc" ;  
+    :l2_flag_names = "LAND,CLDICE,HISATZEN" ;  
+  
+  group: input_parameters {  
+  
+    // group attributes:  
+      :infile = "/data16/sdpsoper/vdc/vpu15/workbuf/l2inlist.dat" ;  
+      :ofile = "M2010226.L3b_DAY_CYAN.nc" ;  
+      :fileuse = "M2010226.L3b_DAY_CYAN.contrib" ;  
+      :sday = "2010226" ;  
+      :eday = "2010226" ;  
+      :latnorth = "90.000000" ;  
+      :latsouth = "-90.000000" ;  
+      :loneast = "0.000000" ;  
+      :lonwest = "0.000000" ;  
+      :resolve = "Q" ;  
+      :rowgroup = "270" ;  
+      :flaguse = "LAND,CLDICE,HISATZEN" ;  
+      :l3bprod = 
+"CI_stumpf,CI_cyano,CI_noncyano,MCI_stumpf,chl_mph,flags_mph,flags_habs,rhos_665,rhos_560,rhos_413" ;  
+      :output_wavelengths = "ALL" ;  
+      :prodtype = "O" ;  
+      :pversion = "CYAN-v4.0" ;  
+      :suite = "CYAN" ;  
+      :night = "0" ;  
+      :verbose = "0" ;  
+      :minobs = "0" ;  
+      :delta_crossing_time = "0.000000" ;  
+      :deflate = "4" ;  
+      :qual_prod = "" ;  
+      :composite_prod = "CI_cyano" ;  
+      :composite_scheme = "max" ;  
+      :qual_max = "255" ;  
+    } // group input_parameters  
+  } // group processing_control  
+}  

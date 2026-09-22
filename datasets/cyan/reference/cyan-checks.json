@@ -1,0 +1,1485 @@
+{
+  "dataset": "cyan",
+  "checker": {
+    "agent": "general-purpose subagent",
+    "model": "sonnet",
+    "started_at": "2026-09-22T17:50:00Z",
+    "finished_at": "2026-09-22T18:40:00Z"
+  },
+  "method": "Every one of the 17 sources was fetched fresh with curl -sL -A \"public-water-quality-pipeline/0.1 (checker)\" into a private scratchpad folder (CMR endpoints kept as raw compact JSON; HTML pages kept raw and also stripped of tags with sed then HTML-entity-decoded with python3 html.unescape; the release notes were read from the researcher-supplied local .txt extraction). A Python script normalized runs of whitespace to a single space in both each claim's quote and the corresponding source text and tested literal substring containment for all 100 claims, without altering any non-ASCII character. The 3 mechanical misses and all 97 mechanical hits were then reviewed by hand against surrounding context to judge whether the quote actually supports the claim's value/note (not just whether it exists), including a byte-level check of two curly-vs-straight punctuation mismatches, a check of the raw HTML/JSON href attributes for the shapefile links, the CyAN File Search Launch link and the TEA HTTPS distribution prefix, and manual confirmation of every page-number and JSON-field locator against the fetched sources.",
+  "checks": [
+    {
+      "id": "chk-cl-cyan-identity-product-title",
+      "claim_id": "cl-cyan-identity-product-title",
+      "verdict": "confirmed",
+      "approved_value": "Product title: Merged Sentinel-3A and Sentinel-3B OLCI Regional Mapped Cyanobacteria Index (CI) Data, version 6.0",
+      "approved_unit": null,
+      "approved_note": "This is the OLCI (current-era) collection; a separate MERIS collection exists.",
+      "source_ids": [
+        "src-cmr-collection-olci",
+        "src-earthdata-collection-olci"
+      ],
+      "quote": "\"title\":\"Merged Sentinel-3A and Sentinel-3B OLCI Regional Mapped Cyanobacteria Index (CI) Data, version 6.0\"",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-identity-short-name",
+      "claim_id": "cl-cyan-identity-short-name",
+      "verdict": "confirmed",
+      "approved_value": "Collection short name: MERGED_S3_OLCI_L3m_CYAN",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-cmr-collection-olci"
+      ],
+      "quote": "\"short_name\":\"MERGED_S3_OLCI_L3m_CYAN\"",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-identity-doi",
+      "claim_id": "cl-cyan-identity-doi",
+      "verdict": "confirmed",
+      "approved_value": "DOI: 10.5067/MERGED-S3/OLCI/L3M/CYAN/CI/6.0",
+      "approved_unit": null,
+      "approved_note": "This is the L3 mapped (L3M) DOI for the distributed collection.",
+      "source_ids": [
+        "src-cmr-collection-olci-umm",
+        "src-earthdata-collection-olci"
+      ],
+      "quote": "\"DOI\":{\"DOI\":\"10.5067/MERGED-S3/OLCI/L3M/CYAN/CI/6.0\",\"Authority\":\"https://doi.org\"}",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-identity-version",
+      "claim_id": "cl-cyan-identity-version",
+      "verdict": "confirmed",
+      "approved_value": "Collection version: 6.0",
+      "approved_unit": "version",
+      "approved_note": "",
+      "source_ids": [
+        "src-cmr-collection-olci"
+      ],
+      "quote": "\"version_id\":\"6.0\"",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-identity-processing-level",
+      "claim_id": "cl-cyan-identity-processing-level",
+      "verdict": "confirmed",
+      "approved_value": "Processing level: 3",
+      "approved_unit": "level",
+      "approved_note": "",
+      "source_ids": [
+        "src-cmr-collection-olci"
+      ],
+      "quote": "\"processing_level_id\":\"3\"",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-identity-producer-obpg",
+      "claim_id": "cl-cyan-identity-producer-obpg",
+      "verdict": "confirmed",
+      "approved_value": "NASA's Ocean Biology Processing Group (OBPG) at Goddard Space Flight Center generated the MERIS and OLCI CIcyano data files",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "the NASA Ocean Biology Processing Group (OBPG; https://oceancolor.gsfc.nasa.gov) at Goddard Space Flight Center (GSFC) generated the MERIS and OLCI CIcyano data files.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-identity-agencies",
+      "claim_id": "cl-cyan-identity-agencies",
+      "verdict": "confirmed",
+      "approved_value": "CyAN was formed by four U.S. federal agencies: EPA, NASA, NOAA and USGS",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "Four U.S. federal agencies – EPA, NASA, NOAA, and USGS – collaborated to form the Cyanobacteria Assessment Network (CyAN) Project.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-identity-usace-2023",
+      "claim_id": "cl-cyan-identity-usace-2023",
+      "verdict": "confirmed",
+      "approved_value": "The U.S. Army Corps of Engineers (USACE) joined the CyAN collaboration in 2023",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-epa-cyan"
+      ],
+      "quote": "CyAN is a collaborative project among EPA; the National Aeronautics and Space Administration (NASA); the National Oceanic and Atmospheric Administration (NOAA); the United States Geological Survey (USGS); and, as of 2023, the U.S. Army Corps of Engineers (USACE)",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-identity-nasa-role",
+      "claim_id": "cl-cyan-identity-nasa-role",
+      "verdict": "corrected",
+      "approved_value": "NASA's role in CyAN is production, validation and distribution of the satellite-derived CI-cyano products",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "NASA’s principal role in CyAN is the production, validation, and distribution of satellite-derived cyanobacteria index (CI-cyano) data products",
+      "reason": "The substance is fully verified on PAGE 4 of the release notes, but the claim's quote uses a straight ASCII apostrophe ' where the source text uses the Unicode curly apostrophe ’ (NASA’s). Per the strict literal-substring rule this fails as transcribed; the corrected quote above (with the source's actual character) is a verbatim substring. Value and note are accurate as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-identity-band1-variable",
+      "claim_id": "cl-cyan-identity-band1-variable",
+      "verdict": "confirmed",
+      "approved_value": "The single geophysical variable is band1, the DN-encoded Cyanobacteria Index (digital number, unitless)",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-cmr-collection-olci"
+      ],
+      "quote": "band1 – Cyanobacteria Index (DN-encoded) (digital number, unitless)",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-identity-meris-collection",
+      "claim_id": "cl-cyan-identity-meris-collection",
+      "verdict": "confirmed",
+      "approved_value": "A companion MERIS collection exists: ENVISAT MERIS Regional Mapped Cyanobacteria Index (CI) Data, version 6.0, short name MERIS_L3m_CYAN, concept id C3416412319-OB_CLOUD",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-cmr-collection-meris"
+      ],
+      "quote": "\"dataset_id\":\"ENVISAT MERIS Regional Mapped Cyanobacteria Index (CI) Data, version 6.0\"",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-identity-platforms",
+      "claim_id": "cl-cyan-identity-platforms",
+      "verdict": "confirmed",
+      "approved_value": "Platforms for the OLCI collection: Sentinel-3A and Sentinel-3B; instrument OLCI",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-cmr-collection-olci"
+      ],
+      "quote": "\"platforms\":[\"Sentinel-3A\",\"Sentinel-3B\"]",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-maturity-stage-2",
+      "claim_id": "cl-cyan-maturity-stage-2",
+      "verdict": "corrected",
+      "approved_value": "The data are validated Stage 2 of 4 on NASA's data maturity level ranking",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "These data are validated Stage 2 of 4 on NASA’s data maturity level ranking.",
+      "reason": "The substance is fully verified on PAGE 6 of the release notes, but the claim's quote uses a straight ASCII apostrophe ' where the source uses the Unicode curly apostrophe ’ (NASA’s). Per the strict literal-substring rule this fails as transcribed; the corrected quote above is a verbatim substring. Value is accurate as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-maturity-stage-2-definition",
+      "claim_id": "cl-cyan-maturity-stage-2-definition",
+      "verdict": "confirmed",
+      "approved_value": "Stage 2 means accuracy is estimated from a significant but not full set of independent measurements from selected locations and time periods, with some peer-reviewed accuracy publications for limited spatial areas",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "data product accuracy is estimated using a significant set (although not full US/global) of independent measurements obtained from selected locations and time periods",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-maturity-preliminary",
+      "claim_id": "cl-cyan-maturity-preliminary",
+      "verdict": "confirmed",
+      "approved_value": "The data are preliminary and to be used for evaluation purposes only",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "Data are preliminary and to be used for evaluation purposes only.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-maturity-validation-locations",
+      "claim_id": "cl-cyan-maturity-validation-locations",
+      "verdict": "confirmed",
+      "approved_value": "Published US validation locations are Lake Erie, Florida, Ohio, Vermont, New Hampshire, Rhode Island, Connecticut, Massachusetts, Oregon, California, Indiana, New Jersey, New York, Utah, Maine and Idaho",
+      "approved_unit": null,
+      "approved_note": "The release notes list New Hampshire, Vermont, California and Oregon twice in this sentence.",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "(8) Published US validation locations are Lake Erie, Florida, Ohio, Vermont, New Hampshire, Rhode Island, Connecticut, Massachusetts, Oregon, California, Indiana, New Jersey, New York, Utah, New Hampshire, Vermont, Maine, California, Oregon, and Idaho.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-maturity-epa-experimental",
+      "claim_id": "cl-cyan-maturity-epa-experimental",
+      "verdict": "confirmed",
+      "approved_value": "EPA describes the CyANWeb app as experimental, providing provisional satellite-derived measures that may contain errors and should be considered a research level tool",
+      "approved_unit": null,
+      "approved_note": "This wording is about EPA's app layer over the NASA product, not the NASA GeoTIFF itself.",
+      "source_ids": [
+        "src-epa-cyan-app"
+      ],
+      "quote": "Note: The CyANWeb app is an experimental application and provides provisional satellite derived measures of cyanobacteria, which may contain errors and should be considered a research level tool.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-temporal-meris-envisat-span",
+      "claim_id": "cl-cyan-temporal-meris-envisat-span",
+      "verdict": "confirmed",
+      "approved_value": "MERIS on Envisat covers 2002-2012 and OLCI on Sentinel-3A 2017-present, Sentinel-3B 2018-present, per the release notes",
+      "approved_unit": null,
+      "approved_note": "The release notes say OLCI starts 2017; the collection metadata says 2016-04-25. See discrepancies.",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "the ESA Medium Resolution Imaging Spectrometer onboard Envisat (MERIS; 2002-2012) and Ocean Colour Land Imager onboard Sentinel-3A (OLCI; 2017-present) and Sentinel-3B (2018-present) for the continental United States (CONUS) and Alaska (Table 1).",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-temporal-meris-14day",
+      "claim_id": "cl-cyan-temporal-meris-14day",
+      "verdict": "confirmed",
+      "approved_value": "MERIS data are provided as 14-day composites from 2002-2007, when the instrument irregularly viewed the US",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "Data for MERIS are provided as 14-day composites from 2002-2007, when the instrument irregularly viewed the US and as 7-day composites and dailies from 2008-2012, when the instrument regularly collected data over the US.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-temporal-meris-collection-extent",
+      "claim_id": "cl-cyan-temporal-meris-collection-extent",
+      "verdict": "confirmed",
+      "approved_value": "The MERIS collection temporal extent in CMR runs 2002-03-21 to 2012-05-09",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-cmr-collection-meris"
+      ],
+      "quote": "\"time_start\":\"2002-03-21T00:00:00.000Z\"",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-temporal-meris-collection-end",
+      "claim_id": "cl-cyan-temporal-meris-collection-end",
+      "verdict": "confirmed",
+      "approved_value": "The MERIS collection end time in CMR is 2012-05-09",
+      "approved_unit": "date",
+      "approved_note": "Consistent with the end of the Envisat mission.",
+      "source_ids": [
+        "src-cmr-collection-meris"
+      ],
+      "quote": "\"time_end\":\"2012-05-09T00:00:00.000Z\"",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-temporal-olci-collection-start",
+      "claim_id": "cl-cyan-temporal-olci-collection-start",
+      "verdict": "confirmed",
+      "approved_value": "The OLCI collection temporal extent starts 2016-04-25 and is open-ended",
+      "approved_unit": "date",
+      "approved_note": "",
+      "source_ids": [
+        "src-cmr-collection-olci",
+        "src-earthdata-collection-olci"
+      ],
+      "quote": "\"time_start\":\"2016-04-25T00:00:00.000Z\"",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-temporal-merged-s3a-s3b-2018",
+      "claim_id": "cl-cyan-temporal-merged-s3a-s3b-2018",
+      "verdict": "confirmed",
+      "approved_value": "The OLCI products are merged Sentinel-3A and Sentinel-3B from 2018-present",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "The OLCI products are merged Sentinel-3A and 3B from 2018-present.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-temporal-merged-max-per-pixel",
+      "claim_id": "cl-cyan-temporal-merged-max-per-pixel",
+      "verdict": "confirmed",
+      "approved_value": "The merged OLCI product is the maximum value for each pixel, combining Sentinel-3A and Sentinel-3B from 2018-present",
+      "approved_unit": null,
+      "approved_note": "Introduced in version 3.",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "This version includes a merged OLCI CIcyano product combining the data from Sentinel-3A and Sentinel-3B from 2018-present. The merged product is the maximum value for each pixel.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-temporal-daily-and-7day",
+      "claim_id": "cl-cyan-temporal-daily-and-7day",
+      "verdict": "confirmed",
+      "approved_value": "Daily and 7-day composites of CI_cyano are available at 300-m resolution",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "Daily and 7-day composites of CI_cyano are available at 300-m resolution.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-temporal-maximum-composite",
+      "claim_id": "cl-cyan-temporal-maximum-composite",
+      "verdict": "confirmed",
+      "approved_value": "The CIcyano value in each pixel is the MAXIMUM CIcyano value over the period, for both the daily and the 7-day composite",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "The CIcyano value in each pixel represents the maximum CIcyano value for both the daily and 7-day composite periods.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-temporal-reprocessing-cadence",
+      "claim_id": "cl-cyan-temporal-reprocessing-cadence",
+      "verdict": "confirmed",
+      "approved_value": "The CyAN Project and OBPG reprocess and redistribute the MERIS and OLCI CIcyano time series every 10 to 16 months",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "The CyAN Project and OBPG will periodically reprocess and redistribute the MERIS and OLCI CIcyano time-series. Reprocessing will occur every 10 to 16 months.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-temporal-version-history",
+      "claim_id": "cl-cyan-temporal-version-history",
+      "verdict": "confirmed",
+      "approved_value": "Release-notes version history: V4.0 March 2022, V5.0 May 2023, V6 February 2025, with an August 2025 update to known issues",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "March 2022 – Version 4.0 Release notes published May 2023 – Version 5.0 Release notes published February 2025 – Version 6 Release notes published August 2025 – Updates to known issues added to release notes*",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-temporal-current-version",
+      "claim_id": "cl-cyan-temporal-current-version",
+      "verdict": "confirmed",
+      "approved_value": "All data are processing version 6 (February 2025)",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "All data are processing version 6 (February 2025).",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-temporal-v6-changes",
+      "claim_id": "cl-cyan-temporal-v6-changes",
+      "verdict": "confirmed",
+      "approved_value": "Version 6 (February 2025) changes: latest S3A/S3B vicarious calibration with minor 681 nm and 709 nm adjustments; water vapor correction in the atmospheric correction; improved turbid-water test",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "1. Updated processing to use the latest NASA S3A and S3B vicarious calibration with minor adjustments to the 681 nm and 709 nm wavelengths 2. Implemented water vapor correction as part of atmospheric correction 3. Improved test for turbid waters, which reduces false positive CIcyano detection in turbid environments",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-spatial-300m",
+      "claim_id": "cl-cyan-spatial-300m",
+      "verdict": "confirmed",
+      "approved_value": "Nominal pixel resolution is 300 m",
+      "approved_unit": "m",
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6",
+        "src-earthdata-project-cyan"
+      ],
+      "quote": "Daily and 7-day composites of CI_cyano are available at 300-m resolution.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-spatial-appendix-a-resolution",
+      "claim_id": "cl-cyan-spatial-appendix-a-resolution",
+      "verdict": "confirmed",
+      "approved_value": "Appendix A metadata gives spatialResolution = 289.894507 m for the L3-binned V6 file",
+      "approved_unit": "m",
+      "approved_note": "This is the L3-binned grid resolution, not necessarily the mapped GeoTIFF pixel size.",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": ":spatialResolution = \"289.894507 m\" ;",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-spatial-albers-nhd",
+      "claim_id": "cl-cyan-spatial-albers-nhd",
+      "verdict": "confirmed",
+      "approved_value": "Images are transformed to Albers Equal Area projection with area-weighted interpolation to match the National Hydrography Dataset projection",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "These images were transformed to Albers Equal Area projection with an area-weighted interpolation to match the projections of the National Hydrography Dataset.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-spatial-srtm-landmask",
+      "claim_id": "cl-cyan-spatial-srtm-landmask",
+      "verdict": "confirmed",
+      "approved_value": "The land mask comes from Shuttle Radar Topography Mission (SRTM) 60-meter data",
+      "approved_unit": null,
+      "approved_note": "The NASA project page instead says CONUS uses a 50m land mask. See discrepancies.",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "Shuttle Radar Topography Mission (SRTM) 60-meter data provided the land mask (https://dds.cr.usgs.gov/srtm/version2_1/SWBD/).",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-spatial-alaska-landmask-file",
+      "claim_id": "cl-cyan-spatial-alaska-landmask-file",
+      "verdict": "confirmed",
+      "approved_value": "A lower-resolution land mask is used for Alaska: landmask_GMT15ARC_AK_v2021.nc",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "A lower resolution land mask is used for the Alaska region ( landmask_GMT15ARC_AK_v2021.nc )",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-spatial-project-landmasks",
+      "claim_id": "cl-cyan-spatial-project-landmasks",
+      "verdict": "confirmed",
+      "approved_value": "The NASA project page states CONUS images use a 50m land mask and the Alaska product a less refined 500m land mask",
+      "approved_unit": "m",
+      "approved_note": "Conflicts with the release notes' SRTM 60-meter figure. See discrepancies.",
+      "source_ids": [
+        "src-earthdata-project-cyan"
+      ],
+      "quote": "The contiguous US images use a 50m land mask, while the Alaska product uses a less refined 500m land mask.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-spatial-conus-tiles",
+      "claim_id": "cl-cyan-spatial-conus-tiles",
+      "verdict": "confirmed",
+      "approved_value": "CONUS is delivered as a 9 x 6 grid of tiles",
+      "approved_unit": "tiles",
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "Figure 1. Envisat and Sentinel-3 CONUS satellite tiles (9X6 tiles)",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-spatial-alaska-tiles",
+      "claim_id": "cl-cyan-spatial-alaska-tiles",
+      "verdict": "confirmed",
+      "approved_value": "Alaska is delivered as a 4 x 3 grid of tiles",
+      "approved_unit": "tiles",
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "Figure 2. Envisat and Sentinel-3 Alaska satellite tiles (4x3 tiles).",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-spatial-900m-window",
+      "claim_id": "cl-cyan-spatial-900m-window",
+      "verdict": "confirmed",
+      "approved_value": "Retrievals are considered more robust for lakes with a window width of at least 900 m",
+      "approved_unit": "m",
+      "approved_note": "The release notes attribute the 900 m figure to a 2017 paper in their reference list; the citation appears verbatim in the quote.",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "(5) Retrievals are considered more robust for lakes ≥ 900 m window width as defined in Clark et al. [2017].",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-spatial-3x3-pixels",
+      "claim_id": "cl-cyan-spatial-3x3-pixels",
+      "verdict": "confirmed",
+      "approved_value": "The 900 m window width corresponds to a minimum 3 x 3 pixel array of water in a water body",
+      "approved_unit": "pixels",
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "This 900 m window width provides a minimum of a 3 x 3-pixel array in a water body.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-encoding-geotiff-8bit",
+      "claim_id": "cl-cyan-encoding-geotiff-8bit",
+      "verdict": "confirmed",
+      "approved_value": "Each data file is stored in 8-bit GeoTIFF",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "Each data file is stored in 8-bit GeoTIFF, where values of:",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-encoding-dn-table",
+      "claim_id": "cl-cyan-encoding-dn-table",
+      "verdict": "confirmed",
+      "approved_value": "DN encoding: 0 = below CIcyano detection threshold, 1-253 = data, 254 = land, 255 = no data (e.g. cloudy pixel, ice cover)",
+      "approved_unit": "DN",
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "• 0 indicate below threshold CIcyano detection limits • 1-253 are data • 254 is land • 255 are no data (e.g., a cloudy pixel, ice cover)",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-encoding-dn-formula",
+      "claim_id": "cl-cyan-encoding-dn-formula",
+      "verdict": "confirmed",
+      "approved_value": "DN to index conversion: CIcyano = 10**(DN * 0.011714 - 4.1870866)",
+      "approved_unit": null,
+      "approved_note": "Slope 0.011714, intercept -4.1870866, base 10.",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "Digital numbers (DN) can be converted to an estimated cyanobacteria abundance derived from CIcyano. CIcyano = 10**(DN * 0.011714 - 4.1870866)",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-encoding-dn-guide-colors",
+      "claim_id": "cl-cyan-encoding-dn-guide-colors",
+      "verdict": "confirmed",
+      "approved_value": "In NASA's DN guide, below-threshold pixels render grey, land brown, and no-data black",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-earthdata-project-cyan"
+      ],
+      "quote": "DN Guide 0 indicates below threshold of CI detection limits (grey color) 1-253 are data 254 is land (brown) 255 are no data (black—e.g., a cloudy pixel)",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-encoding-noaa-flagging",
+      "claim_id": "cl-cyan-encoding-noaa-flagging",
+      "verdict": "confirmed",
+      "approved_value": "NOAA/NCCOS uses a different encoding: land=252 and invalid=251,253,254,255, whereas CyAN uses land=254 and invalid=255",
+      "approved_unit": "DN",
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "o NOAA/NCCOS land=252, invalid=251,253,254,255 o CyAN land=254, invalid=255",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-encoding-noaa-valid-range",
+      "claim_id": "cl-cyan-encoding-noaa-valid-range",
+      "verdict": "confirmed",
+      "approved_value": "NOAA/NCCOS valid data range is 0-250 while CyAN's is 0-253",
+      "approved_unit": "DN",
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "- Range of valid data values o NOAA/NCCOS 0-250 o CyAN 0-253",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-encoding-band1-int8",
+      "claim_id": "cl-cyan-encoding-band1-int8",
+      "verdict": "confirmed",
+      "approved_value": "The catalogued variable Band1 has data type int8 with no fill value, valid range, scale factor or offset recorded",
+      "approved_unit": null,
+      "approved_note": "The DN semantics live in the release notes, not in the CMR variable record.",
+      "source_ids": [
+        "src-earthdata-collection-olci"
+      ],
+      "quote": "Band1 Band1 N/A int8 N/A N/A N/A N/A",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-encoding-l3b-variables",
+      "claim_id": "cl-cyan-encoding-l3b-variables",
+      "verdict": "confirmed",
+      "approved_value": "The upstream L3-binned file carries CI_stumpf, CI_cyano, CI_noncyano, MCI_stumpf, chl_mph, flags_mph and flags_habs",
+      "approved_unit": null,
+      "approved_note": "These are in the binned NetCDF, not in the distributed single-band GeoTIFF.",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "binDataType CI_stumpf(binDataDim) ; binDataType CI_cyano(binDataDim) ; binDataType CI_noncyano(binDataDim) ; binDataType MCI_stumpf(binDataDim) ; binDataType chl_mph(binDataDim) ; binDataType flags_mph(binDataDim) ; binDataType flags_habs(binDataDim) ;",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-encoding-l2-flags",
+      "claim_id": "cl-cyan-encoding-l2-flags",
+      "verdict": "confirmed",
+      "approved_value": "The L2 flags used in binning are LAND, CLDICE and HISATZEN",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": ":l2_flag_names = \"LAND,CLDICE,HISATZEN\" ;",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-encoding-cells-per-ml-range",
+      "claim_id": "cl-cyan-encoding-cells-per-ml-range",
+      "verdict": "confirmed",
+      "approved_value": "NASA's project page states the DN range corresponds to roughly 10,000 to 7,000,000 cells/ml",
+      "approved_unit": "cells/ml",
+      "approved_note": "The page gives a range only; it does not give a CI-to-cells conversion factor or a citation.",
+      "source_ids": [
+        "src-earthdata-project-cyan"
+      ],
+      "quote": "That range is ~10,000 to 7,000,000 cells/ml.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-issues-snow-ice-flag",
+      "claim_id": "cl-cyan-issues-snow-ice-flag",
+      "verdict": "confirmed",
+      "approved_value": "A snow/ice flag has been applied but has not yet been verified; ice can register as high CI counts",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "(1) A snow/flag that identifies ice has been applied but has not yet been verified. Ice can potentially register as high CI counts, so caution should be used where snow/ice might be visible.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-issues-under-thin-ice",
+      "claim_id": "cl-cyan-issues-under-thin-ice",
+      "verdict": "confirmed",
+      "approved_value": "It is unknown whether CyAN can detect cyanobacteria under thin ice in lakes and reservoirs",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "It is currently unknown if CyAN could detect cyanobacteria under thin ice in lakes and reservoirs.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-issues-landmask-imperfect",
+      "claim_id": "cl-cyan-issues-landmask-imperfect",
+      "verdict": "confirmed",
+      "approved_value": "The SRTM land mask may cover dry lakes and may exclude other lakes; an eroded land mask is needed",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "(2) The SRTM land mask may cover dry lakes and may exclude other lakes. There is a need for an eroded landmask.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-issues-mixed-pixels",
+      "claim_id": "cl-cyan-issues-mixed-pixels",
+      "verdict": "confirmed",
+      "approved_value": "A flag identifying mixed land/water pixels has been added but not verified; caution is needed at the land/water interface",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "(3) A flag has been added to identify mixed pixels that are potentially inclusive of land and water. The flag has not yet been verified, so caution should be used where mixed pixels may occur at the land/water interface.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-issues-thin-clouds",
+      "claim_id": "cl-cyan-issues-thin-clouds",
+      "verdict": "confirmed",
+      "approved_value": "Undetected thin clouds can register as high CI counts, elevating CI beyond the minimum detect threshold",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "(4) Undetected thin clouds can potentially register as high CI counts (elevating CI beyond the minimum detect threshold value).",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-issues-small-waterbodies",
+      "claim_id": "cl-cyan-issues-small-waterbodies",
+      "verdict": "confirmed",
+      "approved_value": "Smaller water bodies and rivers are not masked and their data may be erroneous",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "Smaller water bodies and rivers are not masked and their data may be erroneous.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-issues-no-water-level-correction",
+      "claim_id": "cl-cyan-issues-no-water-level-correction",
+      "verdict": "confirmed",
+      "approved_value": "Processing does not account for changes in water levels due to cycles such as drought and flood",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "(7) Satellite data processing does not account for changes in water levels due to cycles such as drought and flood.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-issues-7day-less-than-daily",
+      "claim_id": "cl-cyan-issues-7day-less-than-daily",
+      "verdict": "confirmed",
+      "approved_value": "Occasionally the 7-day mapped maximum has a value lower than the daily maximum for that week, because reprojection to Albers Equal Area averages during the final mapping step",
+      "approved_unit": null,
+      "approved_note": "The 7-day composite is therefore not a strict upper bound on that week's dailies.",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "(9) Occasionally the 7-day mapped maximum product will have a value that is less than is seen in the daily maximum values for a week. This occurs because of reprojecting the round earth onto the flat earth.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-issues-turbid-water",
+      "claim_id": "cl-cyan-issues-turbid-water",
+      "verdict": "confirmed",
+      "approved_value": "V6's improved turbid-water test reduces, but does not eliminate, false positive CIcyano detection in turbid environments",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "The turbid water change should reduce false positives in turbid waters.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-issues-biophysical-flag-dataset",
+      "claim_id": "cl-cyan-issues-biophysical-flag-dataset",
+      "verdict": "confirmed",
+      "approved_value": "A separate Envisat MERIS and Sentinel-3 OLCI lake biophysical water quality flag dataset for the contiguous United States is cited in the release notes references",
+      "approved_unit": null,
+      "approved_note": "Cited as a reference; the release notes do not state that it ships with the CI_cyano GeoTIFFs.",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "Envisat MERIS and Sentinel-3 OLCI satellite lake biophysical water quality flag dataset for the contiguous United States. Data in Brief, 104826.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-naming-convention-release-notes",
+      "claim_id": "cl-cyan-naming-convention-release-notes",
+      "verdict": "confirmed",
+      "approved_value": "File naming convention: sensoryyyydddyyyyddd.datalevel_temporalresolution_product_version_resolution_region",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "MERIS/OLCI data files follow this naming convention: sensoryyyydddyyyyddd.datalevel_temporalresolution_product_version_resolution_region",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-naming-example-decomposition",
+      "claim_id": "cl-cyan-naming-example-decomposition",
+      "verdict": "confirmed",
+      "approved_value": "Example: M20120642012070.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m_5_3 is MERIS, year 2012 day 064 to day 070, L3 mapped, 7-day composite, CI_cyano, CONUS, 300 m, tile column 5 row 3",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "A file named M20120642012070.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m_5_3, for example, is decomposed as:",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-naming-alaska-difference",
+      "claim_id": "cl-cyan-naming-alaska-difference",
+      "verdict": "corrected",
+      "approved_value": "Alaska file names follow the same pattern with AK replacing CONUS",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "* The Alaska naming conventions follows a similar pattern with the single difference of “AK” replacing “CONUS” in the file name.",
+      "reason": "The substance is fully verified on PAGE 6 of the release notes, but the claim's quote uses straight ASCII double quotes around AK and CONUS where the source uses Unicode curly quotes “ ”. Per the strict literal-substring rule this fails as transcribed; the corrected quote above is a verbatim substring. Value is accurate as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-naming-project-page-pattern",
+      "claim_id": "cl-cyan-naming-project-page-pattern",
+      "verdict": "confirmed",
+      "approved_value": "The NASA project page writes the pattern as SYYYYDDDYYYYDDD.LLL_TT_PROJ_PRODUCT_TILEVERSION_RESOLUTION_TILEcol_row, e.g. L20202012020207.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m_5_2",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-earthdata-project-cyan"
+      ],
+      "quote": "SYYYYDDDYYYYDDD.LLL_TT_PROJ_PRODUCT_TILEVERSION_RESOLUTION_TILEcol_row (e.g. L20202012020207.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m_5_2)",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-naming-granule-real-example",
+      "claim_id": "cl-cyan-naming-granule-real-example",
+      "verdict": "confirmed",
+      "approved_value": "A real archived granule id is L2026213.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m_1_1.tif",
+      "approved_unit": null,
+      "approved_note": "Note that a DAY granule carries a single date stamp (L2026213), not the doubled YYYYDDDYYYYDDD form shown for 7D files.",
+      "source_ids": [
+        "src-cmr-granule-olci"
+      ],
+      "quote": "\"producer_granule_id\":\"L2026213.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m_1_1.tif\"",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-format-collection-netcdf4",
+      "claim_id": "cl-cyan-format-collection-netcdf4",
+      "verdict": "confirmed",
+      "approved_value": "The collection landing page and CMR metadata state the file format is netCDF-4",
+      "approved_unit": null,
+      "approved_note": "The actual distributed granules are .tif. See discrepancies.",
+      "source_ids": [
+        "src-earthdata-collection-olci",
+        "src-cmr-collection-olci-umm"
+      ],
+      "quote": "Data Format netCDF-4",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-format-umm-netcdf4",
+      "claim_id": "cl-cyan-format-umm-netcdf4",
+      "verdict": "confirmed",
+      "approved_value": "UMM-C FileDistributionInformation records Format: netCDF-4",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-cmr-collection-olci-umm"
+      ],
+      "quote": "\"ArchiveAndDistributionInformation\":{\"FileDistributionInformation\":[{\"Format\":\"netCDF-4\"}]}",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-format-granule-tif",
+      "claim_id": "cl-cyan-format-granule-tif",
+      "verdict": "confirmed",
+      "approved_value": "The distributed granules are GeoTIFF (.tif) files, as the granule download link shows",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-cmr-granule-olci"
+      ],
+      "quote": "\"href\":\"https://obdaac-tea.earthdatacloud.nasa.gov/ob-cumulus-prod-public/L2026213.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m_1_1.tif\"",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-format-granule-size",
+      "claim_id": "cl-cyan-format-granule-size",
+      "verdict": "confirmed",
+      "approved_value": "The example daily CONUS tile granule size is 0.1351547241210938 (CMR granule_size, MB)",
+      "approved_unit": "MB",
+      "approved_note": "CMR reports granule_size in MB; this is one daily tile, so file sizes vary by tile, date and composite period.",
+      "source_ids": [
+        "src-cmr-granule-olci"
+      ],
+      "quote": "\"granule_size\":\"0.1351547241210938\"",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-lakes-shapefile-link",
+      "claim_id": "cl-cyan-lakes-shapefile-link",
+      "verdict": "confirmed",
+      "approved_value": "A lake shapefile for MERIS and OLCI sensors is published at https://www.earthdata.nasa.gov/s3fs-public/2026-01/MERIS_OLCI_Lakes.zip",
+      "approved_unit": null,
+      "approved_note": "The link text is the description; the page gives no field list for the shapefile.",
+      "source_ids": [
+        "src-earthdata-project-cyan"
+      ],
+      "quote": "Lake Shapefile for MERIS and OLCI sensors",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-lakes-conus-tile-shapefile",
+      "claim_id": "cl-cyan-lakes-conus-tile-shapefile",
+      "verdict": "confirmed",
+      "approved_value": "A CONUS tile-grid shapefile is published at https://www.earthdata.nasa.gov/s3fs-public/2026-01/CONUS_tiles_shapefile.zip",
+      "approved_unit": null,
+      "approved_note": "The link is labelled \"CONUS Shapefile\" in the Shapefiles list.",
+      "source_ids": [
+        "src-earthdata-project-cyan"
+      ],
+      "quote": "CONUS Shapefile",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-lakes-nhdplus-source",
+      "claim_id": "cl-cyan-lakes-nhdplus-source",
+      "verdict": "confirmed",
+      "approved_value": "The CONUS shapefile comes from the National Hydrology Dataset Plus (NHDPlus) version 2.0 database",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-earthdata-project-cyan"
+      ],
+      "quote": "The CONUS Shapefile is from the National Hydrology Dataset Plus (NHDPlus) version 2.0 database",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-lakes-shapefiles-imperfect",
+      "claim_id": "cl-cyan-lakes-shapefiles-imperfect",
+      "verdict": "confirmed",
+      "approved_value": "NASA warns the shapefiles are not perfect and are occasionally updated to correct known errors",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-earthdata-project-cyan"
+      ],
+      "quote": "The shapefiles are not perfect and occasionally updates are made to correct known errors. You can also edit them for your own needs.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-lakes-epa-2000-lakes",
+      "claim_id": "cl-cyan-lakes-epa-2000-lakes",
+      "verdict": "confirmed",
+      "approved_value": "EPA's CyANWeb provides satellite bloom data for over 2,000 of the largest lakes and reservoirs across the United States",
+      "approved_unit": "lakes",
+      "approved_note": "",
+      "source_ids": [
+        "src-epa-cyan-app"
+      ],
+      "quote": "provides access to cyanobacterial bloom satellite data for over 2,000 of the largest lakes and reservoirs across the United States",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-access-file-search-endpoint",
+      "claim_id": "cl-cyan-access-file-search-endpoint",
+      "verdict": "confirmed",
+      "approved_value": "The CyAN File Search tool is at https://oceandata.sci.gsfc.nasa.gov/api/cyan_file_search/ and is reached from the NASA Earthdata tool page via a Launch link",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-earthdata-cyan-file-search"
+      ],
+      "quote": "Launch CyAN File Search",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-access-param-areaids",
+      "claim_id": "cl-cyan-access-param-areaids",
+      "verdict": "confirmed",
+      "approved_value": "cyan_file_search parameter areaids: all, a single tile id such as 1_1, or several tiles joined with +",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-obdaac-cyan-file-search-api"
+      ],
+      "quote": "areaids valid options: all (retrieve all data); tile (retrieve single tile by ID, ex: 1_1); tile1+tile2 (retrieve multiple tiles by ID, ex: 1_1+2_1+3_1)",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-access-wget-example",
+      "claim_id": "cl-cyan-access-wget-example",
+      "verdict": "confirmed",
+      "approved_value": "The documented wget call POSTs the parameters to https://oceandata.gsfc.nasa.gov/api/cyan_file_search",
+      "approved_unit": null,
+      "approved_note": "The example host omits the .sci. label used elsewhere on the same page.",
+      "source_ids": [
+        "src-obdaac-cyan-file-search-api"
+      ],
+      "quote": "wget -q --no-check-certificate --post-data=\"region=0&wgetflag=1&period=2&product=1&areaids=all&sdate=2020-11-01&edate=2020-11-19&addurl=1&results_as_file=1\" -O - https://oceandata.gsfc.nasa.gov/api/cyan_file_search",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-access-getfile-pattern",
+      "claim_id": "cl-cyan-access-getfile-pattern",
+      "verdict": "confirmed",
+      "approved_value": "OB.DAAC file downloads use a getfile URL, e.g. https://oceandata.sci.gsfc.nasa.gov/CYAN/L3BIN/2017/002/ listings pipe getfile links into curl",
+      "approved_unit": null,
+      "approved_note": "The rendered page truncates the full example URL; the getfile token itself appears in the curl example.",
+      "source_ids": [
+        "src-obdaac-cyan-file-search-api"
+      ],
+      "quote": "curl https://oceandata.sci.gsfc.nasa.gov/CYAN/L3BIN/2017/002/ | grep getfile | cut -d \"'\" -f 2 | head -1 | xargs -n 1 curl -LJO -n -c ~/.urs_cookies -b ~/.urs_cookies",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-access-edl-required",
+      "claim_id": "cl-cyan-access-edl-required",
+      "verdict": "confirmed",
+      "approved_value": "OB.DAAC requires users to log in with Earthdata Login credentials to download any products",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-earthdata-obdaac-download"
+      ],
+      "quote": "we require users to login to the OceanColor Web's data access points using their Earthdata Login credentials in order to download any products.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-access-netrc",
+      "claim_id": "cl-cyan-access-netrc",
+      "verdict": "confirmed",
+      "approved_value": "The recommended authentication method is a .netrc file: machine urs.earthdata.nasa.gov login USERNAME password PASSWD, chmod 0600",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-earthdata-obdaac-download"
+      ],
+      "quote": "echo \"machine urs.earthdata.nasa.gov login USERNAME password PASSWD\" > ~/.netrc ; > ~/.urs_cookies chmod 0600 ~/.netrc",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-access-appkey",
+      "claim_id": "cl-cyan-access-appkey",
+      "verdict": "confirmed",
+      "approved_value": "An AppKey can be passed as a parameter appended to the end of the download URL",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-earthdata-obdaac-download"
+      ],
+      "quote": "Pass the AppKey as a parameter by appending it to the end of the download URL.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-access-bearer-token",
+      "claim_id": "cl-cyan-access-bearer-token",
+      "verdict": "confirmed",
+      "approved_value": "Earthdata Login user tokens are Bearer tokens issued by POST /api/users/token",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-urs-user-token"
+      ],
+      "quote": "\"token_type\":\"Bearer\"",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-access-token-lifetime",
+      "claim_id": "cl-cyan-access-token-lifetime",
+      "verdict": "confirmed",
+      "approved_value": "Earthdata Login user tokens are valid for 60 days",
+      "approved_unit": "days",
+      "approved_note": "A user may hold at most two valid tokens at a time.",
+      "source_ids": [
+        "src-urs-user-token"
+      ],
+      "quote": "User tokens are valid for a duration of 60 days.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-access-s3-bucket",
+      "claim_id": "cl-cyan-access-s3-bucket",
+      "verdict": "confirmed",
+      "approved_value": "CyAN OLCI granules live in the S3 bucket s3://ob-cumulus-prod-public/",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-cmr-collection-olci-umm"
+      ],
+      "quote": "\"S3BucketAndObjectPrefixNames\":[\"s3://ob-cumulus-prod-public/\"]",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-access-granule-s3-href",
+      "claim_id": "cl-cyan-access-granule-s3-href",
+      "verdict": "confirmed",
+      "approved_value": "A granule's direct S3 link is s3://ob-cumulus-prod-public/<filename>",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-cmr-granule-olci"
+      ],
+      "quote": "\"href\":\"s3://ob-cumulus-prod-public/L2026213.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m_1_1.tif\"",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-access-tea-https-prefix",
+      "claim_id": "cl-cyan-access-tea-https-prefix",
+      "verdict": "corrected",
+      "approved_value": "The HTTPS distribution prefix is https://obdaac-tea.earthdatacloud.nasa.gov/ob-cumulus-prod-public/",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-cmr-granule-olci"
+      ],
+      "quote": "\"href\":\"https://obdaac-tea.earthdatacloud.nasa.gov/ob-cumulus-prod-public/L2026213.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m_1_1.tif\"",
+      "reason": "Per the hard rule to check href-based claims directly: the researcher's cited quote is the sibling \"title\" field (\"Download L2026213...tif\"), which never states the HTTPS prefix at all and does not by itself support the value. The actual evidence is the \"href\" field in the same links entry, fetched fresh and confirmed to begin with https://obdaac-tea.earthdatacloud.nasa.gov/ob-cumulus-prod-public/ exactly as claimed. Value is correct; the quote is corrected to the href field.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-access-s3credentials-endpoint",
+      "claim_id": "cl-cyan-access-s3credentials-endpoint",
+      "verdict": "confirmed",
+      "approved_value": "Temporary S3 credentials come from https://obdaac-tea.earthdatacloud.nasa.gov/s3credentials",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-cmr-collection-olci-umm"
+      ],
+      "quote": "\"S3CredentialsAPIEndpoint\":\"https://obdaac-tea.earthdatacloud.nasa.gov/s3credentials\"",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-access-s3-same-region-readonly",
+      "claim_id": "cl-cyan-access-s3-same-region-readonly",
+      "verdict": "confirmed",
+      "approved_value": "The Cumulus deployment API dispenses temporary credentials for same-region, read-only, direct S3 access",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-obdaac-s3credentials-readme"
+      ],
+      "quote": "Cumulus deployment api can be configured to dispense temporary credentials for same-region, read-only, direct S3 access.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-access-s3-credentials-1hour",
+      "claim_id": "cl-cyan-access-s3-credentials-1hour",
+      "verdict": "confirmed",
+      "approved_value": "Credentials from the /s3credentials endpoint are valid for 1 hour and code must handle expiry",
+      "approved_unit": "hour",
+      "approved_note": "",
+      "source_ids": [
+        "src-obdaac-s3credentials-readme"
+      ],
+      "quote": "The credentials dispensed from the /s3credentials endpoint are valid for 1 hour . Your code must handle expired tokens and request new ones as needed for sessions that exceed this 1 hour limit.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-access-region-us-west-2",
+      "claim_id": "cl-cyan-access-region-us-west-2",
+      "verdict": "confirmed",
+      "approved_value": "The collection's direct-distribution region is us-west-2",
+      "approved_unit": null,
+      "approved_note": "This is the authoritative NASA statement for this specific collection.",
+      "source_ids": [
+        "src-cmr-collection-olci-umm"
+      ],
+      "quote": "\"Region\":\"us-west-2\"",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-access-us-west-2-limit",
+      "claim_id": "cl-cyan-access-us-west-2-limit",
+      "verdict": "confirmed",
+      "approved_value": "Free direct S3 access to NASA Earthdata Cloud is limited to requests made within the US West (Oregon) us-west-2 AWS region",
+      "approved_unit": null,
+      "approved_note": "Published by NASA Openscapes, a community project, not on a nasa.gov domain.",
+      "source_ids": [
+        "src-openscapes-cloud-clinic"
+      ],
+      "quote": "Access is provided via temporary credentials; this free access is limited to requests made within the US West (Oregon) (code: us-west-2) AWS region.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-access-us-west-2-laads",
+      "claim_id": "cl-cyan-access-us-west-2-laads",
+      "verdict": "confirmed",
+      "approved_value": "A NASA DAAC page states AWS S3 Direct Access is available in the cloud and in the US-WEST-2 region only",
+      "approved_unit": null,
+      "approved_note": "This wording is on the LAADS DAAC page, not an OB.DAAC page; treat as corroborating, not collection-specific.",
+      "source_ids": [
+        "src-laads-s3-direct-access"
+      ],
+      "quote": "Currently, AWS S3 Direct Access to LAADS DAAC data is accessible in the cloud (Lambda, EC2, etc) and in the US-WEST-2 region only.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-terms-open-sharing",
+      "claim_id": "cl-cyan-terms-open-sharing",
+      "verdict": "confirmed",
+      "approved_value": "The ESDS Program promotes the full and open sharing of all data, metadata, documentation, models, images and research results, and all source code",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-earthdata-open-policy"
+      ],
+      "quote": "The ESDS Program promotes the full and open sharing of all data, metadata, documentation, models, images and research results, and all source code.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-terms-data-use-guidance",
+      "claim_id": "cl-cyan-terms-data-use-guidance",
+      "verdict": "confirmed",
+      "approved_value": "NASA's free and open data use guidance states data and information generated under NASA sponsorship are available to all users, and ESDS encourages citation and acknowledgment",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-earthdata-open-policy"
+      ],
+      "quote": "NASA's free and open data use guidance states that data and information generated under NASA sponsorship are available to all users. ESDS encourages citation and acknowledgment of NASA data and services whenever data or works based on the data are published.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-terms-citation-requirement",
+      "claim_id": "cl-cyan-terms-citation-requirement",
+      "verdict": "confirmed",
+      "approved_value": "The dataset is openly shared without restriction, in accordance with the EOSDIS Data Use and Citation Guidance",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-earthdata-collection-olci"
+      ],
+      "quote": "This dataset is openly shared, without restriction, in accordance with the EOSDIS Data Use and Citation Guidance .",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-terms-citation-text",
+      "claim_id": "cl-cyan-terms-citation-text",
+      "verdict": "confirmed",
+      "approved_value": "Recommended citation: NASA Ocean Biology Processing Group. (2025). Merged Sentinel-3A and Sentinel-3B OLCI Regional Mapped Cyanobacteria Index (CI) Data, version 6.0 [Dataset]. NASA Ocean Biology Distributed Active Archive Center. https://doi.org/10.5067/MERGED-S3/OLCI/L3M/CYAN/CI/6.0",
+      "approved_unit": null,
+      "approved_note": "APA form as rendered on the landing page; the trailing access date is generated at page load.",
+      "source_ids": [
+        "src-earthdata-collection-olci"
+      ],
+      "quote": "NASA Ocean Biology Processing Group. (2025). Merged Sentinel-3A and Sentinel-3B OLCI Regional Mapped Cyanobacteria Index (CI) Data, version 6.0 [Dataset]. NASA Ocean Biology Distributed Active Archive Center. https://doi.org/10.5067/MERGED-S3/OLCI/L3M/CYAN/CI/6.0",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-terms-citation-project-page",
+      "claim_id": "cl-cyan-terms-citation-project-page",
+      "verdict": "confirmed",
+      "approved_value": "The NASA project page asks users to cite CyAN data and gives an example citation naming OBPG, the collection, the DOI and the cyan_file_search access URL",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-earthdata-project-cyan"
+      ],
+      "quote": "NASA Ocean Biology Processing Group (OBPG). Cyanobacteria Assessment Network (CyAN), Merged Sentinel-3A and Sentinel-3B OLCI Regional Mapped Cyanobacteria Index (CI) Data, version 6.0, NASA Ocean Biology Distributed Active Archive Center. DOI: ** 10.5067/MERGED-S3/OLCI/L3M/CYAN/CI/6.0 Accessed from https://oceandata.sci.gsfc.nasa.gov/api/cyan_file_search on YYYY/MM/DD",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-terms-epa-disclaimer",
+      "claim_id": "cl-cyan-terms-epa-disclaimer",
+      "verdict": "confirmed",
+      "approved_value": "EPA disclaims endorsement: any mention of trade names, products, services or enterprises does not imply an endorsement by the U.S. Government or EPA",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-epa-cyan-app"
+      ],
+      "quote": "Disclaimer: Any mention of trade names, products, services, or enterprises does not imply an endorsement by the U.S. Government or EPA.",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-access-param-region-period-product",
+      "claim_id": "cl-cyan-access-param-region-period-product",
+      "verdict": "confirmed",
+      "approved_value": "cyan_file_search selectors: region 0=Alaska / 1=CONUS; period 1=Weekly / 2=Daily; product 1=Cyanobacteria Index / 2=True Color",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-obdaac-cyan-file-search-api"
+      ],
+      "quote": "region valid options: 0 (Alaska); 1 (CONUS) period valid options: 1 (Weekly); 2 (Daily) product valid options: 1 (Cyanobacteria Index); 2 (True Color)",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    },
+    {
+      "id": "chk-cl-cyan-access-param-dates-and-flags",
+      "claim_id": "cl-cyan-access-param-dates-and-flags",
+      "verdict": "confirmed",
+      "approved_value": "cyan_file_search also takes sdate and edate (YYYY-MM-DD), addurl (1/0) to include full URLs, results_as_file (1/0) to return a text listing, and the mandatory wgetflag=1",
+      "approved_unit": null,
+      "approved_note": "",
+      "source_ids": [
+        "src-obdaac-cyan-file-search-api"
+      ],
+      "quote": "sdate (optional) start date for a search (format YYYY-MM-DD) edate (optional) end date for a search (format YYYY-MM-DD) addurl include full url in search result; boolean: 1=true, 0=false results_as_file return results as text file listing; boolean: 1=true, 0=false wgetflag 1 (always 1. It's a mandatory parameter.)",
+      "reason": "Quote verified as an exact substring (after whitespace normalization) of the fetched source, and it supports the claim's value and note as written.",
+      "checked_on": "2026-09-22"
+    }
+  ],
+  "not_found_review": [
+    {
+      "topic": "Weekly update timing (e.g. a statement of when in the week a new composite becomes available, such as 'close of business the following Monday') on the two EPA pages",
+      "sources_checked": [
+        "src-epa-cyan",
+        "src-epa-cyan-app"
+      ],
+      "finding": "Confirmed absent from both freshly fetched pages. src-epa-cyan-app states only that lake managers 'could use the CyANWeb app on a daily or weekly basis'; src-epa-cyan states only that 'Daily and weekly coverage using the Sentinel-3 OLCI sensor are now publicly available from 2016 to current day.' Neither page gives a day-of-week or time-of-week for when a new composite posts. No other wording resembling 'close of business' or 'Monday' appears on either page."
+    },
+    {
+      "topic": "Whether the string 'COMID' appears anywhere on the Earthdata CyAN project page",
+      "sources_checked": [
+        "src-earthdata-project-cyan"
+      ],
+      "finding": "Confirmed absent. A case-insensitive search of the freshly fetched, tag-stripped page text (and the raw HTML) for 'comid' returns zero matches. The page states only that the CONUS shapefile derives from NHDPlus version 2.0, without naming any attribute fields, so nothing on the page ties the shapefile to NHDPlus COMID identifiers."
+    },
+    {
+      "topic": "A cells-per-mL conversion relation (e.g. a multiplier applied to CIcyano to yield cells/mL) in the V6 release notes",
+      "sources_checked": [
+        "src-release-notes-v6"
+      ],
+      "finding": "Confirmed absent. The word 'cells' does not appear anywhere in the release notes text at all (a case-insensitive grep of the full local .txt file returns zero hits). The release notes give only the DN-to-CIcyano formula (CIcyano = 10**(DN * 0.011714 - 4.1870866)); the cells/mL range (~10,000 to 7,000,000 cells/ml) is stated only on the NASA Earthdata project page, with no formula or citation connecting CIcyano to a cell count."
+    }
+  ],
+  "discrepancy_review": [
+    {
+      "topic": "OLCI record start year",
+      "both_sides_found": true,
+      "note": "Confirmed in fresh fetches: release notes say 2017-present (src-release-notes-v6); CMR collection time_start is 2016-04-25T00:00:00.000Z (src-cmr-collection-olci); the Earthdata landing page says 'Temporal Extent 2016-04-25 to Present' (src-earthdata-collection-olci); the Earthdata project page says Sentinel-3A OLCI '2016-present' (src-earthdata-project-cyan); the EPA page says 'publicly available from 2016 to current day' (src-epa-cyan); and the OB.DAAC file-search page labels the weekly period 'Weekly [2007-Present]' (src-obdaac-cyan-file-search-api). All six quotes verified present as stated."
+    },
+    {
+      "topic": "CONUS land mask resolution",
+      "both_sides_found": true,
+      "note": "Confirmed: release notes state SRTM 60-meter data provided the land mask (src-release-notes-v6, PAGE 4); the Earthdata project page states a 50m land mask for CONUS and 500m for Alaska (src-earthdata-project-cyan). Both quotes verified present as stated; genuine unresolved conflict."
+    },
+    {
+      "topic": "Distributed file format",
+      "both_sides_found": true,
+      "note": "Confirmed: the Earthdata landing page's Data-at-a-Glance panel and the UMM-C FileDistributionInformation both say netCDF-4, while the actual granule returned by CMR is a .tif and the release notes describe 8-bit GeoTIFF. All four quotes verified present as stated."
+    },
+    {
+      "topic": "Nominal pixel size",
+      "both_sides_found": true,
+      "note": "Confirmed: both figures (300-m body text and 289.894507 m Appendix A spatialResolution attribute) are in the same release-notes document, verified present as stated; the Appendix A value describes the L3-binned Integerized Sinusoidal grid rather than the mapped GeoTIFF."
+    },
+    {
+      "topic": "DOI of the version 6 product",
+      "both_sides_found": true,
+      "note": "Confirmed: the UMM-C DOI object gives 10.5067/MERGED-S3/OLCI/L3M/CYAN/CI/6.0 (the distributed, catalogued collection DOI); the release notes' Appendix A NetCDF global attribute gives :doi = \"10.5067/MERGED-S3/OLCI/L3B/CYAN/CI/6T\" (the upstream L3-binned file's internal DOI string). Both quotes verified present as stated; as the researcher notes, this is not necessarily a real-world conflict since the two DOIs describe different products in the processing chain."
+    },
+    {
+      "topic": "Reprocessing cadence",
+      "both_sides_found": true,
+      "note": "Confirmed: release notes say reprocessing will occur 'every 10 to 16 months' (src-release-notes-v6); the EPA page (updated June 9, 2026) says the data 'will continue to be made publicly available and reprocessed annually' (src-epa-cyan). Both quotes verified present as stated; genuine unresolved conflict between the NASA producer's own schedule language and EPA's paraphrase."
+    }
+  ],
+  "additional_findings": [
+    "A discrepancy the researcher did not list: the V6 release notes (including the August 2025 known-issues update) still describe CyAN as formed by 'Four U.S. federal agencies - EPA, NASA, NOAA, and USGS' with no mention of USACE anywhere in the document, while the EPA CyAN page (updated June 9, 2026) states USACE joined the collaboration 'as of 2023'. NASA's own release-notes document has not been updated to reflect the fifth agency even though EPA's page has.",
+    "cl-cyan-format-granule-size: the granule JSON confirms the raw number 0.1351547241210938 for granule_size, but the fetched JSON itself never states a unit; 'MB' is CMR's well-documented standard unit for this field but is not literally present in the cited source. Left as confirmed because the number is unambiguous and undisputed, but flagged here since the unit is not directly sourced from the fetched JSON.",
+    "PDF-to-text extraction of the release notes inconsistently renders typographic punctuation: most instances of en-dashes (e.g. 'Four U.S. federal agencies – EPA...') and the ≥ sign (Known Issues item 5) are preserved as the true Unicode character, but three apostrophe/quote instances (NASA's / “AK”/“CONUS”) were transcribed into the claims file using straight ASCII marks instead of the source's curly Unicode marks -- these are the three 'corrected' claims above.",
+    "No claim's quoted text spans a '===== PAGE n =====' marker in the release-notes .txt file; every release-notes claim's quote falls entirely within one page's text block. The only hyphen-line-wrap breaks found in the whole document ('top-level', 'ground-truth', 'color-separated') are genuine hyphenated compound words at natural line-wrap points, not mid-word hyphenation artifacts, and none of them fall inside any claim's quoted span.",
+    "The three shapefile/tool href claims (MERIS_OLCI_Lakes.zip, CONUS_tiles_shapefile.zip, and the CyAN File Search 'Launch' link) were independently verified against the raw HTML anchor href attributes and match the URLs stated in each claim's value exactly."
+  ],
+  "limitations": [
+    "Verification relied on a single fresh crawl on 2026-09-22; NASA Earthdata and EPA pages are dynamic and could change wording, and the CMR granule query returns the single newest granule at fetch time, so the specific granule id/size/date in the granule-based claims will drift as the archive grows.",
+    "No data files (.tif/.zip) were downloaded, per instructions; claims about shapefile contents (e.g. whether COMID is an attribute field) and pixel-level file structure could not be verified beyond what the HTML/JSON pages state.",
+    "For the four 'corrected' checks, the correction is limited to the quote's transcription (Unicode punctuation, or citing the href field instead of an adjacent JSON field); none of the four required a change to the claim's value or note text."
+  ]
+}

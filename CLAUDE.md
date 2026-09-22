@@ -7,7 +7,7 @@ and the EPA experimental cyanoHAB forecast. Sentinel-2, other sensors, and in si
 
 ## Current phase
 
-Step 0, initialization, committed 2026-09-22 with the owner's authorization. Step 1a, the CyAN characterization, is next.
+Step 0, initialization, committed 2026-09-22 with the owner's authorization. Step 1a, the CyAN characterization, is delivered and awaits owner review.
 No dataset has been pulled. Start with [docs/work-plan.md](docs/work-plan.md). The facts checked on 2026-09-22 are in
 [docs/probes/2026-09-22-dataset-facts.md](docs/probes/2026-09-22-dataset-facts.md). They await independent checks before any dataset METADATA calls them `documented`.
 
@@ -23,7 +23,8 @@ The owner, Codex, and Claude Code review every step. Complete one authorized ste
 5. Stop for review. Silence, passing tests, and an AI review are not owner approval.
    Never commit, push, publish, or start the next step without the owner's explicit authorization.
 
-Research uses a research agent and a separate checking agent per claim. Only confirmed or corrected claims enter a dataset's METADATA as `documented`.
+Research uses a research agent and a separate checking agent on a different model. Only confirmed or corrected claims enter a dataset's METADATA as `documented`.
+Codex is the preferred second model for adversarial reviews of work and plans, invoked directly when available or through a prompt the owner runs in Codex. When the owner asks, write that prompt as a file under `docs/reviews/` so the request and the answer stay together.
 Scripts that contact a provider run only when the owner invokes them. Codex reads [AGENTS.md](AGENTS.md), which points here.
 
 ## The loop for each dataset

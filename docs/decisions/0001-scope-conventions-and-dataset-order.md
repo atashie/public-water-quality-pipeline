@@ -28,6 +28,7 @@ The owner accepted every default on 2026-09-22 and confirmed that the credential
 - The repository can become public. Assumption A15.
 - Every dataset follows the eight-step loop in [CLAUDE.md](../../CLAUDE.md): characterize, pull, QA/QC, review dashboard, derive, serve, specify for AWS, register.
 - The sequence of work is in [work-plan.md](../work-plan.md). Step 0 is this initialization.
+- Recorded on the owner's answers of 2026-09-22 to the initialization review: no dated milestones, assumption A18. COMID is the master key with a spatial crosswalk for Copernicus lakes, assumption A20. Scope is the contiguous United States first, assumption A21.
 
 ## Consequences
 
@@ -42,3 +43,4 @@ The owner accepted every default on 2026-09-22 and confirmed that the credential
 - Step 1 finds that the CyAN weekly record no longer fits under the local limit.
 - Step 3 finds that no Copernicus subsetting route is practical.
 - The EPA forecast access path breaks or an official feed appears.
+- The owner extends the scope beyond the contiguous United States. COMID is a United States identifier, assumptions A20 and A21. A project-internal lake id with crosswalks becomes the candidate.

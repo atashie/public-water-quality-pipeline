@@ -48,7 +48,7 @@ The owner accepted every default and confirmed that the credentials exist. [Deci
 
 ## Authorization
 
-The owner reviewed this record and authorized commit and push on 2026-09-22. Assumptions A18 and A20 stay `unsourced` until the owner answers.
+The owner reviewed this record and authorized commit and push on 2026-09-22. The owner answered on A18 and A20 the same day. Both are `sourced`. A21 records the contiguous-United-States scope. The answers are in the working tree and await the next authorized commit.
 
 ## Proposed next step
 

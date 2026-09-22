@@ -5,7 +5,7 @@ A checked box means the work exists in this repository with evidence. Every step
 
 ## Next session
 
-The owner's answers on assumptions A18 and A20. Then step 1a. Step 1b needs an Earthdata Login token in `.env` before any download. The dry run needs none.
+Owner review of step 1a, then commit authorization, then step 1b. Step 1b needs an Earthdata Login token in `.env` before any download. The dry run needs none.
 
 ## How a dataset is judged
 
@@ -34,8 +34,8 @@ Every dataset step reports against the same criteria. The registry row summarize
 
 Each sub-step is one authorized unit.
 
-- [ ] 1a. Characterize. Recheck the HAB_PoC CyAN METADATA and the probe record against primary pages with a research agent and a checking agent. Preserve the version 6 release notes under `reference/`. Resolve the catalog disagreement on the newest granule.
-- [ ] 1b. Pull. Port `cyan_api.py` and `pull_cyan.py` with tests. Dry run, then pull the weekly contiguous-United-States mosaic record from 2016 and the daily files for the last 8 weeks, assumption A8. Record latency and bytes.
+- [x] 1a. Characterize, delivered 2026-09-22, owner review pending. 100 claims from 17 primary sources, researched and independently checked. Release notes preserved. The catalog disagreement is a measured 7-week lag of the cloud catalog. [Record](reviews/2026-09-22-cyan-characterization.md), [METADATA](../datasets/cyan/METADATA.md).
+- [ ] 1b. Pull. Port `cyan_api.py` and `pull_cyan.py` with tests. Dry run. List the cloud bucket with a token and compare it to the file search, per [the AWS note](aws/cyan.md). Then, after a separate authorization, pull the weekly contiguous-United-States mosaic record from 2016 and the daily files for the last 8 weeks, assumption A8. Record latency and bytes.
 - [ ] 1c. QA/QC. Port `qa_cyan.py`. Integrity against the manifest, grid and projection consistency, version tags, code composition per file.
 - [ ] 1d. Review dashboard. One page: national map of a selected week at native resolution, composition over time, and per-file QA. Owner review recorded.
 - [ ] 1e. Derive. Pull the resolvable-lakes shapefile, verify its count, and build the per-lake weekly table with the recorded recipe. Authorization for the aggregation recorded in a decision.

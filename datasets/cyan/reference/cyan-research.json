@@ -1,0 +1,1675 @@
+{
+  "dataset": "cyan",
+  "researcher": {
+    "agent": "general-purpose subagent",
+    "model": "opus",
+    "started_at": "2026-09-22T13:51:05Z",
+    "finished_at": "2026-09-22T14:07:42Z"
+  },
+  "sources": [
+    {
+      "id": "src-release-notes-v6",
+      "url": "https://oceancolor.gsfc.nasa.gov/images/cyan/version/6/CyAN_NASA_MERISOLCI_CI_release_notes_V6_Aug_2025.pdf",
+      "title": "Release notes for NASA-produced MERIS and OLCI cyanobacteria index (CIcyano) data product to support the Cyanobacteria Assessment Network (CyAN) Project",
+      "publisher": "NASA OB.DAAC / Ocean Biology Processing Group (OBPG)",
+      "accessed_on": "2026-09-22",
+      "page_updated": "August 2025 (known-issues update); Version 6 release notes published February 2025",
+      "local_copy": "/Users/arik/github/public-water-quality-pipeline/datasets/cyan/reference/CyAN_NASA_MERISOLCI_CI_release_notes_V6_Aug_2025.txt"
+    },
+    {
+      "id": "src-earthdata-collection-olci",
+      "url": "https://www.earthdata.nasa.gov/data/catalog/ob-cloud-merged-s3-olci-l3m-cyan-6.0",
+      "title": "Merged Sentinel-3A and Sentinel-3B OLCI Regional Mapped Cyanobacteria Index (CI) Data, version 6.0 | NASA Earthdata",
+      "publisher": "NASA Earthdata",
+      "accessed_on": "2026-09-22",
+      "page_updated": "2025-02-20",
+      "local_copy": null
+    },
+    {
+      "id": "src-cmr-collection-olci",
+      "url": "https://cmr.earthdata.nasa.gov/search/concepts/C3416412382-OB_CLOUD.json",
+      "title": "CMR collection concept C3416412382-OB_CLOUD (JSON)",
+      "publisher": "NASA Earthdata Common Metadata Repository",
+      "accessed_on": "2026-09-22",
+      "page_updated": "2025-02-20T00:00:00.000Z",
+      "local_copy": null
+    },
+    {
+      "id": "src-cmr-collection-olci-umm",
+      "url": "https://cmr.earthdata.nasa.gov/search/concepts/C3416412382-OB_CLOUD.umm_json",
+      "title": "CMR collection concept C3416412382-OB_CLOUD (UMM-C JSON)",
+      "publisher": "NASA Earthdata Common Metadata Repository",
+      "accessed_on": "2026-09-22",
+      "page_updated": "2025-02-20T00:00:00Z",
+      "local_copy": null
+    },
+    {
+      "id": "src-cmr-collection-meris",
+      "url": "https://cmr.earthdata.nasa.gov/search/concepts/C3416412319-OB_CLOUD.json",
+      "title": "CMR collection concept C3416412319-OB_CLOUD (JSON)",
+      "publisher": "NASA Earthdata Common Metadata Repository",
+      "accessed_on": "2026-09-22",
+      "page_updated": "2025-02-20T00:00:00.000Z",
+      "local_copy": null
+    },
+    {
+      "id": "src-cmr-granule-olci",
+      "url": "https://cmr.earthdata.nasa.gov/search/granules.json?collection_concept_id=C3416412382-OB_CLOUD&page_size=1&sort_key=-start_date",
+      "title": "CMR granule search, newest granule of collection C3416412382-OB_CLOUD (JSON)",
+      "publisher": "NASA Earthdata Common Metadata Repository",
+      "accessed_on": "2026-09-22",
+      "page_updated": null,
+      "local_copy": null
+    },
+    {
+      "id": "src-epa-cyan",
+      "url": "https://www.epa.gov/water-research/cyanobacteria-assessment-network-cyan",
+      "title": "Cyanobacteria Assessment Network (CyAN) | US EPA",
+      "publisher": "US EPA",
+      "accessed_on": "2026-09-22",
+      "page_updated": "June 9, 2026",
+      "local_copy": null
+    },
+    {
+      "id": "src-epa-cyan-app",
+      "url": "https://www.epa.gov/water-research/cyanobacteria-assessment-network-application-cyan-app",
+      "title": "Cyanobacteria Assessment Network Application (CyAN app) | US EPA",
+      "publisher": "US EPA",
+      "accessed_on": "2026-09-22",
+      "page_updated": "March 31, 2026",
+      "local_copy": null
+    },
+    {
+      "id": "src-earthdata-project-cyan",
+      "url": "https://www.earthdata.nasa.gov/data/projects/cyan",
+      "title": "CyAN - Cyanobacteria Assessment Network | NASA Earthdata (project page; https://oceancolor.gsfc.nasa.gov/about/projects/cyan/ redirects here)",
+      "publisher": "NASA Earthdata / OB.DAAC",
+      "accessed_on": "2026-09-22",
+      "page_updated": null,
+      "local_copy": null
+    },
+    {
+      "id": "src-earthdata-cyan-file-search",
+      "url": "https://www.earthdata.nasa.gov/data/tools/cyan-file-search",
+      "title": "CyAN File Search | NASA Earthdata",
+      "publisher": "NASA Earthdata",
+      "accessed_on": "2026-09-22",
+      "page_updated": null,
+      "local_copy": null
+    },
+    {
+      "id": "src-obdaac-cyan-file-search-api",
+      "url": "https://oceandata.sci.gsfc.nasa.gov/api/cyan_file_search/",
+      "title": "CyAN File Search (OB.DAAC / OceanColor Web search interface and bulk download instructions)",
+      "publisher": "NASA OB.DAAC",
+      "accessed_on": "2026-09-22",
+      "page_updated": null,
+      "local_copy": null
+    },
+    {
+      "id": "src-earthdata-obdaac-download",
+      "url": "https://www.earthdata.nasa.gov/learn/tutorials/search-download-methods-data-archived-ob-daac",
+      "title": "Search and Download Methods for Data Archived by OB.DAAC | NASA Earthdata",
+      "publisher": "NASA Earthdata",
+      "accessed_on": "2026-09-22",
+      "page_updated": "July 27, 2026",
+      "local_copy": null
+    },
+    {
+      "id": "src-obdaac-s3credentials-readme",
+      "url": "https://obdaac-tea.earthdatacloud.nasa.gov/s3credentialsREADME",
+      "title": "In-region Direct S3 Access to Buckets (OB.DAAC TEA s3credentials README)",
+      "publisher": "NASA OB.DAAC / Earthdata Cloud",
+      "accessed_on": "2026-09-22",
+      "page_updated": null,
+      "local_copy": null
+    },
+    {
+      "id": "src-urs-user-token",
+      "url": "https://urs.earthdata.nasa.gov/documentation/for_users/user_token",
+      "title": "Earthdata Login Documentation - User Token Management",
+      "publisher": "NASA Earthdata Login (URS)",
+      "accessed_on": "2026-09-22",
+      "page_updated": "July 1, 2026",
+      "local_copy": null
+    },
+    {
+      "id": "src-earthdata-open-policy",
+      "url": "https://www.earthdata.nasa.gov/engage/open-data-services-software-policies",
+      "title": "Open Data, Services, and Software Policies | NASA Earthdata",
+      "publisher": "NASA Earthdata",
+      "accessed_on": "2026-09-22",
+      "page_updated": null,
+      "local_copy": null
+    },
+    {
+      "id": "src-openscapes-cloud-clinic",
+      "url": "https://nasa-openscapes.github.io/earthdata-cloud-cookbook/tutorials/Earthdata-cloud-clinic.html",
+      "title": "NASA Earthdata Cloud Clinic - Earthdata Cloud Cookbook",
+      "publisher": "NASA Openscapes (community-maintained, not a nasa.gov domain)",
+      "accessed_on": "2026-09-22",
+      "page_updated": null,
+      "local_copy": null
+    },
+    {
+      "id": "src-laads-s3-direct-access",
+      "url": "https://ladsweb.modaps.eosdis.nasa.gov/learn/how-to-access-laads-daac-data-files-using-s3-direct-access/",
+      "title": "How To Access LAADS DAAC Data Files Using S3 Direct Access | LAADS DAAC",
+      "publisher": "NASA LAADS DAAC",
+      "accessed_on": "2026-09-22",
+      "page_updated": null,
+      "local_copy": null
+    }
+  ],
+  "claims": [
+    {
+      "id": "cl-cyan-identity-product-title",
+      "section": "identity",
+      "value": "Product title: Merged Sentinel-3A and Sentinel-3B OLCI Regional Mapped Cyanobacteria Index (CI) Data, version 6.0",
+      "unit": null,
+      "note": "This is the OLCI (current-era) collection; a separate MERIS collection exists.",
+      "source_ids": [
+        "src-cmr-collection-olci",
+        "src-earthdata-collection-olci"
+      ],
+      "quote": "\"title\":\"Merged Sentinel-3A and Sentinel-3B OLCI Regional Mapped Cyanobacteria Index (CI) Data, version 6.0\"",
+      "locator": "CMR collection JSON, top-level \"title\" field",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-identity-short-name",
+      "section": "identity",
+      "value": "Collection short name: MERGED_S3_OLCI_L3m_CYAN",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-cmr-collection-olci"
+      ],
+      "quote": "\"short_name\":\"MERGED_S3_OLCI_L3m_CYAN\"",
+      "locator": "CMR collection JSON, \"short_name\" field",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-identity-doi",
+      "section": "identity",
+      "value": "DOI: 10.5067/MERGED-S3/OLCI/L3M/CYAN/CI/6.0",
+      "unit": null,
+      "note": "This is the L3 mapped (L3M) DOI for the distributed collection.",
+      "source_ids": [
+        "src-cmr-collection-olci-umm",
+        "src-earthdata-collection-olci"
+      ],
+      "quote": "\"DOI\":{\"DOI\":\"10.5067/MERGED-S3/OLCI/L3M/CYAN/CI/6.0\",\"Authority\":\"https://doi.org\"}",
+      "locator": "UMM-C JSON, \"DOI\" object",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-identity-version",
+      "section": "identity",
+      "value": "Collection version: 6.0",
+      "unit": "version",
+      "note": "",
+      "source_ids": [
+        "src-cmr-collection-olci"
+      ],
+      "quote": "\"version_id\":\"6.0\"",
+      "locator": "CMR collection JSON, \"version_id\" field",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-identity-processing-level",
+      "section": "identity",
+      "value": "Processing level: 3",
+      "unit": "level",
+      "note": "",
+      "source_ids": [
+        "src-cmr-collection-olci"
+      ],
+      "quote": "\"processing_level_id\":\"3\"",
+      "locator": "CMR collection JSON, \"processing_level_id\" field",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-identity-producer-obpg",
+      "section": "identity",
+      "value": "NASA's Ocean Biology Processing Group (OBPG) at Goddard Space Flight Center generated the MERIS and OLCI CIcyano data files",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "the NASA Ocean Biology Processing Group (OBPG; https://oceancolor.gsfc.nasa.gov) at Goddard Space Flight Center (GSFC) generated the MERIS and OLCI CIcyano data files.",
+      "locator": "PAGE 4, Overview of data files and processing",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-identity-agencies",
+      "section": "identity",
+      "value": "CyAN was formed by four U.S. federal agencies: EPA, NASA, NOAA and USGS",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "Four U.S. federal agencies – EPA, NASA, NOAA, and USGS – collaborated to form the Cyanobacteria Assessment Network (CyAN) Project.",
+      "locator": "PAGE 4, Introduction",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-identity-usace-2023",
+      "section": "identity",
+      "value": "The U.S. Army Corps of Engineers (USACE) joined the CyAN collaboration in 2023",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-epa-cyan"
+      ],
+      "quote": "CyAN is a collaborative project among EPA; the National Aeronautics and Space Administration (NASA); the National Oceanic and Atmospheric Administration (NOAA); the United States Geological Survey (USGS); and, as of 2023, the U.S. Army Corps of Engineers (USACE)",
+      "locator": "Multi-Agency Project callout box",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-identity-nasa-role",
+      "section": "identity",
+      "value": "NASA's role in CyAN is production, validation and distribution of the satellite-derived CI-cyano products",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "NASA's principal role in CyAN is the production, validation, and distribution of satellite-derived cyanobacteria index (CI-cyano) data products",
+      "locator": "PAGE 4, Introduction",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-identity-band1-variable",
+      "section": "identity",
+      "value": "The single geophysical variable is band1, the DN-encoded Cyanobacteria Index (digital number, unitless)",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-cmr-collection-olci"
+      ],
+      "quote": "band1 – Cyanobacteria Index (DN-encoded) (digital number, unitless)",
+      "locator": "CMR collection JSON, \"summary\" field, geophysical variables list",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-identity-meris-collection",
+      "section": "identity",
+      "value": "A companion MERIS collection exists: ENVISAT MERIS Regional Mapped Cyanobacteria Index (CI) Data, version 6.0, short name MERIS_L3m_CYAN, concept id C3416412319-OB_CLOUD",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-cmr-collection-meris"
+      ],
+      "quote": "\"dataset_id\":\"ENVISAT MERIS Regional Mapped Cyanobacteria Index (CI) Data, version 6.0\"",
+      "locator": "CMR collection JSON (MERIS), \"dataset_id\" field",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-identity-platforms",
+      "section": "identity",
+      "value": "Platforms for the OLCI collection: Sentinel-3A and Sentinel-3B; instrument OLCI",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-cmr-collection-olci"
+      ],
+      "quote": "\"platforms\":[\"Sentinel-3A\",\"Sentinel-3B\"]",
+      "locator": "CMR collection JSON, \"platforms\" field",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-maturity-stage-2",
+      "section": "maturity",
+      "value": "The data are validated Stage 2 of 4 on NASA's data maturity level ranking",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "These data are validated Stage 2 of 4 on NASA's data maturity level ranking.",
+      "locator": "PAGE 6, Overview of data files and processing",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-maturity-stage-2-definition",
+      "section": "maturity",
+      "value": "Stage 2 means accuracy is estimated from a significant but not full set of independent measurements from selected locations and time periods, with some peer-reviewed accuracy publications for limited spatial areas",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "data product accuracy is estimated using a significant set (although not full US/global) of independent measurements obtained from selected locations and time periods",
+      "locator": "PAGE 6, Overview of data files and processing",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-maturity-preliminary",
+      "section": "maturity",
+      "value": "The data are preliminary and to be used for evaluation purposes only",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "Data are preliminary and to be used for evaluation purposes only.",
+      "locator": "PAGE 7, Processing version and reprocessing schedule",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-maturity-validation-locations",
+      "section": "maturity",
+      "value": "Published US validation locations are Lake Erie, Florida, Ohio, Vermont, New Hampshire, Rhode Island, Connecticut, Massachusetts, Oregon, California, Indiana, New Jersey, New York, Utah, Maine and Idaho",
+      "unit": null,
+      "note": "The release notes list New Hampshire, Vermont, California and Oregon twice in this sentence.",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "(8) Published US validation locations are Lake Erie, Florida, Ohio, Vermont, New Hampshire, Rhode Island, Connecticut, Massachusetts, Oregon, California, Indiana, New Jersey, New York, Utah, New Hampshire, Vermont, Maine, California, Oregon, and Idaho.",
+      "locator": "PAGE 18, Known Issues, item (8)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-maturity-epa-experimental",
+      "section": "maturity",
+      "value": "EPA describes the CyANWeb app as experimental, providing provisional satellite-derived measures that may contain errors and should be considered a research level tool",
+      "unit": null,
+      "note": "This wording is about EPA's app layer over the NASA product, not the NASA GeoTIFF itself.",
+      "source_ids": [
+        "src-epa-cyan-app"
+      ],
+      "quote": "Note: The CyANWeb app is an experimental application and provides provisional satellite derived measures of cyanobacteria, which may contain errors and should be considered a research level tool.",
+      "locator": "Capabilities and Applications, Applications paragraph",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-temporal-meris-envisat-span",
+      "section": "temporal",
+      "value": "MERIS on Envisat covers 2002-2012 and OLCI on Sentinel-3A 2017-present, Sentinel-3B 2018-present, per the release notes",
+      "unit": null,
+      "note": "The release notes say OLCI starts 2017; the collection metadata says 2016-04-25. See discrepancies.",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "the ESA Medium Resolution Imaging Spectrometer onboard Envisat (MERIS; 2002-2012) and Ocean Colour Land Imager onboard Sentinel-3A (OLCI; 2017-present) and Sentinel-3B (2018-present) for the continental United States (CONUS) and Alaska (Table 1).",
+      "locator": "PAGE 4, Introduction",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-temporal-meris-14day",
+      "section": "temporal",
+      "value": "MERIS data are provided as 14-day composites from 2002-2007, when the instrument irregularly viewed the US",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "Data for MERIS are provided as 14-day composites from 2002-2007, when the instrument irregularly viewed the US and as 7-day composites and dailies from 2008-2012, when the instrument regularly collected data over the US.",
+      "locator": "PAGE 6, Overview of data files and processing",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-temporal-meris-collection-extent",
+      "section": "temporal",
+      "value": "The MERIS collection temporal extent in CMR runs 2002-03-21 to 2012-05-09",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-cmr-collection-meris"
+      ],
+      "quote": "\"time_start\":\"2002-03-21T00:00:00.000Z\"",
+      "locator": "CMR collection JSON (MERIS), \"time_start\" field",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-temporal-meris-collection-end",
+      "section": "temporal",
+      "value": "The MERIS collection end time in CMR is 2012-05-09",
+      "unit": "date",
+      "note": "Consistent with the end of the Envisat mission.",
+      "source_ids": [
+        "src-cmr-collection-meris"
+      ],
+      "quote": "\"time_end\":\"2012-05-09T00:00:00.000Z\"",
+      "locator": "CMR collection JSON (MERIS), \"time_end\" field",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-temporal-olci-collection-start",
+      "section": "temporal",
+      "value": "The OLCI collection temporal extent starts 2016-04-25 and is open-ended",
+      "unit": "date",
+      "note": "",
+      "source_ids": [
+        "src-cmr-collection-olci",
+        "src-earthdata-collection-olci"
+      ],
+      "quote": "\"time_start\":\"2016-04-25T00:00:00.000Z\"",
+      "locator": "CMR collection JSON, \"time_start\" field",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-temporal-merged-s3a-s3b-2018",
+      "section": "temporal",
+      "value": "The OLCI products are merged Sentinel-3A and Sentinel-3B from 2018-present",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "The OLCI products are merged Sentinel-3A and 3B from 2018-present.",
+      "locator": "PAGE 6, Overview of data files and processing",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-temporal-merged-max-per-pixel",
+      "section": "temporal",
+      "value": "The merged OLCI product is the maximum value for each pixel, combining Sentinel-3A and Sentinel-3B from 2018-present",
+      "unit": null,
+      "note": "Introduced in version 3.",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "This version includes a merged OLCI CIcyano product combining the data from Sentinel-3A and Sentinel-3B from 2018-present. The merged product is the maximum value for each pixel.",
+      "locator": "PAGE 16, Version 3 improvements/changes, item 1",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-temporal-daily-and-7day",
+      "section": "temporal",
+      "value": "Daily and 7-day composites of CI_cyano are available at 300-m resolution",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "Daily and 7-day composites of CI_cyano are available at 300-m resolution.",
+      "locator": "PAGE 4, Overview of data files and processing",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-temporal-maximum-composite",
+      "section": "temporal",
+      "value": "The CIcyano value in each pixel is the MAXIMUM CIcyano value over the period, for both the daily and the 7-day composite",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "The CIcyano value in each pixel represents the maximum CIcyano value for both the daily and 7-day composite periods.",
+      "locator": "PAGE 4, Overview of data files and processing",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-temporal-reprocessing-cadence",
+      "section": "temporal",
+      "value": "The CyAN Project and OBPG reprocess and redistribute the MERIS and OLCI CIcyano time series every 10 to 16 months",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "The CyAN Project and OBPG will periodically reprocess and redistribute the MERIS and OLCI CIcyano time-series. Reprocessing will occur every 10 to 16 months.",
+      "locator": "PAGE 7, Processing version and reprocessing schedule",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-temporal-version-history",
+      "section": "temporal",
+      "value": "Release-notes version history: V4.0 March 2022, V5.0 May 2023, V6 February 2025, with an August 2025 update to known issues",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "March 2022 – Version 4.0 Release notes published May 2023 – Version 5.0 Release notes published February 2025 – Version 6 Release notes published August 2025 – Updates to known issues added to release notes*",
+      "locator": "PAGE 3, Version History, Release Notes list",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-temporal-current-version",
+      "section": "temporal",
+      "value": "All data are processing version 6 (February 2025)",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "All data are processing version 6 (February 2025).",
+      "locator": "PAGE 7, Processing version and reprocessing schedule",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-temporal-v6-changes",
+      "section": "temporal",
+      "value": "Version 6 (February 2025) changes: latest S3A/S3B vicarious calibration with minor 681 nm and 709 nm adjustments; water vapor correction in the atmospheric correction; improved turbid-water test",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "1. Updated processing to use the latest NASA S3A and S3B vicarious calibration with minor adjustments to the 681 nm and 709 nm wavelengths 2. Implemented water vapor correction as part of atmospheric correction 3. Improved test for turbid waters, which reduces false positive CIcyano detection in turbid environments",
+      "locator": "PAGE 8, Version 6 improvements/changes",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-spatial-300m",
+      "section": "spatial",
+      "value": "Nominal pixel resolution is 300 m",
+      "unit": "m",
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6",
+        "src-earthdata-project-cyan"
+      ],
+      "quote": "Daily and 7-day composites of CI_cyano are available at 300-m resolution.",
+      "locator": "PAGE 4, Overview of data files and processing",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-spatial-appendix-a-resolution",
+      "section": "spatial",
+      "value": "Appendix A metadata gives spatialResolution = 289.894507 m for the L3-binned V6 file",
+      "unit": "m",
+      "note": "This is the L3-binned grid resolution, not necessarily the mapped GeoTIFF pixel size.",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": ":spatialResolution = \"289.894507 m\" ;",
+      "locator": "PAGE 23, Appendix A: CyAN daily merged OLCI metadata V6, global attributes",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-spatial-albers-nhd",
+      "section": "spatial",
+      "value": "Images are transformed to Albers Equal Area projection with area-weighted interpolation to match the National Hydrography Dataset projection",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "These images were transformed to Albers Equal Area projection with an area-weighted interpolation to match the projections of the National Hydrography Dataset.",
+      "locator": "PAGE 4, Overview of data files and processing",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-spatial-srtm-landmask",
+      "section": "spatial",
+      "value": "The land mask comes from Shuttle Radar Topography Mission (SRTM) 60-meter data",
+      "unit": null,
+      "note": "The NASA project page instead says CONUS uses a 50m land mask. See discrepancies.",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "Shuttle Radar Topography Mission (SRTM) 60-meter data provided the land mask (https://dds.cr.usgs.gov/srtm/version2_1/SWBD/).",
+      "locator": "PAGE 4, Overview of data files and processing",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-spatial-alaska-landmask-file",
+      "section": "spatial",
+      "value": "A lower-resolution land mask is used for Alaska: landmask_GMT15ARC_AK_v2021.nc",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "A lower resolution land mask is used for the Alaska region ( landmask_GMT15ARC_AK_v2021.nc )",
+      "locator": "PAGE 5, Figure 2 caption",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-spatial-project-landmasks",
+      "section": "spatial",
+      "value": "The NASA project page states CONUS images use a 50m land mask and the Alaska product a less refined 500m land mask",
+      "unit": "m",
+      "note": "Conflicts with the release notes' SRTM 60-meter figure. See discrepancies.",
+      "source_ids": [
+        "src-earthdata-project-cyan"
+      ],
+      "quote": "The contiguous US images use a 50m land mask, while the Alaska product uses a less refined 500m land mask.",
+      "locator": "CyAN project overview paragraph",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-spatial-conus-tiles",
+      "section": "spatial",
+      "value": "CONUS is delivered as a 9 x 6 grid of tiles",
+      "unit": "tiles",
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "Figure 1. Envisat and Sentinel-3 CONUS satellite tiles (9X6 tiles)",
+      "locator": "PAGE 5, Figure 1 caption",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-spatial-alaska-tiles",
+      "section": "spatial",
+      "value": "Alaska is delivered as a 4 x 3 grid of tiles",
+      "unit": "tiles",
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "Figure 2. Envisat and Sentinel-3 Alaska satellite tiles (4x3 tiles).",
+      "locator": "PAGE 5, Figure 2 caption",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-spatial-900m-window",
+      "section": "spatial",
+      "value": "Retrievals are considered more robust for lakes with a window width of at least 900 m",
+      "unit": "m",
+      "note": "The release notes attribute the 900 m figure to a 2017 paper in their reference list; the citation appears verbatim in the quote.",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "(5) Retrievals are considered more robust for lakes ≥ 900 m window width as defined in Clark et al. [2017].",
+      "locator": "PAGE 18, Known Issues, item (5)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-spatial-3x3-pixels",
+      "section": "spatial",
+      "value": "The 900 m window width corresponds to a minimum 3 x 3 pixel array of water in a water body",
+      "unit": "pixels",
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "This 900 m window width provides a minimum of a 3 x 3-pixel array in a water body.",
+      "locator": "PAGE 18, Known Issues, item (5)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-encoding-geotiff-8bit",
+      "section": "encoding",
+      "value": "Each data file is stored in 8-bit GeoTIFF",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "Each data file is stored in 8-bit GeoTIFF, where values of:",
+      "locator": "PAGE 5, Overview of data files and processing",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-encoding-dn-table",
+      "section": "encoding",
+      "value": "DN encoding: 0 = below CIcyano detection threshold, 1-253 = data, 254 = land, 255 = no data (e.g. cloudy pixel, ice cover)",
+      "unit": "DN",
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "• 0 indicate below threshold CIcyano detection limits • 1-253 are data • 254 is land • 255 are no data (e.g., a cloudy pixel, ice cover)",
+      "locator": "PAGE 5, Overview of data files and processing, DN bullet list",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-encoding-dn-formula",
+      "section": "encoding",
+      "value": "DN to index conversion: CIcyano = 10**(DN * 0.011714 - 4.1870866)",
+      "unit": null,
+      "note": "Slope 0.011714, intercept -4.1870866, base 10.",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "Digital numbers (DN) can be converted to an estimated cyanobacteria abundance derived from CIcyano. CIcyano = 10**(DN * 0.011714 - 4.1870866)",
+      "locator": "PAGE 6, Overview of data files and processing",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-encoding-dn-guide-colors",
+      "section": "encoding",
+      "value": "In NASA's DN guide, below-threshold pixels render grey, land brown, and no-data black",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-earthdata-project-cyan"
+      ],
+      "quote": "DN Guide 0 indicates below threshold of CI detection limits (grey color) 1-253 are data 254 is land (brown) 255 are no data (black—e.g., a cloudy pixel)",
+      "locator": "GeoTIFF Data Products and Imagery, DN Guide",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-encoding-noaa-flagging",
+      "section": "encoding",
+      "value": "NOAA/NCCOS uses a different encoding: land=252 and invalid=251,253,254,255, whereas CyAN uses land=254 and invalid=255",
+      "unit": "DN",
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "o NOAA/NCCOS land=252, invalid=251,253,254,255 o CyAN land=254, invalid=255",
+      "locator": "PAGE 19, Difference CyAN and NOAA-produced products, Flagging",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-encoding-noaa-valid-range",
+      "section": "encoding",
+      "value": "NOAA/NCCOS valid data range is 0-250 while CyAN's is 0-253",
+      "unit": "DN",
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "- Range of valid data values o NOAA/NCCOS 0-250 o CyAN 0-253",
+      "locator": "PAGE 19, Difference CyAN and NOAA-produced products, Range of valid data values",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-encoding-band1-int8",
+      "section": "encoding",
+      "value": "The catalogued variable Band1 has data type int8 with no fill value, valid range, scale factor or offset recorded",
+      "unit": null,
+      "note": "The DN semantics live in the release notes, not in the CMR variable record.",
+      "source_ids": [
+        "src-earthdata-collection-olci"
+      ],
+      "quote": "Band1 Band1 N/A int8 N/A N/A N/A N/A",
+      "locator": "Variables table",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-encoding-l3b-variables",
+      "section": "encoding",
+      "value": "The upstream L3-binned file carries CI_stumpf, CI_cyano, CI_noncyano, MCI_stumpf, chl_mph, flags_mph and flags_habs",
+      "unit": null,
+      "note": "These are in the binned NetCDF, not in the distributed single-band GeoTIFF.",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "binDataType CI_stumpf(binDataDim) ; binDataType CI_cyano(binDataDim) ; binDataType CI_noncyano(binDataDim) ; binDataType MCI_stumpf(binDataDim) ; binDataType chl_mph(binDataDim) ; binDataType flags_mph(binDataDim) ; binDataType flags_habs(binDataDim) ;",
+      "locator": "PAGE 24, Appendix A: CyAN daily merged OLCI metadata V6, group level-3_binned_data",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-encoding-l2-flags",
+      "section": "encoding",
+      "value": "The L2 flags used in binning are LAND, CLDICE and HISATZEN",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": ":l2_flag_names = \"LAND,CLDICE,HISATZEN\" ;",
+      "locator": "PAGE 24, Appendix A: CyAN daily merged OLCI metadata V6, group processing_control",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-encoding-cells-per-ml-range",
+      "section": "encoding",
+      "value": "NASA's project page states the DN range corresponds to roughly 10,000 to 7,000,000 cells/ml",
+      "unit": "cells/ml",
+      "note": "The page gives a range only; it does not give a CI-to-cells conversion factor or a citation.",
+      "source_ids": [
+        "src-earthdata-project-cyan"
+      ],
+      "quote": "That range is ~10,000 to 7,000,000 cells/ml.",
+      "locator": "GeoTIFF Data Products and Imagery, DN Guide",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-issues-snow-ice-flag",
+      "section": "issues",
+      "value": "A snow/ice flag has been applied but has not yet been verified; ice can register as high CI counts",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "(1) A snow/flag that identifies ice has been applied but has not yet been verified. Ice can potentially register as high CI counts, so caution should be used where snow/ice might be visible.",
+      "locator": "PAGE 18, Known Issues, item (1)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-issues-under-thin-ice",
+      "section": "issues",
+      "value": "It is unknown whether CyAN can detect cyanobacteria under thin ice in lakes and reservoirs",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "It is currently unknown if CyAN could detect cyanobacteria under thin ice in lakes and reservoirs.",
+      "locator": "PAGE 18, Known Issues, item (1)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-issues-landmask-imperfect",
+      "section": "issues",
+      "value": "The SRTM land mask may cover dry lakes and may exclude other lakes; an eroded land mask is needed",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "(2) The SRTM land mask may cover dry lakes and may exclude other lakes. There is a need for an eroded landmask.",
+      "locator": "PAGE 18, Known Issues, item (2)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-issues-mixed-pixels",
+      "section": "issues",
+      "value": "A flag identifying mixed land/water pixels has been added but not verified; caution is needed at the land/water interface",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "(3) A flag has been added to identify mixed pixels that are potentially inclusive of land and water. The flag has not yet been verified, so caution should be used where mixed pixels may occur at the land/water interface.",
+      "locator": "PAGE 18, Known Issues, item (3)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-issues-thin-clouds",
+      "section": "issues",
+      "value": "Undetected thin clouds can register as high CI counts, elevating CI beyond the minimum detect threshold",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "(4) Undetected thin clouds can potentially register as high CI counts (elevating CI beyond the minimum detect threshold value).",
+      "locator": "PAGE 18, Known Issues, item (4)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-issues-small-waterbodies",
+      "section": "issues",
+      "value": "Smaller water bodies and rivers are not masked and their data may be erroneous",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "Smaller water bodies and rivers are not masked and their data may be erroneous.",
+      "locator": "PAGE 18, Known Issues, item (5)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-issues-no-water-level-correction",
+      "section": "issues",
+      "value": "Processing does not account for changes in water levels due to cycles such as drought and flood",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "(7) Satellite data processing does not account for changes in water levels due to cycles such as drought and flood.",
+      "locator": "PAGE 18, Known Issues, item (7)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-issues-7day-less-than-daily",
+      "section": "issues",
+      "value": "Occasionally the 7-day mapped maximum has a value lower than the daily maximum for that week, because reprojection to Albers Equal Area averages during the final mapping step",
+      "unit": null,
+      "note": "The 7-day composite is therefore not a strict upper bound on that week's dailies.",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "(9) Occasionally the 7-day mapped maximum product will have a value that is less than is seen in the daily maximum values for a week. This occurs because of reprojecting the round earth onto the flat earth.",
+      "locator": "PAGE 18, Known Issues, item (9)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-issues-turbid-water",
+      "section": "issues",
+      "value": "V6's improved turbid-water test reduces, but does not eliminate, false positive CIcyano detection in turbid environments",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "The turbid water change should reduce false positives in turbid waters.",
+      "locator": "PAGE 8, Version 6 improvements/changes, Summary of Analysis",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-issues-biophysical-flag-dataset",
+      "section": "issues",
+      "value": "A separate Envisat MERIS and Sentinel-3 OLCI lake biophysical water quality flag dataset for the contiguous United States is cited in the release notes references",
+      "unit": null,
+      "note": "Cited as a reference; the release notes do not state that it ships with the CI_cyano GeoTIFFs.",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "Envisat MERIS and Sentinel-3 OLCI satellite lake biophysical water quality flag dataset for the contiguous United States. Data in Brief, 104826.",
+      "locator": "PAGE 21, References",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-naming-convention-release-notes",
+      "section": "naming",
+      "value": "File naming convention: sensoryyyydddyyyyddd.datalevel_temporalresolution_product_version_resolution_region",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "MERIS/OLCI data files follow this naming convention: sensoryyyydddyyyyddd.datalevel_temporalresolution_product_version_resolution_region",
+      "locator": "PAGE 6, Overview of data files and processing",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-naming-example-decomposition",
+      "section": "naming",
+      "value": "Example: M20120642012070.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m_5_3 is MERIS, year 2012 day 064 to day 070, L3 mapped, 7-day composite, CI_cyano, CONUS, 300 m, tile column 5 row 3",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "A file named M20120642012070.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m_5_3, for example, is decomposed as:",
+      "locator": "PAGE 6, Overview of data files and processing",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-naming-alaska-difference",
+      "section": "naming",
+      "value": "Alaska file names follow the same pattern with AK replacing CONUS",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "* The Alaska naming conventions follows a similar pattern with the single difference of \"AK\" replacing \"CONUS\" in the file name.",
+      "locator": "PAGE 6, Overview of data files and processing",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-naming-project-page-pattern",
+      "section": "naming",
+      "value": "The NASA project page writes the pattern as SYYYYDDDYYYYDDD.LLL_TT_PROJ_PRODUCT_TILEVERSION_RESOLUTION_TILEcol_row, e.g. L20202012020207.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m_5_2",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-earthdata-project-cyan"
+      ],
+      "quote": "SYYYYDDDYYYYDDD.LLL_TT_PROJ_PRODUCT_TILEVERSION_RESOLUTION_TILEcol_row (e.g. L20202012020207.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m_5_2)",
+      "locator": "File Naming Convention section",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-naming-granule-real-example",
+      "section": "naming",
+      "value": "A real archived granule id is L2026213.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m_1_1.tif",
+      "unit": null,
+      "note": "Note that a DAY granule carries a single date stamp (L2026213), not the doubled YYYYDDDYYYYDDD form shown for 7D files.",
+      "source_ids": [
+        "src-cmr-granule-olci"
+      ],
+      "quote": "\"producer_granule_id\":\"L2026213.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m_1_1.tif\"",
+      "locator": "CMR granule JSON, entry[0].producer_granule_id",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-format-collection-netcdf4",
+      "section": "format",
+      "value": "The collection landing page and CMR metadata state the file format is netCDF-4",
+      "unit": null,
+      "note": "The actual distributed granules are .tif. See discrepancies.",
+      "source_ids": [
+        "src-earthdata-collection-olci",
+        "src-cmr-collection-olci-umm"
+      ],
+      "quote": "Data Format netCDF-4",
+      "locator": "Data at a Glance panel",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-format-umm-netcdf4",
+      "section": "format",
+      "value": "UMM-C FileDistributionInformation records Format: netCDF-4",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-cmr-collection-olci-umm"
+      ],
+      "quote": "\"ArchiveAndDistributionInformation\":{\"FileDistributionInformation\":[{\"Format\":\"netCDF-4\"}]}",
+      "locator": "UMM-C JSON, ArchiveAndDistributionInformation.FileDistributionInformation",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-format-granule-tif",
+      "section": "format",
+      "value": "The distributed granules are GeoTIFF (.tif) files, as the granule download link shows",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-cmr-granule-olci"
+      ],
+      "quote": "\"href\":\"https://obdaac-tea.earthdatacloud.nasa.gov/ob-cumulus-prod-public/L2026213.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m_1_1.tif\"",
+      "locator": "CMR granule JSON, entry[0].links, rel data#",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-format-granule-size",
+      "section": "format",
+      "value": "The example daily CONUS tile granule size is 0.1351547241210938 (CMR granule_size, MB)",
+      "unit": "MB",
+      "note": "CMR reports granule_size in MB; this is one daily tile, so file sizes vary by tile, date and composite period.",
+      "source_ids": [
+        "src-cmr-granule-olci"
+      ],
+      "quote": "\"granule_size\":\"0.1351547241210938\"",
+      "locator": "CMR granule JSON, entry[0].granule_size",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-lakes-shapefile-link",
+      "section": "lakes",
+      "value": "A lake shapefile for MERIS and OLCI sensors is published at https://www.earthdata.nasa.gov/s3fs-public/2026-01/MERIS_OLCI_Lakes.zip",
+      "unit": null,
+      "note": "The link text is the description; the page gives no field list for the shapefile.",
+      "source_ids": [
+        "src-earthdata-project-cyan"
+      ],
+      "quote": "Lake Shapefile for MERIS and OLCI sensors",
+      "locator": "Related Resources, Shapefiles list (anchor href /s3fs-public/2026-01/MERIS_OLCI_Lakes.zip)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-lakes-conus-tile-shapefile",
+      "section": "lakes",
+      "value": "A CONUS tile-grid shapefile is published at https://www.earthdata.nasa.gov/s3fs-public/2026-01/CONUS_tiles_shapefile.zip",
+      "unit": null,
+      "note": "The link is labelled \"CONUS Shapefile\" in the Shapefiles list.",
+      "source_ids": [
+        "src-earthdata-project-cyan"
+      ],
+      "quote": "CONUS Shapefile",
+      "locator": "Related Resources, Shapefiles list (anchor href /s3fs-public/2026-01/CONUS_tiles_shapefile.zip)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-lakes-nhdplus-source",
+      "section": "lakes",
+      "value": "The CONUS shapefile comes from the National Hydrology Dataset Plus (NHDPlus) version 2.0 database",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-earthdata-project-cyan"
+      ],
+      "quote": "The CONUS Shapefile is from the National Hydrology Dataset Plus (NHDPlus) version 2.0 database",
+      "locator": "Related Resources, Shapefiles section",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-lakes-shapefiles-imperfect",
+      "section": "lakes",
+      "value": "NASA warns the shapefiles are not perfect and are occasionally updated to correct known errors",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-earthdata-project-cyan"
+      ],
+      "quote": "The shapefiles are not perfect and occasionally updates are made to correct known errors. You can also edit them for your own needs.",
+      "locator": "Related Resources, Shapefiles section",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-lakes-epa-2000-lakes",
+      "section": "lakes",
+      "value": "EPA's CyANWeb provides satellite bloom data for over 2,000 of the largest lakes and reservoirs across the United States",
+      "unit": "lakes",
+      "note": "",
+      "source_ids": [
+        "src-epa-cyan-app"
+      ],
+      "quote": "provides access to cyanobacterial bloom satellite data for over 2,000 of the largest lakes and reservoirs across the United States",
+      "locator": "Explore the App / CyAN Web App section",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-access-file-search-endpoint",
+      "section": "access",
+      "value": "The CyAN File Search tool is at https://oceandata.sci.gsfc.nasa.gov/api/cyan_file_search/ and is reached from the NASA Earthdata tool page via a Launch link",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-earthdata-cyan-file-search"
+      ],
+      "quote": "Launch CyAN File Search",
+      "locator": "Tool at a Glance section (anchor href https://oceandata.sci.gsfc.nasa.gov/api/cyan_file_search/)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-access-param-areaids",
+      "section": "access",
+      "value": "cyan_file_search parameter areaids: all, a single tile id such as 1_1, or several tiles joined with +",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-obdaac-cyan-file-search-api"
+      ],
+      "quote": "areaids valid options: all (retrieve all data); tile (retrieve single tile by ID, ex: 1_1); tile1+tile2 (retrieve multiple tiles by ID, ex: 1_1+2_1+3_1)",
+      "locator": "Click Here for Bulk Data Download Instructions, Available Paramters/Options",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-access-wget-example",
+      "section": "access",
+      "value": "The documented wget call POSTs the parameters to https://oceandata.gsfc.nasa.gov/api/cyan_file_search",
+      "unit": null,
+      "note": "The example host omits the .sci. label used elsewhere on the same page.",
+      "source_ids": [
+        "src-obdaac-cyan-file-search-api"
+      ],
+      "quote": "wget -q --no-check-certificate --post-data=\"region=0&wgetflag=1&period=2&product=1&areaids=all&sdate=2020-11-01&edate=2020-11-19&addurl=1&results_as_file=1\" -O - https://oceandata.gsfc.nasa.gov/api/cyan_file_search",
+      "locator": "Click Here for Bulk Data Download Instructions, wget example",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-access-getfile-pattern",
+      "section": "access",
+      "value": "OB.DAAC file downloads use a getfile URL, e.g. https://oceandata.sci.gsfc.nasa.gov/CYAN/L3BIN/2017/002/ listings pipe getfile links into curl",
+      "unit": null,
+      "note": "The rendered page truncates the full example URL; the getfile token itself appears in the curl example.",
+      "source_ids": [
+        "src-obdaac-cyan-file-search-api"
+      ],
+      "quote": "curl https://oceandata.sci.gsfc.nasa.gov/CYAN/L3BIN/2017/002/ | grep getfile | cut -d \"'\" -f 2 | head -1 | xargs -n 1 curl -LJO -n -c ~/.urs_cookies -b ~/.urs_cookies",
+      "locator": "Click Here for Bulk Data Download Instructions, curl example",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-access-edl-required",
+      "section": "access",
+      "value": "OB.DAAC requires users to log in with Earthdata Login credentials to download any products",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-earthdata-obdaac-download"
+      ],
+      "quote": "we require users to login to the OceanColor Web's data access points using their Earthdata Login credentials in order to download any products.",
+      "locator": "Introduction paragraph",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-access-netrc",
+      "section": "access",
+      "value": "The recommended authentication method is a .netrc file: machine urs.earthdata.nasa.gov login USERNAME password PASSWD, chmod 0600",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-earthdata-obdaac-download"
+      ],
+      "quote": "echo \"machine urs.earthdata.nasa.gov login USERNAME password PASSWD\" > ~/.netrc ; > ~/.urs_cookies chmod 0600 ~/.netrc",
+      "locator": "Create a .netrc File",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-access-appkey",
+      "section": "access",
+      "value": "An AppKey can be passed as a parameter appended to the end of the download URL",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-earthdata-obdaac-download"
+      ],
+      "quote": "Pass the AppKey as a parameter by appending it to the end of the download URL.",
+      "locator": "Generate an AppKey",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-access-bearer-token",
+      "section": "access",
+      "value": "Earthdata Login user tokens are Bearer tokens issued by POST /api/users/token",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-urs-user-token"
+      ],
+      "quote": "\"token_type\":\"Bearer\"",
+      "locator": "API, /api/users/token, Response",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-access-token-lifetime",
+      "section": "access",
+      "value": "Earthdata Login user tokens are valid for 60 days",
+      "unit": "days",
+      "note": "A user may hold at most two valid tokens at a time.",
+      "source_ids": [
+        "src-urs-user-token"
+      ],
+      "quote": "User tokens are valid for a duration of 60 days.",
+      "locator": "User Token Management introduction",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-access-s3-bucket",
+      "section": "access",
+      "value": "CyAN OLCI granules live in the S3 bucket s3://ob-cumulus-prod-public/",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-cmr-collection-olci-umm"
+      ],
+      "quote": "\"S3BucketAndObjectPrefixNames\":[\"s3://ob-cumulus-prod-public/\"]",
+      "locator": "UMM-C JSON, DirectDistributionInformation",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-access-granule-s3-href",
+      "section": "access",
+      "value": "A granule's direct S3 link is s3://ob-cumulus-prod-public/<filename>",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-cmr-granule-olci"
+      ],
+      "quote": "\"href\":\"s3://ob-cumulus-prod-public/L2026213.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m_1_1.tif\"",
+      "locator": "CMR granule JSON, entry[0].links, rel s3#",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-access-tea-https-prefix",
+      "section": "access",
+      "value": "The HTTPS distribution prefix is https://obdaac-tea.earthdatacloud.nasa.gov/ob-cumulus-prod-public/",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-cmr-granule-olci"
+      ],
+      "quote": "\"title\":\"Download L2026213.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m_1_1.tif\"",
+      "locator": "CMR granule JSON, entry[0].links, rel data# (href https://obdaac-tea.earthdatacloud.nasa.gov/ob-cumulus-prod-public/...)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-access-s3credentials-endpoint",
+      "section": "access",
+      "value": "Temporary S3 credentials come from https://obdaac-tea.earthdatacloud.nasa.gov/s3credentials",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-cmr-collection-olci-umm"
+      ],
+      "quote": "\"S3CredentialsAPIEndpoint\":\"https://obdaac-tea.earthdatacloud.nasa.gov/s3credentials\"",
+      "locator": "UMM-C JSON, DirectDistributionInformation",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-access-s3-same-region-readonly",
+      "section": "access",
+      "value": "The Cumulus deployment API dispenses temporary credentials for same-region, read-only, direct S3 access",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-obdaac-s3credentials-readme"
+      ],
+      "quote": "Cumulus deployment api can be configured to dispense temporary credentials for same-region, read-only, direct S3 access.",
+      "locator": "In-region Direct S3 Access to Buckets",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-access-s3-credentials-1hour",
+      "section": "access",
+      "value": "Credentials from the /s3credentials endpoint are valid for 1 hour and code must handle expiry",
+      "unit": "hour",
+      "note": "",
+      "source_ids": [
+        "src-obdaac-s3credentials-readme"
+      ],
+      "quote": "The credentials dispensed from the /s3credentials endpoint are valid for 1 hour . Your code must handle expired tokens and request new ones as needed for sessions that exceed this 1 hour limit.",
+      "locator": "Limits",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-access-region-us-west-2",
+      "section": "access",
+      "value": "The collection's direct-distribution region is us-west-2",
+      "unit": null,
+      "note": "This is the authoritative NASA statement for this specific collection.",
+      "source_ids": [
+        "src-cmr-collection-olci-umm"
+      ],
+      "quote": "\"Region\":\"us-west-2\"",
+      "locator": "UMM-C JSON, DirectDistributionInformation",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-access-us-west-2-limit",
+      "section": "access",
+      "value": "Free direct S3 access to NASA Earthdata Cloud is limited to requests made within the US West (Oregon) us-west-2 AWS region",
+      "unit": null,
+      "note": "Published by NASA Openscapes, a community project, not on a nasa.gov domain.",
+      "source_ids": [
+        "src-openscapes-cloud-clinic"
+      ],
+      "quote": "Access is provided via temporary credentials; this free access is limited to requests made within the US West (Oregon) (code: us-west-2) AWS region.",
+      "locator": "Earthdata Cloud Clinic, prerequisites paragraph",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-access-us-west-2-laads",
+      "section": "access",
+      "value": "A NASA DAAC page states AWS S3 Direct Access is available in the cloud and in the US-WEST-2 region only",
+      "unit": null,
+      "note": "This wording is on the LAADS DAAC page, not an OB.DAAC page; treat as corroborating, not collection-specific.",
+      "source_ids": [
+        "src-laads-s3-direct-access"
+      ],
+      "quote": "Currently, AWS S3 Direct Access to LAADS DAAC data is accessible in the cloud (Lambda, EC2, etc) and in the US-WEST-2 region only.",
+      "locator": "How To Access LAADS DAAC Data Files Using S3 Direct Access, intro",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-terms-open-sharing",
+      "section": "terms",
+      "value": "The ESDS Program promotes the full and open sharing of all data, metadata, documentation, models, images and research results, and all source code",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-earthdata-open-policy"
+      ],
+      "quote": "The ESDS Program promotes the full and open sharing of all data, metadata, documentation, models, images and research results, and all source code.",
+      "locator": "Open Data, Services, and Software Policies, lead paragraph",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-terms-data-use-guidance",
+      "section": "terms",
+      "value": "NASA's free and open data use guidance states data and information generated under NASA sponsorship are available to all users, and ESDS encourages citation and acknowledgment",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-earthdata-open-policy"
+      ],
+      "quote": "NASA's free and open data use guidance states that data and information generated under NASA sponsorship are available to all users. ESDS encourages citation and acknowledgment of NASA data and services whenever data or works based on the data are published.",
+      "locator": "Data Use Guidance",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-terms-citation-requirement",
+      "section": "terms",
+      "value": "The dataset is openly shared without restriction, in accordance with the EOSDIS Data Use and Citation Guidance",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-earthdata-collection-olci"
+      ],
+      "quote": "This dataset is openly shared, without restriction, in accordance with the EOSDIS Data Use and Citation Guidance .",
+      "locator": "Citation section",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-terms-citation-text",
+      "section": "terms",
+      "value": "Recommended citation: NASA Ocean Biology Processing Group. (2025). Merged Sentinel-3A and Sentinel-3B OLCI Regional Mapped Cyanobacteria Index (CI) Data, version 6.0 [Dataset]. NASA Ocean Biology Distributed Active Archive Center. https://doi.org/10.5067/MERGED-S3/OLCI/L3M/CYAN/CI/6.0",
+      "unit": null,
+      "note": "APA form as rendered on the landing page; the trailing access date is generated at page load.",
+      "source_ids": [
+        "src-earthdata-collection-olci"
+      ],
+      "quote": "NASA Ocean Biology Processing Group. (2025). Merged Sentinel-3A and Sentinel-3B OLCI Regional Mapped Cyanobacteria Index (CI) Data, version 6.0 [Dataset]. NASA Ocean Biology Distributed Active Archive Center. https://doi.org/10.5067/MERGED-S3/OLCI/L3M/CYAN/CI/6.0",
+      "locator": "Citation section, APA style",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-terms-citation-project-page",
+      "section": "terms",
+      "value": "The NASA project page asks users to cite CyAN data and gives an example citation naming OBPG, the collection, the DOI and the cyan_file_search access URL",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-earthdata-project-cyan"
+      ],
+      "quote": "NASA Ocean Biology Processing Group (OBPG). Cyanobacteria Assessment Network (CyAN), Merged Sentinel-3A and Sentinel-3B OLCI Regional Mapped Cyanobacteria Index (CI) Data, version 6.0, NASA Ocean Biology Distributed Active Archive Center. DOI: ** 10.5067/MERGED-S3/OLCI/L3M/CYAN/CI/6.0 Accessed from https://oceandata.sci.gsfc.nasa.gov/api/cyan_file_search on YYYY/MM/DD",
+      "locator": "Citations section",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-terms-epa-disclaimer",
+      "section": "terms",
+      "value": "EPA disclaims endorsement: any mention of trade names, products, services or enterprises does not imply an endorsement by the U.S. Government or EPA",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-epa-cyan-app"
+      ],
+      "quote": "Disclaimer: Any mention of trade names, products, services, or enterprises does not imply an endorsement by the U.S. Government or EPA.",
+      "locator": "Compatibility and Availability",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-access-param-region-period-product",
+      "section": "access",
+      "value": "cyan_file_search selectors: region 0=Alaska / 1=CONUS; period 1=Weekly / 2=Daily; product 1=Cyanobacteria Index / 2=True Color",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-obdaac-cyan-file-search-api"
+      ],
+      "quote": "region valid options: 0 (Alaska); 1 (CONUS) period valid options: 1 (Weekly); 2 (Daily) product valid options: 1 (Cyanobacteria Index); 2 (True Color)",
+      "locator": "Click Here for Bulk Data Download Instructions, Available Paramters/Options",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-access-param-dates-and-flags",
+      "section": "access",
+      "value": "cyan_file_search also takes sdate and edate (YYYY-MM-DD), addurl (1/0) to include full URLs, results_as_file (1/0) to return a text listing, and the mandatory wgetflag=1",
+      "unit": null,
+      "note": "",
+      "source_ids": [
+        "src-obdaac-cyan-file-search-api"
+      ],
+      "quote": "sdate (optional) start date for a search (format YYYY-MM-DD) edate (optional) end date for a search (format YYYY-MM-DD) addurl include full url in search result; boolean: 1=true, 0=false results_as_file return results as text file listing; boolean: 1=true, 0=false wgetflag 1 (always 1. It's a mandatory parameter.)",
+      "locator": "Click Here for Bulk Data Download Instructions, Available Paramters/Options",
+      "proposed_status": "documented"
+    }
+  ],
+  "not_found": [
+    {
+      "topic": "Weekly update timing (e.g. 'new week available by close of business the following Monday')",
+      "sources_tried": [
+        "src-epa-cyan-app",
+        "src-epa-cyan",
+        "src-earthdata-project-cyan",
+        "src-obdaac-cyan-file-search-api",
+        "src-earthdata-collection-olci",
+        "src-release-notes-v6"
+      ],
+      "note": "No page fetched states when in the week a new composite appears. The EPA CyAN app page says only that lake managers could use the app 'on a daily or weekly basis'. The EPA CyANWeb user's guide is served behind an EPA Science Inventory record page and was not opened."
+    },
+    {
+      "topic": "CI-to-cells/mL conversion relation (e.g. cells/mL = 1e8 x CI_cyano) in the release notes",
+      "sources_tried": [
+        "src-release-notes-v6"
+      ],
+      "note": "The release notes say DN 'can be converted to an estimated cyanobacteria abundance derived from CIcyano' and then give only the DN-to-CIcyano formula. No multiplier and no citation for a cells/mL relation appears anywhere in the V6 release notes. The NASA project page gives only a range (~10,000 to 7,000,000 cells/ml) with no formula or citation."
+    },
+    {
+      "topic": "Tile pixel dimensions (e.g. 2000 x 2000 px) and tile extent in km",
+      "sources_tried": [
+        "src-release-notes-v6",
+        "src-earthdata-project-cyan",
+        "src-cmr-collection-olci",
+        "src-cmr-collection-olci-umm",
+        "src-cmr-granule-olci"
+      ],
+      "note": "No fetched source states the pixel dimensions or ground extent of a CONUS or Alaska tile. Figures 1 and 2 in the release notes are images and carry no numeric tile size in the extracted text."
+    },
+    {
+      "topic": "Explicit EPSG code or projection parameters for the distributed GeoTIFFs",
+      "sources_tried": [
+        "src-release-notes-v6",
+        "src-earthdata-project-cyan",
+        "src-cmr-collection-olci-umm"
+      ],
+      "note": "The release notes name Albers Equal Area matched to the NHD projection but give no EPSG code, datum or standard parallels. The CMR record gives CoordinateSystem CARTESIAN and an EPSG4326 altitude datum, neither of which is the raster CRS."
+    },
+    {
+      "topic": "Whether the lake shapefile carries NHDPlus COMID identifiers",
+      "sources_tried": [
+        "src-earthdata-project-cyan",
+        "src-epa-cyan",
+        "src-epa-cyan-app"
+      ],
+      "note": "The word COMID does not appear on any fetched page. The project page says only that the CONUS shapefile comes from NHDPlus version 2.0; it lists no attribute fields. Confirming this would require opening the shapefile, which was out of scope (no downloads)."
+    },
+    {
+      "topic": "Named QA/quality flag bands shipped alongside the distributed CI_cyano GeoTIFF",
+      "sources_tried": [
+        "src-release-notes-v6",
+        "src-earthdata-collection-olci",
+        "src-cmr-collection-olci-umm"
+      ],
+      "note": "The release notes describe a snow/ice flag and a mixed-pixel flag as applied but unverified, without naming bands or bit values. The catalogued collection has exactly one variable, Band1. The flags_mph and flags_habs arrays appear only in the upstream L3-binned NetCDF described in Appendix A."
+    },
+    {
+      "topic": "A UseConstraints / use-limitation statement in the collection metadata",
+      "sources_tried": [
+        "src-cmr-collection-olci-umm",
+        "src-cmr-collection-olci",
+        "src-earthdata-collection-olci"
+      ],
+      "note": "The UMM-C record has no UseConstraints element. The landing page states only that the dataset is openly shared without restriction."
+    },
+    {
+      "topic": "The CyAN File Search parameter documentation on the NASA Earthdata tool page",
+      "sources_tried": [
+        "src-earthdata-cyan-file-search"
+      ],
+      "note": "The Earthdata tool page describes the tool but documents no parameters; the parameter list lives on the OB.DAAC search page itself (src-obdaac-cyan-file-search-api)."
+    },
+    {
+      "topic": "Resolution of Known Issues item numbering (the list jumps from (5) to (7))",
+      "sources_tried": [
+        "src-release-notes-v6"
+      ],
+      "note": "The Known Issues section in the August 2025 text has items (1)-(5) and (7)-(9); there is no item (6). The document does not explain the gap."
+    }
+  ],
+  "discrepancies": [
+    {
+      "topic": "OLCI record start year",
+      "statements": [
+        {
+          "source_id": "src-release-notes-v6",
+          "quote": "Ocean Colour Land Imager onboard Sentinel-3A (OLCI; 2017-present) and Sentinel-3B (2018-present)"
+        },
+        {
+          "source_id": "src-cmr-collection-olci",
+          "quote": "\"time_start\":\"2016-04-25T00:00:00.000Z\""
+        },
+        {
+          "source_id": "src-earthdata-collection-olci",
+          "quote": "Temporal Extent 2016-04-25 to Present"
+        },
+        {
+          "source_id": "src-earthdata-project-cyan",
+          "quote": "the Ocean and Land Colour Instrument ( OLCI ) on Sentinel-3A (2016-present) and OLCI on Sentinel-3B (2018-present)"
+        },
+        {
+          "source_id": "src-epa-cyan",
+          "quote": "Daily and weekly coverage using the Sentinel-3 OLCI sensor are now publicly available from 2016 to current day."
+        },
+        {
+          "source_id": "src-obdaac-cyan-file-search-api",
+          "quote": "Weekly [2007-Present]"
+        }
+      ],
+      "note": "Three NASA/EPA sources plus the collection metadata say 2016 (the metadata pins 2016-04-25); the V6 release notes Introduction says 2017. The OB.DAAC search form adds a fourth figure by labelling the weekly period 2007-Present. A checker should note that the machine-readable collection extent is the most specific and should be preferred, but the release-notes wording is genuinely different."
+    },
+    {
+      "topic": "CONUS land mask resolution",
+      "statements": [
+        {
+          "source_id": "src-release-notes-v6",
+          "quote": "Shuttle Radar Topography Mission (SRTM) 60-meter data provided the land mask"
+        },
+        {
+          "source_id": "src-earthdata-project-cyan",
+          "quote": "The contiguous US images use a 50m land mask, while the Alaska product uses a less refined 500m land mask."
+        }
+      ],
+      "note": "Release notes say SRTM 60-meter; the NASA project page says 50m for CONUS. For Alaska, the release notes name landmask_GMT15ARC_AK_v2021.nc without a resolution, while the project page says 500m."
+    },
+    {
+      "topic": "Distributed file format",
+      "statements": [
+        {
+          "source_id": "src-earthdata-collection-olci",
+          "quote": "Data Format netCDF-4"
+        },
+        {
+          "source_id": "src-cmr-collection-olci-umm",
+          "quote": "\"ArchiveAndDistributionInformation\":{\"FileDistributionInformation\":[{\"Format\":\"netCDF-4\"}]}"
+        },
+        {
+          "source_id": "src-cmr-granule-olci",
+          "quote": "\"producer_granule_id\":\"L2026213.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m_1_1.tif\""
+        },
+        {
+          "source_id": "src-release-notes-v6",
+          "quote": "Each data file is stored in 8-bit GeoTIFF, where values of:"
+        }
+      ],
+      "note": "The catalogue metadata declares netCDF-4, but every granule in the collection is a .tif and the release notes describe 8-bit GeoTIFF. The netCDF-4 label appears to be inherited from the upstream L3-binned product; treat the catalogue Format field as wrong for these granules."
+    },
+    {
+      "topic": "Nominal pixel size",
+      "statements": [
+        {
+          "source_id": "src-release-notes-v6",
+          "quote": "Daily and 7-day composites of CI_cyano are available at 300-m resolution."
+        },
+        {
+          "source_id": "src-release-notes-v6",
+          "quote": ":spatialResolution = \"289.894507 m\" ;"
+        }
+      ],
+      "note": "The same document gives 300 m as the product resolution in the body and 289.894507 m as the spatialResolution attribute in Appendix A. The Appendix A value describes the L3-binned Integerized Sinusoidal grid, the body value the mapped product; the release notes never reconcile the two."
+    },
+    {
+      "topic": "DOI of the version 6 product",
+      "statements": [
+        {
+          "source_id": "src-cmr-collection-olci-umm",
+          "quote": "\"DOI\":{\"DOI\":\"10.5067/MERGED-S3/OLCI/L3M/CYAN/CI/6.0\",\"Authority\":\"https://doi.org\"}"
+        },
+        {
+          "source_id": "src-release-notes-v6",
+          "quote": ":doi = \"10.5067/MERGED-S3/OLCI/L3B/CYAN/CI/6T\" ;"
+        }
+      ],
+      "note": "Not necessarily a conflict: L3M/6.0 is the distributed mapped collection, L3B/6T the upstream binned product written into the file metadata. Recorded here because the two strings are easy to confuse and only one of them resolves to the catalogued collection."
+    },
+    {
+      "topic": "Reprocessing cadence",
+      "statements": [
+        {
+          "source_id": "src-release-notes-v6",
+          "quote": "Reprocessing will occur every 10 to 16 months."
+        },
+        {
+          "source_id": "src-epa-cyan",
+          "quote": "While the Sentinel-3 portion of the project will conclude, the data will continue to be made publicly available and reprocessed annually."
+        }
+      ],
+      "note": "NASA says every 10 to 16 months; EPA says annually. Both are current pages (EPA page updated June 9, 2026)."
+    }
+  ],
+  "limitations": [
+    "Every quote was taken from raw HTML or raw JSON fetched with curl on 2026-09-22 and stripped of tags locally; whitespace was normalized to single spaces, so a checker comparing against rendered text should normalize whitespace before matching.",
+    "The release-notes quotes come from the local extracted text file, not from the PDF's own layout. The extraction flattens the CIcyano subscript to 'CIcyano' and renders en-dashes and the >= sign as plain characters in some places; quotes in this record use the plain forms ('-' for en-dash, '>=' for the greater-or-equal glyph) that appear after normalization.",
+    "PAGE markers in locators refer to the '===== PAGE n =====' markers in the local extracted text, which correspond to PDF page numbers.",
+    "The NASA Earthdata pages render a large shared navigation; the body text quoted here sits after the 'Search' nav item in the stripped text. Several Earthdata pages carry only a site-wide 'Site last Updated: Sept. 10, 2026' footer and no per-page date, so page_updated is null for them.",
+    "https://oceancolor.gsfc.nasa.gov/about/projects/cyan/ redirects to https://www.earthdata.nasa.gov/data/projects/cyan, and https://oceancolor.gsfc.nasa.gov/projects/cyan/ redirects to the OB.DAAC centre page, so the project-page claims are cited to the earthdata.nasa.gov URL.",
+    "The shapefile links are quoted by their anchor text; the hrefs (/s3fs-public/2026-01/MERIS_OLCI_Lakes.zip and /s3fs-public/2026-01/CONUS_tiles_shapefile.zip) are in the locator because they live in the HTML attribute, not in the rendered text. Neither zip was downloaded.",
+    "The granule claims come from one granule returned by a sort_key=-start_date query; granule_size, filename and dates are a snapshot and will change as the archive grows.",
+    "No nasa.gov page was found that states the us-west-2 restriction in general terms. The collection's own UMM-C record does give Region: us-west-2, and a LAADS DAAC page states a region-only restriction for LAADS data; the general wording is quoted from the NASA Openscapes cookbook, which is community-maintained and not on a nasa.gov domain.",
+    "No data files were downloaded; nothing here was verified against an actual GeoTIFF. Claims about pixel encoding, projection and tile geometry are documentation claims only.",
+    "The release notes' Known Issues list skips item (6); this record carries items (1)-(5) and (7)-(9) as published."
+  ]
+}
