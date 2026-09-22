@@ -40,6 +40,7 @@ Provider pulls need credentials in `.env`. Copy `.env.example` and fill it in. G
 | [docs/decisions/](docs/decisions/README.md) | Why something was decided |
 | [docs/data-registry.md](docs/data-registry.md) | One row per dataset with its status |
 | [docs/probes/](docs/probes/README.md) | Dated records of live checks against providers |
+| [docs/measurements.md](docs/measurements.md) | What checked-in scripts measured, with the result file behind each number |
 | [docs/reviews/](docs/reviews/README.md) | Dated review records, newest first |
 | [docs/aws/](docs/aws/README.md) | What each dataset's AWS note will contain |
 | [datasets/README.md](datasets/README.md) | The eight-step loop each dataset follows, and the folder layout |

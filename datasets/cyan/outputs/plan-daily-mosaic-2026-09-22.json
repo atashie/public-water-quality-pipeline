@@ -1,0 +1,28 @@
+{
+  "urls": 56,
+  "merged": 56,
+  "per_satellite_excluded": 0,
+  "other_excluded": 0,
+  "after_stream_collapse": 56,
+  "preferred_stream": "CYAN",
+  "preferred_stream_count": 56,
+  "fallback_stream_count": 0,
+  "limit": 0,
+  "planned": 56,
+  "first": "L2026209.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+  "last": "L2026264.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+  "searched_at": "2026-09-22T15:27:50Z",
+  "region": "conus",
+  "period": "daily",
+  "tiles": "all",
+  "sdate": "2026-07-28",
+  "edate": "2026-09-22",
+  "route": "getfile",
+  "outdir": "/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic",
+  "streams": [
+    "CYAN"
+  ],
+  "years": [
+    "2026"
+  ]
+}

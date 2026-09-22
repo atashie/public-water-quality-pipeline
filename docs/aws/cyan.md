@@ -20,8 +20,19 @@ Prefer route B if its data are identical to route A's. A bucket that lags or lac
 3. Repeat the newest-date comparison on a second date to separate a one-day lag from a standing one.
 4. Record the outcome in a decision. Options: B alone, A alone, or A for the newest weeks with B for the archive.
 
+## Measured on 2026-09-22
+
+[Measurement 1](../measurements.md#1-the-cloud-copy-is-a-byte-identical-but-lagging-and-incomplete-mirror-2026-09-22) ran the comparison above from the owner's laptop.
+
+- Bytes are identical where both routes hold a file. Two of two samples matched by sha256.
+- Route B trails route A by 7 weeks and lacks 6 weekly files from the last 17 months. Route A itself lacks the week starting 2026-07-05.
+- Route B holds only the `CYAN` name stream. The 18 `CYANV6T` duplicates are absent, with no data lost.
+- Credentials are issued to any Earthdata user, but listing the bucket from outside us-west-2 is refused. The HTTPS endpoint of route B answers from anywhere with a token.
+
+Consequence under the owner's rule: route B alone cannot be the source. It is not identical to route A. The candidates for step 1g are route A alone, or route A for freshness and gaps with route B for in-region bulk reads. A second measurement on a later date tells whether the 6 absent files ever arrive.
+
 ## Open questions for the design
 
-- Whether the lag sits in the catalog index or in the bucket contents.
-- Whether the missing weekly files are absent from the bucket or only from the index.
+- Whether the 6 absent files and the 7-week lag sit in the bucket or only in the endpoint's index. A listing from inside us-west-2 answers it.
+- Whether the lag is constant. Repeat the comparison on a later date.
 - How a reprocessing appears on each route, and how a version watch detects it.

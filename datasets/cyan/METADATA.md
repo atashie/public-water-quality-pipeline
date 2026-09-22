@@ -48,7 +48,8 @@ Both the daily and the 7-day composite hold the maximum index over their period.
 
 Latency. No fetched page states when a new composite appears. `unverified`, see section 12.
 On 2026-09-22 the file search listed the weekly composite for 2026-09-13 to 2026-09-19. That was 3 days after its window end. It also listed the daily composite for 2026-09-21, 1 day old. probe, [record](../../docs/probes/2026-09-22-cyan-catalogs.md)
-The Earthdata Cloud catalog lagged the file search by 7 weeks on the same day. Whether the bucket lags or only its index does is unknown. probe, same record
+The cloud copy lagged the file search by 7 weeks on the same day and lacked 6 older weekly files. measured, [measurement 1](../../docs/measurements.md#1-the-cloud-copy-is-a-byte-identical-but-lagging-and-incomplete-mirror-2026-09-22)
+The archive itself lacks the week starting 2026-07-05. From 2016-04-24 to 2026-09-13 there are 543 weekly start dates and the file search lists 542. measured, [measurement 2](../../docs/measurements.md#2-the-archive-itself-lacks-one-weekly-file-2026-09-22)
 
 Reprocessing. The producer reprocesses and redistributes the whole MERIS and OLCI series every 10 to 16 months. EPA's page says annually. documented [cl-cyan-temporal-reprocessing-cadence], discrepancy D6
 Version history: 4.0 in 2022-03, 5.0 in 2023-05, 6 in 2025-02, with a known-issues update in 2025-08. All current data are processing version 6. documented [cl-cyan-temporal-version-history] [cl-cyan-temporal-current-version]
@@ -109,15 +110,15 @@ Consequences for use. Cloud and ice gaps are seasonal and latitudinal, so missin
 
 ## 6. Bulk or subset
 
-Measured sizes from the catalog on 2026-09-22: a daily whole-region file 4.53 MB, a daily tile 0.13 MB, weekly whole-region files 5.6 to 5.9 MB. The tile size is also a catalog claim. The catalog record gives the number without a unit. Megabytes is the catalog's documented convention. documented [cl-cyan-format-granule-size] The catalog held 3,742 daily and 529 weekly whole-region files through 2026-08-01. probe, [records](../../docs/probes/README.md)
+Measured sizes from the catalog on 2026-09-22: a daily whole-region file 4.53 MB, a daily tile 0.13 MB, weekly whole-region files 5.6 to 5.9 MB. Two weekly files downloaded on 2026-09-22 were 5,886,210 and 6,175,066 bytes, measurement 1. The tile size is also a catalog claim. The catalog record gives the number without a unit. Megabytes is the catalog's documented convention. documented [cl-cyan-format-granule-size] The catalog held 3,742 daily and 529 weekly whole-region files through 2026-08-01. probe, [records](../../docs/probes/README.md)
 The HAB_PoC repository pulled the full weekly whole-region record, MERIS and OLCI, as 752 files and 4.04 GB on 2026-07-01. `prior`
 
 Estimates from those numbers, `unverified` until step 1b measures them:
 
 | Scope | Files | Size |
 |---|---|---|
-| Weekly whole-region, OLCI 2016 onward, assumption A8 | about 540 | about 3.2 GB |
-| Daily whole-region, most recent 8 weeks, assumption A8 | 56 | about 0.25 GB |
+| Weekly whole-region, OLCI 2016 onward, assumption A8 | 542, measured by the dry run of 2026-09-22 | about 3.3 GB |
+| Daily whole-region, most recent 8 weeks, assumption A8 | 56, measured by the dry run of 2026-09-22 | about 0.25 GB |
 | Daily whole-region, OLCI 2016 onward | about 3,800 | about 17 GB, over the limit of assumption A16 |
 | Per-tile instead of whole-region | 54 tiles per date | many small files, no size saving |
 
@@ -156,7 +157,7 @@ The granules live in the bucket `s3://ob-cumulus-prod-public/`. Each granule car
 Temporary credentials come from `https://obdaac-tea.earthdatacloud.nasa.gov/s3credentials`. They allow same-region, read-only, direct S3 access and last 1 hour. documented [cl-cyan-access-s3credentials-endpoint] [cl-cyan-access-s3-same-region-readonly] [cl-cyan-access-s3-credentials-1hour]
 The collection's direct-distribution region is us-west-2. Two other NASA-related pages state the us-west-2 limit in general terms. documented [cl-cyan-access-region-us-west-2] [cl-cyan-access-us-west-2-limit] [cl-cyan-access-us-west-2-laads]
 An unauthenticated HEAD on the HTTPS link redirected to a host naming `ob-cumulus-prod-public.s3.us-west-2.amazonaws.com`, which places the bucket in us-west-2. probe [record](../../docs/probes/2026-09-22-cyan-format-and-start.md)
-On 2026-09-22 the cloud catalog lagged the file search by 7 weeks and was short 8 weekly files. probe. Step 1b lists the bucket with a token before the AWS note relies on it. See [docs/aws/cyan.md](../../docs/aws/cyan.md).
+On 2026-09-22 the cloud HTTPS endpoint served 529 of the 560 weekly whole-region files the file search listed. Its newest file ended 2026-08-01, 7 weeks behind. Beyond the lag, 6 weekly files from the last 17 months were absent, and the 18 `CYANV6T` duplicates were absent with their `CYAN` twins present. Two sampled files were byte-identical on both routes. Listing the bucket from outside us-west-2 was refused. measured, [measurement 1](../../docs/measurements.md#1-the-cloud-copy-is-a-byte-identical-but-lagging-and-incomplete-mirror-2026-09-22). See [docs/aws/cyan.md](../../docs/aws/cyan.md).
 
 ### 7.4 Ancillary files
 
@@ -194,7 +195,7 @@ The index is not a toxin measurement and not a cell count. Any link from index t
 ## 10. Reproducibility and version pinning
 
 - Read the processing version from each file's own metadata, never from the filename. No page documents the tag. The HAB_PoC repository read an `OBPG_version` tag of `6.0` from files whose names carry `CYAN` and `6T` from files whose names carry `CYANV6T`, `prior`. Step 1c verifies the tag on pulled files.
-- Two name streams can coexist for one date, `CYAN` and `CYANV6T`. The HAB_PoC repository chose `CYAN` because it spans the whole record, `prior`. Step 1b records the streams the search returns and the choice.
+- Two name streams can coexist for one date, `CYAN` and `CYANV6T`. The dry run of 2026-09-22 found 18 `CYANV6T` duplicates, all in 2022 and 2023, each with a `CYAN` twin. The pull keeps `CYAN`, which spans the whole record. measured, [measurement 3](../../docs/measurements.md#3-dry-run-plans-for-the-assumption-a8-scope-2026-09-22)
 - Every download goes through the cached, sha256-manifested helper in `datasets/_common/net.py`. A changed sha256 on re-fetch is a reprocessing event, recorded, never overwritten.
 - File names follow `sensoryyyydddyyyyddd.datalevel_temporalresolution_product_version_resolution_region`, with a tile column and row suffix for tiles. A daily file carries one date stamp. Alaska files replace `CONUS` with `AK`. documented [cl-cyan-naming-convention-release-notes] [cl-cyan-naming-example-decomposition] [cl-cyan-naming-project-page-pattern] [cl-cyan-naming-granule-real-example] [cl-cyan-naming-alaska-difference]
 - Access date for every check in this document: 2026-09-22.
@@ -219,7 +220,7 @@ The owner ruled on 2026-09-22 that O1 to O4 are unknowns to uncover when their s
 | D4 | Pixel size | Release notes body: 300 m. Appendix A: 289.894507 m | Appendix A describes the binned grid. Step 1c reads the mapped pixel size from a file |
 | D5 | DOI | Catalog: `L3M/CYAN/CI/6.0`. Release notes file metadata: `L3B/CYAN/CI/6T` | Two products, mapped and binned. Cite the catalog DOI for the distributed files |
 | D6 | Reprocessing cadence | Release notes: every 10 to 16 months. EPA page: annually | Both recorded. Step 1g plans a version watch either way |
-| D7 | Cloud catalog lag | The cloud catalog trails the file search by 7 weeks and 8 weekly files on 2026-09-22 | A Discovery input to the AWS route choice, [docs/aws/cyan.md](../../docs/aws/cyan.md). Step 1b lists the bucket with a token and compares |
+| D7 | Cloud copy completeness | Measured on 2026-09-22: identical bytes where present, 7 weeks behind, 6 weekly files absent beyond the lag, bucket listing refused from outside the region | A Discovery input to the AWS route choice, [docs/aws/cyan.md](../../docs/aws/cyan.md), [measurement 1](../../docs/measurements.md#1-the-cloud-copy-is-a-byte-identical-but-lagging-and-incomplete-mirror-2026-09-22). A listing from inside us-west-2 remains open |
 | O1 | Weekly update timing | Not on any fetched page. Not needed now | Step 1b measures latency on dated pulls |
 | O2 | EPSG code and tile pixel dimensions | Not on any page. Not needed now | Step 1c reads them from files |
 | O3 | COMID in the lake shapefile | Not on any page. Not needed now | Step 1e opens the shapefile |

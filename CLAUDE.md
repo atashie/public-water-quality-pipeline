@@ -7,7 +7,7 @@ and the EPA experimental cyanoHAB forecast. Sentinel-2, other sensors, and in si
 
 ## Current phase
 
-Step 0, initialization, committed 2026-09-22 with the owner's authorization. Step 1a, the CyAN characterization, is delivered and awaits owner review.
+Step 0, initialization, committed 2026-09-22 with the owner's authorization. Step 1a is committed. Step 1b part 1, the CyAN access code, dry runs, and route comparison, is delivered and awaits owner review. The pull awaits a separate authorization.
 No dataset has been pulled. Start with [docs/work-plan.md](docs/work-plan.md). The facts checked on 2026-09-22 are in
 [docs/probes/2026-09-22-dataset-facts.md](docs/probes/2026-09-22-dataset-facts.md). They await independent checks before any dataset METADATA calls them `documented`.
 
@@ -48,13 +48,19 @@ uv run pytest                             # documentation and helper tests, no n
 uv run ruff check . && uv run ruff format --check .
 ```
 
-Dataset commands are added here as each dataset's scripts exist. Every provider-contacting command is listed with the step that authorized it.
+Dataset commands. Each contacts a provider and runs only when the owner invokes it. See the run guide in [datasets/cyan/README.md](datasets/cyan/README.md).
+
+```sh
+uv run python datasets/cyan/access/pull_cyan.py --period weekly --tiles all --sdate 2016-01-01 --edate 2026-09-22 --dry-run   # step 1b, search only
+uv run python datasets/cyan/access/compare_routes.py --sdate 2016-01-01 --edate 2026-09-22 --sample 2                          # step 1b, needs the token
+uv run python datasets/cyan/access/pull_cyan.py --period weekly --tiles all --sdate 2016-01-01 --edate 2026-09-22             # step 1b part 2, after authorization
+```
 
 ## Layout
 
 | Path | What it is |
 |---|---|
-| `docs/` | Assumptions, decisions, reviews, probe records, work plan, data registry, AWS notes. Later the review dashboards and the engineering handoff page |
+| `docs/` | Assumptions, decisions, reviews, probe records, measurements, work plan, data registry, AWS notes. Later the review dashboards and the engineering handoff page |
 | `docs/archive/` | Ignored by git. Superseded documents kept locally until deleted. Nothing links to it |
 | `datasets/` | One folder per dataset, the shared helpers in `_common/`, and the copy-me `_template/`. See [datasets/README.md](datasets/README.md) |
 | `data/` | Ignored by git. `data/<dataset>/raw/` and `data/<dataset>/derived/`. Everything here regenerates from checked-in code |
@@ -80,7 +86,7 @@ Dataset commands are added here as each dataset's scripts exist. Every provider-
 Each gotcha points to its home. Numbers live there, not here.
 
 - CyAN files now sit in NASA Earthdata Cloud S3 as well as behind the OB.DAAC download endpoint. In-region reads change the AWS design. Probe record, CyAN section.
-- The two CyAN catalogs disagreed on the newest granule on 2026-09-22. Do not assume the S3 bucket holds the newest composite until checked. Probe record, CyAN section.
+- The CyAN cloud copy is byte-identical where present but 7 weeks behind and missing 6 weekly files. Bucket listing needs in-region compute. [Measurement 1](docs/measurements.md).
 - CyAN pixels are 8-bit codes. Zero means below detection, not missing. Land and no-data are explicit codes. There is no nodata flag. Prior CyAN METADATA in the HAB_PoC repository, to be rechecked in step 1.
 - The Copernicus product is delivered as one global file per dekad of several gigabytes. It never fits the local limit as delivered. Subsetting is step 3's discovery question. Probe record, CLMS section.
 - Copernicus version 2 adds chlorophyll-a, suspended matter, the cyanobacteria index, uncertainties, and flags from 2024-09. Version 1 turbidity uses a different method. Treat the versions as separate streams, assumption A11.

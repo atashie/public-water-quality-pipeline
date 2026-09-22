@@ -17,6 +17,7 @@ All queries against the NASA Common Metadata Repository, collection `C3416412382
 - Counts by name pattern: 529 weekly whole-region granules, 3,742 daily whole-region granules. `probe`
 - The OB.DAAC file search on the same day lists weekly composites through `L20262562026262`, 2026-09-13 to 2026-09-19, and daily composites through `L2026264`, 2026-09-21. `probe`
 - Conclusion: on 2026-09-22 the cloud catalog's newest item is 7 weeks older than the file search's. The catalog holds 529 weekly whole-region files through 2026-08-01, where a complete weekly series from 2016-04-24 would hold 537. Whether the S3 bucket itself lags or only the catalog index lags is unknown without credentials. Step 1b checks the bucket with a token. `unverified`
+- Correction, later on 2026-09-22: a complete series through 2026-07-26 holds 536 start dates, not 537. The archive lacks one of them. The cloud copy lacks 6 more. [Measurement 1](../measurements.md#1-the-cloud-copy-is-a-byte-identical-but-lagging-and-incomplete-mirror-2026-09-22) has the checked numbers.
 
 ## Neighboring collections in the same provider
 

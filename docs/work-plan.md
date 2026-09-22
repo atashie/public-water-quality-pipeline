@@ -5,7 +5,7 @@ A checked box means the work exists in this repository with evidence. Every step
 
 ## Next session
 
-Owner review of step 1a, then commit authorization, then step 1b. Step 1b needs an Earthdata Login token in `.env` before any download. The dry run needs none.
+Step 1b part 2, the pull, then step 1c, QA/QC of the pulled files. Both authorized on 2026-09-22. Step 1b needs an Earthdata Login token in `.env` before any download. The dry run needs none.
 
 ## How a dataset is judged
 
@@ -35,7 +35,8 @@ Every dataset step reports against the same criteria. The registry row summarize
 Each sub-step is one authorized unit.
 
 - [x] 1a. Characterize, delivered 2026-09-22, owner review pending. 100 claims from 17 primary sources, researched and independently checked. Release notes preserved. The catalog disagreement is a measured 7-week lag of the cloud catalog. [Record](reviews/2026-09-22-cyan-characterization.md), [METADATA](../datasets/cyan/METADATA.md).
-- [ ] 1b. Pull. Port `cyan_api.py` and `pull_cyan.py` with tests. Dry run. List the cloud bucket with a token and compare it to the file search, per [the AWS note](aws/cyan.md). Then, after a separate authorization, pull the weekly contiguous-United-States mosaic record from 2016 and the daily files for the last 8 weeks, assumption A8. Record latency and bytes.
+- [x] 1b, part 1, delivered and approved 2026-09-22. `cyan_api.py`, `pull_cyan.py`, and `compare_routes.py` ported or written with 16 offline tests. Dry runs: 542 weekly and 56 daily files. Route comparison measured, [measurements](measurements.md). [Record](reviews/2026-09-22-cyan-route-comparison-and-dry-run.md).
+- [ ] 1b, part 2, authorized 2026-09-22. Pull the 542 weekly and 56 daily whole-region files through the archive route, assumption A8. Record latency, bytes, and version tags.
 - [ ] 1c. QA/QC. Port `qa_cyan.py`. Integrity against the manifest, grid and projection consistency, version tags, code composition per file.
 - [ ] 1d. Review dashboard. One page: national map of a selected week at native resolution, composition over time, and per-file QA. Owner review recorded.
 - [ ] 1e. Derive. Pull the resolvable-lakes shapefile, verify its count, and build the per-lake weekly table with the recorded recipe. Authorization for the aggregation recorded in a decision.
