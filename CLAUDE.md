@@ -7,8 +7,8 @@ and the EPA experimental cyanoHAB forecast. Sentinel-2, other sensors, and in si
 
 ## Current phase
 
-Step 0, initialization, committed 2026-09-22 with the owner's authorization. Step 1a is committed. Step 1b part 1, the CyAN access code, dry runs, and route comparison, is delivered and awaits owner review. The pull awaits a separate authorization.
-No dataset has been pulled. Start with [docs/work-plan.md](docs/work-plan.md). The facts checked on 2026-09-22 are in
+Step 0, initialization, committed 2026-09-22 with the owner's authorization. Steps 1a to 1c are committed and approved. 598 files sit under `data/cyan/raw/`. Step 1d, the review dashboard, is in progress.
+Start with [docs/work-plan.md](docs/work-plan.md). The facts checked on 2026-09-22 are in
 [docs/probes/2026-09-22-dataset-facts.md](docs/probes/2026-09-22-dataset-facts.md). They await independent checks before any dataset METADATA calls them `documented`.
 
 ## Workflow
@@ -24,7 +24,7 @@ The owner, Codex, and Claude Code review every step. Complete one authorized ste
    Never commit, push, publish, or start the next step without the owner's explicit authorization.
 
 Research uses a research agent and a separate checking agent on a different model. Only confirmed or corrected claims enter a dataset's METADATA as `documented`.
-Codex is the preferred second model for adversarial reviews of work and plans, invoked directly when available or through a prompt the owner runs in Codex. When the owner asks, write that prompt as a file under `docs/reviews/` so the request and the answer stay together.
+Codex is the preferred second model for adversarial reviews of work and plans. Invoke it directly when available, or write a prompt for the owner to run in Codex. Keep such a prompt under `docs/reviews/` so the request and the answer stay together.
 Scripts that contact a provider run only when the owner invokes them. Codex reads [AGENTS.md](AGENTS.md), which points here.
 
 ## The loop for each dataset
@@ -54,6 +54,7 @@ Dataset commands. Each contacts a provider and runs only when the owner invokes 
 uv run python datasets/cyan/access/pull_cyan.py --period weekly --tiles all --sdate 2016-01-01 --edate 2026-09-22 --dry-run   # step 1b, search only
 uv run python datasets/cyan/access/compare_routes.py --sdate 2016-01-01 --edate 2026-09-22 --sample 2                          # step 1b, needs the token
 uv run python datasets/cyan/access/pull_cyan.py --period weekly --tiles all --sdate 2016-01-01 --edate 2026-09-22             # step 1b part 2, after authorization
+uv run python datasets/cyan/qaqc/qa_cyan.py --raw data/cyan/raw/weekly_conus_mosaic --plan datasets/cyan/outputs/plan-weekly-mosaic-2026-09-22.json  # step 1c, local only
 ```
 
 ## Layout

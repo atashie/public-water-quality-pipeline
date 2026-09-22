@@ -1,0 +1,5007 @@
+{
+ "raw_dir": "data/cyan/raw/daily_conus_mosaic",
+ "n_files": 56,
+ "n_files_with_flags": 0,
+ "flag_counts": {},
+ "fatal": false,
+ "inventory": {
+  "planned": 56,
+  "in_manifest": 56,
+  "on_disk": 56,
+  "readable": 56,
+  "planned_missing_on_disk": [],
+  "on_disk_not_planned": [],
+  "manifest_only": [],
+  "disk_only": [],
+  "unreadable": []
+ },
+ "collection": {
+  "n_files": 56,
+  "n_readable": 56,
+  "values": {
+   "crs": [
+    "EPSG:5070"
+   ],
+   "epsg": [
+    "5070"
+   ],
+   "shape": [
+    "26328x15138"
+   ],
+   "transform": [
+    "[300.0, 0.0, -3949197.04669, 0.0, -300.0, 3791526.267078]"
+   ],
+   "pixel_size_m": [
+    "[300.0, 300.0]"
+   ],
+   "dtype": [
+    "uint8"
+   ],
+   "band_count": [
+    "1"
+   ],
+   "nodata_flag": [
+    "None"
+   ],
+   "processing_version_tag": [
+    "OBPG_version=6.0"
+   ],
+   "stream": [
+    "CYAN"
+   ]
+  },
+  "version_tags": {
+   "OBPG_version=6.0": 56
+  },
+  "streams": {
+   "CYAN": 56
+  },
+  "compressions": [
+   "lzw"
+  ],
+  "tag_namespaces": [
+   "DERIVED_SUBDATASETS",
+   "IMAGE_STRUCTURE"
+  ],
+  "default_tag_keys": [
+   "AREA_OR_POINT",
+   "OBPG_version"
+  ],
+  "land_count_min_max": [
+   132508772,
+   132508901
+  ],
+  "grid_consistent": true,
+  "collection_consistent": true,
+  "collection_flags": [],
+  "notes": [
+   "land count varies from 132,508,772 to 132,508,901 pixels, a spread of 129. The spread is a lower bound on differing pixels"
+  ]
+ },
+ "completeness": {
+  "temporal": "DAY",
+  "bounds_from": "plan",
+  "first": "2026-07-28",
+  "last": "2026-09-21",
+  "expected": 56,
+  "present": 56,
+  "duplicates": 0,
+  "missing": [],
+  "unreadable_dates": []
+ },
+ "manifest": {
+  "records": 56,
+  "bytes_total": 271020420,
+  "fetched": 56,
+  "cached": 0,
+  "integrity": {
+   "unverified": 56
+  },
+  "routes": {
+   "getfile": 56
+  },
+  "version_tags": {
+   "6.0": 56
+  },
+  "accessed_first": "2026-09-22T16:28:50Z",
+  "accessed_last": "2026-09-22T16:29:15Z",
+  "age_at_retrieval_days": {
+   "key_in_manifest": "latency_days",
+   "min": 1,
+   "median": 28.5,
+   "max": 56,
+   "newest_file": 1,
+   "newest_file_window_end": "2026-09-21"
+  }
+ },
+ "per_file": [
+  {
+   "filename": "L2026209.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4908364,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-07-28",
+    "end_date": "2026-07-28"
+   },
+   "manifest_sha256": "233ea6b3e36bf5a6c61c60a3d3b95d6cd004e73b7ebc6a4b6ce1947eabef40ce",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026209.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026209.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 9197169,
+    "valid": 487342,
+    "land": 132508792,
+    "nodata": 256359961
+   },
+   "class_pct": {
+    "below_detection": 2.3076,
+    "valid": 0.1223,
+    "land": 33.2474,
+    "nodata": 64.3226
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 139.262,
+    "p50": 146,
+    "p90": 198,
+    "p99": 229
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026210.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4936890,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-07-29",
+    "end_date": "2026-07-29"
+   },
+   "manifest_sha256": "94d5106c8224103686a6a99eac1b31a21b3637c572e1203069487ce69a768f5a",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026210.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026210.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 11534914,
+    "valid": 495841,
+    "land": 132508780,
+    "nodata": 254013729
+   },
+   "class_pct": {
+    "below_detection": 2.8942,
+    "valid": 0.1244,
+    "land": 33.2474,
+    "nodata": 63.7339
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 138.586,
+    "p50": 146,
+    "p90": 195,
+    "p99": 224
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026211.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4811560,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-07-30",
+    "end_date": "2026-07-30"
+   },
+   "manifest_sha256": "47d7391cf585c2e46335f13122b362c1194c8841503006cf46432db98729da42",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026211.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026211.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 9994731,
+    "valid": 477797,
+    "land": 132508788,
+    "nodata": 255571948
+   },
+   "class_pct": {
+    "below_detection": 2.5078,
+    "valid": 0.1199,
+    "land": 33.2474,
+    "nodata": 64.1249
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 132.383,
+    "p50": 141,
+    "p90": 194,
+    "p99": 229
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026212.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4668430,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-07-31",
+    "end_date": "2026-07-31"
+   },
+   "manifest_sha256": "46c9714f27d796eb5cf6dbfb2b83475f5582efdc052aed30b9b378060daa3ea7",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026212.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026212.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 9113507,
+    "valid": 383591,
+    "land": 132508780,
+    "nodata": 256547386
+   },
+   "class_pct": {
+    "below_detection": 2.2866,
+    "valid": 0.0962,
+    "land": 33.2474,
+    "nodata": 64.3697
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 137.294,
+    "p50": 144,
+    "p90": 198,
+    "p99": 230
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026213.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4754018,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-01",
+    "end_date": "2026-08-01"
+   },
+   "manifest_sha256": "3074cf6b0b5cddc041cf912fd292276953f08bf518479f8ac78001de98c5df63",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026213.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026213.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 7326388,
+    "valid": 460913,
+    "land": 132508795,
+    "nodata": 258257168
+   },
+   "class_pct": {
+    "below_detection": 1.8382,
+    "valid": 0.1156,
+    "land": 33.2474,
+    "nodata": 64.7987
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 144.165,
+    "p50": 151,
+    "p90": 200,
+    "p99": 230
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026214.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4585462,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-02",
+    "end_date": "2026-08-02"
+   },
+   "manifest_sha256": "0516310142d391b7d5aaf76d7220595df7ece62e6b1bbe9b57545fad6c4b812d",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026214.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026214.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 7655603,
+    "valid": 340283,
+    "land": 132508778,
+    "nodata": 258048600
+   },
+   "class_pct": {
+    "below_detection": 1.9208,
+    "valid": 0.0854,
+    "land": 33.2474,
+    "nodata": 64.7463
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 139.848,
+    "p50": 147,
+    "p90": 194,
+    "p99": 225
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026215.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4606018,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-03",
+    "end_date": "2026-08-03"
+   },
+   "manifest_sha256": "5af8d5fbab52ce5e3eaf7b170a50d5ed565e98b516ea217d47da0c2bb423042b",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026215.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026215.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 8458553,
+    "valid": 366080,
+    "land": 132508788,
+    "nodata": 257219843
+   },
+   "class_pct": {
+    "below_detection": 2.1223,
+    "valid": 0.0919,
+    "land": 33.2474,
+    "nodata": 64.5384
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 129.923,
+    "p50": 136,
+    "p90": 191,
+    "p99": 226
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026216.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4745240,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-04",
+    "end_date": "2026-08-04"
+   },
+   "manifest_sha256": "0c540b30ca68ed25922cb53933452ba46cde5115bdcdd22b47df3179ac4b1cb4",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026216.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026216.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 8169961,
+    "valid": 441337,
+    "land": 132508789,
+    "nodata": 257433177
+   },
+   "class_pct": {
+    "below_detection": 2.0499,
+    "valid": 0.1107,
+    "land": 33.2474,
+    "nodata": 64.5919
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 134.973,
+    "p50": 144,
+    "p90": 194,
+    "p99": 228
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026217.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4838044,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-05",
+    "end_date": "2026-08-05"
+   },
+   "manifest_sha256": "c01972c007c8be7be17d25c1cd249ec2163a8dc4d58a39a8fa15201c4fbf3000",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026217.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026217.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 9363512,
+    "valid": 417057,
+    "land": 132508799,
+    "nodata": 256263896
+   },
+   "class_pct": {
+    "below_detection": 2.3494,
+    "valid": 0.1046,
+    "land": 33.2475,
+    "nodata": 64.2985
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 137.56,
+    "p50": 145,
+    "p90": 197,
+    "p99": 230
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026218.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4661246,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-06",
+    "end_date": "2026-08-06"
+   },
+   "manifest_sha256": "e46af6100f78a797d42a66760bb81ca63db846b183b771037279608d84c255d6",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026218.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026218.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 10366060,
+    "valid": 310986,
+    "land": 132508777,
+    "nodata": 255367441
+   },
+   "class_pct": {
+    "below_detection": 2.6009,
+    "valid": 0.078,
+    "land": 33.2474,
+    "nodata": 64.0736
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 134.434,
+    "p50": 145,
+    "p90": 198,
+    "p99": 228
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026219.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4801482,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-07",
+    "end_date": "2026-08-07"
+   },
+   "manifest_sha256": "7f4d6b096e9527c2ef1eacc936fc3bf752beeed42741488e26b4cd3c35117f9d",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026219.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026219.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 9896199,
+    "valid": 390929,
+    "land": 132508800,
+    "nodata": 255757336
+   },
+   "class_pct": {
+    "below_detection": 2.483,
+    "valid": 0.0981,
+    "land": 33.2475,
+    "nodata": 64.1714
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 138.878,
+    "p50": 147,
+    "p90": 198,
+    "p99": 229
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026220.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4760656,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-08",
+    "end_date": "2026-08-08"
+   },
+   "manifest_sha256": "eb9aa9939c4fb194ad4541ff36488b986b77c28dec168a440d1da38548a022bc",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026220.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026220.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 9859367,
+    "valid": 412548,
+    "land": 132508837,
+    "nodata": 255772512
+   },
+   "class_pct": {
+    "below_detection": 2.4738,
+    "valid": 0.1035,
+    "land": 33.2475,
+    "nodata": 64.1752
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 140.33,
+    "p50": 149,
+    "p90": 199,
+    "p99": 230
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026221.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4731256,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-09",
+    "end_date": "2026-08-09"
+   },
+   "manifest_sha256": "f475480a3839986437877438d959cd41957df86835803c25eaf835caaa04a33e",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026221.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026221.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 8609570,
+    "valid": 391300,
+    "land": 132508828,
+    "nodata": 257043566
+   },
+   "class_pct": {
+    "below_detection": 2.1602,
+    "valid": 0.0982,
+    "land": 33.2475,
+    "nodata": 64.4942
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 136.86,
+    "p50": 143,
+    "p90": 197,
+    "p99": 231
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026222.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4819534,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-10",
+    "end_date": "2026-08-10"
+   },
+   "manifest_sha256": "691f3b3bbad5ad7174af3acdca60fb3ef9bb6b75549e94c422a7f0b484c07590",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026222.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026222.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 10842783,
+    "valid": 431036,
+    "land": 132508901,
+    "nodata": 254770544
+   },
+   "class_pct": {
+    "below_detection": 2.7205,
+    "valid": 0.1082,
+    "land": 33.2475,
+    "nodata": 63.9238
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 135.995,
+    "p50": 142,
+    "p90": 199,
+    "p99": 233
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026223.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4666876,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-11",
+    "end_date": "2026-08-11"
+   },
+   "manifest_sha256": "bf2b97f1c29001943f04685f598e621a642b2537a8d087c13be3d31c9630b5d4",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026223.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026223.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 9562096,
+    "valid": 396897,
+    "land": 132508785,
+    "nodata": 256085486
+   },
+   "class_pct": {
+    "below_detection": 2.3992,
+    "valid": 0.0996,
+    "land": 33.2474,
+    "nodata": 64.2538
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 143.902,
+    "p50": 149,
+    "p90": 199,
+    "p99": 228
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026224.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4682312,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-12",
+    "end_date": "2026-08-12"
+   },
+   "manifest_sha256": "ff7a4c495754356260f49e6a2f8b6f469e8635bf27cbcb948b5fa1021fd7ffd1",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026224.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026224.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 9549964,
+    "valid": 366853,
+    "land": 132508809,
+    "nodata": 256127638
+   },
+   "class_pct": {
+    "below_detection": 2.3962,
+    "valid": 0.092,
+    "land": 33.2475,
+    "nodata": 64.2643
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 141.953,
+    "p50": 148,
+    "p90": 204,
+    "p99": 233
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026225.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4824192,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-13",
+    "end_date": "2026-08-13"
+   },
+   "manifest_sha256": "6f905476f1df1a2472a360d67357cfd16f0df17b1395ce22b2e76dec0a57b040",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026225.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026225.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 9749349,
+    "valid": 451989,
+    "land": 132508788,
+    "nodata": 255843138
+   },
+   "class_pct": {
+    "below_detection": 2.4462,
+    "valid": 0.1134,
+    "land": 33.2474,
+    "nodata": 64.193
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 140.845,
+    "p50": 148,
+    "p90": 202,
+    "p99": 232
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026226.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4724716,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-14",
+    "end_date": "2026-08-14"
+   },
+   "manifest_sha256": "7b42027070a4deb2226c4558fbfee63f6e20024694424be39c65d7aff97a0f6c",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026226.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026226.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 10732125,
+    "valid": 373296,
+    "land": 132508818,
+    "nodata": 254939025
+   },
+   "class_pct": {
+    "below_detection": 2.6928,
+    "valid": 0.0937,
+    "land": 33.2475,
+    "nodata": 63.9661
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 138.75,
+    "p50": 146,
+    "p90": 194,
+    "p99": 231
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026227.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4609032,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-15",
+    "end_date": "2026-08-15"
+   },
+   "manifest_sha256": "ca1e9f6e29a3b7a75d3120b711350282fd93fa99a84f78a527470e844cbc8925",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026227.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026227.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 9702747,
+    "valid": 354065,
+    "land": 132508853,
+    "nodata": 255987599
+   },
+   "class_pct": {
+    "below_detection": 2.4345,
+    "valid": 0.0888,
+    "land": 33.2475,
+    "nodata": 64.2292
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 146.856,
+    "p50": 152,
+    "p90": 207,
+    "p99": 237
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026228.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4852060,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-16",
+    "end_date": "2026-08-16"
+   },
+   "manifest_sha256": "f68044e5f5555cecfa2dd7340a6c46a589b2e8bd92053d8c9343fc27cf65b99b",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026228.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026228.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 8533990,
+    "valid": 475188,
+    "land": 132508794,
+    "nodata": 257035292
+   },
+   "class_pct": {
+    "below_detection": 2.1412,
+    "valid": 0.1192,
+    "land": 33.2474,
+    "nodata": 64.4921
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 140.397,
+    "p50": 147,
+    "p90": 197,
+    "p99": 230
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026229.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4876006,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-17",
+    "end_date": "2026-08-17"
+   },
+   "manifest_sha256": "3afec3fcacb76b23c88d011660c80e89068c70df8278806193eb357be8ddcfd9",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026229.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026229.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 9499295,
+    "valid": 513309,
+    "land": 132508783,
+    "nodata": 256031877
+   },
+   "class_pct": {
+    "below_detection": 2.3834,
+    "valid": 0.1288,
+    "land": 33.2474,
+    "nodata": 64.2403
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 139.203,
+    "p50": 148,
+    "p90": 197,
+    "p99": 228
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026230.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4872702,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-18",
+    "end_date": "2026-08-18"
+   },
+   "manifest_sha256": "1ccbe18f93988165c1cda8f4f8d24769faaee3a7d0ea3a5fe5e45289c0801d4f",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026230.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026230.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 9816207,
+    "valid": 514069,
+    "land": 132508780,
+    "nodata": 255714208
+   },
+   "class_pct": {
+    "below_detection": 2.463,
+    "valid": 0.129,
+    "land": 33.2474,
+    "nodata": 64.1606
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 142.222,
+    "p50": 150,
+    "p90": 199,
+    "p99": 228
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026231.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4839236,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-19",
+    "end_date": "2026-08-19"
+   },
+   "manifest_sha256": "3a6207029f8430f5dee9d74de5e5c5bf0ab5d4db8c9f7e7081f7093584547de0",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026231.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026231.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 10415019,
+    "valid": 480691,
+    "land": 132508811,
+    "nodata": 255148743
+   },
+   "class_pct": {
+    "below_detection": 2.6132,
+    "valid": 0.1206,
+    "land": 33.2475,
+    "nodata": 64.0187
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 140.93,
+    "p50": 149,
+    "p90": 200,
+    "p99": 230
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026232.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 5072722,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-20",
+    "end_date": "2026-08-20"
+   },
+   "manifest_sha256": "ceecc11080daff9c3c62498ed746f8a91c261a90dcb27aea03ffb78bdce3b7dc",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026232.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026232.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 9664606,
+    "valid": 550359,
+    "land": 132508791,
+    "nodata": 255829508
+   },
+   "class_pct": {
+    "below_detection": 2.4249,
+    "valid": 0.1381,
+    "land": 33.2474,
+    "nodata": 64.1895
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 141.958,
+    "p50": 150,
+    "p90": 199,
+    "p99": 230
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026233.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 5116860,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-21",
+    "end_date": "2026-08-21"
+   },
+   "manifest_sha256": "176b2c4e7a288174729b1331f220cf4e234237b7ecb0b94cd75ac6317a804f2f",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026233.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026233.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 9621943,
+    "valid": 572453,
+    "land": 132508775,
+    "nodata": 255850093
+   },
+   "class_pct": {
+    "below_detection": 2.4142,
+    "valid": 0.1436,
+    "land": 33.2474,
+    "nodata": 64.1947
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 138.062,
+    "p50": 146,
+    "p90": 196,
+    "p99": 226
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026234.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 5056204,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-22",
+    "end_date": "2026-08-22"
+   },
+   "manifest_sha256": "af8054935ad4fde0ef608efea1bf5cae898d32b7a82cbe841dac304ae5044600",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026234.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026234.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 9154728,
+    "valid": 550968,
+    "land": 132508778,
+    "nodata": 256338790
+   },
+   "class_pct": {
+    "below_detection": 2.297,
+    "valid": 0.1382,
+    "land": 33.2474,
+    "nodata": 64.3173
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 136.671,
+    "p50": 144,
+    "p90": 197,
+    "p99": 226
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026235.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4422996,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-23",
+    "end_date": "2026-08-23"
+   },
+   "manifest_sha256": "cd90dfa313c748fb38c290e808ac1adde5dca77c16a4d494719294886e592f38",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026235.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026235.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 5683360,
+    "valid": 394097,
+    "land": 132508772,
+    "nodata": 259967035
+   },
+   "class_pct": {
+    "below_detection": 1.426,
+    "valid": 0.0989,
+    "land": 33.2474,
+    "nodata": 65.2277
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 135.254,
+    "p50": 141,
+    "p90": 194,
+    "p99": 227
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026236.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4518732,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-24",
+    "end_date": "2026-08-24"
+   },
+   "manifest_sha256": "dd2f37074010a009dd5e6a9a44f5a4fe705f9ebc12db8c0563d4877e393f68e3",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026236.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026236.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 8745514,
+    "valid": 357477,
+    "land": 132508785,
+    "nodata": 256941488
+   },
+   "class_pct": {
+    "below_detection": 2.1943,
+    "valid": 0.0897,
+    "land": 33.2474,
+    "nodata": 64.4685
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 142.677,
+    "p50": 152,
+    "p90": 197,
+    "p99": 227
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026237.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 5086134,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-25",
+    "end_date": "2026-08-25"
+   },
+   "manifest_sha256": "329cfbae611a1a63f4c79ed53aa7c5f6762bb1c0e653d9439b3f3fc8a8aac243",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026237.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026237.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 9810660,
+    "valid": 558835,
+    "land": 132508799,
+    "nodata": 255674970
+   },
+   "class_pct": {
+    "below_detection": 2.4616,
+    "valid": 0.1402,
+    "land": 33.2475,
+    "nodata": 64.1508
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 142.556,
+    "p50": 150,
+    "p90": 201,
+    "p99": 232
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026238.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 5231522,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-26",
+    "end_date": "2026-08-26"
+   },
+   "manifest_sha256": "53a343e0099afedcc15d53e67802362d0e2fc075250a5b3be02b123db2dc1000",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026238.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026238.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 9783165,
+    "valid": 618890,
+    "land": 132508893,
+    "nodata": 255642316
+   },
+   "class_pct": {
+    "below_detection": 2.4547,
+    "valid": 0.1553,
+    "land": 33.2475,
+    "nodata": 64.1426
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 137.877,
+    "p50": 145,
+    "p90": 200,
+    "p99": 234
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026239.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 5230534,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-27",
+    "end_date": "2026-08-27"
+   },
+   "manifest_sha256": "e279570b1d2da0940d5eb692c4a745ccd3e621217a7e9f150c4f70945cb4b9af",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026239.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026239.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 8902961,
+    "valid": 687407,
+    "land": 132508827,
+    "nodata": 256454069
+   },
+   "class_pct": {
+    "below_detection": 2.2338,
+    "valid": 0.1725,
+    "land": 33.2475,
+    "nodata": 64.3462
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 142.407,
+    "p50": 149,
+    "p90": 201,
+    "p99": 230
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026240.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4978860,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-28",
+    "end_date": "2026-08-28"
+   },
+   "manifest_sha256": "5cee36dd7041ad0b232180bb97f443df4562650cfe7e99bd6b8632ab8a5e9910",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026240.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026240.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 8987026,
+    "valid": 555232,
+    "land": 132508792,
+    "nodata": 256502214
+   },
+   "class_pct": {
+    "below_detection": 2.2549,
+    "valid": 0.1393,
+    "land": 33.2474,
+    "nodata": 64.3583
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 134.363,
+    "p50": 143,
+    "p90": 189,
+    "p99": 224
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026241.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 5031300,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-29",
+    "end_date": "2026-08-29"
+   },
+   "manifest_sha256": "95ef51b93b9bd66d62749426110f0118e249791693e5ea9b5fa2dfd6de86f26d",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026241.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026241.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 8132323,
+    "valid": 600171,
+    "land": 132508780,
+    "nodata": 257311990
+   },
+   "class_pct": {
+    "below_detection": 2.0405,
+    "valid": 0.1506,
+    "land": 33.2474,
+    "nodata": 64.5615
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 134.763,
+    "p50": 141,
+    "p90": 192,
+    "p99": 226
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026242.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4922846,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-30",
+    "end_date": "2026-08-30"
+   },
+   "manifest_sha256": "37b74231956484864604aec92b4f0886e69fd1f01875fecedd3bb70019d8a69a",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026242.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026242.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 8141010,
+    "valid": 520981,
+    "land": 132508784,
+    "nodata": 257382489
+   },
+   "class_pct": {
+    "below_detection": 2.0426,
+    "valid": 0.1307,
+    "land": 33.2474,
+    "nodata": 64.5792
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 138.59,
+    "p50": 146,
+    "p90": 196,
+    "p99": 229
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026243.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4894592,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-08-31",
+    "end_date": "2026-08-31"
+   },
+   "manifest_sha256": "5ae58faa46d8ca81d0a60d4da6a7374795112e7629e9e5f6385f4c45ad92b94c",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026243.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026243.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 8366103,
+    "valid": 529172,
+    "land": 132508804,
+    "nodata": 257149185
+   },
+   "class_pct": {
+    "below_detection": 2.0991,
+    "valid": 0.1328,
+    "land": 33.2475,
+    "nodata": 64.5207
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 126.283,
+    "p50": 130,
+    "p90": 192,
+    "p99": 228
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026244.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4983960,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-09-01",
+    "end_date": "2026-09-01"
+   },
+   "manifest_sha256": "e45b6fdcd6f855bb5e8c35b903d7d3fd52c68e0ae0c4d0c5a07a198237eb4ddf",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026244.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026244.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 8603919,
+    "valid": 514269,
+    "land": 132508829,
+    "nodata": 256926247
+   },
+   "class_pct": {
+    "below_detection": 2.1588,
+    "valid": 0.129,
+    "land": 33.2475,
+    "nodata": 64.4647
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 134.586,
+    "p50": 140,
+    "p90": 195,
+    "p99": 230
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026245.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 5071402,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-09-02",
+    "end_date": "2026-09-02"
+   },
+   "manifest_sha256": "67a8309dd206436863d3dc8101f38e75cce0426733e13f132bad11666b5cd6b8",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026245.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026245.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 9590203,
+    "valid": 562737,
+    "land": 132508775,
+    "nodata": 255891549
+   },
+   "class_pct": {
+    "below_detection": 2.4063,
+    "valid": 0.1412,
+    "land": 33.2474,
+    "nodata": 64.2051
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 136.495,
+    "p50": 142,
+    "p90": 199,
+    "p99": 230
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026246.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4910360,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-09-03",
+    "end_date": "2026-09-03"
+   },
+   "manifest_sha256": "9d98fed3b932fcf39ada5a39c4223a5c31324839037a586ac0a8be6661843a4b",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026246.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026246.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 9003817,
+    "valid": 455007,
+    "land": 132508788,
+    "nodata": 256585652
+   },
+   "class_pct": {
+    "below_detection": 2.2591,
+    "valid": 0.1142,
+    "land": 33.2474,
+    "nodata": 64.3793
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 123.943,
+    "p50": 128,
+    "p90": 186,
+    "p99": 228
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026247.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 5176950,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-09-04",
+    "end_date": "2026-09-04"
+   },
+   "manifest_sha256": "666fadb8494aac54be552faa09036a3bcc5e375f330a54937039404b5b65c09f",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026247.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026247.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 8372393,
+    "valid": 660984,
+    "land": 132508780,
+    "nodata": 257011107
+   },
+   "class_pct": {
+    "below_detection": 2.1007,
+    "valid": 0.1658,
+    "land": 33.2474,
+    "nodata": 64.486
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 137.28,
+    "p50": 142,
+    "p90": 200,
+    "p99": 230
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026248.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4933294,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-09-05",
+    "end_date": "2026-09-05"
+   },
+   "manifest_sha256": "33b6646fc7a1e591fe6546ca0dfdf5290a2dc30953a32c824e7c3df5101cc9cc",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026248.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026248.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 9404750,
+    "valid": 518272,
+    "land": 132508784,
+    "nodata": 256121458
+   },
+   "class_pct": {
+    "below_detection": 2.3597,
+    "valid": 0.13,
+    "land": 33.2474,
+    "nodata": 64.2628
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 126.223,
+    "p50": 132,
+    "p90": 192,
+    "p99": 228
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026249.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4889428,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-09-06",
+    "end_date": "2026-09-06"
+   },
+   "manifest_sha256": "a502c29d3368de3cf72408a9c1586131722ed1f69c944b4c1fb91990f4ffa7c6",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026249.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026249.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 10798878,
+    "valid": 469390,
+    "land": 132508781,
+    "nodata": 254776215
+   },
+   "class_pct": {
+    "below_detection": 2.7095,
+    "valid": 0.1178,
+    "land": 33.2474,
+    "nodata": 63.9253
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 121.111,
+    "p50": 127,
+    "p90": 183,
+    "p99": 226
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026250.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4594650,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-09-07",
+    "end_date": "2026-09-07"
+   },
+   "manifest_sha256": "c23aebc97f604e1578d483049d8a5778526455976f4a757efd32e6fa1b2d6358",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026250.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026250.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 8909704,
+    "valid": 347948,
+    "land": 132508785,
+    "nodata": 256786827
+   },
+   "class_pct": {
+    "below_detection": 2.2355,
+    "valid": 0.0873,
+    "land": 33.2474,
+    "nodata": 64.4297
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 125.281,
+    "p50": 133,
+    "p90": 186,
+    "p99": 225
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026251.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4658992,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-09-08",
+    "end_date": "2026-09-08"
+   },
+   "manifest_sha256": "f81a4d3850f6713d1a3cbfb1f47067ca3dc97473eda637acb49e362ac9cd17c0",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026251.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026251.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 8198270,
+    "valid": 402276,
+    "land": 132508780,
+    "nodata": 257443938
+   },
+   "class_pct": {
+    "below_detection": 2.057,
+    "valid": 0.1009,
+    "land": 33.2474,
+    "nodata": 64.5946
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 140.317,
+    "p50": 150,
+    "p90": 197,
+    "p99": 228
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026252.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4801528,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-09-09",
+    "end_date": "2026-09-09"
+   },
+   "manifest_sha256": "8b0241bb8f41f65da9c2e5bc2c08b0b09187eb99b6669d359f573459fbb02cd7",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026252.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026252.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 8167652,
+    "valid": 470396,
+    "land": 132508802,
+    "nodata": 257406414
+   },
+   "class_pct": {
+    "below_detection": 2.0493,
+    "valid": 0.118,
+    "land": 33.2475,
+    "nodata": 64.5852
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 137.938,
+    "p50": 147,
+    "p90": 195,
+    "p99": 227
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026253.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4652304,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-09-10",
+    "end_date": "2026-09-10"
+   },
+   "manifest_sha256": "bfa7e735ab7e07f26d3fd7e104a6eb533cd7f32b74a8d8442b5fc55ed9b08ee0",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026253.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026253.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 8664838,
+    "valid": 438940,
+    "land": 132508793,
+    "nodata": 256940693
+   },
+   "class_pct": {
+    "below_detection": 2.1741,
+    "valid": 0.1101,
+    "land": 33.2474,
+    "nodata": 64.4683
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 142.259,
+    "p50": 153,
+    "p90": 194,
+    "p99": 227
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026254.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4630356,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-09-11",
+    "end_date": "2026-09-11"
+   },
+   "manifest_sha256": "f854a3b4b53d324ee2f5456ecc4a806ac041dcd9e8c9c5686911812be0595109",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026254.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026254.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 9320269,
+    "valid": 362398,
+    "land": 132508778,
+    "nodata": 256361819
+   },
+   "class_pct": {
+    "below_detection": 2.3385,
+    "valid": 0.0909,
+    "land": 33.2474,
+    "nodata": 64.3231
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 133.86,
+    "p50": 142,
+    "p90": 190,
+    "p99": 226
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026255.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4716284,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-09-12",
+    "end_date": "2026-09-12"
+   },
+   "manifest_sha256": "5af057e210921f472cbe4c9a7f667baa72dd78c137ca3c6de4e7cf0201d398d3",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026255.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026255.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 9024208,
+    "valid": 374120,
+    "land": 132508788,
+    "nodata": 256646148
+   },
+   "class_pct": {
+    "below_detection": 2.2642,
+    "valid": 0.0939,
+    "land": 33.2474,
+    "nodata": 64.3944
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 132.835,
+    "p50": 139,
+    "p90": 196,
+    "p99": 228
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026256.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4932388,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-09-13",
+    "end_date": "2026-09-13"
+   },
+   "manifest_sha256": "7ecfae7e87d7098bc0e566542621c63159e56018fc1a2bbd607e9f49553d9b56",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026256.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026256.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 9270383,
+    "valid": 510876,
+    "land": 132508776,
+    "nodata": 256263229
+   },
+   "class_pct": {
+    "below_detection": 2.326,
+    "valid": 0.1282,
+    "land": 33.2474,
+    "nodata": 64.2984
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 139.652,
+    "p50": 147,
+    "p90": 195,
+    "p99": 227
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026257.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4510792,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-09-14",
+    "end_date": "2026-09-14"
+   },
+   "manifest_sha256": "4d703723640b999b4acbdf6acde2499afa3858a5d004ccb2db6b08861c2f3a89",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026257.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026257.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 10623795,
+    "valid": 321111,
+    "land": 132508784,
+    "nodata": 255099574
+   },
+   "class_pct": {
+    "below_detection": 2.6656,
+    "valid": 0.0806,
+    "land": 33.2474,
+    "nodata": 64.0064
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 127.808,
+    "p50": 136,
+    "p90": 186,
+    "p99": 223
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026258.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4711994,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-09-15",
+    "end_date": "2026-09-15"
+   },
+   "manifest_sha256": "3b5b8eb38a0bd93f23f98402fa8778b37945a9e694271f4c7ed75350af52a76a",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026258.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026258.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 9275030,
+    "valid": 379982,
+    "land": 132508794,
+    "nodata": 256389458
+   },
+   "class_pct": {
+    "below_detection": 2.3272,
+    "valid": 0.0953,
+    "land": 33.2474,
+    "nodata": 64.33
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 132.789,
+    "p50": 139,
+    "p90": 197,
+    "p99": 228
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026259.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4910740,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-09-16",
+    "end_date": "2026-09-16"
+   },
+   "manifest_sha256": "c223c9e4fbbe230a3bd059d8a1f0336cb7beae5fe1f87a22ad225663d28fca8a",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026259.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026259.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 9502207,
+    "valid": 491304,
+    "land": 132508795,
+    "nodata": 256050958
+   },
+   "class_pct": {
+    "below_detection": 2.3842,
+    "valid": 0.1233,
+    "land": 33.2474,
+    "nodata": 64.2451
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 135.3,
+    "p50": 144,
+    "p90": 193,
+    "p99": 228
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026260.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 5122670,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-09-17",
+    "end_date": "2026-09-17"
+   },
+   "manifest_sha256": "055c02448cf8abbdfbc16cd7039e1fdb1a906ae22ad92021b26b9dc139b7b51a",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026260.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026260.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 8794471,
+    "valid": 607289,
+    "land": 132508786,
+    "nodata": 256642718
+   },
+   "class_pct": {
+    "below_detection": 2.2066,
+    "valid": 0.1524,
+    "land": 33.2474,
+    "nodata": 64.3936
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 135.272,
+    "p50": 144,
+    "p90": 191,
+    "p99": 226
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026261.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4874848,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-09-18",
+    "end_date": "2026-09-18"
+   },
+   "manifest_sha256": "cfe6dce0aa806cbae01d660d70a4201daf6537f72f53ad30a9dbe7ee247fff59",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026261.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026261.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 9559904,
+    "valid": 482327,
+    "land": 132508795,
+    "nodata": 256002238
+   },
+   "class_pct": {
+    "below_detection": 2.3987,
+    "valid": 0.121,
+    "land": 33.2474,
+    "nodata": 64.2329
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 132.774,
+    "p50": 141,
+    "p90": 194,
+    "p99": 230
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026262.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4942300,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-09-19",
+    "end_date": "2026-09-19"
+   },
+   "manifest_sha256": "af18a836f64851f0308499e0f1b17d8e73d35cc61e88fb7898df9df5ebfe2743",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026262.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026262.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 7675216,
+    "valid": 504356,
+    "land": 132508784,
+    "nodata": 257864908
+   },
+   "class_pct": {
+    "below_detection": 1.9258,
+    "valid": 0.1265,
+    "land": 33.2474,
+    "nodata": 64.7002
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 128.55,
+    "p50": 137,
+    "p90": 189,
+    "p99": 226
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026263.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4880810,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-09-20",
+    "end_date": "2026-09-20"
+   },
+   "manifest_sha256": "6a6e5281d3f756ec85b3dbf2660f2218819e003ffd56a2118b058e2f5ca181f5",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026263.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026263.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 7354508,
+    "valid": 504223,
+    "land": 132508851,
+    "nodata": 258185682
+   },
+   "class_pct": {
+    "below_detection": 1.8453,
+    "valid": 0.1265,
+    "land": 33.2475,
+    "nodata": 64.7807
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 132.025,
+    "p50": 140,
+    "p90": 193,
+    "p99": 231
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  },
+  {
+   "filename": "L2026264.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+   "bytes": 4975736,
+   "parsed": {
+    "stream": "CYAN",
+    "temporal": "DAY",
+    "tile": "CONUS_mosaic",
+    "region": "CONUS",
+    "start_date": "2026-09-21",
+    "end_date": "2026-09-21"
+   },
+   "manifest_sha256": "b3d5d2840456532ed0bb9eea8ce21087faee7a5405a01295a821c9b325b5e3dc",
+   "sha256_ok": true,
+   "band_count": 1,
+   "dtype": "uint8",
+   "width": 26328,
+   "height": 15138,
+   "shape": "26328x15138",
+   "crs": "EPSG:5070",
+   "epsg": 5070,
+   "transform": [
+    300.0,
+    0.0,
+    -3949197.04669,
+    0.0,
+    -300.0,
+    3791526.267078
+   ],
+   "pixel_size_m": [
+    300.0,
+    300.0
+   ],
+   "bounds": [
+    -3949197.047,
+    -749873.733,
+    3949202.953,
+    3791526.267
+   ],
+   "nodata_flag": null,
+   "compression": "lzw",
+   "block_shape": [
+    1,
+    26328
+   ],
+   "tag_namespaces": [
+    "DERIVED_SUBDATASETS",
+    "IMAGE_STRUCTURE"
+   ],
+   "tags": {
+    "DERIVED_SUBDATASETS": {
+     "DERIVED_SUBDATASET_1_NAME": "DERIVED_SUBDATASET:LOGAMPLITUDE:/Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026264.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+     "DERIVED_SUBDATASET_1_DESC": "log10 of amplitude of input bands from /Users/arik/github/public-water-quality-pipeline/data/cyan/raw/daily_conus_mosaic/L2026264.L3m_DAY_CYAN_CI_cyano_CYAN_CONUS_300m.tif"
+    },
+    "IMAGE_STRUCTURE": {
+     "COMPRESSION": "LZW",
+     "INTERLEAVE": "BAND"
+    },
+    "default": {
+     "OBPG_version": "6.0",
+     "AREA_OR_POINT": "Area"
+    }
+   },
+   "processing_version_tag": "OBPG_version=6.0",
+   "total_pixels": 398553264,
+   "class_counts": {
+    "below_detection": 8035897,
+    "valid": 526012,
+    "land": 132508798,
+    "nodata": 257482557
+   },
+   "class_pct": {
+    "below_detection": 2.0163,
+    "valid": 0.132,
+    "land": 33.2475,
+    "nodata": 64.6043
+   },
+   "dn_valid": {
+    "min": 1,
+    "max": 253,
+    "mean": 129.577,
+    "p50": 139,
+    "p90": 186,
+    "p99": 225
+   },
+   "ci_max": 0.05977992970248461,
+   "flags": []
+  }
+ ],
+ "measured_at": "2026-09-22T18:50:06Z",
+ "finished_at": "2026-09-22T19:59:24Z",
+ "code": {
+  "base_revision": "5663c35",
+  "working_tree_dirty": true,
+  "sources": {
+   "datasets/cyan/qaqc/qa_cyan.py": "464d77a342c4f4c500cbc515d1172e99dc425554573b0ee2fb2ae472df2468d8",
+   "datasets/cyan/access/cyan_api.py": "0aac3e3527c565c8f52af780ece1a4dd267eb7f22448242c7cf1501c9a45f625",
+   "datasets/_common/net.py": "5c01ed9588f8c6d9b16a2b4a00f616bde83570269f77606cc8e2c6bbcc1223e6"
+  },
+  "inputs": {
+   "data/cyan/raw/daily_conus_mosaic/manifest.jsonl": "841cc5cec11b759ac6288f20bc9c4ebce20b19f38d446f5ada9b19392043d2da",
+   "datasets/cyan/outputs/plan-daily-mosaic-2026-09-22.json": "13666f422daa686cf4b74fa82b6b191f944f5665cf3b50f8f9abac4a47081b89"
+  }
+ },
+ "plan": "datasets/cyan/outputs/plan-daily-mosaic-2026-09-22.json"
+}

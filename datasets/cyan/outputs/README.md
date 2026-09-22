@@ -4,6 +4,7 @@ Evidence written by scripts under `../access/` and, later, `../qaqc/`. Never edi
 
 | File | Written by | What it holds |
 |---|---|---|
-| `plan-weekly-mosaic-2026-09-22.json` | `pull_cyan.py --dry-run` | The weekly whole-region plan: counts, streams, first and last file, search time |
-| `plan-daily-mosaic-2026-09-22.json` | `pull_cyan.py --dry-run` | The daily whole-region plan for the last 8 weeks |
+| `plan-weekly-mosaic-2026-09-22.json` | `pull_cyan.py --dry-run` | The approved weekly whole-region selection: every filename, counts, streams, search time, code provenance |
+| `plan-daily-mosaic-2026-09-22.json` | `pull_cyan.py --dry-run` | The approved daily whole-region selection for the last 8 weeks |
+| `qa-<dir>-<stamp>.json`, `qa-report-<stamp>.md` | `qa_cyan.py` | One result per raw directory per run, stamped with the run's UTC time, plus the report. Earlier runs are never overwritten |
 | `route-comparison-2026-09-22.json` | `compare_routes.py` | Presence of every listed weekly file on the cloud endpoint, the catalog count, the credentials and listing test, and two byte comparisons |

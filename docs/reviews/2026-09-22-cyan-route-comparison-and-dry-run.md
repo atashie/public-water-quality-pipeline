@@ -18,9 +18,9 @@ The owner authorized step 1b on 2026-09-22 and supplied the Earthdata token for 
 
 ## Findings
 
-1. **Route B is a byte-identical but incomplete mirror.** 529 of 560 listed weekly files are served, all in the `CYAN` stream. The two samples matched the archive by sha256. The newest served file ends 2026-08-01, 7 weeks behind. Six weekly files from the last 17 months are absent beyond the lag. Under the owner's rule, route B alone cannot be the source. [Measurement 1](../measurements.md#1-the-cloud-copy-is-a-byte-identical-but-lagging-and-incomplete-mirror-2026-09-22).
+1. **Route B is a byte-identical but incomplete mirror.** 529 of 560 listed weekly files are served, all in the `CYAN` stream. The two samples matched the archive by sha256. The newest served file ends 2026-08-01, 7 weeks behind. Six weekly files from the last 17 months are absent beyond the lag. Under the owner's rule, route B alone cannot be the source. [Measurement 1](../measurements.md#1-the-cloud-https-endpoint-served-529-of-560-listed-weekly-files-7-weeks-behind-two-samples-byte-identical-2026-09-22).
 2. **Credentials are issued but listing is refused off region.** The HTTPS endpoint answers from anywhere with a token. A bucket listing needs compute inside us-west-2. That is a design constraint for step 1g.
-3. **The archive lacks one week too.** The week starting 2026-07-05 is absent from the file search. Every other week from 2016-04-24 to 2026-09-13 is present. [Measurement 2](../measurements.md#2-the-archive-itself-lacks-one-weekly-file-2026-09-22).
+3. **The archive lacks one week too.** The week starting 2026-07-05 is absent from the file search. Every other week from 2016-04-24 to 2026-09-13 is present. [Measurement 2](../measurements.md#2-the-archive-listing-lacks-one-weekly-file-2026-09-22).
 4. **The pull plan is 542 weekly and 56 daily files, about 3.5 GB.** All in the `CYAN` stream. The 18 `CYANV6T` duplicates collapse onto their `CYAN` twins. [Measurement 3](../measurements.md#3-dry-run-plans-for-the-assumption-a8-scope-2026-09-22).
 
 ## Checks

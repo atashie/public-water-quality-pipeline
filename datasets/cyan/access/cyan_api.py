@@ -74,7 +74,7 @@ REGION = {"conus": 1, "alaska": 0, "ak": 0}
 PERIOD = {"daily": 2, "weekly": 1}
 PRODUCT = {"ci": 1, "ci_cyano": 1, "truecolor": 2, "tc": 2}
 
-NO_RESULTS_MARKERS = ("your query generated 0 file", "no results")
+EMPTY_RESULT_MARKERS = ("your query generated 0 file", "no results")
 
 
 def getfile_url(filename: str) -> str:
@@ -237,17 +237,19 @@ def search_form(
 
 
 def parse_search_body(status_code: int, body: str) -> list[str] | None:
-    """URLs from a search response, ``[]`` for a documented empty result, None to retry.
+    """URLs from a search response, ``[]`` for an explicit empty result, None to retry.
 
-    An empty result comes back as an HTML page that says the query generated 0 files, as a
-    plain "No Results", or as an empty body. Those mean nothing available, not an error.
+    An empty result is accepted only when the body says so: the HTML page stating that the
+    query generated 0 files, observed on 2026-09-22, or a plain "No Results". Any other HTML,
+    an empty body, or an unexpected body is treated as a failed request. A provider outage
+    then fails loudly instead of passing as an empty archive.
     """
     if status_code != 200:
         return None
     if "getfile" in body:
         return [ln.strip() for ln in body.splitlines() if ln.strip().startswith("http")]
     low = body.lower()
-    if not body.strip() or any(m in low for m in NO_RESULTS_MARKERS) or "<html" in low:
+    if any(m in low for m in EMPTY_RESULT_MARKERS):
         return []
     return None
 

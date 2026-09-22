@@ -103,9 +103,15 @@ def test_parse_search_body():
         c.parse_search_body(200, "<html><body>Your query generated 0 file(s).</body></html>") == []
     )
     assert c.parse_search_body(200, "No Results") == []
-    assert c.parse_search_body(200, "") == []
     assert c.parse_search_body(502, "Bad Gateway") is None
     assert c.parse_search_body(200, "something unexpected") is None
+
+
+def test_parse_search_body_fails_closed_on_unexpected_html_and_empty_body():
+    outage = "<html><body>Service temporarily unavailable</body></html>"
+    assert c.parse_search_body(200, outage) is None
+    assert c.parse_search_body(200, "") is None
+    assert c.parse_search_body(200, "   \n") is None
 
 
 class FakeSession:

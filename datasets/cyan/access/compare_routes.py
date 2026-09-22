@@ -19,7 +19,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import subprocess
 import sys
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -28,7 +27,7 @@ REPO = Path(__file__).resolve().parents[3]
 if str(REPO) not in sys.path:
     sys.path.insert(0, str(REPO))
 
-from datasets._common import net  # noqa: E402
+from datasets._common import net, provenance  # noqa: E402
 from datasets.cyan.access import cyan_api as c  # noqa: E402
 
 DEFAULT_OUT = REPO / "datasets" / "cyan" / "outputs" / "route-comparison.json"
@@ -50,15 +49,6 @@ def parse_args(argv=None):
     p.add_argument("--skip-s3", action="store_true", help="skip the credentials and listing test")
     p.add_argument("--dry-run", action="store_true")
     return p.parse_args(argv)
-
-
-def git_revision() -> str | None:
-    try:
-        return subprocess.check_output(
-            ["git", "rev-parse", "--short", "HEAD"], cwd=REPO, text=True
-        ).strip()
-    except Exception:  # noqa: BLE001
-        return None
 
 
 def summarize_presence(files: list[c.CyanFile], heads: list[dict]) -> dict:
@@ -199,7 +189,7 @@ def main(argv=None) -> int:
     result = {
         "measured_at": started,
         "finished_at": net.utc_now_iso(),
-        "code_version": git_revision(),
+        "code": provenance.code_provenance([Path(__file__), Path(c.__file__)]),
         "search": {
             "period": args.period,
             "tiles": args.tiles,
@@ -220,6 +210,8 @@ def main(argv=None) -> int:
         "head_details": heads,
         "limitations": [
             "One day of measurement. Presence and newest dates drift as the archive grows.",
+            "Byte identity is established only for the sampled files.",
+            "A 404 from the HTTPS endpoint is an unavailable path at that time, not a listing.",
             "A HEAD through the HTTPS endpoint tests one object. It does not list the bucket.",
             "The credentials and listing test runs from outside us-west-2 unless stated otherwise.",
             "Byte comparison covers only the sampled files.",

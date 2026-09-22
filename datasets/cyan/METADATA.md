@@ -40,16 +40,16 @@ EPA describes its own CyANWeb application over these data as experimental and pr
 | Sensor | Period | Cadence | Status |
 |---|---|---|---|
 | MERIS on Envisat | 2002 to 2012. The catalog extent is 2002-03-21 to 2012-05-09 | 14-day composites 2002 to 2007, when the instrument viewed the United States irregularly. 7-day composites and dailies 2008 to 2012 | documented [cl-cyan-temporal-meris-envisat-span] [cl-cyan-temporal-meris-14day] [cl-cyan-temporal-meris-collection-extent] [cl-cyan-temporal-meris-collection-end] |
-| Gap | 2012-04-07 to 2016-04-24 | No product. The last MERIS weekly file ends 2012-04-07. A weekly search for 2013-01-01 to 2015-12-31 returns "Your query generated 0 file(s)." | probe, [record](../../docs/probes/2026-09-22-cyan-format-and-start.md) |
+| Gap | 2012-04-07 to 2016-04-24 | No file listed. The last MERIS weekly file ends 2012-04-07. A weekly search for 2013-01-01 to 2015-12-31 returns "Your query generated 0 file(s)." | probe, [record](../../docs/probes/2026-09-22-cyan-format-and-start.md) |
 | OLCI on Sentinel-3A and 3B | Catalog extent starts 2016-04-25, open-ended. The earliest weekly file covers 2016-04-24 to 2016-04-30 and the earliest daily file 2016-04-25. See discrepancy D1 | Daily and 7-day composites at 300 m | documented [cl-cyan-temporal-olci-collection-start] [cl-cyan-temporal-daily-and-7day], probe [record](../../docs/probes/2026-09-22-cyan-format-and-start.md) |
 
 The OLCI products are merged Sentinel-3A and 3B from 2018 onward. The merged value is the maximum for each pixel. documented [cl-cyan-temporal-merged-s3a-s3b-2018] [cl-cyan-temporal-merged-max-per-pixel]
 Both the daily and the 7-day composite hold the maximum index over their period. documented [cl-cyan-temporal-maximum-composite]
 
-Latency. No fetched page states when a new composite appears. `unverified`, see section 12.
+Latency. No fetched page states when a new composite appears. On the pull of 2026-09-22 the newest weekly file was 3 days past its window end and the newest daily file 1 day. Those ages at retrieval bound the publication delay from above. The delay itself stays `unverified`. measured, [measurement 4](../../docs/measurements.md#4-the-assumption-a8-pull-598-files-335-gb-no-failure-newest-weekly-file-3-days-old-at-retrieval-2026-09-22)
 On 2026-09-22 the file search listed the weekly composite for 2026-09-13 to 2026-09-19. That was 3 days after its window end. It also listed the daily composite for 2026-09-21, 1 day old. probe, [record](../../docs/probes/2026-09-22-cyan-catalogs.md)
-The cloud copy lagged the file search by 7 weeks on the same day and lacked 6 older weekly files. measured, [measurement 1](../../docs/measurements.md#1-the-cloud-copy-is-a-byte-identical-but-lagging-and-incomplete-mirror-2026-09-22)
-The archive itself lacks the week starting 2026-07-05. From 2016-04-24 to 2026-09-13 there are 543 weekly start dates and the file search lists 542. measured, [measurement 2](../../docs/measurements.md#2-the-archive-itself-lacks-one-weekly-file-2026-09-22)
+On the same day the cloud HTTPS endpoint's newest file lagged the file search by 7 weeks. Six older weekly paths were unavailable through it. measured, [measurement 1](../../docs/measurements.md#1-the-cloud-https-endpoint-served-529-of-560-listed-weekly-files-7-weeks-behind-two-samples-byte-identical-2026-09-22)
+The search listing lacks the week starting 2026-07-05. From 2016-04-24 to 2026-09-13 there are 543 weekly start dates and the file search lists 542. Physical absence from the archive is not established. measured, [measurement 2](../../docs/measurements.md#2-the-archive-listing-lacks-one-weekly-file-2026-09-22)
 
 Reprocessing. The producer reprocesses and redistributes the whole MERIS and OLCI series every 10 to 16 months. EPA's page says annually. documented [cl-cyan-temporal-reprocessing-cadence], discrepancy D6
 Version history: 4.0 in 2022-03, 5.0 in 2023-05, 6 in 2025-02, with a known-issues update in 2025-08. All current data are processing version 6. documented [cl-cyan-temporal-version-history] [cl-cyan-temporal-current-version]
@@ -59,15 +59,15 @@ Pixel values are therefore not frozen. Every pulled file records its version tag
 ## 3. Spatial characteristics
 
 - Nominal resolution 300 m. The Appendix A metadata of the upstream binned file says 289.894507 m. See discrepancy D4. documented [cl-cyan-spatial-300m] [cl-cyan-spatial-appendix-a-resolution]
-- Projection: Albers Equal Area with area-weighted interpolation to match the National Hydrography Dataset projection. No page gives an EPSG code or parameters. documented [cl-cyan-spatial-albers-nhd], `unverified` code. The HAB_PoC repository read EPSG:5070 from a file on 2026-07-01, `prior`. Step 1c reads it from a pulled file.
-- Tiles: 9 by 6 over the contiguous United States and 4 by 3 over Alaska. Tile pixel dimensions are not on any page. The HAB_PoC repository measured 2,000 by 2,000 pixels, `prior`. documented [cl-cyan-spatial-conus-tiles] [cl-cyan-spatial-alaska-tiles]
-- Whole-region files: the search parameter `areaids=all` retrieves all data. On 2026-09-22 the search returned whole-region file names without a tile suffix. The HAB_PoC repository measured the whole-region mosaic at 26,328 by 15,138 pixels, `prior`. documented [cl-cyan-access-param-areaids], probe
+- Projection: Albers Equal Area with area-weighted interpolation to match the National Hydrography Dataset projection. No page gives an EPSG code or parameters. documented [cl-cyan-spatial-albers-nhd]. Every one of the 598 pulled files declares EPSG:5070 at exactly 300.0 m. measured, [measurement 5](../../docs/measurements.md#5-qaqc-of-the-pulled-files-2026-09-22)
+- Tiles: 9 by 6 over the contiguous United States and 4 by 3 over Alaska. Tile pixel dimensions are not on any page. The HAB_PoC repository measured 2,000 by 2,000 pixels, `prior`. No tile is in the pulled scope. documented [cl-cyan-spatial-conus-tiles] [cl-cyan-spatial-alaska-tiles]
+- Whole-region files: the search parameter `areaids=all` retrieves all data. On 2026-09-22 the search returned whole-region file names without a tile suffix. Every pulled whole-region file is 26,328 by 15,138 pixels on one shared grid. The origin is easting −3,949,197.047 m and northing 3,791,526.267 m. Files are LZW compressed with one row per block. documented [cl-cyan-access-param-areaids], measured [measurement 5](../../docs/measurements.md#5-qaqc-of-the-pulled-files-2026-09-22)
 - Land mask: the release notes say Shuttle Radar Topography Mission 60-meter data. The project page says a 50 m mask for the contiguous United States and a less refined 500 m mask for Alaska. The release notes name the Alaska file `landmask_GMT15ARC_AK_v2021.nc`. See discrepancy D2. documented [cl-cyan-spatial-srtm-landmask] [cl-cyan-spatial-project-landmasks] [cl-cyan-spatial-alaska-landmask-file]
 - Minimum reliable water body: retrievals are considered more robust for lakes with a window width of at least 900 m. That width gives a minimum 3 by 3 pixel array. Smaller water bodies and rivers are not masked, and their data may be erroneous. documented [cl-cyan-spatial-900m-window] [cl-cyan-spatial-3x3-pixels] [cl-cyan-issues-small-waterbodies]
 
 ## 4. Encoding and quality flags, exact values
 
-Each file is an 8-bit GeoTIFF. documented [cl-cyan-encoding-geotiff-8bit]
+Each file is an 8-bit GeoTIFF. documented [cl-cyan-encoding-geotiff-8bit]. Every pulled file is one uint8 band with no nodata flag. The four classes below partition every uint8 value, so counting them describes a file without validating its codes. measured, [measurement 5](../../docs/measurements.md#5-qaqc-of-the-pulled-files-2026-09-22)
 
 | Digital number | Meaning | Handling |
 |---|---|---|
@@ -84,7 +84,7 @@ The catalog variable `Band1` is `int8` with no fill value, valid range, scale, o
 
 Look-alike product. NOAA's cyanobacteria index uses a different encoding. Its land value is 252, its invalid values are 251, 253, 254, and 255, and its valid range is 0 to 250. CyAN uses land 254, invalid 255, and a range of 0 to 253. Code written for the NOAA product is wrong for these files. documented [cl-cyan-encoding-noaa-flagging] [cl-cyan-encoding-noaa-valid-range]
 
-Flags. The distributed GeoTIFF carries one band. No page names a flag band shipped with it. `unverified`, section 12.
+Flags. The distributed GeoTIFF carries one band. Its default metadata namespace holds two tags, `AREA_OR_POINT` and `OBPG_version`, beside the `IMAGE_STRUCTURE` and `DERIVED_SUBDATASETS` namespaces. No separately exposed flag raster ships with it. Whether upstream snow and ice screening was applied is not visible in the file. measured, [measurement 5](../../docs/measurements.md#5-qaqc-of-the-pulled-files-2026-09-22)
 The upstream binned file carries `CI_stumpf`, `CI_cyano`, `CI_noncyano`, `MCI_stumpf`, `chl_mph`, `flags_mph`, and `flags_habs`, and its binning used the Level-2 flags LAND, CLDICE, and HISATZEN. documented [cl-cyan-encoding-l3b-variables] [cl-cyan-encoding-l2-flags]
 A snow and ice flag and a mixed-pixel flag have been applied but are not yet verified, section 5.
 A separate lake biophysical water quality flag dataset is cited in the release notes. The notes do not say that it ships with these files. documented [cl-cyan-issues-biophysical-flag-dataset]
@@ -106,6 +106,8 @@ All from the release notes' Known Issues section of 2025-08. The list numbers 1 
 
 Turbid water: version 6's improved test reduces false positives in turbid waters. It does not claim to remove them. documented [cl-cyan-issues-turbid-water]
 
+Measured composition of the pulled whole-region files. The canvas is 33.2 percent land and 61 to 65 percent no data. The below-detection class is 1.4 to 5.1 percent and the data class 0.03 to 0.53 percent. The land count varies by up to 1,365 pixels between files. That is a lower bound on the pixels whose class differs, so no single file's land class is a mask. Canvas percentages say nothing about coverage inside a lake. measured, [measurement 5](../../docs/measurements.md#5-qaqc-of-the-pulled-files-2026-09-22)
+
 Consequences for use. Cloud and ice gaps are seasonal and latitudinal, so missing values are not random. Below-detection values are frequent and meaningful. Small, narrow, and shoreline waters are under-served. Values change with each reprocessing.
 
 ## 6. Bulk or subset
@@ -113,16 +115,16 @@ Consequences for use. Cloud and ice gaps are seasonal and latitudinal, so missin
 Measured sizes from the catalog on 2026-09-22: a daily whole-region file 4.53 MB, a daily tile 0.13 MB, weekly whole-region files 5.6 to 5.9 MB. Two weekly files downloaded on 2026-09-22 were 5,886,210 and 6,175,066 bytes, measurement 1. The tile size is also a catalog claim. The catalog record gives the number without a unit. Megabytes is the catalog's documented convention. documented [cl-cyan-format-granule-size] The catalog held 3,742 daily and 529 weekly whole-region files through 2026-08-01. probe, [records](../../docs/probes/README.md)
 The HAB_PoC repository pulled the full weekly whole-region record, MERIS and OLCI, as 752 files and 4.04 GB on 2026-07-01. `prior`
 
-Estimates from those numbers, `unverified` until step 1b measures them:
+Measured on the pull of 2026-09-22, with the two unpulled scopes estimated from the same numbers:
 
 | Scope | Files | Size |
 |---|---|---|
-| Weekly whole-region, OLCI 2016 onward, assumption A8 | 542, measured by the dry run of 2026-09-22 | about 3.3 GB |
-| Daily whole-region, most recent 8 weeks, assumption A8 | 56, measured by the dry run of 2026-09-22 | about 0.25 GB |
+| Weekly whole-region, OLCI 2016 onward, assumption A8 | 542, pulled 2026-09-22 | 3,080,930,304 bytes, [measurement 4](../../docs/measurements.md#4-the-assumption-a8-pull-598-files-335-gb-no-failure-newest-weekly-file-3-days-old-at-retrieval-2026-09-22) |
+| Daily whole-region, most recent 8 weeks, assumption A8 | 56, pulled 2026-09-22 | 271,020,420 bytes, [measurement 4](../../docs/measurements.md#4-the-assumption-a8-pull-598-files-335-gb-no-failure-newest-weekly-file-3-days-old-at-retrieval-2026-09-22) |
 | Daily whole-region, OLCI 2016 onward | about 3,800 | about 17 GB, over the limit of assumption A16 |
 | Per-tile instead of whole-region | 54 tiles per date | many small files, no size saving |
 
-Decision under assumption A8: pull the weekly whole-region record in full plus the recent dailies. Do not pull the daily record or the tiles.
+Decision under assumption A8: the weekly whole-region record in full plus the recent dailies are pulled. The full daily record and the tiles are not.
 
 ## 7. Access, verified 2026-09-22
 
@@ -157,7 +159,7 @@ The granules live in the bucket `s3://ob-cumulus-prod-public/`. Each granule car
 Temporary credentials come from `https://obdaac-tea.earthdatacloud.nasa.gov/s3credentials`. They allow same-region, read-only, direct S3 access and last 1 hour. documented [cl-cyan-access-s3credentials-endpoint] [cl-cyan-access-s3-same-region-readonly] [cl-cyan-access-s3-credentials-1hour]
 The collection's direct-distribution region is us-west-2. Two other NASA-related pages state the us-west-2 limit in general terms. documented [cl-cyan-access-region-us-west-2] [cl-cyan-access-us-west-2-limit] [cl-cyan-access-us-west-2-laads]
 An unauthenticated HEAD on the HTTPS link redirected to a host naming `ob-cumulus-prod-public.s3.us-west-2.amazonaws.com`, which places the bucket in us-west-2. probe [record](../../docs/probes/2026-09-22-cyan-format-and-start.md)
-On 2026-09-22 the cloud HTTPS endpoint served 529 of the 560 weekly whole-region files the file search listed. Its newest file ended 2026-08-01, 7 weeks behind. Beyond the lag, 6 weekly files from the last 17 months were absent, and the 18 `CYANV6T` duplicates were absent with their `CYAN` twins present. Two sampled files were byte-identical on both routes. Listing the bucket from outside us-west-2 was refused. measured, [measurement 1](../../docs/measurements.md#1-the-cloud-copy-is-a-byte-identical-but-lagging-and-incomplete-mirror-2026-09-22). See [docs/aws/cyan.md](../../docs/aws/cyan.md).
+On 2026-09-22 the cloud HTTPS endpoint served 529 of the 560 weekly whole-region files the file search listed. Its newest file ended 2026-08-01, 7 weeks behind. Beyond the lag, 6 weekly files from the last 17 months were absent, and the 18 `CYANV6T` duplicates were absent with their `CYAN` twins present. The two sampled files were byte-identical on both routes. Identity elsewhere is untested. Listing the bucket from outside us-west-2 was refused, which matches NASA staff guidance on the Earthdata forum. measured, [measurement 1](../../docs/measurements.md#1-the-cloud-https-endpoint-served-529-of-560-listed-weekly-files-7-weeks-behind-two-samples-byte-identical-2026-09-22). See [docs/aws/cyan.md](../../docs/aws/cyan.md).
 
 ### 7.4 Ancillary files
 
@@ -194,7 +196,7 @@ The index is not a toxin measurement and not a cell count. Any link from index t
 
 ## 10. Reproducibility and version pinning
 
-- Read the processing version from each file's own metadata, never from the filename. No page documents the tag. The HAB_PoC repository read an `OBPG_version` tag of `6.0` from files whose names carry `CYAN` and `6T` from files whose names carry `CYANV6T`, `prior`. Step 1c verifies the tag on pulled files.
+- Read the processing version from each file's own metadata, never from the filename. No page documents the tag. Every one of the 598 files pulled on 2026-09-22 carries the tag `6.0`. measured, [measurement 4](../../docs/measurements.md#4-the-assumption-a8-pull-598-files-335-gb-no-failure-newest-weekly-file-3-days-old-at-retrieval-2026-09-22). The HAB_PoC repository read `6T` from files whose names carry `CYANV6T`, `prior`, none of which is in the pulled scope.
 - Two name streams can coexist for one date, `CYAN` and `CYANV6T`. The dry run of 2026-09-22 found 18 `CYANV6T` duplicates, all in 2022 and 2023, each with a `CYAN` twin. The pull keeps `CYAN`, which spans the whole record. measured, [measurement 3](../../docs/measurements.md#3-dry-run-plans-for-the-assumption-a8-scope-2026-09-22)
 - Every download goes through the cached, sha256-manifested helper in `datasets/_common/net.py`. A changed sha256 on re-fetch is a reprocessing event, recorded, never overwritten.
 - File names follow `sensoryyyydddyyyyddd.datalevel_temporalresolution_product_version_resolution_region`, with a tile column and row suffix for tiles. A daily file carries one date stamp. Alaska files replace `CONUS` with `AK`. documented [cl-cyan-naming-convention-release-notes] [cl-cyan-naming-example-decomposition] [cl-cyan-naming-project-page-pattern] [cl-cyan-naming-granule-real-example] [cl-cyan-naming-alaska-difference]
@@ -210,7 +212,7 @@ EPA's application page disclaims endorsement of any trade name, product, service
 
 ## 12. Discrepancies and open items
 
-The owner ruled on 2026-09-22 that O1 to O4 are unknowns to uncover when their step runs, not blockers. D7 feeds the AWS route decision.
+The owner ruled on 2026-09-22 that O1 to O4 are unknowns to uncover when their step runs, not blockers. O2 and O4 were uncovered the same day. D7 feeds the AWS route decision.
 
 | Id | Topic | What the sources say | Resolution |
 |---|---|---|---|
@@ -220,10 +222,10 @@ The owner ruled on 2026-09-22 that O1 to O4 are unknowns to uncover when their s
 | D4 | Pixel size | Release notes body: 300 m. Appendix A: 289.894507 m | Appendix A describes the binned grid. Step 1c reads the mapped pixel size from a file |
 | D5 | DOI | Catalog: `L3M/CYAN/CI/6.0`. Release notes file metadata: `L3B/CYAN/CI/6T` | Two products, mapped and binned. Cite the catalog DOI for the distributed files |
 | D6 | Reprocessing cadence | Release notes: every 10 to 16 months. EPA page: annually | Both recorded. Step 1g plans a version watch either way |
-| D7 | Cloud copy completeness | Measured on 2026-09-22: identical bytes where present, 7 weeks behind, 6 weekly files absent beyond the lag, bucket listing refused from outside the region | A Discovery input to the AWS route choice, [docs/aws/cyan.md](../../docs/aws/cyan.md), [measurement 1](../../docs/measurements.md#1-the-cloud-copy-is-a-byte-identical-but-lagging-and-incomplete-mirror-2026-09-22). A listing from inside us-west-2 remains open |
-| O1 | Weekly update timing | Not on any fetched page. Not needed now | Step 1b measures latency on dated pulls |
-| O2 | EPSG code and tile pixel dimensions | Not on any page. Not needed now | Step 1c reads them from files |
+| D7 | Cloud copy completeness | Measured on 2026-09-22: two samples byte-identical, the endpoint's newest file 7 weeks behind, 6 older weekly paths unavailable through it, bucket listing refused from outside the region | A Discovery input to the AWS route choice, [docs/aws/cyan.md](../../docs/aws/cyan.md), [measurement 1](../../docs/measurements.md#1-the-cloud-https-endpoint-served-529-of-560-listed-weekly-files-7-weeks-behind-two-samples-byte-identical-2026-09-22). A listing from inside us-west-2 remains open |
+| O1 | Weekly update timing | Not on any fetched page. Not needed now | Bounded from above by the age at retrieval of the newest pulled file, 3 days weekly and 1 day daily on 2026-09-22. The delay itself needs first-availability observations |
+| O2 | EPSG code and tile pixel dimensions | Not on any page | Resolved for the whole-region files on 2026-09-22: EPSG:5070, 26,328 by 15,138 pixels, [measurement 5](../../docs/measurements.md#5-qaqc-of-the-pulled-files-2026-09-22). Tile dimensions stay `prior` until a tile is pulled |
 | O3 | COMID in the lake shapefile | Not on any page. Not needed now | Step 1e opens the shapefile |
-| O4 | Flag bands in the GeoTIFF | Not on any page. The catalog lists one band. Not needed now | Step 1c inspects a file |
+| O4 | Flag bands in the GeoTIFF | Not on any page. The catalog lists one band | Resolved on 2026-09-22: one band, two tags, no flag band, [measurement 5](../../docs/measurements.md#5-qaqc-of-the-pulled-files-2026-09-22) |
 | O5 | Cells per milliliter factor | Range only, no factor, no citation | Any factor used later names its own source |
 | O6 | Known Issues item 6 | Absent from the document | None. Recorded as published |

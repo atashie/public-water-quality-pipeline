@@ -32,7 +32,7 @@ REPO = Path(__file__).resolve().parents[3]
 if str(REPO) not in sys.path:
     sys.path.insert(0, str(REPO))
 
-from datasets._common import net  # noqa: E402
+from datasets._common import net, provenance  # noqa: E402
 from datasets.cyan.access import cyan_api as c  # noqa: E402
 
 DEFAULT_RAW = REPO / "data" / "cyan" / "raw"
@@ -61,6 +61,16 @@ def parse_args(argv=None) -> argparse.Namespace:
     p.add_argument("--limit", type=int, default=0, help="cap the number of files, 0 for no cap")
     p.add_argument("--dry-run", action="store_true", help="enumerate and plan only")
     p.add_argument("--plan-json", default=None, help="write the plan summary to this path")
+    p.add_argument(
+        "--plan",
+        default=None,
+        help="an approved plan JSON to execute. The fresh search must list the same files",
+    )
+    p.add_argument(
+        "--accept-drift",
+        action="store_true",
+        help="continue when the fresh search differs from the approved plan",
+    )
     return p.parse_args(argv)
 
 
@@ -92,8 +102,18 @@ def build_plan(urls: list[str], preferred_stream: str, limit: int = 0) -> dict:
     }
 
 
-def latency_days(end_date: str, accessed_utc: str) -> int:
-    """Whole days from the composite's window end to the access time."""
+def plan_drift(approved: list[str], fresh: list[str]) -> dict:
+    """Files the fresh search added or removed against an approved selection."""
+    a, f = set(approved), set(fresh)
+    return {"added": sorted(f - a), "removed": sorted(a - f), "same": a == f}
+
+
+def age_at_retrieval_days(end_date: str, accessed_utc: str) -> int:
+    """Whole days from the composite's window end to the access time.
+
+    This is the file's age when retrieved, not the provider's publication delay. For the
+    newest file it bounds the publication delay from above. For an old file it is history.
+    """
     end = dt.date.fromisoformat(end_date)
     accessed = dt.datetime.strptime(accessed_utc, "%Y-%m-%dT%H:%M:%SZ").date()
     return (accessed - end).days
@@ -131,6 +151,7 @@ def main(argv=None) -> int:
         print(f"[plan]   LIMIT: first {plan['planned']} of {plan['after_stream_collapse']} files")
     summary = {
         **plan,
+        "filenames": [f.filename for f in files],
         "searched_at": searched_at,
         "region": args.region,
         "period": args.period,
@@ -141,7 +162,31 @@ def main(argv=None) -> int:
         "outdir": str(outdir),
         "streams": sorted({f.stream for f in files}),
         "years": sorted({f.start_date[:4] for f in files}),
+        "code": provenance.code_provenance([Path(__file__), Path(c.__file__)]),
     }
+    if args.plan:
+        approved = json.loads(Path(args.plan).read_text(encoding="utf-8"))
+        drift = plan_drift(approved.get("filenames", []), summary["filenames"])
+        summary["approved_plan"] = {
+            "path": args.plan,
+            "sha256": net.sha256_file(Path(args.plan)),
+            "planned": approved.get("planned"),
+            "drift": drift,
+        }
+        if not drift["same"]:
+            print(
+                f"[plan]   DRIFT against {args.plan}: {len(drift['added'])} added, "
+                f"{len(drift['removed'])} removed"
+            )
+            for name in drift["added"][:10]:
+                print(f"           + {name}")
+            for name in drift["removed"][:10]:
+                print(f"           - {name}")
+            if not (args.dry_run or args.accept_drift):
+                print("[plan]   refusing to download. Pass --accept-drift to continue.")
+                return 3
+        else:
+            print(f"[plan]   matches the approved plan {args.plan}")
     if args.plan_json:
         Path(args.plan_json).parent.mkdir(parents=True, exist_ok=True)
         Path(args.plan_json).write_text(json.dumps(summary, indent=2), encoding="utf-8")
@@ -197,7 +242,8 @@ def main(argv=None) -> int:
                 "integrity": res.integrity,
                 "processing_version": version,
                 "accessed_utc": res.accessed_utc,
-                "latency_days": latency_days(f.end_date, res.accessed_utc),
+                "age_at_retrieval_days": age_at_retrieval_days(f.end_date, res.accessed_utc),
+                "approved_plan_sha256": summary.get("approved_plan", {}).get("sha256"),
                 "sensor": f.sensor_code,
                 "temporal": f.temporal,
                 "stream": f.stream,

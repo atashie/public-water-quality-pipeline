@@ -1,6 +1,6 @@
 # Open water-quality data pipeline
 
-**Step 0, initialization, committed 2026-09-22. Step 1a, the CyAN characterization, is next. No dataset pulled yet.**
+**CyAN is characterized, pulled, and checked as of 2026-09-22. The QA awaits owner review. The review dashboard, step 1d, is next.**
 
 This repository ingests, checks, processes, and serves open water-quality data for lakes and reservoirs.
 The first three datasets derive from or train on Sentinel-3 OLCI at 300 m:

@@ -33,8 +33,16 @@ def test_default_outdir_and_latency():
     out = pull_cyan.default_outdir("conus", "weekly", "all")
     assert out.name == "weekly_conus_mosaic" and out.parent.name == "raw"
     assert pull_cyan.default_outdir("conus", "daily", "7_2+6_2").name == "daily_conus_7_2-6_2"
-    assert pull_cyan.latency_days("2026-09-19", "2026-09-22T10:00:00Z") == 3
-    assert pull_cyan.latency_days("2026-09-21", "2026-09-22T00:00:00Z") == 1
+    assert pull_cyan.age_at_retrieval_days("2026-09-19", "2026-09-22T10:00:00Z") == 3
+    assert pull_cyan.age_at_retrieval_days("2026-09-21", "2026-09-22T00:00:00Z") == 1
+
+
+def test_plan_drift_reports_added_and_removed():
+    same = pull_cyan.plan_drift(NAMES[:2], NAMES[:2])
+    assert same == {"added": [], "removed": [], "same": True}
+    drift = pull_cyan.plan_drift(NAMES[:2], [NAMES[1], NAMES[2]])
+    assert drift["added"] == [NAMES[2]] and drift["removed"] == [NAMES[0]]
+    assert drift["same"] is False
 
 
 def test_summarize_presence():

@@ -22,12 +22,12 @@ Prefer route B if its data are identical to route A's. A bucket that lags or lac
 
 ## Measured on 2026-09-22
 
-[Measurement 1](../measurements.md#1-the-cloud-copy-is-a-byte-identical-but-lagging-and-incomplete-mirror-2026-09-22) ran the comparison above from the owner's laptop.
+[Measurement 1](../measurements.md#1-the-cloud-https-endpoint-served-529-of-560-listed-weekly-files-7-weeks-behind-two-samples-byte-identical-2026-09-22) ran the comparison above from the owner's laptop.
 
-- Bytes are identical where both routes hold a file. Two of two samples matched by sha256.
-- Route B trails route A by 7 weeks and lacks 6 weekly files from the last 17 months. Route A itself lacks the week starting 2026-07-05.
-- Route B holds only the `CYAN` name stream. The 18 `CYANV6T` duplicates are absent, with no data lost.
-- Credentials are issued to any Earthdata user, but listing the bucket from outside us-west-2 is refused. The HTTPS endpoint of route B answers from anywhere with a token.
+- The two sampled files matched by sha256. Byte identity elsewhere is untested.
+- Route B's HTTPS endpoint trails route A's listing by 7 weeks and answered 404 for 6 older weekly paths. Route A's listing lacks the week starting 2026-07-05.
+- Route B served only the `CYAN` name stream. The 18 `CYANV6T` duplicates were unavailable. Date coverage is retained in the `CYAN` stream.
+- Credentials were issued, but listing the bucket from outside us-west-2 was refused, as NASA staff state on the Earthdata forum. The HTTPS endpoint of route B answered from the tested off-region laptop with a token.
 
 Consequence under the owner's rule: route B alone cannot be the source. It is not identical to route A. The candidates for step 1g are route A alone, or route A for freshness and gaps with route B for in-region bulk reads. A second measurement on a later date tells whether the 6 absent files ever arrive.
 

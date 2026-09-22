@@ -5,7 +5,7 @@ A checked box means the work exists in this repository with evidence. Every step
 
 ## Next session
 
-Step 1b part 2, the pull, then step 1c, QA/QC of the pulled files. Both authorized on 2026-09-22. Step 1b needs an Earthdata Login token in `.env` before any download. The dry run needs none.
+Step 1d, the CyAN review dashboard, authorized 2026-09-22. Step 1b needs an Earthdata Login token in `.env` before any download. The dry run needs none.
 
 ## How a dataset is judged
 
@@ -36,8 +36,8 @@ Each sub-step is one authorized unit.
 
 - [x] 1a. Characterize, delivered 2026-09-22, owner review pending. 100 claims from 17 primary sources, researched and independently checked. Release notes preserved. The catalog disagreement is a measured 7-week lag of the cloud catalog. [Record](reviews/2026-09-22-cyan-characterization.md), [METADATA](../datasets/cyan/METADATA.md).
 - [x] 1b, part 1, delivered and approved 2026-09-22. `cyan_api.py`, `pull_cyan.py`, and `compare_routes.py` ported or written with 16 offline tests. Dry runs: 542 weekly and 56 daily files. Route comparison measured, [measurements](measurements.md). [Record](reviews/2026-09-22-cyan-route-comparison-and-dry-run.md).
-- [ ] 1b, part 2, authorized 2026-09-22. Pull the 542 weekly and 56 daily whole-region files through the archive route, assumption A8. Record latency, bytes, and version tags.
-- [ ] 1c. QA/QC. Port `qa_cyan.py`. Integrity against the manifest, grid and projection consistency, version tags, code composition per file.
+- [x] 1b, part 2, done 2026-09-22. 542 weekly and 56 daily whole-region files pulled through the archive route, 3.35 GB, no failure. [Measurement 4](measurements.md#4-the-assumption-a8-pull-598-files-335-gb-no-failure-newest-weekly-file-3-days-old-at-retrieval-2026-09-22).
+- [x] 1c, delivered 2026-09-22, corrected after two independent Codex reviews the same day, approved by the owner. `qa_cyan.py` with tests, run on all 598 files against the approved plans. [Record](reviews/2026-09-22-cyan-pull-and-qa.md).
 - [ ] 1d. Review dashboard. One page: national map of a selected week at native resolution, composition over time, and per-file QA. Owner review recorded.
 - [ ] 1e. Derive. Pull the resolvable-lakes shapefile, verify its count, and build the per-lake weekly table with the recorded recipe. Authorization for the aggregation recorded in a decision.
 - [ ] 1f. Serve. User-facing dashboard to the owner's specification. The HAB_PoC "current active blooms" view is the reference.
