@@ -1,0 +1,33 @@
+# Planning assumptions
+
+Each row drives design, scope, or a target. Each carries a provenance status:
+
+- `sourced`: traceable to the owner's recorded direction, a cited page, or a recorded decision.
+- `unsourced`: stated in this repository on 2026-09-22 without a written source. Confirm it, correct it, or record the decision that set it.
+
+[Decision 0001](decisions/0001-scope-conventions-and-dataset-order.md) records the owner's brief and answers of 2026-09-22 that source most rows.
+
+| # | Assumption | Status | Used in | Note |
+|---|---|---|---|---|
+| A1 | Scope is to ingest, QA/QC, process, and serve open water-quality data. The first datasets are CyAN, the Copernicus Lake Water Quality 300 m product version 2, and the EPA cyanoHAB forecast. Sentinel-2, other sensors, and in situ data may follow later. | sourced | everywhere | Owner brief 2026-09-22. |
+| A2 | Validation of facts comes first. Time is spent to confirm technical accuracy and to guard against fabricated claims. | sourced | [.claude/rules/docs.md](../.claude/rules/docs.md) | Owner brief 2026-09-22, guideline 1. |
+| A3 | Every newly ingested dataset is reviewed by the owner on a dashboard the agent generates, before the data are used. | sourced | [work-plan.md](work-plan.md), [datasets/README.md](../datasets/README.md) | Owner brief 2026-09-22, guideline 2. |
+| A4 | Two purposes. Short term: store and process a dataset locally when it fits, then build a user-facing dashboard to the owner's specification. Long term: a high-level AWS design per dataset with S3 and Lambda, storage and compute costs, for the engineering team. | sourced | [work-plan.md](work-plan.md), [aws/README.md](aws/README.md) | Owner brief 2026-09-22, guideline 3. |
+| A5 | Conventions mirror the owner's Sentinel-2 and weather assessment repositories. Codex participates through `AGENTS.md`. No commit, push, or publication without the owner's authorization. | sourced | [../CLAUDE.md](../CLAUDE.md) | Owner answer 2026-09-22, question 1. |
+| A6 | Layout is one self-contained folder per dataset, shared helpers, and top-level tests. | sourced | [../datasets/README.md](../datasets/README.md) | Owner answer 2026-09-22, question 2. |
+| A7 | Dataset order is CyAN, then the EPA forecast, then the Copernicus product. Weekly forecast snapshots start as soon as the forecast module is verified. | sourced | [work-plan.md](work-plan.md) | Owner answer 2026-09-22, question 3. |
+| A8 | CyAN local scope is the full weekly OLCI record for the contiguous United States as whole-region mosaics, 2016 onward, plus daily files for the most recent 8 weeks. MERIS 2008 to 2012 is deferred. | sourced | [work-plan.md](work-plan.md) | Owner answer 2026-09-22, question 4. Weekly is the 7-day maximum composite. |
+| A9 | The lake universe for per-lake products is the CyAN resolvable-lakes shapefile keyed by COMID. | sourced, provisional | [work-plan.md](work-plan.md) | Owner answer 2026-09-22, question 5. The count of 2,321 lakes comes from the HAB_PoC repository's access of 2026-07-02 and is `unverified` here until step 1 rechecks the file. |
+| A10 | The owner holds a NASA Earthdata Login and a Copernicus Data Space Ecosystem account with S3 keys. Credentials live in the ignored `.env`. | sourced | [../.env.example](../.env.example) | Owner answer 2026-09-22, question 6. |
+| A11 | Copernicus version 2, from 2024-09, is ingested first. Version 1, 2016 to 2024, is a separate stream with the turbidity method break documented. | sourced | [work-plan.md](work-plan.md) | Owner answer 2026-09-22, question 7. The break is described in the probe record of 2026-09-22. |
+| A12 | The EPA forecast is extracted through the unofficial Qlik path, reused locally as research-grade. The owner decides whether to request a supported feed before any AWS automation. | sourced | [work-plan.md](work-plan.md) | Owner answer 2026-09-22, question 8. |
+| A13 | Review dashboards are one static HTML page per dataset with vendored libraries, served from `docs/` on Vercel. | sourced | [work-plan.md](work-plan.md) | Owner answer 2026-09-22, question 9. No deployment exists yet. |
+| A14 | The AWS region is us-west-2, the region of NASA Earthdata Cloud buckets. | sourced | [aws/README.md](aws/README.md) | Owner answer 2026-09-22, question 10. |
+| A15 | This repository can become public. Roles, never names. No secrets. No customer data. | sourced | [../CLAUDE.md](../CLAUDE.md) | Owner answer 2026-09-22, question 11. |
+| A16 | A dataset is stored locally in full only when the relevant files total under 10 GB. Otherwise it is subset by scope, never by resolution. | sourced | [work-plan.md](work-plan.md) | Owner brief 2026-09-22, guideline 3. |
+| A17 | No spatial or temporal aggregation without a recorded owner authorization. Per-lake statistics are a derived product once their recipe and authorization are recorded. | sourced, provisional | [../.claude/rules/datasets.md](../.claude/rules/datasets.md) | Owner direction recorded in the HAB_PoC repository's onboarding guide, lesson 0. Confirm that it carries over. |
+| A18 | No dated milestones exist. Steps are ordered, not scheduled. | unsourced | [work-plan.md](work-plan.md) | Mirrors the Sentinel-2 repository. Confirm or correct. |
+| A19 | Cost figures come only from measurements or from pricing pages quoted with a date. Prices stay null until then. | sourced | [aws/README.md](aws/README.md) | Convention carried from the Sentinel-2 repository under A5. |
+| A20 | Per-lake products join other data by COMID, the NHDPlus waterbody identifier. Stable identifiers keep later joins possible. | unsourced | [work-plan.md](work-plan.md) | Follows from A9. Confirm the join target. |
+
+To change an assumption, record a decision in [decisions/](decisions/README.md) and update this table.

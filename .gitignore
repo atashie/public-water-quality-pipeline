@@ -1,0 +1,24 @@
+.venv/
+.uv-cache/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+data/
+.env
+*.parquet
+*.tif
+*.tiff
+*.nc
+*.zarr/
+*.gpkg
+!tests/fixtures/**
+dist/
+.DS_Store
+
+# Claude Code personal overrides
+CLAUDE.local.md
+.claude/settings.local.json
+
+# Quarantined documents, local only
+docs/archive/
