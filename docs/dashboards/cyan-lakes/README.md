@@ -17,7 +17,7 @@ The builder takes the newest table under `data/cyan/derived/` by default, or `--
 The page is not a single file. It loads its libraries from `vendor/` and its data from `data/`, all by relative path, and works from a folder on disk or from any static host. Share or deploy the whole folder.
 
 - Always needed: `index.html`, `vendor/`, `data/lakes.js`, `data/basemap_land.js`, and `data/basemap_states.js`. These are in git. Without `data/`, the page shows only its frame and names the missing file at the top.
-- Needed for the Lake tab's plots and for the pixel overlays: `data/lakes/` and `data/pixels/`, 4,642 files and about 140 MB. They are not in git. The builder writes them in under a minute, and a deployment copies them from a build or from linked storage.
+- Needed for the Lake tab's plots and for the pixel overlays: `data/lakes/` and `data/pixels/`, 4,642 files and about 140 MB. The builder writes them in under a minute. They were committed once on 2026-09-23 so that Vercel can serve them, see [the hosting note](../../vercel-hosting.md).
 
 ## What the page shows
 

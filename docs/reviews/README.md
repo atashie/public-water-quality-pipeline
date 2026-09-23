@@ -5,6 +5,7 @@ Start with the latest review below.
 
 | Date | Review | Reviewer |
 |---|---|---|
+| 2026-09-23 | [CyAN lake dashboard prepared for Vercel: per-lake files committed once, hosting note](2026-09-23-cyan-lakes-hosting.md) | Claude Code (AI coding agent), directed by the repository owner |
 | 2026-09-23 | [Verification of the dispositions of the independent review of the CyAN pull and QA/QC: two gaps closed, one suggestion declined](2026-09-23-cyan-qa-review-verification.md) | Claude Code (AI coding agent), directed by the repository owner |
 | 2026-09-23 | [Step 1f, CyAN lake dashboard: every lake's weekly state under a movable bloom line, a ranked list, a per-lake deep dive, and the companion attribute table](2026-09-23-cyan-lake-dashboard.md) | Claude Code (AI coding agent), directed by the repository owner |
 | 2026-09-23 | [Step 1e, CyAN lake universe and per-lake table: 2,321 lakes keyed by COMID, the recipe of decision 0002, and one row per lake and file](2026-09-23-cyan-lake-table.md) | Claude Code (AI coding agent), directed by the repository owner |

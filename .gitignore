@@ -25,6 +25,4 @@ docs/archive/
 
 # Review dashboard frames, large and regenerable
 docs/dashboards/*/data/frames/
-# Lake dashboard per-lake series, large and regenerable
-docs/dashboards/*/data/lakes/
-docs/dashboards/*/data/pixels/
+# Lake dashboard per-lake files are committed once for hosting, see docs/vercel-hosting.md

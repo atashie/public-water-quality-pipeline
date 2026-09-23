@@ -1,6 +1,6 @@
 # Open water-quality data pipeline
 
-**CyAN is characterized, pulled, and checked as of 2026-09-22. The QA awaits owner review. The review dashboard, step 1d, is next.**
+**CyAN is characterized, pulled, checked, derived per lake, and served on a lake dashboard as of 2026-09-23. The dashboard is prepared for Vercel hosting. The AWS note, step 1g, is next.**
 
 This repository ingests, checks, processes, and serves open water-quality data for lakes and reservoirs.
 The first three datasets derive from or train on Sentinel-3 OLCI at 300 m:
