@@ -14,5 +14,5 @@ paths:
 - Keep measured absence distinct from missing. Never fold a below-detection code into no-data.
 - When a script excludes files or records, log the counts kept and dropped and say why.
 - Never add the PyPI package named `datasets`. It shadows this repository's `datasets` package.
-- QA writes `outputs/qa_report.md` and `outputs/qa_summary.json`. The review dashboard is one HTML page with vendored libraries that opens from disk and makes no external request.
+- QA writes `outputs/qa-<dir>-<stamp>.json` and `outputs/qa-report-<stamp>.md`, stamped with the run's UTC time. A rerun never overwrites an earlier result. The review dashboard is one HTML page with vendored libraries that opens from disk and makes no external request.
 - Tests under `datasets/<name>/tests/` and `tests/` contact nothing. Use fixtures.

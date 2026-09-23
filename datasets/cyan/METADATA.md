@@ -191,6 +191,7 @@ Full records with titles, publishers, and page dates are in [reference/cyan-rese
 ## 9. Role in this project
 
 The index is the observed bloom signal for every lake in the universe of assumption A9. Per-lake statistics over the pixels inside a lake polygon become the target and the features of any model. That aggregation needs the recorded authorization of assumption A17 before step 1e computes it.
+Step 1e computed it on 2026-09-23 under [decision 0002](../../docs/decisions/0002-per-lake-table-recipe.md). The EPA forecast's own operationalization, a weekly lake median of 130 or more over pixels wholly inside the polygon, is read from the official code deposit, [probe record of 2026-09-23](../../docs/probes/2026-09-23-epa-forecast-code-deposit.md), `probe`. It was `prior` before that. Step 1f serves the table on [the lake dashboard](../../docs/dashboards/cyan-lakes/README.md).
 The EPA cyanoHAB forecast is built from this signal. Validating a model that uses this signal against that forecast is circular. Ground truth for bloom presence comes from independent in situ sources or from this index treated as an observation.
 The index is not a toxin measurement and not a cell count. Any link from index to cells or toxins carries its own source and uncertainty.
 

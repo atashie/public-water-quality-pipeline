@@ -1,0 +1,137 @@
+{
+ "measured_at": "2026-09-23T16:15:51Z",
+ "recipe": {
+  "id": "gnis-crosswalk-v2",
+  "classes": [
+   "Lake",
+   "Reservoir"
+  ],
+  "near_m": 300.0,
+  "excluded": "names containing (historical)",
+  "tie_break": "farthest from the shoreline"
+ },
+ "lakes": 2321,
+ "name_sources": {
+  "shapefile": 1866,
+  "gnis_inside": 345,
+  "none": 91,
+  "gnis_near": 19
+ },
+ "shapefile_names_with_a_gnis_point_inside": 1789,
+ "of_which_the_nearest_gnis_name_is_the_same": 1579,
+ "gnis_features_of_the_classes": 143334,
+ "multiple_candidates_among_newly_named": 108,
+ "largest_newly_named": [
+  {
+   "comid": 166757656,
+   "name": "Lake Okeechobee",
+   "source": "gnis_inside",
+   "area_sqkm": 1674.9,
+   "n_candidates": 1,
+   "alternatives": null
+  },
+  {
+   "comid": 167166635,
+   "name": "Lake Pontchartrain",
+   "source": "gnis_inside",
+   "area_sqkm": 1647.8,
+   "n_candidates": 3,
+   "alternatives": "Little Lagoon; Irish Bayou Lagoon"
+  },
+  {
+   "comid": 15447630,
+   "name": "Lake Champlain",
+   "source": "gnis_inside",
+   "area_sqkm": 664.1,
+   "n_candidates": 2,
+   "alternatives": "Devils Pond"
+  },
+  {
+   "comid": 22071698,
+   "name": "Lake Mead",
+   "source": "gnis_inside",
+   "area_sqkm": 611.8,
+   "n_candidates": 1,
+   "alternatives": null
+  },
+  {
+   "comid": 167267897,
+   "name": "Goose Lake",
+   "source": "gnis_inside",
+   "area_sqkm": 400.7,
+   "n_candidates": 3,
+   "alternatives": "Lake of the Ozarks; Benson Lake"
+  },
+  {
+   "comid": 120054054,
+   "name": "Agency Lake",
+   "source": "gnis_inside",
+   "area_sqkm": 267.1,
+   "n_candidates": 3,
+   "alternatives": "Upper Klamath Lake; Melvins Pond"
+  },
+  {
+   "comid": 167182204,
+   "name": "Guntersville Lake",
+   "source": "gnis_inside",
+   "area_sqkm": 258.6,
+   "n_candidates": 1,
+   "alternatives": null
+  },
+  {
+   "comid": 22798811,
+   "name": "Lake Salvador",
+   "source": "gnis_inside",
+   "area_sqkm": 236.6,
+   "n_candidates": 3,
+   "alternatives": "Lake Cataouatche; Baie du Cabanage"
+  },
+  {
+   "comid": 167300255,
+   "name": "Lake Texoma",
+   "source": "gnis_inside",
+   "area_sqkm": 236.2,
+   "n_candidates": 2,
+   "alternatives": "Cedar Bayou"
+  },
+  {
+   "comid": 167801019,
+   "name": "Eufaula Lake",
+   "source": "gnis_inside",
+   "area_sqkm": 232.4,
+   "n_candidates": 1,
+   "alternatives": null
+  },
+  {
+   "comid": 120052939,
+   "name": "American Falls Reservoir",
+   "source": "gnis_inside",
+   "area_sqkm": 224.8,
+   "n_candidates": 1,
+   "alternatives": null
+  },
+  {
+   "comid": 167245953,
+   "name": "Lake Francis Case",
+   "source": "gnis_inside",
+   "area_sqkm": 205.7,
+   "n_candidates": 1,
+   "alternatives": null
+  }
+ ],
+ "parquet": "data/cyan_lakes/derived/lake_names-2026-09-23T1615Z.parquet",
+ "csv": "datasets/cyan_lakes/outputs/lake-names-2026-09-23T1615Z.csv",
+ "csv_sha256": "000954d99b3cfc7fff9a05d1bc3f3164585a4779c527f7bff6f4fd4e7141e269",
+ "code": {
+  "base_revision": "92e7fb5",
+  "working_tree_dirty": true,
+  "sources": {
+   "datasets/cyan_lakes/derive/build_name_crosswalk.py": "666415d8dae64d08f470775a9bd1ff7527aa2ac252989d7894787188ca1f1d71"
+  },
+  "inputs": {
+   "data/cyan_lakes/raw/MERIS_OLCI_Lakes.zip": "e3efe1f69a004af9be3c15e63122e3ddc3ec9b8bc33d2e44e580d39aca4e0e06",
+   "data/cyan_lakes/raw/DomesticNames_National_Text.zip": "e2dc959d762ad45d84292dae8c5236d091c2dc5b0cdce00d1db5279e4bed2312",
+   "data/cyan_lakes/raw/manifest.jsonl": "e6b58e87ed9c638e3ee0463d4792adc2f536ca1ec89072051f743d2c83b455b0"
+  }
+ }
+}

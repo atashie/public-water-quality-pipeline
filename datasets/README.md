@@ -27,13 +27,13 @@ Answer at least these questions. What does each variable mean? What are the cove
 
 Enumerate first. Print the dry-run plan: files, dates, versions, bytes when known. Then download into `data/<dataset>/raw/` through `_common/net.py`.
 Every file lands in the manifest with URL, bytes, sha256, access time, and the version tag read from the file.
-Log what the enumeration returned and what the script excluded, with counts. Record the observed latency against the provider's stated latency.
+Log what the enumeration returned and what the script excluded, with counts. Record each file's age at retrieval. It bounds the provider's publication delay from above and does not measure it.
 
 ### 3. QA/QC the bytes
 
 Recompute sha256 against the manifest. Check structure against the documented specification: type, bands or variables, projection, grid, bounds.
 Report the composition of codes and flags per file. Keep measured absence separate from missing. Check consistency across files. Report version tags.
-Write `outputs/qa_report.md` and `outputs/qa_summary.json`. A clean report still lists what was checked.
+Write `outputs/qa-<dir>-<stamp>.json` and `outputs/qa-report-<stamp>.md`, stamped with the run's UTC time, and never overwrite an earlier run. A clean report still lists what was checked.
 
 ### 4. Build the review dashboard, then stop
 
@@ -66,7 +66,7 @@ datasets/<name>/
   METADATA.md      the characterization, from _template/METADATA.template.md
   reference/       preserved primary documents and their text extractions
   access/          enumerate and pull scripts, each with --dry-run and --limit
-  qaqc/            QA scripts writing outputs/qa_report.md and outputs/qa_summary.json
+  qaqc/            QA scripts writing stamped outputs/qa-<dir>-<stamp>.json and qa-report-<stamp>.md
   viz/             review dashboard data builder
   outputs/         QA report and JSON, small PNG proofs. Tracked
   tests/           offline tests on fixtures

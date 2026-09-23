@@ -12,7 +12,7 @@ The owner authorized step 1d on 2026-09-22 after approving the pull and the corr
 |---|---|
 | Builder | `datasets/cyan/viz/build_review_dashboard.py` with `regions.json` and 5 offline tests on a synthetic mosaic. It reads one native window per region from every pulled file, reprojects it to latitude and longitude with nearest neighbour so every pixel keeps its code, and writes each frame as a PNG inside a script file so the page can read pixels from a file:// URL |
 | Page | `docs/dashboards/cyan/index.html` with three tabs. Map: region, cadence, date slider, play, class toggles, legend, the code and index under the cursor, and the window's composition. Record: four charts of the national record with the missing week shaded, and a sortable table of every file. Provenance: QA verdicts, manifests, and the hashes behind the page |
-| Data | `data/summary.js` and `data/basemap_states.js` tracked. 4,784 frames under `data/frames/`, 635 MB, ignored by git and rebuilt by the builder |
+| Data | `data/summary.js` and `data/basemap_states.js` tracked. Note added 2026-09-23: they were not, because the ignore rule `data/` matched this folder too. The step 1f commit of 2026-09-23 fixed the rule and added them. 4,784 frames under `data/frames/`, 635 MB, ignored by git and rebuilt by the builder |
 | Vendored | Leaflet 1.9.4 and Plotly.js 2.35.2 copied from the HAB_PoC repository, with the Census state outlines it derived |
 | Environment | Pillow added to the pinned `datasets` group |
 

@@ -29,7 +29,7 @@ def test_build_plan_limit():
     assert [f.filename for f in plan["files"]] == [NAMES[0], NAMES[2]]
 
 
-def test_default_outdir_and_latency():
+def test_default_outdir_and_age_at_retrieval():
     out = pull_cyan.default_outdir("conus", "weekly", "all")
     assert out.name == "weekly_conus_mosaic" and out.parent.name == "raw"
     assert pull_cyan.default_outdir("conus", "daily", "7_2+6_2").name == "daily_conus_7_2-6_2"

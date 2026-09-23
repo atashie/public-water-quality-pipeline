@@ -1,6 +1,6 @@
 # cyan: CyAN cyanobacteria index
 
-Status: characterized, pulled, and checked on 2026-09-22. Step 1c was corrected after an independent review and awaits owner review. Step 1 of [the work plan](../../docs/work-plan.md). Read [METADATA.md](METADATA.md) first.
+Status: characterized, pulled, and checked on 2026-09-22. Steps 1a to 1c are approved and committed. Later steps are tracked in [the work plan](../../docs/work-plan.md). Read [METADATA.md](METADATA.md) first.
 
 What it is: the NASA-produced `CI_cyano` Level-3 mapped product for the EPA Cyanobacteria Assessment Network. The Ocean Biology DAAC distributes it as 8-bit GeoTIFF tiles and whole-region mosaics at 300 m in EPSG:5070. Composites are daily and 7-day maximum.
 [METADATA.md](METADATA.md) holds the characterization. Its 100 claims from 17 primary sources each carry a verbatim quote confirmed by a checking agent. Section 12 lists the open items.
@@ -32,11 +32,19 @@ uv run python datasets/cyan/qaqc/qa_cyan.py \
   --raw data/cyan/raw/daily_conus_mosaic --plan datasets/cyan/outputs/plan-daily-mosaic-2026-09-22.json
 ```
 
+```sh
+# Serve. Local only, contacts nothing. Rebuilds the lake dashboard's data from the newest per-lake table.
+uv run python datasets/cyan/viz/build_lake_dashboard.py
+# Measure what a year of per-lake pixel images would cost in bytes. Local only, about 15 minutes.
+uv run python datasets/cyan/viz/estimate_pixel_history.py --weeks 52
+```
+
 ## Plan for this folder
 
 - Step 1a wrote `METADATA.md` with a research agent and a checking agent. Done 2026-09-22.
-- Step 1b ported `cyan_api.py` and `pull_cyan.py` into `access/` with tests and added `compare_routes.py`. Part 1 done 2026-09-22. Part 2, the pull, awaits authorization.
-- Step 1c ported `qa_cyan.py` into `qaqc/` with tests on synthetic files. It runs on the pulled files once the pull completes.
+- Step 1b ported `cyan_api.py` and `pull_cyan.py` into `access/` with tests and added `compare_routes.py`. Part 1 done 2026-09-22. Part 2, the pull, done 2026-09-22: 598 files under `data/cyan/raw/` with manifests.
+- Step 1c ported `qa_cyan.py` into `qaqc/` with tests on synthetic files. Run on all 598 pulled files against the approved plans on 2026-09-22 and corrected after two independent reviews. [Record](../../docs/reviews/2026-09-22-cyan-pull-and-qa.md).
+- Step 1f built the user-facing lake dashboard with `viz/build_lake_dashboard.py`, page under [docs/dashboards/cyan-lakes/](../../docs/dashboards/cyan-lakes/README.md), and the companion attribute table. Approved 2026-09-23 after five rounds of feedback.
 - Step 1e pulled the lake universe into [cyan_lakes/](../cyan_lakes/README.md) and built the per-lake table with `derive/build_lake_table.py` under decision 0002. Done 2026-09-23, recipe review pending.
 - Step 1d built the review dashboard. Builder under `viz/`, page under [docs/dashboards/cyan/](../../docs/dashboards/cyan/README.md). Done 2026-09-23, owner exploration pending.
 - Local scope is assumption A8: weekly whole-region mosaics from 2016 plus 8 weeks of dailies.

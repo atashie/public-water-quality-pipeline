@@ -1,0 +1,366 @@
+{
+  "measured_at": "2026-09-23T19:38:28Z",
+  "recipe": "for each weekly file and each lake, the coloured RGBA PNG and the grey code PNG exactly as build_lake_dashboard.py encodes them, counted as base64 data URLs",
+  "files": {
+    "n": 52,
+    "first": "2025-09-14",
+    "last": "2026-09-13"
+  },
+  "lakes": {
+    "n": 2321,
+    "of": 2321,
+    "sample": 0,
+    "window_cells": 4372248
+  },
+  "newest_week_bytes": {
+    "as_built": 6088476,
+    "codes_only": 1903126
+  },
+  "per_week_bytes": {
+    "as_built": {
+      "mean": 5408993,
+      "min": 4606496,
+      "max": 6606348
+    },
+    "codes_only": {
+      "mean": 1701555,
+      "min": 1463886,
+      "max": 2052122
+    }
+  },
+  "year_bytes": {
+    "as_built": 281267636,
+    "codes_only": 88480904,
+    "codes_strip": 52743014,
+    "mask_once": 1381350,
+    "outline_once": 103027466
+  },
+  "served_today_bytes": 109115942,
+  "per_lake_bytes": {
+    "one_week_as_built": {
+      "median": 1155,
+      "p90": 4611,
+      "max": 113361
+    },
+    "year_as_built": {
+      "median": 60100,
+      "p90": 239812,
+      "max": 5894796
+    },
+    "year_codes_strip": {
+      "median": 5522,
+      "p90": 44326,
+      "max": 1752766
+    },
+    "outline": {
+      "median": 11624,
+      "p90": 88126,
+      "max": 7163812
+    }
+  },
+  "largest": [
+    {
+      "comid": 166757656,
+      "year_as_built": 5894796,
+      "year_codes_strip": 1752766,
+      "outline": 93116
+    },
+    {
+      "comid": 946020001,
+      "year_as_built": 3519124,
+      "year_codes_strip": 1116818,
+      "outline": 625237
+    },
+    {
+      "comid": 19251179,
+      "year_as_built": 3086776,
+      "year_codes_strip": 828126,
+      "outline": 7163812
+    },
+    {
+      "comid": 3528295,
+      "year_as_built": 2499844,
+      "year_codes_strip": 566162,
+      "outline": 1885595
+    },
+    {
+      "comid": 21543470,
+      "year_as_built": 2461636,
+      "year_codes_strip": 667006,
+      "outline": 1343718
+    }
+  ],
+  "weekly": [
+    {
+      "file": "L20252572025263.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 6308812,
+      "codes": 1965530
+    },
+    {
+      "file": "L20252642025270.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 6489880,
+      "codes": 2015342
+    },
+    {
+      "file": "L20252712025277.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 6524264,
+      "codes": 2023110
+    },
+    {
+      "file": "L20252782025284.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 6606348,
+      "codes": 2052122
+    },
+    {
+      "file": "L20252852025291.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 6348908,
+      "codes": 1977318
+    },
+    {
+      "file": "L20252922025298.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 6295952,
+      "codes": 1961162
+    },
+    {
+      "file": "L20252992025305.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 6163156,
+      "codes": 1922114
+    },
+    {
+      "file": "L20253062025312.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 5983456,
+      "codes": 1872222
+    },
+    {
+      "file": "L20253132025319.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 5866200,
+      "codes": 1833286
+    },
+    {
+      "file": "L20253202025326.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 5866304,
+      "codes": 1834350
+    },
+    {
+      "file": "L20253272025333.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 5631516,
+      "codes": 1767678
+    },
+    {
+      "file": "L20253342025340.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 5150196,
+      "codes": 1632490
+    },
+    {
+      "file": "L20253412025347.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 5059616,
+      "codes": 1602978
+    },
+    {
+      "file": "L20253482025354.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 5037136,
+      "codes": 1598442
+    },
+    {
+      "file": "L20253552025361.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 4900812,
+      "codes": 1558246
+    },
+    {
+      "file": "L20253622026003.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 4876888,
+      "codes": 1545778
+    },
+    {
+      "file": "L20260042026010.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 4927584,
+      "codes": 1562750
+    },
+    {
+      "file": "L20260112026017.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 5019316,
+      "codes": 1590274
+    },
+    {
+      "file": "L20260182026024.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 4998212,
+      "codes": 1583566
+    },
+    {
+      "file": "L20260252026031.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 4777896,
+      "codes": 1513630
+    },
+    {
+      "file": "L20260322026038.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 4719432,
+      "codes": 1499242
+    },
+    {
+      "file": "L20260392026045.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 4710380,
+      "codes": 1497654
+    },
+    {
+      "file": "L20260462026052.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 4687044,
+      "codes": 1489586
+    },
+    {
+      "file": "L20260532026059.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 4686372,
+      "codes": 1486546
+    },
+    {
+      "file": "L20260602026066.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 4606496,
+      "codes": 1463886
+    },
+    {
+      "file": "L20260672026073.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 4701516,
+      "codes": 1491326
+    },
+    {
+      "file": "L20260742026080.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 4664064,
+      "codes": 1479638
+    },
+    {
+      "file": "L20260812026087.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 4762228,
+      "codes": 1508574
+    },
+    {
+      "file": "L20260882026094.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 4677536,
+      "codes": 1485722
+    },
+    {
+      "file": "L20260952026101.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 4896084,
+      "codes": 1549702
+    },
+    {
+      "file": "L20261022026108.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 4862064,
+      "codes": 1542042
+    },
+    {
+      "file": "L20261092026115.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 4994204,
+      "codes": 1580542
+    },
+    {
+      "file": "L20261162026122.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 5102888,
+      "codes": 1613782
+    },
+    {
+      "file": "L20261232026129.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 5024192,
+      "codes": 1591190
+    },
+    {
+      "file": "L20261302026136.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 5260648,
+      "codes": 1658886
+    },
+    {
+      "file": "L20261372026143.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 5031884,
+      "codes": 1594470
+    },
+    {
+      "file": "L20261442026150.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 5150152,
+      "codes": 1624918
+    },
+    {
+      "file": "L20261512026157.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 5276388,
+      "codes": 1662310
+    },
+    {
+      "file": "L20261582026164.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 5319896,
+      "codes": 1671722
+    },
+    {
+      "file": "L20261652026171.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 5359948,
+      "codes": 1687382
+    },
+    {
+      "file": "L20261722026178.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 5436732,
+      "codes": 1708706
+    },
+    {
+      "file": "L20261792026185.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 5498044,
+      "codes": 1725598
+    },
+    {
+      "file": "L20261932026199.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 5583844,
+      "codes": 1755322
+    },
+    {
+      "file": "L20262002026206.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 5644368,
+      "codes": 1767646
+    },
+    {
+      "file": "L20262072026213.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 5801284,
+      "codes": 1813678
+    },
+    {
+      "file": "L20262142026220.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 5898116,
+      "codes": 1846454
+    },
+    {
+      "file": "L20262212026227.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 5746536,
+      "codes": 1800058
+    },
+    {
+      "file": "L20262282026234.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 6060196,
+      "codes": 1892182
+    },
+    {
+      "file": "L20262352026241.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 6046272,
+      "codes": 1889122
+    },
+    {
+      "file": "L20262422026248.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 6067180,
+      "codes": 1892946
+    },
+    {
+      "file": "L20262492026255.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 6070720,
+      "codes": 1894558
+    },
+    {
+      "file": "L20262562026262.L3m_7D_CYAN_CI_cyano_CYAN_CONUS_300m.tif",
+      "as_built": 6088476,
+      "codes": 1903126
+    }
+  ],
+  "seconds": 952.8,
+  "code": {
+    "base_revision": "92e7fb5",
+    "working_tree_dirty": true,
+    "sources": {
+      "datasets/cyan/viz/estimate_pixel_history.py": "2b21730e0815569cbed92cdfbfbe4cf88db4119dabcc082a50b591d2ccf22c78",
+      "datasets/cyan/viz/build_lake_dashboard.py": "61b4ae5821efa5d92a419ce86f71bb628aa8fc8e65aa6b6dafbc8f94e30d4a92",
+      "datasets/cyan/derive/build_lake_table.py": "926d6a0800614cce7a378dc2f8e0baf985102e59ed7bb8f29e8d6aba702d8adb"
+    },
+    "inputs": {}
+  }
+}

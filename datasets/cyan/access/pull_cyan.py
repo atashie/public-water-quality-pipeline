@@ -7,7 +7,7 @@ Reproducible, cached, and auditable:
   * Collapses the two name streams to one file per date, preferring the CYAN stream.
   * Downloads only what is missing, through the archive (getfile) or the cloud HTTPS
     endpoint (tea). Every file lands in a JSONL manifest with sha256, bytes, the version tag
-    read from the file, the observed latency, and the access time.
+    read from the file, the age at retrieval, and the access time.
 
 Downloads need OB_DAAC_EDL_TOKEN or OB_DAAC_APPKEY in the repository's .env. --dry-run needs
 nothing and contacts only the search endpoint. This script runs only when the owner invokes it.

@@ -139,6 +139,8 @@ def test_unreadable_file_keeps_its_name_facts_and_is_fatal(tmp_path):
     assert s["inventory"]["unreadable"] == [NAMES[1]]
     assert s["completeness"]["unreadable_dates"] == [STARTS[1]]
     assert STARTS[1] in s["completeness"]["missing"]
+    assert s["completeness"]["missing_planned"] == [STARTS[1]]
+    assert s["completeness"]["missing_not_planned"] == ["2026-07-21"]
 
 
 def test_clean_directory_with_plan_passes(tmp_path):
@@ -148,6 +150,7 @@ def test_clean_directory_with_plan_passes(tmp_path):
     comp = s["completeness"]
     assert comp["bounds_from"] == "plan" and comp["expected"] == 4 and comp["present"] == 3
     assert comp["missing"] == ["2026-07-21"]
+    assert comp["missing_not_planned"] == ["2026-07-21"] and comp["missing_planned"] == []
     x = s["collection"]
     assert x["grid_consistent"] and x["collection_consistent"]
     assert x["values"]["epsg"] == ["5070"] and x["version_tags"] == {"OBPG_version=6.0": 3}
@@ -182,6 +185,29 @@ def test_planned_file_missing_on_disk_is_fatal_even_without_manifest_record(tmp_
     assert s["inventory"]["planned_missing_on_disk"] == [NAMES[0]]
     assert s["completeness"]["bounds_from"] == "plan"
     assert s["completeness"]["expected"] == 4 and STARTS[0] in s["completeness"]["missing"]
+    assert s["completeness"]["missing_planned"] == [STARTS[0]]
+    assert s["completeness"]["missing_not_planned"] == ["2026-07-21"]
+
+
+def test_unplanned_file_on_disk_is_a_collection_flag(tmp_path):
+    raw = make_dir(tmp_path)
+    s = qa_cyan.qa_directory(raw, qa_cyan.load_plan(plan_file(raw, NAMES[:2])))
+    assert s["fatal"] is True
+    assert s["inventory"]["on_disk_not_planned"] == [NAMES[2]]
+    assert "on_disk_not_planned: 1 file(s)" in s["collection"]["collection_flags"]
+    comp = s["completeness"]
+    assert comp["bounds_from"] == "plan" and comp["expected"] == 2 and comp["missing"] == []
+
+
+def test_without_a_plan_the_bounds_come_from_disk_and_the_notes_say_so(tmp_path):
+    raw = make_dir(tmp_path)
+    s = qa_cyan.qa_directory(raw, None)
+    comp = s["completeness"]
+    assert comp["bounds_from"] == "filenames on disk" and comp["missing"] == ["2026-07-21"]
+    assert comp["missing_not_planned"] is None and comp["missing_planned"] is None
+    assert s["collection"]["notes"][0].startswith("no approved plan given")
+    assert s["collection"]["notes"][1].startswith("1 expected date(s) without a readable file")
+    assert s["fatal"] is False
 
 
 def test_legacy_latency_key_is_still_read(tmp_path):
@@ -197,15 +223,19 @@ def test_legacy_latency_key_is_still_read(tmp_path):
 
 def test_main_exit_codes_and_dated_outputs(tmp_path):
     raw = make_dir(tmp_path / "clean")
+    plan = plan_file(raw, NAMES)
     out = tmp_path / "out"
-    rc = qa_cyan.main(["--raw", str(raw), "--outdir", str(out), "--stamp", "2026-09-22T1200Z"])
+    argv = ["--raw", str(raw), "--plan", str(plan), "--outdir", str(out)]
+    rc = qa_cyan.main([*argv, "--stamp", "2026-09-22T1200Z"])
     assert rc == 0
     j = json.loads((out / "qa-clean-2026-09-22T1200Z.json").read_text())
     assert j["measured_at"].endswith("Z") and j["n_files"] == 3 and j["fatal"] is False
     assert "sources" in j["code"] and any(k.endswith("qa_cyan.py") for k in j["code"]["sources"])
     assert any(k.endswith("manifest.jsonl") for k in j["code"]["inputs"])
+    assert any(k.endswith("plan.json") for k in j["code"]["inputs"])
     report = (out / "qa-report-2026-09-22T1200Z.md").read_text()
     assert "# CyAN QA/QC report, 2026-09-22T1200Z" in report and ": pass" in report
+    assert "never planned ['2026-07-21'], planned but not readable []" in report
 
     bad = make_dir(tmp_path / "bad", bad_digest=True)
     rc = qa_cyan.main(["--raw", str(bad), "--outdir", str(out), "--stamp", "2026-09-22T1201Z"])

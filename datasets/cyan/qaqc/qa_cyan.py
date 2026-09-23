@@ -13,14 +13,17 @@ For every raw directory given:
     and processing version must each take one value across the collection.
   * Completeness in time: expected dates from the plan's bounds, or from the filenames when
     no plan is given, against readable files. Unreadable files keep their filename dates.
+    With a plan, missing dates split into dates the plan never listed, which are gaps in the
+    search listing, and planned files that are absent or unreadable.
   * Manifest statistics: bytes, age at retrieval, integrity events, version tags.
 
 Writes qa-<dir>-<stamp>.json per directory and one qa-report-<stamp>.md, where the stamp is
 the run's UTC time. Reruns never overwrite an earlier result. Never edit a result by hand.
 
-Exit status: 0 when every file is readable, every sha256 matches, every planned file is on
-disk, and every collection invariant holds. 1 when any of those fails, after the results are
-written. 2 for a usage error. Notes such as a varying land count do not change the status.
+Exit status: 0 when every file is readable, every sha256 matches, the plan, the manifest, and
+the disk hold the same files, and every collection invariant holds. 1 when any of those fails,
+after the results are written. 2 for a usage error. Notes such as a varying land count or a
+date the plan never listed do not change the status.
 
 Usage:
   uv run python datasets/cyan/qaqc/qa_cyan.py \
@@ -188,13 +191,29 @@ def reconcile(
 
 
 def expected_dates(
-    records: list[dict], bounds: tuple[str, str] | None, temporal: str | None
+    records: list[dict],
+    bounds: tuple[str, str] | None,
+    temporal: str | None,
+    planned_dates: set[str] | None = None,
 ) -> dict:
-    """Expected start dates against readable files. Unreadable files keep their dates."""
+    """Expected start dates against readable files. Unreadable files keep their dates.
+
+    With planned dates, each missing date is either one the plan never listed, a gap in the
+    search listing, or a planned file that is absent or unreadable. Without a plan the split
+    is None.
+    """
+    split = planned_dates is not None
     named = [r for r in records if r.get("parsed")]
     starts_all = sorted(r["parsed"]["start_date"] for r in named)
     if not starts_all and not bounds:
-        return {"expected": 0, "present": 0, "missing": [], "unreadable_dates": []}
+        return {
+            "expected": 0,
+            "present": 0,
+            "missing": [],
+            "missing_not_planned": [] if split else None,
+            "missing_planned": [] if split else None,
+            "unreadable_dates": [],
+        }
     temporal = temporal or Counter(r["parsed"]["temporal"] for r in named).most_common(1)[0][0]
     step = 7 if temporal == "7D" else 1
     first, last = bounds if bounds else (starts_all[0], starts_all[-1])
@@ -204,6 +223,7 @@ def expected_dates(
         d += dt.timedelta(days=step)
     readable = {r["parsed"]["start_date"] for r in named if "error" not in r}
     unreadable = sorted({r["parsed"]["start_date"] for r in named if "error" in r})
+    missing = [e for e in expected if e not in readable]
     return {
         "temporal": temporal,
         "bounds_from": "plan" if bounds else "filenames on disk",
@@ -212,7 +232,9 @@ def expected_dates(
         "expected": len(expected),
         "present": sum(1 for e in expected if e in readable),
         "duplicates": len(starts_all) - len(set(starts_all)),
-        "missing": [e for e in expected if e not in readable],
+        "missing": missing,
+        "missing_not_planned": [e for e in missing if e not in planned_dates] if split else None,
+        "missing_planned": [e for e in missing if e in planned_dates] if split else None,
         "unreadable_dates": unreadable,
     }
 
@@ -233,7 +255,13 @@ def collection_checks(records: list[dict], inventory: dict) -> dict:
     for k in ("dtype", "band_count", "nodata_flag", "stream", "processing_version_tag"):
         if len(values[k]) > 1:
             flags.append(f"mixed {k}: {values[k]}")
-    for k in ("planned_missing_on_disk", "manifest_only", "disk_only", "unreadable"):
+    for k in (
+        "planned_missing_on_disk",
+        "on_disk_not_planned",
+        "manifest_only",
+        "disk_only",
+        "unreadable",
+    ):
         if inventory[k]:
             flags.append(f"{k}: {len(inventory[k])} file(s)")
     land = [r["class_counts"]["land"] for r in ok if r.get("class_counts")]
@@ -320,12 +348,25 @@ def qa_directory(raw: Path, plan: dict | None) -> dict:
     disk = {t.name for t in tifs}
     readable = {r["filename"] for r in per_file if "error" not in r}
     planned = set(plan["filenames"]) if plan and plan.get("filenames") else None
+    planned_dates = None
+    if planned is not None:
+        planned_dates = {f.start_date for f in map(c.parse_cyan_filename, planned) if f}
     inventory = reconcile(planned, set(by_name), disk, readable)
     collection = collection_checks(per_file, inventory)
     bounds = plan["_bounds"] if plan else None
     temporal = plan["_temporal"] if plan else None
-    completeness = expected_dates(per_file, bounds, temporal)
-    if completeness.get("missing"):
+    completeness = expected_dates(per_file, bounds, temporal, planned_dates)
+    if planned is None:
+        collection["notes"].append(
+            "no approved plan given. Completeness bounds come from the filenames on disk, so an "
+            "absent first or last date cannot be detected"
+        )
+    if completeness.get("missing_not_planned"):
+        collection["notes"].append(
+            f"{len(completeness['missing_not_planned'])} expected date(s) the plan never "
+            "listed: absent from the search listing. Not a physical archive check"
+        )
+    elif planned is None and completeness.get("missing"):
         collection["notes"].append(
             f"{len(completeness['missing'])} expected date(s) without a readable file. "
             "Absent from the search listing or from the pull. Not a physical archive check"
@@ -386,6 +427,11 @@ def write_report(summaries: list[dict], path: Path, stamp: str) -> None:
         bounds = f"bounds from {comp.get('bounds_from')}"
         present = f"{comp['present']} of {comp['expected']} expected dates readable"
         missing = f"missing {comp['missing'][:10]}"
+        if comp.get("missing_planned") is not None:
+            missing = (
+                f"never planned {comp['missing_not_planned'][:10]}, "
+                f"planned but not readable {comp['missing_planned'][:10]}"
+            )
         lines.append(f"| Completeness | {span}, {bounds}: {present}, {missing} |")
         if man.get("records"):
             age = man.get("age_at_retrieval_days") or {}

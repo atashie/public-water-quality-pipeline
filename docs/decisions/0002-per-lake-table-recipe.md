@@ -24,6 +24,14 @@ The owner authorized step 1e, the per-lake table, on 2026-09-23. The HAB_PoC rep
 - Edge and mixed pixels are excluded by construction. A bloom confined to a shoreline is invisible to the table. The touched count shows how much of a lake the rule discards.
 - The median with zeros included is a coverage-sensitive statistic. `valid_frac` travels with every row so a consumer can filter.
 
+## Note of 2026-09-23, after reading the EPA code deposit
+
+The EPA forecast code deposit, DOI 10.23719/1529140, was fetched and read on 2026-09-23 after this decision was confirmed. [Probe record](../probes/2026-09-23-epa-forecast-code-deposit.md). Where the two overlap they agree: pixels wholly inside the polygon (`coverage_fraction == 1`), the median with `na.rm`, code 0 kept as a measurement, codes above 253 set to missing so that 253 is kept, and a bloom flag at a median of 130 or more. Three things the EPA code does that this recipe does not: it multiplies every image by a fixed `invalidMixed.tif` mask that is not in the deposit, it masks ice with weekly shapefiles, and it fills ice-masked missing weeks with no bloom before training. The interior rule of this recipe is a geometric stand-in for the first and is not the same mask. None of this changes the recipe. The dashboard of step 1f states the differences.
+
+## Note of 2026-09-23, on the precision of the interior rule
+
+[Measurement 10](../measurements.md#10-the-pixel-masks-against-exact-polygon-geometry-and-the-displacement-of-simplified-outlines-2026-09-23) compared the 8 by 8 oversampled classification with exact coverage fractions on 70 lakes. The masks never miss a wholly inside cell. Under one percent of interior cells have an exact fraction between 0.944 and 0.999, where a sliver of shore clips a corner between the sub-grid's sample points. Exact fractions would cost about 30 minutes per rebuild against 90 seconds and would move under one percent of interior cells out. The recipe stands unless the owner asks for exact fractions or a finer sub-grid, either of which is a new recipe id.
+
 ## Review triggers
 
 - The owner amends any rule above. The recipe id changes and the table is rebuilt.

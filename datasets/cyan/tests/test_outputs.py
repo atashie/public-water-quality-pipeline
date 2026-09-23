@@ -11,6 +11,6 @@ OUTPUTS = Path(__file__).resolve().parents[1] / "outputs"
 @pytest.mark.parametrize("path", sorted(OUTPUTS.glob("*.json")), ids=lambda p: p.name)
 def test_output_parses_and_is_dated(path):
     rec = json.loads(path.read_text(encoding="utf-8"))
-    stamp = rec.get("measured_at") or rec.get("searched_at")
+    stamp = rec.get("measured_at") or rec.get("searched_at") or rec.get("built_at")
     assert stamp and stamp.endswith("Z"), f"{path.name}: no UTC timestamp"
     assert stamp[:10] in path.stem, f"{path.name}: filename does not carry the stamp date"

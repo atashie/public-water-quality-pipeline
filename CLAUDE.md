@@ -7,7 +7,7 @@ and the EPA experimental cyanoHAB forecast. Sentinel-2, other sensors, and in si
 
 ## Current phase
 
-Step 0, initialization, committed 2026-09-22 with the owner's authorization. Steps 1a to 1c are committed and approved. 598 files sit under `data/cyan/raw/`. Step 1d, the review dashboard at `docs/dashboards/cyan/index.html`, is approved. Step 1e is approved: the per-lake table is built under decision 0002. Step 1f, the user-facing lake dashboard, is in progress.
+Step 0, initialization, committed 2026-09-22 with the owner's authorization. Steps 1a to 1c are committed and approved. 598 files sit under `data/cyan/raw/`. Step 1d, the review dashboard at `docs/dashboards/cyan/index.html`, is approved. Step 1e is approved: the per-lake table is built under decision 0002. Step 1f, the user-facing lake dashboard at `docs/dashboards/cyan-lakes/index.html`, is approved. Step 1g, the AWS note for CyAN, is next.
 Start with [docs/work-plan.md](docs/work-plan.md). The facts checked on 2026-09-22 are in
 [docs/probes/2026-09-22-dataset-facts.md](docs/probes/2026-09-22-dataset-facts.md). They await independent checks before any dataset METADATA calls them `documented`.
 
@@ -33,7 +33,7 @@ Every dataset goes through the same eight steps. Each step is one authorized uni
 
 1. Characterize. Write `METADATA.md` from primary sources with quotes and access dates. Preserve the sources under `reference/`. List what stays unresolved.
 2. Pull. Enumerate, print a dry-run plan, then download into `data/<dataset>/raw/` with a cached, sha256-manifested downloader.
-3. QA/QC the bytes. Integrity, structure, encoding, version tags, and distributions. Emit `outputs/qa_report.md` and `outputs/qa_summary.json`.
+3. QA/QC the bytes. Integrity, structure, encoding, version tags, and distributions. Emit stamped `outputs/qa-<dir>-<stamp>.json` and `outputs/qa-report-<stamp>.md`. Never overwrite an earlier run.
 4. Review dashboard. The agent builds one static HTML page. The owner explores it and gives feedback. The feedback and its dispositions become a dated review.
 5. Derive. Per-lake tables keyed by COMID on the lake universe of assumption A9. Any aggregation cites its authorization.
 6. Serve. A user-facing dashboard to the owner's specification for that dataset.
@@ -83,7 +83,7 @@ uv run python datasets/cyan/derive/build_lake_table.py --raw data/cyan/raw/weekl
 - Timestamps carry a UTC offset. Dates are ISO 8601. No relative dates in documents.
 - Documents use plain English and American spelling. Descriptive sentences: 25 words maximum. Procedure steps: imperative, 20 words maximum. No semicolons. No "should".
 - Python: ruff, line length 100, rules `E F I B UP`. Python 3.12 for development and CI. Never install the PyPI package `datasets`.
-- Do not commit anything under `data/` or `.env`. Large artifacts belong in linked storage.
+- Do not commit anything under the root `data/` or `.env`. Large artifacts belong in linked storage. A dashboard's small up-front data files under `docs/dashboards/*/data/` are committed. Its per-lake and per-frame files are not.
 
 ## Gotchas
 

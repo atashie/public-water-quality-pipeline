@@ -5,7 +5,7 @@ A checked box means the work exists in this repository with evidence. Every step
 
 ## Next session
 
-Step 1f, the user-facing CyAN lake dashboard, authorized 2026-09-23. Step 1b needs an Earthdata Login token in `.env` before any download. The dry run needs none.
+Step 1f approved and committed 2026-09-23 after five rounds of feedback. Next is 1g, the AWS note for CyAN, and a Codex check of the probe record on the EPA and Copernicus assertions. Step 1b needs an Earthdata Login token in `.env` before any download. The dry run needs none.
 
 ## How a dataset is judged
 
@@ -41,7 +41,7 @@ Each sub-step is one authorized unit.
 - [x] 1d, delivered and approved 2026-09-23 after the owner's exploration and two rounds of feedback. One offline page: native 300 m frames for eight review windows over every pulled file, the national record, the QA table, and provenance. [Record](reviews/2026-09-23-cyan-review-dashboard.md), [page README](dashboards/cyan/README.md).
 - [x] 1e part 1, done 2026-09-23. Lake and tile shapefiles pulled and checked: 2,321 lakes, 2,321 distinct COMID. [Measurement 6](measurements.md#6-the-cyan-resolvable-lakes-shapefile-2321-lakes-keyed-by-comid-2026-09-23). Recipe recorded in [decision 0002](decisions/0002-per-lake-table-recipe.md), owner confirmation pending.
 - [x] 1e part 2, delivered and approved 2026-09-23. Recipe confirmed. 1,387,958 rows for 2,321 lakes in 87 seconds. [measurement 7](measurements.md#7-the-per-lake-table-1387958-rows-for-2321-lakes-under-decision-0002-2026-09-23). [Record](reviews/2026-09-23-cyan-lake-table.md).
-- [ ] 1f. Serve. User-facing dashboard to the owner's specification. The HAB_PoC "current active blooms" view is the reference.
+- [x] 1f, delivered, approved, and committed 2026-09-23 after five rounds of feedback. One offline page over the per-lake table: a map of every lake's state in any of the newest 104 weeks with a movable bloom line and coverage control, a ranked list, a per-lake deep dive over the whole record, and provenance. The companion attribute table with centroids, windows, and interior cell indices. Names for 2,230 of 2,321 lakes by a GNIS crosswalk after the owner's first feedback. After the second round: FAQ dropdown, three-panel map with continent outlines, filters by state and status, newest-week pixel overlays, no provenance tab. [Record](reviews/2026-09-23-cyan-lake-dashboard.md), [page README](dashboards/cyan-lakes/README.md), [measurement 8](measurements.md#8-the-lake-dashboard-data-2321-lakes-the-newest-104-weeks-on-one-page-2026-09-23).
 - [ ] 1g. AWS note. In-region read from the Earthdata Cloud bucket, weekly schedule, Lambda unit, provenance, backfill, reprocessing watch, costs from dated pages.
 - [ ] 1h. Register and review.
 
