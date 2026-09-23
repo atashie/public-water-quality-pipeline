@@ -1,0 +1,53 @@
+{
+ "measured_at": "2026-09-23T14:36:00Z",
+ "stamp": "2026-09-23T1436Z",
+ "recipe": {
+  "id": "decision-0002-v1",
+  "oversample": 8,
+  "interior_min_coverage": 0.999,
+  "valid_codes": [
+   0,
+   253
+  ],
+  "statistics_over": "interior pixels with codes 0 to 253, code 0 included",
+  "excluded_codes": [
+   254,
+   255
+  ],
+  "temporal_aggregation": "none"
+ },
+ "lakes": {
+  "in_file": 2321,
+  "with_interior_pixel": 2321,
+  "without_interior_pixel": [],
+  "interior_pixels": {
+   "min": 3,
+   "median": 44.0,
+   "p90": 354.0,
+   "max": 46186,
+   "sum": 541510
+  }
+ },
+ "files": 598,
+ "rows": 1387958,
+ "weekly_rows": 1257982,
+ "weekly_lake_weeks_with_valid_pixel": 1040186,
+ "weekly_lake_weeks_valid_frac_at_least_half": 947460,
+ "weekly_lake_weeks_median_at_least_130": 124104,
+ "output": "data/cyan/derived/cyan_lake_table-2026-09-23T1436Z.parquet",
+ "output_sha256": "4df1ccab548f8742c3573184129af0619e3649d563024f02f01537dfecbb6a3c",
+ "output_bytes": 32581188,
+ "code": {
+  "base_revision": "6c7321f",
+  "working_tree_dirty": true,
+  "sources": {
+   "datasets/cyan/derive/build_lake_table.py": "926d6a0800614cce7a378dc2f8e0baf985102e59ed7bb8f29e8d6aba702d8adb",
+   "datasets/cyan/access/cyan_api.py": "0aac3e3527c565c8f52af780ece1a4dd267eb7f22448242c7cf1501c9a45f625"
+  },
+  "inputs": {
+   "data/cyan_lakes/raw/MERIS_OLCI_Lakes.zip": "e3efe1f69a004af9be3c15e63122e3ddc3ec9b8bc33d2e44e580d39aca4e0e06",
+   "data/cyan/raw/weekly_conus_mosaic/manifest.jsonl": "ec299b2646b7f56a97635abb2859e8b035820a892cef75bfdca4fe48c5fec66d",
+   "data/cyan/raw/daily_conus_mosaic/manifest.jsonl": "841cc5cec11b759ac6288f20bc9c4ebce20b19f38d446f5ada9b19392043d2da"
+  }
+ }
+}

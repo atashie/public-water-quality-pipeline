@@ -1,6 +1,6 @@
 # 0002. The per-lake table: lake universe, pixel rule, and statistics, 2026-09-23
 
-Status: active, proposed by the implementer under the owner's authorization of step 1e on 2026-09-23. The owner confirms or amends the recipe on review of the step 1e record.
+Status: active. Proposed by the implementer under the owner's authorization of step 1e and confirmed by the owner on 2026-09-23 after a walkthrough of the recipe and the table. The interior rule stays at 99.9 percent coverage.
 
 ## Context
 
@@ -12,7 +12,7 @@ The owner authorized step 1e, the per-lake table, on 2026-09-23. The HAB_PoC rep
 - Lake universe: `updatedValidLakes.shp` from the NASA Earthdata CyAN project page, 2,321 features with 2,321 distinct COMID, pulled and checked on 2026-09-23. Every lake keeps its COMID, name, and area from the file.
 - Grid: the whole-region mosaic grid, EPSG:5070 at 300 m. Polygons are reprojected to the file's projection before rasterization.
 - Interior pixel: a native cell whose area lies at least 99.9 percent inside the polygon, from an 8 by 8 oversampled rasterization. Computed once per lake. Touched pixels, any coverage above zero, are counted for reference and used in no statistic.
-- Statistics per lake and file, over interior pixels only: counts by code class, and over the valid codes 0 to 253 the mean, median, sample standard deviation, 90th percentile, and maximum, with the derived index of the maximum. Code 0 counts as a measurement of zero, as in the EPA forecast recipe. Codes 254 and 255 are excluded and counted.
+- Statistics per lake and file, over interior pixels only. Counts by code class. Over the valid codes 0 to 253: the mean, median, sample standard deviation, 90th percentile, and maximum, with the derived index of the maximum. Code 0 counts as a measurement of zero, as in the EPA forecast recipe. Codes 254 and 255 are excluded and counted.
 - A lake with no interior pixel produces no row. Its COMID is listed in the provenance sidecar.
 - No temporal aggregation. One row per lake and file. Daily and weekly files stay apart.
 - Every table carries a provenance sidecar with the recipe id, the code hashes, and the input hashes, and a summary under `datasets/cyan/outputs/`. Tables are stamped and never overwritten.

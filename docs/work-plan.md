@@ -5,7 +5,7 @@ A checked box means the work exists in this repository with evidence. Every step
 
 ## Next session
 
-Step 1e, the resolvable-lakes shapefile and the per-lake table, authorized 2026-09-23. Step 1b needs an Earthdata Login token in `.env` before any download. The dry run needs none.
+Step 1f, the user-facing CyAN lake dashboard, authorized 2026-09-23. Step 1b needs an Earthdata Login token in `.env` before any download. The dry run needs none.
 
 ## How a dataset is judged
 
@@ -39,7 +39,8 @@ Each sub-step is one authorized unit.
 - [x] 1b, part 2, done 2026-09-22. 542 weekly and 56 daily whole-region files pulled through the archive route, 3.35 GB, no failure. [Measurement 4](measurements.md#4-the-assumption-a8-pull-598-files-335-gb-no-failure-newest-weekly-file-3-days-old-at-retrieval-2026-09-22).
 - [x] 1c, delivered 2026-09-22, corrected after two independent Codex reviews the same day, approved by the owner. `qa_cyan.py` with tests, run on all 598 files against the approved plans. [Record](reviews/2026-09-22-cyan-pull-and-qa.md).
 - [x] 1d, delivered and approved 2026-09-23 after the owner's exploration and two rounds of feedback. One offline page: native 300 m frames for eight review windows over every pulled file, the national record, the QA table, and provenance. [Record](reviews/2026-09-23-cyan-review-dashboard.md), [page README](dashboards/cyan/README.md).
-- [ ] 1e. Derive. Pull the resolvable-lakes shapefile, verify its count, and build the per-lake weekly table with the recorded recipe. Authorization for the aggregation recorded in a decision.
+- [x] 1e part 1, done 2026-09-23. Lake and tile shapefiles pulled and checked: 2,321 lakes, 2,321 distinct COMID. [Measurement 6](measurements.md#6-the-cyan-resolvable-lakes-shapefile-2321-lakes-keyed-by-comid-2026-09-23). Recipe recorded in [decision 0002](decisions/0002-per-lake-table-recipe.md), owner confirmation pending.
+- [x] 1e part 2, delivered and approved 2026-09-23. Recipe confirmed. 1,387,958 rows for 2,321 lakes in 87 seconds. [measurement 7](measurements.md#7-the-per-lake-table-1387958-rows-for-2321-lakes-under-decision-0002-2026-09-23). [Record](reviews/2026-09-23-cyan-lake-table.md).
 - [ ] 1f. Serve. User-facing dashboard to the owner's specification. The HAB_PoC "current active blooms" view is the reference.
 - [ ] 1g. AWS note. In-region read from the Earthdata Cloud bucket, weekly schedule, Lambda unit, provenance, backfill, reprocessing watch, costs from dated pages.
 - [ ] 1h. Register and review.

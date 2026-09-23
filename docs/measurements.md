@@ -81,3 +81,41 @@ A first run of the script, before the corrections of the [independent review](re
 
 What it shows. The files share one grid and one version tag, and their metadata matches the documented encoding. The four classes partition every uint8 value, so the composition describes the files and does not validate the meaning of any code. The land class differs between files. A per-lake mask must therefore come from the lake polygons and treat each file's land and no-data codes on its own.
 What it does not show. Whether any value is right. Usable coverage inside any lake, or the causes of missing values. Whether upstream snow and ice screening was applied. Physical absence of the missing week from the archive.
+
+### 6. The CyAN resolvable-lakes shapefile: 2,321 lakes keyed by COMID, 2026-09-23
+
+Scripts `datasets/cyan_lakes/access/pull_lakes.py` and `datasets/cyan_lakes/qaqc/qa_lakes.py`. Results [qa-lakes-2026-09-23T1433Z.json](../datasets/cyan_lakes/outputs/qa-lakes-2026-09-23T1433Z.json) and the [report](../datasets/cyan_lakes/outputs/qa-lakes-2026-09-23T1433Z.md). `measured`
+
+| Measure | Value |
+|---|---|
+| `MERIS_OLCI_Lakes.zip` | 32,822,913 bytes, sha256 `e3efe1f69a00...`, fetched 2026-09-23. Four members, `updatedValidLakes.shp` at 41,997,768 bytes |
+| `CONUS_tiles_shapefile.zip` | 4,834 bytes, 54 tile features with row and column fields |
+| Lake features, distinct COMID, null, duplicated | 2,321, 2,321, 0, 0 |
+| Projection | Albers equal area on GRS80, read as EPSG:5070 |
+| Geometry | 2,316 polygons and 5 multipolygons, 2,306 valid, 0 empty |
+| Area from geometry, km² | 0.74 min, 7.28 median, 4,309.7 max, 67,370 in all. The `AREASQKM` field agrees within 0.02 percent |
+| Lakes under 9 and under 25 native pixels by area | 1 and 177 |
+| Unnamed features | 455 |
+| Fields beyond NHDPlus | `shore_dist`, `max_window`, `new_flag`, `POINTID`, and `_1` duplicates, undocumented on the project page |
+
+What it shows. The universe of assumption A9 exists, is keyed by COMID without gaps, and lands on the CyAN grid's projection. The count matches the HAB_PoC repository's access of 2026-07-02.
+What it does not show. Which NHDPlus version the COMIDs follow, or whether the polygons match current shorelines. The 15 invalid geometries are counted, not repaired.
+
+### 7. The per-lake table: 1,387,958 rows for 2,321 lakes under decision 0002, 2026-09-23
+
+Script `datasets/cyan/derive/build_lake_table.py`, recipe `decision-0002-v1`. Table `data/cyan/derived/cyan_lake_table-2026-09-23T1436Z.parquet`, 32,581,188 bytes, ignored by git, with its provenance sidecar. Summary [lake-table-2026-09-23T1436Z.json](../datasets/cyan/outputs/lake-table-2026-09-23T1436Z.json). Built 2026-09-23T14:34:34Z to 14:36:01Z, 1 minute 27 seconds for 598 files, each read once in full. `measured`
+
+| Measure | Value |
+|---|---|
+| Lakes in the shapefile, lakes with an interior pixel | 2,321, 2,321 |
+| Interior pixels per lake | min 3, median 44, 90th percentile 354, max 46,186, 541,510 in all |
+| Lakes under 9 and under 25 interior pixels | 51 and 688 |
+| Touched pixels the interior rule discards, per lake | median 61 percent, 90th percentile 78 percent |
+| Rows | 1,387,958, one per lake and file: 1,257,982 weekly and 129,976 daily |
+| Weekly lake-weeks with at least one valid pixel | 1,040,186 of 1,257,982, 82.7 percent |
+| Weekly lake-weeks with `valid_frac` of at least 0.5 | 947,460, 75.3 percent. Median `valid_frac` 0.933 |
+| Mean weekly `valid_frac` by year | 0.73 in 2016, 0.64 in 2017, 0.64 in 2018, 0.70 in 2019, 0.75 in 2020, 0.74 in 2021, 0.72 in 2022, 0.69 in 2023, 0.78 in 2024, 0.74 in 2025, 0.74 in 2026 to date |
+| Weekly lake-weeks whose median code is 130 or more | 124,104, which is 11.9 percent of those with a valid pixel. Reported as a distribution, not a bloom claim |
+
+What it shows. The shapefile is already limited to lakes the sensor resolves, so every lake yields interior pixels. The strict interior rule keeps well under half of the pixels a lake polygon touches, and 688 lakes rest on fewer than 25 pixels. Cloud and ice leave one weekly lake-week in six without any valid pixel.
+What it does not show. Whether any value is right. Whether the discarded shoreline pixels carry signal. The 130 threshold is the EPA forecast paper's operationalization and is reported here only to describe the table.

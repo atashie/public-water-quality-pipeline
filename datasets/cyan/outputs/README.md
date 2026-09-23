@@ -6,5 +6,6 @@ Evidence written by scripts under `../access/` and, later, `../qaqc/`. Never edi
 |---|---|---|
 | `plan-weekly-mosaic-2026-09-22.json` | `pull_cyan.py --dry-run` | The approved weekly whole-region selection: every filename, counts, streams, search time, code provenance |
 | `plan-daily-mosaic-2026-09-22.json` | `pull_cyan.py --dry-run` | The approved daily whole-region selection for the last 8 weeks |
+| `lake-table-<stamp>.json` | `build_lake_table.py` | Summary of one per-lake table build: recipe, lakes with and without interior pixels, row counts, coverage counts, the table's path and sha256, and provenance |
 | `qa-<dir>-<stamp>.json`, `qa-report-<stamp>.md` | `qa_cyan.py` | One result per raw directory per run, stamped with the run's UTC time, plus the report. Earlier runs are never overwritten |
 | `route-comparison-2026-09-22.json` | `compare_routes.py` | Presence of every listed weekly file on the cloud endpoint, the catalog count, the credentials and listing test, and two byte comparisons |

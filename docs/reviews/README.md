@@ -5,6 +5,7 @@ Start with the latest review below.
 
 | Date | Review | Reviewer |
 |---|---|---|
+| 2026-09-23 | [Step 1e, CyAN lake universe and per-lake table: 2,321 lakes keyed by COMID, the recipe of decision 0002, and one row per lake and file](2026-09-23-cyan-lake-table.md) | Claude Code (AI coding agent), directed by the repository owner |
 | 2026-09-23 | [Step 1d, CyAN review dashboard: native 300 m frames for eight windows, the national record, and provenance on one offline page](2026-09-23-cyan-review-dashboard.md) | Claude Code (AI coding agent), directed by the repository owner |
 | 2026-09-22 | [Independent review of the CyAN pull and QA/QC](2026-09-22-cyan-pull-qa-independent-review.md) | Codex |
 | 2026-09-22 | [Independent validation of CyAN route measurements](2026-09-22-cyan-independent-validation.md) | Codex with three low-cost checking agents |

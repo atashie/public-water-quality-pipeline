@@ -7,7 +7,7 @@ and the EPA experimental cyanoHAB forecast. Sentinel-2, other sensors, and in si
 
 ## Current phase
 
-Step 0, initialization, committed 2026-09-22 with the owner's authorization. Steps 1a to 1c are committed and approved. 598 files sit under `data/cyan/raw/`. Step 1d, the review dashboard at `docs/dashboards/cyan/index.html`, is approved. Step 1e, the lake universe and the per-lake table, is in progress.
+Step 0, initialization, committed 2026-09-22 with the owner's authorization. Steps 1a to 1c are committed and approved. 598 files sit under `data/cyan/raw/`. Step 1d, the review dashboard at `docs/dashboards/cyan/index.html`, is approved. Step 1e is approved: the per-lake table is built under decision 0002. Step 1f, the user-facing lake dashboard, is in progress.
 Start with [docs/work-plan.md](docs/work-plan.md). The facts checked on 2026-09-22 are in
 [docs/probes/2026-09-22-dataset-facts.md](docs/probes/2026-09-22-dataset-facts.md). They await independent checks before any dataset METADATA calls them `documented`.
 
@@ -56,6 +56,8 @@ uv run python datasets/cyan/access/compare_routes.py --sdate 2016-01-01 --edate 
 uv run python datasets/cyan/access/pull_cyan.py --period weekly --tiles all --sdate 2016-01-01 --edate 2026-09-22             # step 1b part 2, after authorization
 uv run python datasets/cyan/qaqc/qa_cyan.py --raw data/cyan/raw/weekly_conus_mosaic --plan datasets/cyan/outputs/plan-weekly-mosaic-2026-09-22.json  # step 1c, local only
 uv run python datasets/cyan/viz/build_review_dashboard.py --raw data/cyan/raw/weekly_conus_mosaic --qa datasets/cyan/outputs/<qa json>  # step 1d, local only
+uv run python datasets/cyan_lakes/access/pull_lakes.py --dry-run                                                          # step 1e, two public zips
+uv run python datasets/cyan/derive/build_lake_table.py --raw data/cyan/raw/weekly_conus_mosaic                            # step 1e, local only
 ```
 
 ## Layout
