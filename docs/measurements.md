@@ -133,7 +133,7 @@ Script `datasets/cyan/viz/build_lake_dashboard.py` over the table of measurement
 | Names | 1,866 from the shapefile, 345 from a GNIS point inside the polygon, 19 from a GNIS point within 300 m, 91 lakes unnamed and shown by COMID. Measurement 9 |
 | `data/lakes.js`, `data/basemap_land.js` | 3,122,804 and 559,819 bytes, tracked. The simplified `outlines.js` of earlier builds is no longer written |
 | States by centroid | 46 states, every lake assigned, 2 by nearest state. Minnesota 414, Maine 199, Texas 138, Michigan 137, Florida 133 |
-| Pixel overlays from `L20262562026262`, 2026-09-13 to 2026-09-19 | 2,321 files, 66,755,331 bytes in all, ignored by git. Each is the lake's window warped to Web Mercator at twice the native resolution, once coloured and once as raw codes, plus the exact outline to 6 decimals, which is most of the bytes |
+| Pixel overlays from `L20262562026262`, 2026-09-13 to 2026-09-19 | 2,321 files, 66,755,331 bytes in all, ignored by git. Each is the lake's window warped to Web Mercator at twice the native resolution, once colored and once as raw codes, plus the exact outline to 6 decimals, which is most of the bytes |
 | Per-lake series files `data/lakes/<comid>.js` | 2,321 files, 73 MB, ignored by git |
 | Companion attribute table `data/cyan/derived/cyan_lake_attributes-2026-09-23T1846Z.parquet` | 2,321 rows, 20 columns with the state, ignored by git. Interior cell indices sum to 541,510, equal to measurement 7 |
 | Cross-check of one lake | Apopka, Lake: the page series, the parquet row, and the attribute row agree on the newest week's median 176, 90th percentile 180, maximum 198, 1,284 valid of 1,284 interior pixels, and a strict run of 147 weeks |
@@ -173,17 +173,17 @@ What it shows. The masks never miss a wholly inside cell and never touch a cell 
 
 ### 11. A year of per-lake pixel images: what it costs in bytes, 2026-09-23
 
-Script `datasets/cyan/viz/estimate_pixel_history.py`. Result [pixel-history-2026-09-23T1952Z.json](../datasets/cyan/outputs/pixel-history-2026-09-23T1952Z.json). All 2,321 lakes, the newest 52 weekly files, 2025-09-14 through 2026-09-13, 13 minutes. For each file and each lake the script encodes the coloured PNG and the grey code PNG exactly as the dashboard builder does and counts the base64 data URLs as served. `measured`. A first run, `pixel-history-2026-09-23T1938.json`, counted the outlines at full coordinate precision instead of the 6 decimals the page serves, and is superseded.
+Script `datasets/cyan/viz/estimate_pixel_history.py`. Result [pixel-history-2026-09-23T1952Z.json](../datasets/cyan/outputs/pixel-history-2026-09-23T1952Z.json). All 2,321 lakes, the newest 52 weekly files, 2025-09-14 through 2026-09-13, 13 minutes. For each file and each lake the script encodes the colored PNG and the gray code PNG exactly as the dashboard builder does and counts the base64 data URLs as served. `measured`. A first run, `pixel-history-2026-09-23T1938.json`, counted the outlines at full coordinate precision instead of the 6 decimals the page serves, and is superseded.
 
 | Measure | Value |
 |---|---|
 | Served today, all lakes: images for the newest week, and the exact outlines | 6,088,476 B of images and 60,993,186 B of outlines, 67,081,662 B together. The outlines are 91 percent. The served folder measures 66,755,331 B, within 0.5 percent: the script keeps trailing zeros in coordinates that the builder drops, and the served files add a wrapper |
-| Images per weekly file, all lakes, over the 52 files | mean 5,408,993 B, from 4,606,496 B to 6,606,348 B. The grey code PNG alone: mean 1,701,555 B |
+| Images per weekly file, all lakes, over the 52 files | mean 5,408,993 B, from 4,606,496 B to 6,606,348 B. The gray code PNG alone: mean 1,701,555 B |
 | 52 weeks of images as built, all lakes | 281,267,636 B, 46 times the newest week |
-| 52 weeks of the grey code PNG alone, with the alpha mask sent once per lake | 88,480,904 B of codes and 1,381,350 B of masks |
-| 52 weeks of the grey code PNG stacked into one PNG per lake | 52,743,014 B, 60 percent of the separate code PNGs |
+| 52 weeks of the gray code PNG alone, with the alpha mask sent once per lake | 88,480,904 B of codes and 1,381,350 B of masks |
+| 52 weeks of the gray code PNG stacked into one PNG per lake | 52,743,014 B, 60 percent of the separate code PNGs |
 | One lake, one week, as built | median 1,155 B, 90th percentile 4,611 B, largest 113,361 B on Lake Okeechobee |
 | One lake, 52 weeks, as built, and as stacked codes | median 60,100 B and 5,522 B. 90th percentile 239,812 B and 44,326 B. Largest 5,894,796 B and 1,752,766 B, Lake Okeechobee |
 | The page and the up-front lake file | unchanged by any of this: `index.html` 46,957 B, `lakes.js` 3,122,780 B |
 
-What it shows. A year of pixels for every lake costs 281 MB as the page encodes them today, or 53 MB with the codes stacked per lake and coloured in the browser, against 67 MB served today, most of it outlines. Split into one file per lake per week, what the browser fetches for one lake and one week stays what it is today. The page and the up-front data do not grow at all. What it does not show. The bytes for daily composites, or for the whole weekly record since 2016, which is 543 files and about ten times the year.
+What it shows. A year of pixels for every lake costs 281 MB as the page encodes them today, or 53 MB with the codes stacked per lake and colored in the browser, against 67 MB served today, most of it outlines. Split into one file per lake per week, what the browser fetches for one lake and one week stays what it is today. The page and the up-front data do not grow at all. What it does not show. The bytes for daily composites, or for the whole weekly record since 2016, which is 543 files and about ten times the year.

@@ -59,7 +59,7 @@ Each sub-step is one authorized unit.
 
 ## Step 3: Copernicus Lake Water Quality 300 m
 
-- [ ] 3a. Characterize. Product user manual, product pages, release news, and the catalogue listing, with a research agent and a checking agent. Resolve the grid spacing from a file. Count the lakes inside the contiguous United States.
+- [ ] 3a. Characterize. Product user manual, product pages, release news, and the catalog listing, with a research agent and a checking agent. Resolve the grid spacing from a file. Count the lakes inside the contiguous United States.
 - [ ] 3b. Discovery of access routes, measured on one dekad. Compare a full NetCDF download with a local crop, range reads from the cloud-optimized variant over S3, and any server-side subsetting the platform offers. Report bytes, requests, time, and completeness. Record the inner file layout of both product variants.
 - [ ] 3c. Decision on the subsetting route and the local scope. Version 2 first, assumption A11.
 - [ ] 3d. Pull, QA/QC, review dashboard, derive, serve, AWS note, register. Same pattern as step 1.

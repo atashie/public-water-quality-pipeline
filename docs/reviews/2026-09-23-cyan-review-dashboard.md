@@ -10,7 +10,7 @@ The owner authorized step 1d on 2026-09-22 after approving the pull and the corr
 
 | Area | Change |
 |---|---|
-| Builder | `datasets/cyan/viz/build_review_dashboard.py` with `regions.json` and 5 offline tests on a synthetic mosaic. It reads one native window per region from every pulled file, reprojects it to latitude and longitude with nearest neighbour so every pixel keeps its code, and writes each frame as a PNG inside a script file so the page can read pixels from a file:// URL |
+| Builder | `datasets/cyan/viz/build_review_dashboard.py` with `regions.json` and 5 offline tests on a synthetic mosaic. It reads one native window per region from every pulled file, reprojects it to latitude and longitude with nearest neighbor so every pixel keeps its code, and writes each frame as a PNG inside a script file so the page can read pixels from a file:// URL |
 | Page | `docs/dashboards/cyan/index.html` with three tabs. Map: region, cadence, date slider, play, class toggles, legend, the code and index under the cursor, and the window's composition. Record: four charts of the national record with the missing week shaded, and a sortable table of every file. Provenance: QA verdicts, manifests, and the hashes behind the page |
 | Data | `data/summary.js` and `data/basemap_states.js` tracked. Note added 2026-09-23: they were not, because the ignore rule `data/` matched this folder too. The step 1f commit of 2026-09-23 fixed the rule and added them. 4,784 frames under `data/frames/`, 635 MB, ignored by git and rebuilt by the builder |
 | Vendored | Leaflet 1.9.4 and Plotly.js 2.35.2 copied from the HAB_PoC repository, with the Census state outlines it derived |
@@ -58,7 +58,7 @@ The summary was regenerated at 2026-09-23T14:23Z with exact pixel counts per fil
 | Date | Feedback | Disposition |
 |---|---|---|
 | 2026-09-23 | Does the weekly record chart show sums across all locations in the 48 states? | Answered and fixed. Each point is one national file's counts over every pixel of its canvas, expressed as a share of the canvas. The canvas is the CyAN product extent for the contiguous United States, which includes whole lakes across the Canadian border and near-shore waters, plus empty margins coded as no data. The record tab now says so, and every point carries the exact pixel count on hover. The builder now writes the counts and the canvas size into the summary |
-| 2026-09-23 | The dual-axis charts take time to read. Label the axes more clearly, perhaps by color | Fixed. Every axis title, tick, and line carries the color of its series, chart titles name which series sits on which axis, and the legend entries say left or right. The daily no-data series became a line on its own dark-grey axis so the two scales no longer compete as bars. Hover is unified per date |
+| 2026-09-23 | The dual-axis charts take time to read. Label the axes more clearly, perhaps by color | Fixed. Every axis title, tick, and line carries the color of its series, chart titles name which series sits on which axis, and the legend entries say left or right. The daily no-data series became a line on its own dark-gray axis so the two scales no longer compete as bars. Hover is unified per date |
 
 ## Authorization
 

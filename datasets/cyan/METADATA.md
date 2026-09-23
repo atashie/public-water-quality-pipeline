@@ -79,7 +79,7 @@ Each file is an 8-bit GeoTIFF. documented [cl-cyan-encoding-geotiff-8bit]. Every
 documented [cl-cyan-encoding-dn-table]
 
 Conversion for 1 to 253: index equals 10 to the power of the digital number times 0.011714 minus 4.1870866. documented [cl-cyan-encoding-dn-formula]
-NASA's guide renders below-threshold pixels grey, land brown, and no data black. documented [cl-cyan-encoding-dn-guide-colors]
+NASA's guide renders below-threshold pixels gray, land brown, and no data black. documented [cl-cyan-encoding-dn-guide-colors]
 The catalog variable `Band1` is `int8` with no fill value, valid range, scale, or offset recorded. The semantics live in the release notes. documented [cl-cyan-encoding-band1-int8]
 
 Look-alike product. NOAA's cyanobacteria index uses a different encoding. Its land value is 252, its invalid values are 251, 253, 254, and 255, and its valid range is 0 to 250. CyAN uses land 254, invalid 255, and a range of 0 to 253. Code written for the NOAA product is wrong for these files. documented [cl-cyan-encoding-noaa-flagging] [cl-cyan-encoding-noaa-valid-range]

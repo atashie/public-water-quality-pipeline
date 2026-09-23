@@ -2,10 +2,10 @@
 """Measure what a year of per-lake pixel images costs in bytes.
 
 The dashboard serves one week of pixels per lake, encoded by build_lake_dashboard.py as a
-coloured PNG and a grey code PNG in Web Mercator, both as base64 data URLs. This script encodes
+colored PNG and a gray code PNG in Web Mercator, both as base64 data URLs. This script encodes
 the same images for the newest N weekly files and every lake, and sums the bytes as served.
-It also measures two cheaper encodings: the grey code PNG alone, with the alpha mask sent once
-per lake, and all weeks of the grey code PNG stacked into one PNG per lake.
+It also measures two cheaper encodings: the gray code PNG alone, with the alpha mask sent once
+per lake, and all weeks of the gray code PNG stacked into one PNG per lake.
 
 Reads local files only. Contacts nothing. Writes datasets/cyan/outputs/pixel-history-<stamp>.json.
 
@@ -53,7 +53,7 @@ def strip_url(frames: list[np.ndarray]) -> str:
 
 
 def mask_url(interior: np.ndarray, touched: np.ndarray, window_transform) -> str:
-    """The alpha mask alone, warped like the pixels, as one grey PNG per lake."""
+    """The alpha mask alone, warped like the pixels, as one gray PNG per lake."""
     zeros = np.zeros(interior.shape, np.uint8)
     url, _, _ = b.pixel_overlay(zeros, interior, touched, window_transform)
     alpha = decode_png(url)[:, :, 3]
@@ -152,7 +152,7 @@ def build(args) -> dict:
     summary = {
         "measured_at": datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "recipe": (
-            "for each weekly file and each lake, the coloured RGBA PNG and the grey code PNG "
+            "for each weekly file and each lake, the colored RGBA PNG and the gray code PNG "
             "exactly as build_lake_dashboard.py encodes them, counted as base64 data URLs. "
             "Outlines at the 6 decimals the page serves"
         ),

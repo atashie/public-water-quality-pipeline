@@ -17,7 +17,7 @@ Local only. The regions are in `datasets/cyan/viz/regions.json`. Edit them and r
 
 ## What the page shows and does not show
 
-- Every pixel is one native 300 m code, reprojected to latitude and longitude with nearest neighbour for display. No value is averaged or resampled.
+- Every pixel is one native 300 m code, reprojected to latitude and longitude with nearest neighbor for display. No value is averaged or resampled.
 - Percentages on the map tab are of the review window. Percentages on the record tab are of the whole canvas, which extends beyond the region. Neither is coverage inside any lake.
 - The state outlines come from the Census cartographic boundary file at 1:20,000,000, copied from the HAB_PoC repository. They are context, not a water mask.
 - Lake polygons are not on the page yet. They arrive in step 1e.

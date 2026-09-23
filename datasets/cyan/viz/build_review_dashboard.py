@@ -3,7 +3,7 @@
 
 Reads local files only. Contacts nothing. For every region in regions.json and every pulled
 whole-region file, it reads one window of the mosaic at native 300 m, reprojects it to
-EPSG:4326 with nearest neighbour so every pixel keeps its code, and writes the frame as a
+EPSG:4326 with nearest neighbor so every pixel keeps its code, and writes the frame as a
 PNG inside a small JavaScript file. The page loads frames with script tags, which works
 from a file:// URL where image pixel reads do not. Alpha marks pixels outside the source
 window. Nothing is aggregated: the counts per frame come from the source window.
@@ -76,7 +76,7 @@ def class_counts(arr: np.ndarray) -> dict:
 
 
 def reproject_window(arr: np.ndarray, window_transform):
-    """Nearest-neighbour reprojection of a code array to EPSG:4326.
+    """Nearest-neighbor reprojection of a code array to EPSG:4326.
 
     Returns the code array, an alpha array that is 255 inside the source window and 0
     outside, the destination transform, and the lat/lon bounds.

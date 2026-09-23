@@ -13,7 +13,7 @@ Version 2 begins 2024-09. Version 1 covers 2002 to 2012 and 2016 to 2024 with a 
 
 ## Plan for this folder
 
-- Step 3a writes `METADATA.md` with a research agent and a checking agent. Its sources are the product user manual, the product pages, the release news, the catalogue attributes, and a file opened locally. It preserves the manual under `reference/`.
+- Step 3a writes `METADATA.md` with a research agent and a checking agent. Its sources are the product user manual, the product pages, the release news, the catalog attributes, and a file opened locally. It preserves the manual under `reference/`.
 - Step 3b writes the route comparison under `access/` with a result file and a dated review.
 - Later steps follow the loop.
 

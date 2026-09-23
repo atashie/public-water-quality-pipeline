@@ -43,4 +43,4 @@ Line numbers are in the extracted files.
 
 - The 130 threshold and the whole-pixel rule were `prior`, from the HAB_PoC repository's replication of the paper. They are now read from the official code and cited as `probe`. They become `documented` when step 2a's checking agent confirms the quotes.
 - Decision 0002 stands. Its interior rule, 99.9 percent coverage from an oversampled rasterization, is a stand-in for `coverage_fraction == 1` and for the unknown mixed-pixel mask, and is not the same mask. The dashboard of step 1f states the differences.
-- The 130 line on the dashboard is labelled as the EPA code's operationalization and is movable. It is not a claim about any lake.
+- The 130 line on the dashboard is labeled as the EPA code's operationalization and is movable. It is not a claim about any lake.

@@ -34,6 +34,10 @@ Ruff clean, ruff format clean, 148 tests pass, including the documentation link 
 
 The owner authorized the one-time commit, the hosting note, and their commit and push on 2026-09-23.
 
+## Deployment
+
+The owner imported the repository in Vercel on 2026-09-23 and reported that it deployed properly. The URL and the check results are not recorded here.
+
 ## Proposed next step
 
-The owner imports the repository in Vercel following the note and records the result. Then the question of more years of pixel data: [measurement 11](../measurements.md#11-a-year-of-per-lake-pixel-images-what-it-costs-in-bytes-2026-09-23) gives 53 MB a year with the codes stacked per lake and coloured in the browser, against GitHub's 1 GB guidance. Step 1g, the AWS note, follows.
+The owner records the deployment URL and the check results. Then the question of more years of pixel data: [measurement 11](../measurements.md#11-a-year-of-per-lake-pixel-images-what-it-costs-in-bytes-2026-09-23) gives 53 MB a year with the codes stacked per lake and colored in the browser, against GitHub's 1 GB guidance. Step 1g, the AWS note, follows.

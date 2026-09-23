@@ -5,8 +5,8 @@ Reads local files only. Contacts nothing. Outputs under docs/dashboards/cyan-lak
   data/lakes.js       one record per lake with its centroid, size, the newest week's state,
                       the run of consecutive weeks at or above the threshold, and coverage
   data/lakes/<comid>.js   the lake's full weekly and daily series, loaded on demand
-  data/pixels/<comid>.js  the lake's pixels from the newest weekly file, a coloured PNG in Web
-                          Mercator with its bounds, a grey PNG carrying the raw codes for the
+  data/pixels/<comid>.js  the lake's pixels from the newest weekly file, a colored PNG in Web
+                          Mercator with its bounds, a gray PNG carrying the raw codes for the
                           hover readout, and the lake's exact outline in WGS84, loaded on demand
 It also writes the companion attribute table under data/cyan/derived/: one row per lake with
 centroid, bounds, pixel window, and the interior cell indices of decision 0002.
@@ -113,7 +113,7 @@ def lake_states(lakes5070, states_path: Path) -> dict[int, str]:
 
 
 def ramp_lut() -> np.ndarray:
-    """RGB for codes 0 to 255: the ramp for 0 to 253, land grey, no data lighter grey."""
+    """RGB for codes 0 to 255: the ramp for 0 to 253, land gray, no data lighter gray."""
     lut = np.zeros((256, 3), np.uint8)
     stops = [(t, tuple(int(h[i : i + 2], 16) for i in (1, 3, 5))) for t, h in RAMP]
     for code in range(254):
@@ -129,9 +129,9 @@ def ramp_lut() -> np.ndarray:
 
 
 def pixel_overlay(codes: np.ndarray, interior: np.ndarray, touched: np.ndarray, window_transform):
-    """Warp one lake window to Web Mercator and colour it.
+    """Warp one lake window to Web Mercator and color it.
 
-    Returns the coloured PNG data URL, a grey PNG data URL whose value is the code, and the
+    Returns the colored PNG data URL, a gray PNG data URL whose value is the code, and the
     lat/lon bounds.
     """
     from PIL import Image

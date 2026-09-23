@@ -36,9 +36,9 @@ All `prior`. Recheck in step 1a.
 
 ## Copernicus Lake Water Quality 300 m
 
-### Catalogue listing
+### Catalog listing
 
-Copernicus Data Space Ecosystem OData catalogue, filter `contains(Name,'LWQ300') and Collection/Name eq 'CLMS'`, paged in full on 2026-09-22.
+Copernicus Data Space Ecosystem OData catalog, filter `contains(Name,'LWQ300') and Collection/Name eq 'CLMS'`, paged in full on 2026-09-22.
 
 - 1,472 products in all: 736 dekads, each as a `_nc` product and a `_cog` product. `probe`
 - Version spans and median product sizes, decimal gigabytes: `probe`
@@ -73,7 +73,7 @@ Downloaded from the technical library on 2026-09-22 and text-extracted. The titl
 - "provides an optical characterisation of more than 4200 inland waterbodies". "Since version 1.3.0 of the processing chain, the set of lakes has been extended to 4,265 waterbodies to a total of 2,166,023 km2. The included waterbodies span a surface size range of 0.11 to 379,446 km2."
 - Dekads: "periods of nominally ten and varying from eight to eleven days, defined to start on days 1, 11 and 21 of each month".
 - Grid: "pixel size at 300m: 0.25/112°", "global grid size at 300m: 161280 columns, 80640 lines", and "0.0022° (nominally 300m)". Section 4.5.1 instead says "mapped to a global 0.0026° grid". The two statements disagree. Verify from a file.
-- File naming: `c_gls_<Acronym>_<YYYYMMDDHHmm>_<AREA>_<SENSOR>_<Version>.<EXTENSION>`, example `c_gls_LWQ300_200504010000_GLOBE_OLCI_V2.0.nc`. Format "netCDF CF1.8". Collection identifier `clms_global_lwq_300m_v2_10daily-nrt_netcdf`. The catalogue names above carry a `_nc` or `_cog` suffix instead of an extension.
+- File naming: `c_gls_<Acronym>_<YYYYMMDDHHmm>_<AREA>_<SENSOR>_<Version>.<EXTENSION>`, example `c_gls_LWQ300_200504010000_GLOBE_OLCI_V2.0.nc`. Format "netCDF CF1.8". Collection identifier `clms_global_lwq_300m_v2_10daily-nrt_netcdf`. The catalog names above carry a `_nc` or `_cog` suffix instead of an extension.
 - Observation bands: `num_obs`, `first_obs`, `last_obs`. Constituent bands: `turbidity_mean`, `chla_mean`, `chla_uncertainty`, `tsm_mean`, `tsm_uncertainty`. Reflectance bands: `Rw400_rep` through `Rw1020_rep` at 17 wavelengths, `Rw_relative_uncertainty`, `Rw_relative_uncertainty_unbiased`, `RwDayNum_rep`. Index bands: `trophic_state_index`, `floating_cyanobacteria`. Coordinates and flags: `lat`, `lon`, `time`, `crs`, `quality_flags`.
 - `floating_cyanobacteria`: "range of values from 0 to 1 indicating probability of cyanobacteria presence".
 - `trophic_state_index`: values 0 to 100 in steps of 10 after Carlson 1977. 60 to 80 eutrophic, 80 to 100 hypereutrophic.
@@ -82,9 +82,9 @@ Downloaded from the technical library on 2026-09-22 and text-extracted. The titl
 - Version compatibility. "reflectance and trophic state products found in Copernicus products v1.4.0 and v2.0 are fully compatible." "Turbidity equivalent to v1.4.0 can be obtained in v2.0 by applying the following scaling factor to TSM: Turbidity = TSM * 1.17."
 - Processing chain Calimnos version 2.0. Polymer 4.14 for atmospheric correction. IdePix 7.0.5 for pixel identification. 13 optical water types plus 2 for land adjacency. Maximum Peak Height for floating cyanobacteria.
 - Limitations quoted: "systematic underestimation of water-leaving reflectance is apparent in the current product version, particularly for highly turbid lakes". "Users interested in lake averages rather than maps are advised to mask a buffer of one or more pixels from shorelines".
-- Latency. "The products from the NRT service are available 3 days after the last acquisition of the respective dekad period." The catalogue's delivery date above shows 7 days for the newest dekad.
+- Latency. "The products from the NRT service are available 3 days after the last acquisition of the respective dekad period." The catalog's delivery date above shows 7 days for the newest dekad.
 - Citation requirement: "Copernicus Service information [Year]" or "Contains modified Copernicus Service information [Year]", plus the Calimnos credit sentence in section 4.5.4.
-- Planned: "A future version 3.0 is anticipated for 2025". The catalogue holds no version 3 product on 2026-09-22.
+- Planned: "A future version 3.0 is anticipated for 2025". The catalog holds no version 3 product on 2026-09-22.
 
 ## EPA cyanoHAB forecast
 
