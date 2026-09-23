@@ -22,3 +22,6 @@ CLAUDE.local.md
 
 # Quarantined documents, local only
 docs/archive/
+
+# Review dashboard frames, large and regenerable
+docs/dashboards/*/data/frames/

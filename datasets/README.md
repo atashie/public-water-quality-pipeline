@@ -5,7 +5,7 @@ The rules for these folders are in [.claude/rules/datasets.md](../.claude/rules/
 
 | Folder | Dataset | Status |
 |---|---|---|
-| [cyan/](cyan/README.md) | CyAN cyanobacteria index | pulled and checked 2026-09-22, review dashboard in progress |
+| [cyan/](cyan/README.md) | CyAN cyanobacteria index | reviewed 2026-09-23, per-lake table in progress |
 | [epa_cyanohab_forecast/](epa_cyanohab_forecast/README.md) | EPA experimental cyanoHAB forecast | planned |
 | [clms_lwq/](clms_lwq/README.md) | Copernicus Lake Water Quality 300 m, version 2 | planned |
 | `_common/` | Shared helpers: retrying HTTP session, credential resolution, cached and manifested downloads | ported with tests |

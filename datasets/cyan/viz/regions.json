@@ -1,0 +1,14 @@
+{
+  "note": "Review windows for the CyAN dashboard. Each is a square of size_px native 300 m pixels centered on the point, snapped to the whole-region grid. Edit freely and rebuild.",
+  "default_size_px": 2000,
+  "regions": [
+    {"id": "great-lakes-west", "label": "Lake Erie and western Great Lakes", "lon": -81.5, "lat": 42.0},
+    {"id": "florida", "label": "Florida peninsula", "lon": -81.6, "lat": 27.8},
+    {"id": "upper-midwest", "label": "Wisconsin and Minnesota lakes", "lon": -91.0, "lat": 45.0},
+    {"id": "california", "label": "California, Clear Lake to Tahoe", "lon": -121.0, "lat": 38.5},
+    {"id": "utah", "label": "Utah Lake and Great Salt Lake", "lon": -112.0, "lat": 40.5},
+    {"id": "texas", "label": "Texas reservoirs", "lon": -96.5, "lat": 31.5},
+    {"id": "northeast", "label": "New England and New York lakes", "lon": -72.5, "lat": 43.5},
+    {"id": "southeast", "label": "Georgia and Carolinas reservoirs", "lon": -83.5, "lat": 34.0}
+  ]
+}

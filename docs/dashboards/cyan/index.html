@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CyAN review dashboard</title>
+<link rel="stylesheet" href="vendor/leaflet.css">
+<style>
+  :root{--ink:#12343b;--teal:#0f6e78;--muted:#6b7f83;--line:#dbe4e4;--bg:#eef3f3;--card:#fff;--warn:#d1495b}
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);font-size:14px;line-height:1.4}
+  header{background:var(--card);border-bottom:1px solid var(--line);padding:10px 18px}
+  .brand{font-size:18px;font-weight:700}
+  .sub{color:var(--muted);font-size:12.5px;margin-top:2px}
+  .banner{margin-top:6px;background:#fff6e6;border:1px solid #f0d9a8;color:#7a5a12;padding:5px 10px;border-radius:6px;font-size:12px;display:inline-block}
+  .tabs{margin-top:10px;display:flex;gap:4px}
+  .tabs button{border:1px solid var(--line);background:#f4f8f8;color:var(--ink);padding:7px 16px;border-radius:7px 7px 0 0;cursor:pointer;font-size:14px;font-weight:600}
+  .tabs button.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+  main{padding:14px 18px}
+  .tab{display:none}.tab.active{display:block}
+  .split{display:grid;grid-template-columns:320px 1fr;gap:14px}
+  @media(max-width:900px){.split{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-width:0}
+  .card h3{margin:0 0 6px;font-size:14px}
+  label{font-size:12.5px;color:var(--muted);font-weight:600;display:block;margin-top:8px}
+  select,input[type=range]{width:100%}
+  .row{display:flex;gap:6px;align-items:center;margin-top:6px}
+  .row button{border:1px solid var(--line);background:#f4f8f8;padding:4px 10px;border-radius:6px;cursor:pointer}
+  .row button:hover{background:#e7f1f1}
+  .mapbox{height:70vh;min-height:480px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+  .legend{font-size:12px;margin-top:8px}
+  .legend .sw{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:-2px;margin-right:6px;border:1px solid #9fb0b5}
+  .ramp{height:12px;border-radius:3px;border:1px solid #9fb0b5;background:linear-gradient(90deg,#1f4e79,#2a9d8f,#e9c46a,#f4a261,#d1495b,#6a0c0c)}
+  .readout{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:#f4f8f8;border:1px solid var(--line);border-radius:6px;padding:6px 8px;margin-top:8px;min-height:64px;white-space:pre-line}
+  .note{color:var(--muted);font-size:11.5px;margin-top:6px}
+  .plot{width:100%;height:280px}
+  table{width:100%;border-collapse:collapse;font-size:12px}
+  th{text-align:left;color:var(--muted);font-weight:600;padding:5px 6px;border-bottom:1px solid var(--line);cursor:pointer;white-space:nowrap;position:sticky;top:0;background:#fff}
+  td{padding:3px 6px;border-bottom:1px solid #eef3f3;white-space:nowrap}
+  td.n{text-align:right;font-variant-numeric:tabular-nums}
+  .scroll{max-height:60vh;overflow:auto;border:1px solid var(--line);border-radius:8px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:1000px){.grid2{grid-template-columns:1fr}}
+  .flag{color:var(--warn);font-weight:600}
+  code{background:#e7eeee;padding:1px 5px;border-radius:4px;font-size:12px}
+  .kv td:first-child{color:var(--muted);width:34%}
+  footer{padding:14px 18px;color:var(--muted);font-size:11.5px;border-top:1px solid var(--line)}
+  .toggle{font-size:12.5px;margin-top:6px;display:block}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">CyAN cyanobacteria index, review dashboard</div>
+  <div class="sub" id="sub">loading</div>
+  <div class="banner">Review page for the owner. Native 300 m codes, nothing averaged. Percentages describe windows or the canvas, never a lake.</div>
+  <nav class="tabs">
+    <button data-tab="map" class="active">Map</button>
+    <button data-tab="record">Record</button>
+    <button data-tab="prov">Provenance</button>
+  </nav>
+</header>
+<main>
+  <section id="tab-map" class="tab active">
+    <div class="split">
+      <div>
+        <div class="card">
+          <h3>Frame</h3>
+          <label>Region <select id="region"></select></label>
+          <label>Cadence <select id="cadence"><option value="7D">Weekly, 7-day maximum</option><option value="DAY">Daily</option></select></label>
+          <label>Date <span id="datelabel" style="color:var(--ink)"></span></label>
+          <input type="range" id="slider" min="0" max="0" value="0">
+          <div class="row">
+            <button id="prev">◀ earlier</button><button id="next">later ▶</button><button id="play">play</button>
+            <span class="note" id="frameidx"></span>
+          </div>
+          <label class="toggle"><input type="checkbox" id="showland" checked> show land, code 254</label>
+          <label class="toggle"><input type="checkbox" id="shownodata" checked> show no data, code 255</label>
+          <label class="toggle"><input type="checkbox" id="showbelow" checked> show below detection, code 0</label>
+          <div class="legend">
+            <div><span class="sw" style="background:#cfd8dc"></span>0 below detection, a measurement</div>
+            <div class="ramp" style="margin:4px 0"></div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted)"><span>DN 1</span><span>DN 130</span><span>DN 253</span></div>
+            <div><span class="sw" style="background:#d7c7a8"></span>254 land &nbsp; <span class="sw" style="background:#3b3f44"></span>255 no data &nbsp; <span class="sw" style="background:transparent"></span>outside the window</div>
+          </div>
+          <div class="readout" id="readout">Move the cursor over the map.</div>
+          <div class="note" id="framestats"></div>
+        </div>
+      </div>
+      <div id="map" class="mapbox"></div>
+    </div>
+    <p class="note">The frame is the source window reprojected to latitude and longitude with nearest neighbour, so every displayed pixel carries one original code. The index equals 10 to the power of DN × 0.011714 − 4.1870866 for DN 1 to 253. Lake polygons are not on this page yet.</p>
+  </section>
+
+  <section id="tab-record" class="tab">
+    <div class="card" style="margin-bottom:14px"><h3>What each point is</h3>
+      <p class="note" style="font-size:12.5px;margin:0" id="recordnote"></p>
+    </div>
+    <div class="grid2">
+      <div class="card"><h3>Weekly files: <span style="color:#d1495b">data</span> on the left axis, <span style="color:#0f6e78">below detection</span> on the right</h3><div id="p1" class="plot"></div></div>
+      <div class="card"><h3>Weekly files: <span style="color:#3b3f44">no data</span>, one axis</h3><div id="p2" class="plot"></div></div>
+      <div class="card"><h3>Weekly files: <span style="color:#6b4fb0">highest code</span> in the file, one axis</h3><div id="p3" class="plot"></div></div>
+      <div class="card"><h3>Daily files, last 8 weeks: <span style="color:#d1495b">data</span> and <span style="color:#0f6e78">below detection</span> bars on the left, <span style="color:#3b3f44">no data</span> line on the right</h3><div id="p4" class="plot"></div></div>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <h3>Every pulled file <span class="note" id="tablenote"></span></h3>
+      <div class="scroll"><table id="files"><thead></thead><tbody></tbody></table></div>
+    </div>
+  </section>
+
+  <section id="tab-prov" class="tab">
+    <div class="grid2">
+      <div class="card"><h3>QA verdicts and manifests</h3><table class="kv" id="qa"></table></div>
+      <div class="card"><h3>What produced this page</h3><table class="kv" id="code"></table>
+        <p class="note">Documents: <a href="../../../datasets/cyan/METADATA.md">METADATA</a> · <a href="../../measurements.md">measurements</a> · <a href="../../reviews/README.md">reviews</a> · <a href="README.md">this page's README</a></p>
+      </div>
+    </div>
+    <div class="card" style="margin-top:14px"><h3>What this page shows and does not show</h3>
+      <ul class="note" style="font-size:12.5px">
+        <li>Shows: every native 300 m code inside a review window for any pulled week or day, the code under the cursor, the composition of the window and of the whole canvas, the QA verdicts, and the provenance of the files and of this page.</li>
+        <li>Does not show: anything inside a lake polygon, any average, any value's correctness, any cause of missing data, or any file not pulled. Coverage percentages include the canvas outside the region.</li>
+        <li>Display choice: colors are assigned in the browser from the code. Land and no data can be hidden to see the water classes alone.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+<footer id="foot"></footer>
+
+<script src="vendor/leaflet.js"></script>
+<script src="vendor/plotly.min.js"></script>
+<script src="data/basemap_states.js"></script>
+<script src="data/summary.js"></script>
+<script>
+"use strict";
+var R = window.CYAN_REVIEW, ENC = R.encoding;
+var frames = {};          // region -> key -> dataURL, filled by frame scripts
+var decoded = {};         // region/key -> {w,h,dn:Uint8Array,alpha:Uint8Array}
+var pending = {};
+window.CYAN_FRAME = function(region, key, url){ frames[region] = frames[region] || {}; frames[region][key] = url; var cb = pending[region+'/'+key]; if(cb){ delete pending[region+'/'+key]; cb(url); } };
+
+document.getElementById('sub').textContent = 'Built ' + R.built_at + ' · ' + R.n_files + ' files · ' + R.regions.length + ' review windows of ' + R.window_px + ' × ' + R.window_px + ' native pixels';
+document.getElementById('foot').innerHTML = 'Step 1d review page. Data: NASA OB.DAAC CyAN CI_cyano version 6.0, pulled 2026-09-22 through the archive route. Codes: 0 below detection, 1 to 253 data, 254 land, 255 no data. Basemap: Census cartographic state boundaries 1:20,000,000. Libraries vendored: Leaflet 1.9.4, Plotly.js 2.35.2. This page requests nothing external.';
+
+/* ---------- tabs ---------- */
+document.querySelectorAll('.tabs button').forEach(function(b){ b.onclick = function(){
+  document.querySelectorAll('.tabs button').forEach(function(x){ x.classList.remove('active'); }); b.classList.add('active');
+  document.querySelectorAll('.tab').forEach(function(t){ t.classList.remove('active'); });
+  document.getElementById('tab-' + b.dataset.tab).classList.add('active');
+  if(b.dataset.tab === 'map') setTimeout(function(){ map.invalidateSize(); }, 40);
+  if(b.dataset.tab === 'record') setTimeout(function(){ ['p1','p2','p3','p4'].forEach(function(id){ try{ Plotly.Plots.resize(id); }catch(e){} }); }, 60);
+};});
+
+/* ---------- map ---------- */
+var map = L.map('map', {crs: L.CRS.EPSG4326, zoomControl: true, minZoom: 3, maxZoom: 12});
+map.attributionControl.setPrefix(false);
+if(window.CYAN_STATES){ L.geoJSON(window.CYAN_STATES, {style: {color:'#7d8f93', weight:1, fill:true, fillColor:'#f7f9f9', fillOpacity:0.6}}).addTo(map); }
+var overlay = null, current = {region:null, key:null}, canvas = document.createElement('canvas'), ctx = canvas.getContext('2d', {willReadFrequently:true});
+var colorCache = null;
+function ci(dn){ return Math.pow(10, dn * ENC.ci_slope + ENC.ci_intercept); }
+function rampColor(dn){ // DN 1..253 -> color along the legend ramp
+  var stops = [[31,78,121],[42,157,143],[233,196,106],[244,162,97],[209,73,91],[106,12,12]];
+  var t = (dn - 1) / 252, seg = t * (stops.length - 1), i = Math.min(Math.floor(seg), stops.length - 2), f = seg - i, a = stops[i], b = stops[i+1];
+  return [Math.round(a[0]+(b[0]-a[0])*f), Math.round(a[1]+(b[1]-a[1])*f), Math.round(a[2]+(b[2]-a[2])*f)];
+}
+function palette(){
+  if(colorCache) return colorCache;
+  var p = new Array(256);
+  for(var d=1; d<=253; d++) p[d] = rampColor(d).concat([255]);
+  p[0] = [207,216,220,255]; p[254] = [215,199,168,255]; p[255] = [59,63,68,190];
+  colorCache = p; return p;
+}
+function colorize(dec){
+  var showLand = document.getElementById('showland').checked, showNo = document.getElementById('shownodata').checked, showBelow = document.getElementById('showbelow').checked;
+  var p = palette(), out = ctx.createImageData(dec.w, dec.h), o = out.data, n = dec.w * dec.h;
+  for(var i=0; i<n; i++){
+    var a = dec.alpha[i]; if(!a){ continue; }
+    var d = dec.dn[i];
+    if((d === 254 && !showLand) || (d === 255 && !showNo) || (d === 0 && !showBelow)) continue;
+    var c = p[d]; o[4*i] = c[0]; o[4*i+1] = c[1]; o[4*i+2] = c[2]; o[4*i+3] = c[3];
+  }
+  canvas.width = dec.w; canvas.height = dec.h; ctx.putImageData(out, 0, 0);
+  return canvas.toDataURL('image/png');
+}
+function decode(region, key, url, cb){
+  var id = region + '/' + key; if(decoded[id]) return cb(decoded[id]);
+  var img = new Image();
+  img.onload = function(){
+    var c2 = document.createElement('canvas'); c2.width = img.width; c2.height = img.height;
+    var x = c2.getContext('2d', {willReadFrequently:true}); x.drawImage(img, 0, 0);
+    var d = x.getImageData(0, 0, img.width, img.height).data, n = img.width * img.height, dn = new Uint8Array(n), al = new Uint8Array(n);
+    for(var i=0; i<n; i++){ dn[i] = d[4*i]; al[i] = d[4*i+3]; }
+    decoded[id] = {w: img.width, h: img.height, dn: dn, alpha: al}; cb(decoded[id]);
+  };
+  img.src = url;
+}
+function loadFrame(region, key, cb){
+  if(frames[region] && frames[region][key]) return cb(frames[region][key]);
+  pending[region + '/' + key] = cb;
+  var s = document.createElement('script'); s.src = 'data/frames/' + region + '/' + key + '.js';
+  s.onerror = function(){ delete pending[region + '/' + key]; document.getElementById('readout').textContent = 'Frame not built: data/frames/' + region + '/' + key + '.js. Run the builder, see README.md.'; };
+  document.body.appendChild(s);
+}
+function regionObj(){ return R.regions[+document.getElementById('region').value]; }
+function frameList(){ var cad = document.getElementById('cadence').value; return regionObj().frames.filter(function(f){ return f.temporal === cad; }); }
+function show(){
+  var reg = regionObj(), list = frameList(), idx = +document.getElementById('slider').value; if(!list.length) return;
+  var fr = list[Math.min(idx, list.length - 1)];
+  document.getElementById('datelabel').textContent = fr.temporal === '7D' ? fr.start + ' to ' + fr.end : fr.start;
+  document.getElementById('frameidx').textContent = (idx + 1) + ' of ' + list.length + ' · ' + fr.file;
+  var cnt = fr.counts, tot = fr.pixels, pct = function(v){ return (100 * v / tot).toFixed(2) + '%'; };
+  document.getElementById('framestats').textContent = 'Window composition: data ' + pct(cnt.valid) + ', below detection ' + pct(cnt.below_detection) + ', land ' + pct(cnt.land) + ', no data ' + pct(cnt.nodata) + '. Highest code ' + (cnt.dn_max === null ? 'none' : cnt.dn_max + ', index ' + ci(cnt.dn_max).toExponential(2)) + '.';
+  current = {region: reg.id, key: fr.key};
+  loadFrame(reg.id, fr.key, function(url){ decode(reg.id, fr.key, url, function(dec){
+    if(current.region !== reg.id || current.key !== fr.key) return;
+    var b = reg.bounds, bounds = [[b.south, b.west], [b.north, b.east]];
+    var png = colorize(dec);
+    if(overlay){ overlay.setUrl(png); overlay.setBounds(bounds); } else { overlay = L.imageOverlay(png, bounds, {opacity: 0.95, interactive: false}).addTo(map); }
+  }); });
+}
+function fitRegion(){ var b = regionObj().bounds; map.fitBounds([[b.south, b.west], [b.north, b.east]]); }
+var regSel = document.getElementById('region');
+R.regions.forEach(function(r, i){ var o = document.createElement('option'); o.value = i; o.textContent = r.label; regSel.appendChild(o); });
+function resetSlider(){ var list = frameList(); var s = document.getElementById('slider'); s.max = Math.max(0, list.length - 1); s.value = s.max; }
+regSel.onchange = function(){ resetSlider(); fitRegion(); show(); };
+document.getElementById('cadence').onchange = function(){ resetSlider(); show(); };
+document.getElementById('slider').oninput = show;
+document.getElementById('prev').onclick = function(){ var s = document.getElementById('slider'); s.value = Math.max(0, +s.value - 1); show(); };
+document.getElementById('next').onclick = function(){ var s = document.getElementById('slider'); s.value = Math.min(+s.max, +s.value + 1); show(); };
+var timer = null;
+document.getElementById('play').onclick = function(){
+  if(timer){ clearInterval(timer); timer = null; this.textContent = 'play'; return; }
+  var self = this; self.textContent = 'stop';
+  timer = setInterval(function(){ var s = document.getElementById('slider'); if(+s.value >= +s.max){ clearInterval(timer); timer = null; self.textContent = 'play'; return; } s.value = +s.value + 1; show(); }, 700);
+};
+['showland','shownodata','showbelow'].forEach(function(id){ document.getElementById(id).onchange = show; });
+document.addEventListener('keydown', function(e){ if(e.key === 'ArrowLeft') document.getElementById('prev').click(); if(e.key === 'ArrowRight') document.getElementById('next').click(); });
+map.on('mousemove', function(e){
+  var reg = regionObj(), dec = decoded[current.region + '/' + current.key]; if(!dec) return;
+  var b = reg.bounds, x = Math.floor((e.latlng.lng - b.west) / (b.east - b.west) * dec.w), y = Math.floor((b.north - e.latlng.lat) / (b.north - b.south) * dec.h);
+  var out = document.getElementById('readout');
+  if(x < 0 || y < 0 || x >= dec.w || y >= dec.h || !dec.alpha[y * dec.w + x]){ out.textContent = 'outside the window\n' + e.latlng.lat.toFixed(4) + ', ' + e.latlng.lng.toFixed(4); return; }
+  var d = dec.dn[y * dec.w + x], cls = d === 0 ? 'below detection' : d === 254 ? 'land' : d === 255 ? 'no data' : 'data';
+  out.textContent = 'code ' + d + ' · ' + cls + (d >= 1 && d <= 253 ? '\nindex ' + ci(d).toExponential(3) : '') + '\n' + e.latlng.lat.toFixed(4) + ', ' + e.latlng.lng.toFixed(4);
+});
+resetSlider(); fitRegion(); show();
+/* deep link: #record or #prov opens that tab */
+if(location.hash === '#record' || location.hash === '#prov'){ document.querySelector('.tabs button[data-tab=' + location.hash.slice(1) + ']').click(); }
+
+/* ---------- record ---------- */
+var weekly = (R.record.find(function(r){ return r.rows.length && r.rows[0].temporal === '7D'; }) || {rows: []});
+var daily = (R.record.find(function(r){ return r.rows.length && r.rows[0].temporal === 'DAY'; }) || {rows: []});
+var PF = {family:'Segoe UI,Helvetica,Arial,sans-serif', size: 11, color: '#12343b'}, CFG = {displayModeBar:false, responsive:true};
+var COL = {data:'#d1495b', below:'#0f6e78', nodata:'#3b3f44', dnmax:'#6b4fb0'};
+var total = (weekly.rows[0] && weekly.rows[0].total) || (daily.rows[0] && daily.rows[0].total) || null;
+document.getElementById('recordnote').textContent = 'Each point is one national file. Its counts cover every pixel of the file, ' + (total ? total.toLocaleString() + ' pixels at 300 m' : 'the whole canvas') + ', expressed as a percent of that canvas. The canvas is the CyAN product extent for the contiguous United States: it includes whole lakes that cross the Canadian border and near-shore waters, and it has empty margins coded as no data. It is the whole national file, not exactly the 48 states. Hover a point for the exact pixel count. Axis titles and ticks carry the color of their series. Nothing here describes a single lake.';
+function axis(title, color, extra){ var a = {title:{text:title, font:{color:color}}, tickfont:{color:color}, linecolor:color, showline:true}; for(var k in (extra||{})) a[k] = extra[k]; return a; }
+function hover(label){ return label + ' %{y:.3f}% of canvas<br>%{customdata:,} pixels<br>%{x}<extra></extra>'; }
+function gapShapes(rec){ var m = (rec.completeness && rec.completeness.missing) || []; return m.map(function(d){ var e = new Date(d + 'T00:00:00'); e.setDate(e.getDate() + 7); return {type:'rect', xref:'x', yref:'paper', x0:d, x1:e.toISOString().slice(0,10), y0:0, y1:1, fillcolor:'#d1495b', opacity:0.25, line:{width:0}}; }); }
+function gapNote(rec){ var m = (rec.completeness && rec.completeness.missing) || []; return m.length ? [{xref:'paper', yref:'paper', x:1, y:1.03, xanchor:'right', yanchor:'bottom', showarrow:false, text:'shaded: ' + m.length + ' expected week' + (m.length > 1 ? 's' : '') + ' without a file', font:{size:10, color:'#d1495b'}}] : []; }
+if(weekly.rows.length){
+  var x = weekly.rows.map(function(r){ return r.start; });
+  Plotly.newPlot('p1', [
+    {x:x, y:weekly.rows.map(function(r){ return r.pct[0]; }), customdata:weekly.rows.map(function(r){ return r.counts[0]; }), name:'data, codes 1 to 253, left axis', mode:'lines', line:{color:COL.data, width:1.2}, hovertemplate:hover('data')},
+    {x:x, y:weekly.rows.map(function(r){ return r.pct[1]; }), customdata:weekly.rows.map(function(r){ return r.counts[1]; }), name:'below detection, code 0, right axis', mode:'lines', line:{color:COL.below, width:1.2}, yaxis:'y2', hovertemplate:hover('below detection')}
+  ], {margin:{t:34,r:52,b:34,l:52}, font:PF, legend:{orientation:'h', y:1.24}, xaxis:{type:'date'}, yaxis:axis('data, % of canvas', COL.data), yaxis2:axis('below detection, % of canvas', COL.below, {overlaying:'y', side:'right', showgrid:false}), shapes:gapShapes(weekly), annotations:gapNote(weekly), hovermode:'x unified'}, CFG);
+  Plotly.newPlot('p2', [{x:x, y:weekly.rows.map(function(r){ return r.pct[3]; }), customdata:weekly.rows.map(function(r){ return r.counts[3]; }), name:'no data, code 255', mode:'lines', line:{color:COL.nodata, width:1.2}, hovertemplate:hover('no data')}],
+    {margin:{t:24,r:12,b:34,l:52}, font:PF, xaxis:{type:'date'}, yaxis:axis('no data, % of canvas', COL.nodata), shapes:gapShapes(weekly), annotations:gapNote(weekly)}, CFG);
+  Plotly.newPlot('p3', [{x:x, y:weekly.rows.map(function(r){ return r.dn_max; }), name:'highest code', mode:'markers', marker:{color:COL.dnmax, size:4}, hovertemplate:'highest code %{y}<br>%{x}<extra></extra>'}],
+    {margin:{t:24,r:12,b:34,l:52}, font:PF, xaxis:{type:'date'}, yaxis:axis('highest code, DN', COL.dnmax, {range:[240,256]}), shapes:gapShapes(weekly), annotations:gapNote(weekly)}, CFG);
+}
+if(daily.rows.length){
+  var xd = daily.rows.map(function(r){ return r.start; });
+  Plotly.newPlot('p4', [
+    {x:xd, y:daily.rows.map(function(r){ return r.pct[0]; }), customdata:daily.rows.map(function(r){ return r.counts[0]; }), name:'data, left axis', type:'bar', marker:{color:COL.data}, hovertemplate:hover('data')},
+    {x:xd, y:daily.rows.map(function(r){ return r.pct[1]; }), customdata:daily.rows.map(function(r){ return r.counts[1]; }), name:'below detection, left axis', type:'bar', marker:{color:COL.below}, hovertemplate:hover('below detection')},
+    {x:xd, y:daily.rows.map(function(r){ return r.pct[3]; }), customdata:daily.rows.map(function(r){ return r.counts[3]; }), name:'no data, right axis', mode:'lines+markers', line:{color:COL.nodata, width:1.5}, marker:{color:COL.nodata, size:5}, yaxis:'y2', hovertemplate:hover('no data')}
+  ], {margin:{t:24,r:52,b:34,l:52}, font:PF, barmode:'group', legend:{orientation:'h', y:1.24}, xaxis:{type:'date'}, yaxis:axis('data and below detection, % of canvas', '#12343b'), yaxis2:axis('no data, % of canvas', COL.nodata, {overlaying:'y', side:'right', showgrid:false}), hovermode:'x unified'}, CFG);
+}
+var rows = weekly.rows.concat(daily.rows), sortKey = 'start', sortDir = 1;
+var cols = [['file','File'],['start','Start'],['end','End'],['temporal','Cadence'],['stream','Stream'],['pct0','% data'],['pct1','% below'],['pct2','% land'],['pct3','% no data'],['dn_max','DN max'],['version','Version'],['flags','Flags']];
+function val(r, k){ if(k.indexOf('pct') === 0) return r.pct[+k[3]]; if(k === 'flags') return r.flags.join(', '); return r[k]; }
+function renderTable(){
+  var thead = document.querySelector('#files thead'), tbody = document.querySelector('#files tbody');
+  thead.innerHTML = '<tr>' + cols.map(function(c){ return '<th data-k="' + c[0] + '">' + c[1] + (sortKey === c[0] ? (sortDir > 0 ? ' ▲' : ' ▼') : '') + '</th>'; }).join('') + '</tr>';
+  var sorted = rows.slice().sort(function(a, b){ var x = val(a, sortKey), y = val(b, sortKey); if(x == null) x = -1e9; if(y == null) y = -1e9; return (x > y ? 1 : x < y ? -1 : 0) * sortDir; });
+  tbody.innerHTML = sorted.map(function(r){ return '<tr>' + cols.map(function(c){ var v = val(r, c[0]); var num = typeof v === 'number'; var cls = c[0] === 'flags' && v ? ' class="flag"' : num ? ' class="n"' : ''; return '<td' + cls + '>' + (v == null ? '' : v) + '</td>'; }).join('') + '</tr>'; }).join('');
+  thead.querySelectorAll('th').forEach(function(th){ th.onclick = function(){ var k = th.dataset.k; if(sortKey === k) sortDir = -sortDir; else { sortKey = k; sortDir = 1; } renderTable(); }; });
+}
+document.getElementById('tablenote').textContent = rows.length + ' files, ' + rows.filter(function(r){ return r.flags.length; }).length + ' flagged. Click a header to sort.';
+renderTable();
+
+/* ---------- provenance ---------- */
+function kv(id, pairs){ document.getElementById(id).innerHTML = pairs.map(function(p){ return '<tr><td>' + p[0] + '</td><td>' + p[1] + '</td></tr>'; }).join(''); }
+var qaPairs = [];
+R.record.forEach(function(rec){
+  var man = rec.manifest || {}, age = man.age_at_retrieval_days || {};
+  qaPairs.push([rec.raw_dir + ' verdict', (rec.fatal ? '<span class="flag">FAIL</span>' : 'pass') + ' · ' + rec.n_files + ' files · flags ' + JSON.stringify(rec.collection.collection_flags) + ' · notes ' + (rec.collection.notes || []).length]);
+  qaPairs.push([rec.raw_dir + ' completeness', rec.completeness.present + ' of ' + rec.completeness.expected + ' expected dates, missing ' + JSON.stringify(rec.completeness.missing || [])]);
+  qaPairs.push([rec.raw_dir + ' manifest', (man.records || 0) + ' records · ' + (man.bytes_total || 0).toLocaleString() + ' bytes · versions ' + JSON.stringify(man.version_tags || {}) + ' · newest file age at retrieval ' + age.newest_file + ' days']);
+  qaPairs.push([rec.raw_dir + ' QA result', rec.qa_file + ' measured ' + rec.measured_at + ' at base revision ' + ((rec.code || {}).base_revision || '?') + ((rec.code || {}).working_tree_dirty ? ' with a dirty working tree' : '')]);
+});
+kv('qa', qaPairs);
+var code = R.code || {};
+kv('code', [['Built at', R.built_at], ['Base revision', (code.base_revision || '?') + (code.working_tree_dirty ? ', dirty working tree' : ', clean')], ['Sources'].concat([Object.keys(code.sources || {}).map(function(k){ return k + ' <code>' + code.sources[k].slice(0, 12) + '</code>'; }).join('<br>')]), ['Inputs', Object.keys(code.inputs || {}).map(function(k){ return k + ' <code>' + code.inputs[k].slice(0, 12) + '</code>'; }).join('<br>')], ['Windows', R.regions.map(function(r){ return r.label + ': columns ' + r.window.col + ' to ' + (r.window.col + r.window.width) + ', rows ' + r.window.row + ' to ' + (r.window.row + r.window.height); }).join('<br>')]]);
+</script>
+</body>
+</html>

@@ -37,7 +37,7 @@ uv run python datasets/cyan/qaqc/qa_cyan.py \
 - Step 1a wrote `METADATA.md` with a research agent and a checking agent. Done 2026-09-22.
 - Step 1b ported `cyan_api.py` and `pull_cyan.py` into `access/` with tests and added `compare_routes.py`. Part 1 done 2026-09-22. Part 2, the pull, awaits authorization.
 - Step 1c ported `qa_cyan.py` into `qaqc/` with tests on synthetic files. It runs on the pulled files once the pull completes.
-- Step 1d builds the review dashboard data under `viz/`.
+- Step 1d built the review dashboard. Builder under `viz/`, page under [docs/dashboards/cyan/](../../docs/dashboards/cyan/README.md). Done 2026-09-23, owner exploration pending.
 - Local scope is assumption A8: weekly whole-region mosaics from 2016 plus 8 weeks of dailies.
 
 ## Prior code to port

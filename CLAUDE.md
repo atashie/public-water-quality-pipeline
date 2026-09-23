@@ -7,7 +7,7 @@ and the EPA experimental cyanoHAB forecast. Sentinel-2, other sensors, and in si
 
 ## Current phase
 
-Step 0, initialization, committed 2026-09-22 with the owner's authorization. Steps 1a to 1c are committed and approved. 598 files sit under `data/cyan/raw/`. Step 1d, the review dashboard, is in progress.
+Step 0, initialization, committed 2026-09-22 with the owner's authorization. Steps 1a to 1c are committed and approved. 598 files sit under `data/cyan/raw/`. Step 1d, the review dashboard at `docs/dashboards/cyan/index.html`, is approved. Step 1e, the lake universe and the per-lake table, is in progress.
 Start with [docs/work-plan.md](docs/work-plan.md). The facts checked on 2026-09-22 are in
 [docs/probes/2026-09-22-dataset-facts.md](docs/probes/2026-09-22-dataset-facts.md). They await independent checks before any dataset METADATA calls them `documented`.
 
@@ -55,13 +55,14 @@ uv run python datasets/cyan/access/pull_cyan.py --period weekly --tiles all --sd
 uv run python datasets/cyan/access/compare_routes.py --sdate 2016-01-01 --edate 2026-09-22 --sample 2                          # step 1b, needs the token
 uv run python datasets/cyan/access/pull_cyan.py --period weekly --tiles all --sdate 2016-01-01 --edate 2026-09-22             # step 1b part 2, after authorization
 uv run python datasets/cyan/qaqc/qa_cyan.py --raw data/cyan/raw/weekly_conus_mosaic --plan datasets/cyan/outputs/plan-weekly-mosaic-2026-09-22.json  # step 1c, local only
+uv run python datasets/cyan/viz/build_review_dashboard.py --raw data/cyan/raw/weekly_conus_mosaic --qa datasets/cyan/outputs/<qa json>  # step 1d, local only
 ```
 
 ## Layout
 
 | Path | What it is |
 |---|---|
-| `docs/` | Assumptions, decisions, reviews, probe records, measurements, work plan, data registry, AWS notes. Later the review dashboards and the engineering handoff page |
+| `docs/` | Assumptions, decisions, reviews, probe records, measurements, work plan, data registry, AWS notes, and the review dashboards under `docs/dashboards/`. Later the engineering handoff page |
 | `docs/archive/` | Ignored by git. Superseded documents kept locally until deleted. Nothing links to it |
 | `datasets/` | One folder per dataset, the shared helpers in `_common/`, and the copy-me `_template/`. See [datasets/README.md](datasets/README.md) |
 | `data/` | Ignored by git. `data/<dataset>/raw/` and `data/<dataset>/derived/`. Everything here regenerates from checked-in code |
