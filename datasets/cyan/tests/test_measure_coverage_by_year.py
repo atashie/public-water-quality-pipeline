@@ -3,6 +3,7 @@
 import json
 
 import pandas as pd
+import pytest
 
 from datasets.cyan.qaqc import measure_coverage_by_year as c
 
@@ -55,3 +56,15 @@ def test_build_writes_a_stamped_result(tmp_path, monkeypatch):
     assert len(written) == 1
     season = json.loads(written[0].read_text())["may_to_october"]
     assert [r["with_a_value_share"] for r in season] == [1.0, 1.0]
+
+
+def test_a_rerun_in_the_same_minute_does_not_overwrite(tmp_path, monkeypatch):
+    table = tmp_path / "cyan_lake_table-2026-07-20T0000Z.parquet"
+    frame().to_parquet(table, index=False)
+    monkeypatch.setattr(c, "OUTPUTS", tmp_path / "outputs")
+    monkeypatch.setattr(c.net, "utc_now_iso", lambda: "2026-09-25T17:01:30Z")
+    c.build(c.parse_args(["--table", str(table)]))
+    first = next((tmp_path / "outputs").glob("coverage-by-year-*.json")).read_bytes()
+    with pytest.raises(FileExistsError):
+        c.build(c.parse_args(["--table", str(table)]))
+    assert next((tmp_path / "outputs").glob("coverage-by-year-*.json")).read_bytes() == first

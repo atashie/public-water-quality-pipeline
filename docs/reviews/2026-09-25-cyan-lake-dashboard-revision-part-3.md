@@ -14,7 +14,7 @@ Implementer: Claude Code (AI coding agent), directed by the repository owner. Sc
 | Page, explainer | The banner names the index as observed cyanobacteria near the surface. It says the index is not a forecast and not a toxin measurement, and links to a new FAQ entry. That entry says what the index reads, how it converts to cells per mL, how uncertain that is, and where the level words come from. A second new entry says the index is not a toxin measurement |
 | Page, words on the scale | A band under the bloom line slider names four levels of estimated abundance: low, moderate, high, and very high. They adapt the classes of Mishra et al. 2019 at 20,000, 100,000, and 1,000,000 cells per mL. On the scale each starts at the first code whose estimate reaches the boundary: 42, 102, and 187. The weekly, daily, and year plots carry faint dotted lines and labels at the same codes |
 | Page, estimates | Six places give the level and the estimate in cells per mL, to one significant figure. They are the slider note, the map popup, the pixel readout, the Lake tab's facts, and the hovers of the weekly and year plots. The words follow the estimate, so a half-code median gets the level its estimate falls in. A median below code 1 reads "near the detection limit" without an estimate. Code 0 reads "below detection" without an index value, which the pixel readout printed before |
-| Page, single-satellite years | The year plot draws 2016 to 2018 dotted. Compared weeks from those years carry an asterisk and a note. Both say that Sentinel-3B joined during 2018 and that those years have a smaller share of weeks with a value. A new FAQ entry explains the sensor periods. It states measurement 14's finding in words. No number pooled across weeks appears on the page, per decision 0003 |
+| Page, single-satellite years | The year plot draws 2016 to 2018 dotted. Compared weeks from those years carry an asterisk and a note. Both say that Sentinel-3B joined during 2018 and that, from May to October, those years have a smaller share of weeks with a value. A new FAQ entry explains the sensor periods. It states measurement 14's finding in words. No number pooled across weeks appears on the page, per decision 0003 |
 | Documents | The page README, the outputs README, the probes index, the reviews index, the work plan |
 
 ## Acceptance checks
@@ -54,7 +54,7 @@ Codex reviewed this part read-only the same day. [Request and answer](2026-09-25
 | # | Codex finding | Disposition |
 |---|---|---|
 | 1 | Coffer et al. 2020's XML shows "CC BY" but links to CC BY-NC 4.0 | fixed. The file is not preserved. The research record says why. 13 files remain |
-| 2 | January 2019 is not a documented satellite boundary. Measurement 14 measures coverage, not passes | fixed. The page, the README, and this record describe 2016 to 2018 by what is documented and measured. Sentinel-3A alone through 2017, Sentinel-3B joining during 2018, and a smaller share of weeks with a value |
+| 2 | January 2019 is not a documented satellite boundary. Measurement 14 measures coverage, not passes | fixed. The page, the README, and this record describe 2016 to 2018 by what is documented and measured. Sentinel-3A alone through 2017, Sentinel-3B joining during 2018, and from May to October a smaller share of weeks with a value |
 | 3 | A half-code median such as 101.5 gets the word of the code below it. Medians of 0.5 get estimates outside the formula's domain | fixed. The words follow the estimate. Below code 1 the page gives no estimate |
 | 4 | Measurement 14 says "fewer lake-weeks" where it means a smaller share, and "makes years comparable" overstates the filter | corrected with evidence. The measurement speaks of shares, names the partial first and last years, and says how the mean is weighted |
 | 5 | California's recommendation lost "without additional validation and study". "The product defines none" lacks a claim. D9's "likely" is unsupported. This record's "about a factor of two" repeats the corrected overstatement | fixed in METADATA, the page, and this record |
@@ -62,6 +62,28 @@ Codex reviewed this part read-only the same day. [Request and answer](2026-09-25
 | 7 | The FAQ links lack an address, so a keyboard cannot reach them | fixed. Each link has `href="#"`. A headless check opened the FAQ with the Enter key |
 | 8 | The page shows no new pooled number. Measurement 14 pools weeks and lakes outside the page, and no decision records that recipe under A17 | fixed. On 2026-09-25 the owner added terms for diagnostic measurements to assumption A17. Measurements 13 and 14 meet them and say so |
 | 9 | Facts repeat across METADATA, the README, and review prose. One METADATA sentence exceeds 25 words. This record held placeholders and "now" | fixed, except the restatements in review prose, which link to their homes as earlier reviews do. The README points to METADATA for the level boundaries |
+
+## Independent verification requested by the owner, 2026-09-25
+
+After the commit, the owner had Codex verify the delivered corrections. [The verification](2026-09-25-cyan-dashboard-part-3-independent-verification.md) found the scientific explanations supported within their stated limits. It confirmed eight of the nine earlier fixes and the owner's A17 terms. Two implementation findings remained.
+
+| # | Finding | Disposition |
+|---|---|---|
+| F1 | Two runs of measurement 14 in the same minute share a file name, and the second replaces the first | fixed. A shared helper, `provenance.write_new`, creates a result file only if it does not exist. Measurements 13 and 14 use it. Tests show that a second run in the same minute fails and leaves the first result unchanged |
+| F2 | The plot guides sit at whole codes 42, 102, and 187, while a median such as 101.5 takes its level from its estimate | fixed. The weekly, daily, and year plots draw the guides at the exact boundaries, about 41.7, 101.3, and 186.7. The slider keeps whole codes, because it moves by whole codes. The FAQ's table names its column "pixel codes" and explains how a median between codes is classified |
+
+The implementer also ran a read-only Codex check of the commit, [request and answer](2026-09-25-codex-verification-lake-dashboard-revision-part-3.md). It confirmed seven of the nine earlier fixes and found two partly resolved.
+
+| # | Finding | Disposition |
+|---|---|---|
+| V1 | The year-plot note and the compare footnote say 2016 to 2018 have a smaller share of weeks with a value without "May to October". Over all months 2016 has 87.5 percent and 2019 80.5 percent | fixed. Both notes, the README, and this record name May to October |
+| V2 | Some new sentences on the page exceed 25 words | fixed for the new sentences. Longer sentences from step 1f stay as the owner approved them |
+| V3 | The preserved EPA fact sheet names two agency contacts | not changed. The owner chose on 2026-09-25 to keep the fact sheet, see below |
+| V4 | Esri's terms for a public site are still open, and older plan and QA files hold local absolute paths | accepted and deferred. Both predate this revision. The Esri item has been open since step 1f |
+
+V3. The fact sheet is a public EPA document kept byte for byte, so its hash still matches. Editing it would break that. Every preserved paper also names its authors. The repository's rule on names governs what the repository writes, not the preserved sources. Removing the fact sheet would leave its claim with the EPA web page alone. That page carries the same values without their unit.
+
+Eight older scripts write their dated results the same way. They are `qa_cyan.py`, `qa_lakes.py`, `build_lake_table.py`, `build_lake_dashboard.py`, `estimate_pixel_history.py`, `compare_routes.py`, `build_name_crosswalk.py`, and `check_lake_masks.py`. They predate this revision. Moving them to the helper is proposed below, not done.
 
 ## Limits
 
@@ -93,13 +115,14 @@ Codex reviewed this part read-only the same day. [Request and answer](2026-09-25
 
 - Assumption A17: option 3. Diagnostic measurements may pool counts across lakes and weeks if they stay in the measurements document, say they are pooled, and never feed a dataset. The page may state their findings in words, never their numbers. [Assumption A17](../assumptions.md) holds the text.
 - Commit: the owner authorized a commit of part 3. Push was not part of the authorization.
-- The level words were not discussed. The page keeps the classes of Mishra et al. 2019 as delivered, and the question stays open.
+- The level words: keep the four classes of Mishra et al. 2019 as delivered.
+- After both verifications, the owner authorized a commit of the fixes and records, and a push. The preserved EPA fact sheet stays as fetched.
 - Features from the SFEI survey: none is scheduled until a user asks for a specific feature. S3 and S5 to S9 stay documented in [the probe record](../probes/2026-09-25-sfei-fhab-survey.md#candidate-features-for-the-lake-dashboard) and are listed in [the work plan](../work-plan.md#candidates-not-scheduled).
 
 ## Open for the owner
 
-1. The level words: keep the four classes of Mishra et al. 2019, switch to another scheme, or show estimates without words.
-2. Push, which redeploys the Vercel site with parts 2 and 3.
+1. Whether to move the eight older scripts to the write-once helper, as a separate small step.
+2. Esri's terms for the imagery basemap on a public site, open since step 1f.
 
 ## Proposed next step
 

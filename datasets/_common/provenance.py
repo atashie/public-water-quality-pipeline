@@ -45,6 +45,25 @@ def rel(path: Path) -> str:
         return str(path)
 
 
+def write_new(path: Path, text: str) -> Path:
+    """Write a result file that must not exist yet. A rerun never overwrites an earlier result.
+
+    Stamped names carry the minute, so two runs in one minute collide. The second run fails
+    instead of replacing the first run's evidence.
+    """
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        with path.open("x", encoding="utf-8") as f:
+            f.write(text)
+    except FileExistsError:
+        raise FileExistsError(
+            f"{rel(path)} exists. A rerun never overwrites an earlier result. "
+            "Rerun after the minute."
+        ) from None
+    return path
+
+
 def code_provenance(sources: list[Path], inputs: list[Path] | None = None) -> dict:
     """Base revision, dirty flag, and sha256 of the named source and input files."""
     return {

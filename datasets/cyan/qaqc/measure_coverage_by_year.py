@@ -96,9 +96,9 @@ def build(args) -> dict:
         "may_to_october": by_year(in_season(weekly)),
         "code": provenance.code_provenance([Path(__file__)], [table]),
     }
-    OUTPUTS.mkdir(parents=True, exist_ok=True)
-    out = OUTPUTS / f"coverage-by-year-{stamp}.json"
-    out.write_text(json.dumps(summary, indent=1) + "\n", encoding="utf-8")
+    out = provenance.write_new(
+        OUTPUTS / f"coverage-by-year-{stamp}.json", json.dumps(summary, indent=1) + "\n"
+    )
     for r in summary["may_to_october"]:
         print(
             f"[coverage-by-year] {r['year']} May-Oct: {r['files']} files, "

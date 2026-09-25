@@ -205,7 +205,7 @@ What it shows. The whole weekly record costs 516 MB with the codes stacked per l
 
 ### 13. Zero medians and land-coded lake pixels in the weekly record, 2026-09-25
 
-A diagnostic measurement pooled across lakes and weeks, under the terms of [assumption A17](assumptions.md). Script `datasets/cyan/qaqc/measure_zero_and_land.py`. Result [zero-and-land-2026-09-25T1615Z.json](../datasets/cyan/outputs/zero-and-land-2026-09-25T1615Z.json). Input: the per-lake table of measurement 7, weekly rows only, 1,257,982 rows. `measured`. The run started from revision `e24d9eb` with uncommitted changes, which the result records.
+A diagnostic measurement pooled across lakes and weeks, under the terms of [assumption A17](assumptions.md). Script `datasets/cyan/qaqc/measure_zero_and_land.py`. Result [zero-and-land-2026-09-25T1615Z.json](../datasets/cyan/outputs/zero-and-land-2026-09-25T1615Z.json). Input: the per-lake table of measurement 7, weekly rows only, 1,257,982 rows. `measured`. The run started from revision `e24d9eb` with uncommitted changes, which the result records. On 2026-09-25, after this run, the script changed only in how it writes its result, which a rerun can no longer overwrite. The counting code is unchanged.
 
 | Measure | Value |
 |---|---|
@@ -223,7 +223,7 @@ What it shows. 79 percent of weekly lake medians with a value are code 0, below 
 
 ### 14. Weekly lake coverage by year, before and after the second satellite, 2026-09-25
 
-A diagnostic measurement pooled across lakes and weeks, under the terms of [assumption A17](assumptions.md). Script `datasets/cyan/qaqc/measure_coverage_by_year.py`. Result [coverage-by-year-2026-09-25T1701Z.json](../datasets/cyan/outputs/coverage-by-year-2026-09-25T1701Z.json). Input: the per-lake table of measurement 7, weekly rows only, 1,257,982 rows. Every lake has a row in every weekly file, so each year pools the same 2,321 lakes. `measured`. The run started from revision `e808d82` with uncommitted changes, which the result records.
+A diagnostic measurement pooled across lakes and weeks, under the terms of [assumption A17](assumptions.md). Script `datasets/cyan/qaqc/measure_coverage_by_year.py`. Result [coverage-by-year-2026-09-25T1701Z.json](../datasets/cyan/outputs/coverage-by-year-2026-09-25T1701Z.json). Input: the per-lake table of measurement 7, weekly rows only, 1,257,982 rows. Every lake has a row in every weekly file, so each year pools the same 2,321 lakes. `measured`. The run started from revision `e808d82` with uncommitted changes, which the result records. On 2026-09-25, after this run, the script changed only in how it writes its result, which a rerun can no longer overwrite. The counting code is unchanged.
 
 May to October leaves out most ice and low sun. The first and last years are partial. 2016 starts at 2016-04-24, and 2026 ends at 2026-09-13.
 

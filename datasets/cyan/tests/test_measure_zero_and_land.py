@@ -4,6 +4,7 @@ import json
 
 import numpy as np
 import pandas as pd
+import pytest
 
 from datasets.cyan.qaqc import measure_zero_and_land as z
 
@@ -54,3 +55,15 @@ def test_build_writes_a_stamped_result(tmp_path, monkeypatch):
     written = list((tmp_path / "outputs").glob("zero-and-land-*.json"))
     assert len(written) == 1
     assert json.loads(written[0].read_text())["land"]["ceiling_under_0_9"] == 1
+
+
+def test_a_rerun_in_the_same_minute_does_not_overwrite(tmp_path, monkeypatch):
+    table = tmp_path / "cyan_lake_table-2026-07-20T0000Z.parquet"
+    frame().to_parquet(table, index=False)
+    monkeypatch.setattr(z, "OUTPUTS", tmp_path / "outputs")
+    monkeypatch.setattr(z.net, "utc_now_iso", lambda: "2026-09-25T17:01:30Z")
+    z.build(z.parse_args(["--table", str(table)]))
+    first = next((tmp_path / "outputs").glob("zero-and-land-*.json")).read_bytes()
+    with pytest.raises(FileExistsError):
+        z.build(z.parse_args(["--table", str(table)]))
+    assert next((tmp_path / "outputs").glob("zero-and-land-*.json")).read_bytes() == first

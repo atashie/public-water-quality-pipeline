@@ -121,9 +121,9 @@ def build(args) -> dict:
         "land": summarize_land(land_ceilings(weekly)),
         "code": provenance.code_provenance([Path(__file__)], [table]),
     }
-    OUTPUTS.mkdir(parents=True, exist_ok=True)
-    out = OUTPUTS / f"zero-and-land-{stamp}.json"
-    out.write_text(json.dumps(summary, indent=1) + "\n", encoding="utf-8")
+    out = provenance.write_new(
+        OUTPUTS / f"zero-and-land-{stamp}.json", json.dumps(summary, indent=1) + "\n"
+    )
     z, land = summary["zero"], summary["land"]
     print(f"[zero-and-land] {z['rows_with_a_value']:,} weekly rows with a value")
     print(
