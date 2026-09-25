@@ -6,7 +6,8 @@
 <title>CyAN lake dashboard</title>
 <link rel="stylesheet" href="vendor/leaflet.css">
 <style>
-  :root{--ink:#12343b;--teal:#0f6e78;--muted:#6b7f83;--line:#dbe4e4;--bg:#eef3f3;--card:#fff;--warn:#d1495b;--water:#e3edf1;--land:#f5f7f7}
+  :root{--ink:#12343b;--teal:#0f6e78;--muted:#6b7f83;--line:#dbe4e4;--bg:#eef3f3;--card:#fff;--warn:#d1495b;--water:#e3edf1;--land:#f5f7f7;
+    --zero:#e4eef1;--noval:#9fa7aa;--landpx:#30373a;--valid:#2a78d6}
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);font-size:14px;line-height:1.4}
@@ -27,17 +28,17 @@
   #faq ul{padding-left:18px}
   main{padding:14px 18px}
   .tab{display:none}.tab.active{display:block}
-  .three{display:grid;grid-template-columns:290px 1fr 320px;gap:14px}
+  .three{display:grid;grid-template-columns:300px 1fr 340px;gap:14px}
   @media(max-width:1100px){.three{grid-template-columns:1fr}}
   .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-width:0;margin-bottom:12px}
   .card h3{margin:0 0 6px;font-size:14px}
   label{font-size:12.5px;color:var(--muted);font-weight:600;display:block;margin-top:8px}
   select,input[type=range],input[type=text]{width:100%}
   select,input[type=text]{font-size:13px;padding:5px 6px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink)}
-  input[type=number]{width:80px;font-size:13px;padding:4px 6px;border:1px solid var(--line);border-radius:6px}
   .row{display:flex;gap:6px;align-items:center;margin-top:6px;flex-wrap:wrap}
-  .row button{border:1px solid var(--line);background:#f4f8f8;padding:4px 10px;border-radius:6px;cursor:pointer}
+  .row button{border:1px solid var(--line);background:#f4f8f8;padding:4px 10px;border-radius:6px;cursor:pointer;color:var(--ink)}
   .row button:hover{background:#e7f1f1}
+  .row select{width:auto;flex:1;min-width:150px}
   .mapbox{height:74vh;min-height:540px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--water)}
   .lakemap{height:340px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--water)}
   .leaflet-image-layer{image-rendering:pixelated}
@@ -48,7 +49,24 @@
   .leaflet-control.basemap label{display:inline;margin:0;font-weight:500;color:var(--ink);font-size:12.5px}
   .legend{font-size:12px;margin-top:8px;display:flex;flex-wrap:wrap;gap:4px 12px}
   .sw{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:5px;border:1px solid #9fb0b5}
-  .ramp{height:12px;border-radius:3px;border:1px solid #9fb0b5;background:linear-gradient(90deg,#1f4e79,#2a9d8f,#e9c46a,#f4a261,#d1495b,#6a0c0c)}
+  .sw.hollow{border-radius:50%;border:1.5px dashed #6b7f83;background:rgba(255,255,255,.4)}
+  .ramp{display:inline-block;width:70px;height:10px;border-radius:3px;border:1px solid #9fb0b5;vertical-align:-1px;margin-right:5px}
+  /* the bloom line: a slider drawn over the index scale */
+  .scale{margin-top:10px}
+  .scalehead{display:flex;justify-content:space-between;align-items:baseline;font-size:12.5px;color:var(--muted);font-weight:600}
+  .scalehead b{color:var(--ink);font-weight:700}
+  .scalerow{display:flex;align-items:center;gap:6px;margin-top:6px}
+  .zsw{flex:none;width:16px;height:16px;border-radius:3px;border:1px solid #9fb0b5;background:var(--zero)}
+  .track{position:relative;flex:1;padding-bottom:16px}
+  input.heat{-webkit-appearance:none;appearance:none;display:block;width:100%;height:16px;margin:0;border-radius:3px;border:1px solid #9fb0b5;cursor:pointer;outline:none}
+  input.heat:focus-visible{box-shadow:0 0 0 2px #fff,0 0 0 4px var(--teal)}
+  input.heat::-webkit-slider-thumb{-webkit-appearance:none;width:8px;height:26px;border-radius:3px;background:var(--ink);border:2px solid #fff;box-shadow:0 0 0 1px var(--ink);cursor:ew-resize}
+  input.heat::-moz-range-thumb{width:8px;height:26px;border-radius:3px;background:var(--ink);border:2px solid #fff;box-shadow:0 0 0 1px var(--ink);cursor:ew-resize}
+  input.heat::-moz-range-track{background:transparent}
+  .epa{position:absolute;top:18px;transform:translateX(-50%);font-size:10.5px;color:var(--muted);white-space:nowrap;pointer-events:none}
+  .epa:before{content:"";position:absolute;left:50%;top:-4px;width:1px;height:4px;background:var(--muted)}
+  .scaleends{display:grid;grid-template-columns:22px 1fr auto;font-size:11px;color:var(--muted)}
+  .scaleends span:first-child{text-align:center;padding-right:6px}
   .counts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:8px}
   .counts div{background:#f4f8f8;border:1px solid var(--line);border-radius:6px;padding:6px 8px;font-size:12px}
   .counts b{display:block;font-size:18px}
@@ -57,16 +75,21 @@
   .lrow:hover{background:#f4f8f8}.lrow.sel{background:#e3f1f2;outline:1px solid var(--teal)}
   .lrow .nm{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .lrow .n{font-variant-numeric:tabular-nums;color:var(--muted);text-align:right;flex:none}
-  .lrow .wk{width:74px}.lrow .val{width:44px}
-  .lhead{position:sticky;top:0;background:#fff;color:var(--muted);font-size:11px;font-weight:600;letter-spacing:.02em;cursor:default;border-bottom:1px solid var(--line)}
+  .lrow .stc{width:34px;flex:none;color:var(--muted)}
+  .lrow .wk{width:70px}.lrow .val{width:44px}
+  .lhead{position:sticky;top:0;background:#fff;color:var(--muted);font-size:11px;font-weight:600;letter-spacing:.02em;border-bottom:1px solid var(--line);z-index:1}
   .lhead:hover{background:#fff}
+  .lhead span[data-sort]{cursor:pointer;user-select:none}
+  .lhead span[data-sort]:hover{color:var(--ink)}
+  .lhead span.on{color:var(--ink)}
   .note{color:var(--muted);font-size:11.5px;margin-top:6px}
   .plot{width:100%;height:300px}
-  .plot.small{height:170px}
+  .plot.small{height:190px}
   table{width:100%;border-collapse:collapse;font-size:12px}
   th{text-align:left;color:var(--muted);font-weight:600;padding:5px 6px;border-bottom:1px solid var(--line);white-space:nowrap;position:sticky;top:0;background:#fff}
   td{padding:3px 6px;border-bottom:1px solid #eef3f3;white-space:nowrap}
   td.n{text-align:right;font-variant-numeric:tabular-nums}
+  td button{border:1px solid var(--line);background:#f4f8f8;border-radius:5px;cursor:pointer;padding:0 6px;color:var(--ink)}
   .scroll{max-height:50vh;overflow:auto;border:1px solid var(--line);border-radius:8px}
   .flag{color:var(--warn);font-weight:600}
   code{background:#e7eeee;padding:1px 5px;border-radius:4px;font-size:12px;word-break:break-all}
@@ -103,10 +126,19 @@
         <div class="card">
           <h3>Week</h3>
           <div id="weeklabel" style="font-weight:600"></div>
-          <input type="range" id="week" min="0" max="0" value="0">
+          <input type="range" id="week" min="0" max="0" value="0" aria-label="week">
           <div class="row"><button id="prev">◀ earlier</button><button id="next">later ▶</button><button id="newest">newest</button><span class="note" id="weekidx"></span></div>
-          <label>Bloom line, median index code <input type="number" id="thr" min="1" max="253" step="1" value="130"> <span class="note" id="thrnote"></span></label>
-          <label>Color lakes by <select id="mode"><option value="run">bloom state and how long</option><option value="median">median index code</option></select></label>
+          <label>State <select id="m-state"></select></label>
+          <label>Color lakes by <select id="mode"><option value="median">index, low to high</option><option value="run">bloom duration</option></select></label>
+          <div class="scale">
+            <div class="scalehead"><span>Bloom line</span><b id="thrval"></b></div>
+            <div class="scalerow">
+              <span class="zsw" title="code 0, below detection"></span>
+              <div class="track"><input type="range" id="thr" class="heat" min="1" max="253" step="1" value="130" aria-label="bloom line, index code"><span class="epa" id="epamark">EPA 130</span></div>
+            </div>
+            <div class="scaleends"><span title="code 0, below detection">0</span><span>low index</span><span>high</span></div>
+            <div class="note" id="thrnote"></div>
+          </div>
           <label class="toggle"><input type="checkbox" id="px" checked> show the newest week's pixels <span class="note" id="pxnote"></span></label>
           <div class="legend" id="legend"></div>
           <div class="counts">
@@ -114,12 +146,13 @@
             <div>below<b id="c-below">0</b></div>
             <div>no data<b id="c-unseen">0</b></div>
           </div>
+          <div class="note" id="countnote"></div>
           <details class="more"><summary>More options</summary>
             <label>Minimum coverage <span id="covlabel" style="color:var(--ink)">any valid pixel</span></label>
-            <input type="range" id="cov" min="0" max="100" value="0">
+            <input type="range" id="cov" min="0" max="100" value="0" aria-label="minimum coverage">
             <div class="note">Hide a lake's week when fewer than this share of its pixels have a value.</div>
-            <label class="toggle"><input type="checkbox" id="bridge"> let weeks without a value bridge a run</label>
-            <div class="note">By default a week with no value ends a run.</div>
+            <label class="toggle"><input type="checkbox" id="bridge"> let weeks without a value bridge a bloom duration</label>
+            <div class="note">By default a week with no value ends a bloom duration.</div>
           </details>
         </div>
       </div>
@@ -131,7 +164,7 @@
         <div class="card">
           <h3 id="listhead">Lakes at or above the line</h3>
           <div class="list" id="list"></div>
-          <div class="note">Longest runs first. Click a row to find the lake on the map.</div>
+          <div class="note">Click a column name to sort. Click a row to find the lake on the map.</div>
         </div>
       </div>
     </div>
@@ -150,8 +183,20 @@
     <div class="card">
       <h3 id="lake-title">Weekly index, 7-day maximum composites</h3>
       <div id="p-weekly" class="plot"></div>
+      <div class="note">Median, 90th percentile, and maximum of the index codes of the pixels inside the lake. The dashed line is the bloom line from the Map tab. A week with no value leaves a gap. Click a week to add it to the comparison below.</div>
       <div id="p-weekly-cov" class="plot small"></div>
-      <div class="note">Median, 90th percentile, and maximum of the index codes of the pixels inside the lake. The dashed line is the bloom line from the Map tab. Coverage is the share of the lake's pixels with a value that week. A week with no value leaves a gap.</div>
+      <div class="note">Each bar is one week, split into the share of the lake's pixels with a value, without a value, and marked as land by the CyAN land mask. Coverage is the blue share. Land-marked pixels never have a value, so some lakes never reach 100 percent.</div>
+    </div>
+    <div class="card">
+      <h3>Each year's weekly median, by time of year</h3>
+      <div id="p-years" class="plot"></div>
+      <div class="note">One line per year, each week plotted at the date it starts. Older years are lighter. The newest year is in teal. Weeks without a value leave gaps. Click a year in the legend to hide it, or double-click to show that year alone. Click a week to add it to the comparison below.</div>
+    </div>
+    <div class="card">
+      <h3>Compare weeks</h3>
+      <div class="row"><select id="cmp-week" aria-label="week to compare"></select><button id="cmp-add">add week</button><button id="cmp-years" title="for the week selected in the list, add the week that covers the same date in every year">same date in every year</button><button id="cmp-clear">clear</button></div>
+      <div class="note" id="cmp-note">Pick the weeks to compare. Each row is one week as observed. Nothing is averaged. The choice stays when you open another lake.</div>
+      <div class="scroll" style="margin-top:6px"><table id="cmp-table"></table></div>
     </div>
     <div class="two">
       <div class="card">
@@ -163,7 +208,8 @@
         <h3 id="lakemap-title">Newest week's pixels</h3>
         <div id="lakemap" class="lakemap"></div>
         <div class="readout" id="lakemap-readout">move over the pixels to read them</div>
-        <div class="note" id="lakemap-note">Each square is one 300 m pixel colored by its index code. Faded squares touch the outline but are not wholly inside it and do not count. Gray is land, light gray is no value.</div>
+        <div class="legend" id="lakemap-legend"></div>
+        <div class="note" id="lakemap-note">Each square is one 300 m pixel colored by its index code. Faded squares touch the outline but are not wholly inside it and do not count.</div>
       </div>
     </div>
     <div class="card">
@@ -207,30 +253,47 @@ window.onerror = function(msg, src, line){ var el = document.getElementById('sub
 
 var LAKES = D.lakes, WEEKS = D.recent_weeks, NW = WEEKS.length;
 var byId = {}; LAKES.forEach(function(l){ byId[l.c] = l; });
+/* Colors. Index codes 1 to 253 run on one warm hue, light to dark. Code 0, below detection, is
+   a pale neutral of its own, so that a lake with nothing detected does not read as a low value.
+   No value and land are two grays. The set was checked for color-vision separation. */
+var HEAT = ['#fdae6b','#fd8d3c','#f16913','#d94801','#a63603','#7f2704'];
+var ZERO_C = '#e4eef1', NOVAL_C = '#9fa7aa', LAND_C = '#30373a', VALID_C = '#2a78d6';
 var BUCKETS = [[53,'#8c3b12','53 or more weeks'],[13,'#d1731f','13 to 52 weeks'],[4,'#ef9d5b','4 to 12 weeks'],[1,'#f6c99f','1 to 3 weeks']];
-var BELOW='#c9d6d9', UNSEEN='#efefef';
-var RAMP=[[0,'#1f4e79'],[0.2,'#2a9d8f'],[0.4,'#e9c46a'],[0.6,'#f4a261'],[0.8,'#d1495b'],[1,'#6a0c0c']];
+var BELOW = '#c9d6d9';
 var PX = D.pixels || null;
 var STATE_NAMES = {}; if(window.CYAN_STATES){ window.CYAN_STATES.features.forEach(function(f){ STATE_NAMES[f.properties.STUSPS] = f.properties.NAME; }); }
 
 function fmt(n){ return n==null? '–' : n.toLocaleString('en-US'); }
 function ci(dn){ return Math.pow(10, dn*0.011714 - 4.1870866); }
-function ciText(dn){ var v=ci(dn); return v<0.01? v.toExponential(2) : v.toFixed(3); }
+function ciText(dn){ var v=ci(dn); return v<0.01? v.toPrecision(2) : v.toFixed(3); }
 function name(l){ return l.n || ('COMID '+l.c); }
 function sortName(l){ return (l.n ? '0' : '1') + name(l).toLowerCase(); }
 function endOf(start){ var d=new Date(start+'T00:00:00Z'); d.setUTCDate(d.getUTCDate()+6); return d.toISOString().slice(0,10); }
-function lerp(a,b,t){ return a+(b-a)*t; }
 function hex(c){ var m=c.match(/#(..)(..)(..)/); return [parseInt(m[1],16),parseInt(m[2],16),parseInt(m[3],16)]; }
-function rampColor(t){ t=Math.max(0,Math.min(1,t)); for(var i=1;i<RAMP.length;i++){ if(t<=RAMP[i][0]){ var a=hex(RAMP[i-1][1]), b=hex(RAMP[i][1]), u=(t-RAMP[i-1][0])/(RAMP[i][0]-RAMP[i-1][0]); return 'rgb('+Math.round(lerp(a[0],b[0],u))+','+Math.round(lerp(a[1],b[1],u))+','+Math.round(lerp(a[2],b[2],u))+')'; } } return RAMP[RAMP.length-1][1]; }
+/* One lookup table for every code: the map circles, the pixels, and the slider share it. */
+var LUT = (function(){
+  var t = new Uint8ClampedArray(256*3), stops = HEAT.map(hex), z = hex(ZERO_C), nv = hex(NOVAL_C), ld = hex(LAND_C);
+  function put(code, rgb){ t[code*3]=rgb[0]; t[code*3+1]=rgb[1]; t[code*3+2]=rgb[2]; }
+  put(0, z);
+  for(var code=1; code<=253; code++){
+    var f = (code-1)/252*(stops.length-1), i = Math.min(stops.length-2, Math.floor(f)), u = f-i, a = stops[i], b = stops[i+1];
+    put(code, [Math.round(a[0]+(b[0]-a[0])*u), Math.round(a[1]+(b[1]-a[1])*u), Math.round(a[2]+(b[2]-a[2])*u)]);
+  }
+  put(254, ld); put(255, nv);
+  return t;
+})();
+function codeColor(code){ var c = Math.max(0, Math.min(255, code)); c = code>0 && c<1 ? 1 : Math.round(c); return 'rgb('+LUT[c*3]+','+LUT[c*3+1]+','+LUT[c*3+2]+')'; }
+var HEAT_CSS = 'linear-gradient(90deg,' + HEAT.join(',') + ')';
 function bucketColor(run){ for(var i=0;i<BUCKETS.length;i++){ if(run>=BUCKETS[i][0]) return BUCKETS[i][1]; } return BELOW; }
 
 /* state */
-var k = NW-1, T = D.threshold, C = 0, bridge = false, mode = 'run', selected = null, showPx = true;
+var k = NW-1, T = D.threshold, C = 0, bridge = false, mode = 'median', selected = null, showPx = true, mapState = 'all', sortKey = null, sortDir = -1;
 
 function seen(l,i){ if(l.m[i]==null) return false; return C>0 ? l.v[i]>=C : true; }
 function above(l,i){ return seen(l,i) && l.m[i]>=T; }
 function run(l,i){ var n=0; for(var j=i;j>=0;j--){ if(above(l,j)) n++; else if(bridge && !seen(l,j)) continue; else break; } return n; }
 function stateOf(l,i){ if(!seen(l,i)) return 'unseen'; return l.m[i]>=T ? 'above' : 'below'; }
+function inMapState(l){ return mapState==='all' || l.st===mapState; }
 
 /* header */
 document.getElementById('sub').textContent = fmt(D.n_lakes)+' lakes · weekly satellite files from '+D.weeks[0]+' through '+endOf(D.newest_week);
@@ -251,14 +314,16 @@ var FAQ = [
   ['What am I looking at?', '<p>The cyanobacteria index that NASA produces for the EPA CyAN program from the Sentinel-3 OLCI satellites, at 300 m per pixel. Each weekly file holds the highest value of the week for every pixel. This page summarizes the pixels inside each of '+fmt(D.n_lakes)+' lakes, one value per lake per week, from '+D.weeks[0]+' through '+endOf(D.newest_week)+'. Nothing here is a forecast.</p>'],
   ['How is a lake\'s value computed?', '<p>Only pixels that lie wholly inside the lake outline count. Pixels that straddle the shoreline are left out. For each week the page reports the median, the 90th percentile, and the maximum of those pixels\' index codes. A pixel below the sensor\'s detection limit counts as zero. Land and pixels without a value are excluded.</p>'],
   ['What is the index code?', '<p>Each pixel carries a code from 0 to 253. Zero means below detection. The code converts to the cyanobacteria index by CI = 10<sup>0.011714 × code − 4.1870866</sup>, so higher codes mean more cyanobacteria. The index is not a cell count and not a toxin level.</p>'],
-  ['What is the bloom line?', '<p>The EPA\'s weekly cyanobacteria forecast flags a lake as blooming when its median code is 130 or more. The EPA notes that 130 corresponds to about 12 micrograms per liter of chlorophyll-a. This page uses the same line by default. You can move it on the Map tab, which changes the colors, the counts, and the runs on both tabs.</p>'],
-  ['What do the colors mean?', '<p>On the map a lake is colored by its state in the selected week.</p><ul><li>Shades of orange to brown: the median is at or above the bloom line, darker for longer runs (1 to 3, 4 to 12, 13 to 52, 53 or more consecutive weeks).</li><li>Blue-gray: has data and is below the line.</li><li>Pale gray: no data that week.</li></ul><p>"Median index code" colors lakes on a continuous scale from 0 to 253 instead.</p>'],
-  ['What do "no data" and "coverage" mean?', '<p>Clouds, ice, and sun glint leave pixels without a value. Coverage is the share of a lake\'s pixels that have a value in a week. A lake with no valid pixel in a week has "no data". Under "More options" you can require a minimum coverage before a week counts. A median computed from very few pixels is noisy.</p>'],
-  ['What is a run?', '<p>The number of consecutive weeks, ending with the selected week, in which the lake\'s median was at or above the bloom line. A week with no value ends the run unless "bridge" is on under "More options". The map holds the newest 104 weeks, so a run shown as 104+ is at least two years. The Lake tab shows the full run.</p>'],
-  ['What are the pixels?', '<p>Zoom in past level 8 with "show the newest week\'s pixels" ticked, as it is when the page opens, or open a lake on the Lake tab. Each square is one 300 m pixel from the newest weekly file, colored by its code on the same scale as "median index code". Squares at full strength are wholly inside the outline and count toward the lake\'s numbers. Faded squares touch the outline but do not count. Gray is land, light gray is no value. Only the newest week is available as pixels. "Wholly inside" is decided on an 8 by 8 sub-grid of each pixel, so a square whose corner is clipped by a sliver of shore thinner than 40 m can still count.</p>'],
+  ['What do the colors mean?', '<p>By default the map colors each lake by its median index code in the selected week, on the scale under "Bloom line": light orange for low codes, dark brown for high ones.</p><ul><li>Pale blue-gray: the median is zero, below detection.</li><li>Hollow dashed circle: no data that week.</li></ul><p>"Color lakes by bloom duration" instead shades the lakes at or above the bloom line by how many weeks in a row they have been there, and paints the rest light gray. The pixels always use the index scale, with dark gray for land and mid gray for no value.</p>'],
+  ['What is the bloom line?', '<p>The EPA\'s weekly cyanobacteria forecast flags a lake as blooming when its median code is 130 or more. The EPA notes that 130 corresponds to about 12 micrograms per liter of chlorophyll-a. The page starts at the same line, marked "EPA 130" on the scale. Drag the handle along the scale, or use the arrow keys, to move it. The counts, the list, bloom duration, and the Lake tab follow.</p>'],
+  ['What is bloom duration?', '<p>The number of consecutive weeks, ending with the selected week, in which the lake\'s median was at or above the bloom line. A week with no value, or below the minimum coverage, ends it unless "bridge" is on under "More options". The map holds the newest 104 weeks, so a duration shown as 104+ is at least two years. The Lake tab counts over the whole record.</p>'],
+  ['What do "no data" and "coverage" mean?', '<p>Clouds, ice, and sun glint leave pixels without a value. Coverage is the share of a lake\'s pixels that have a value in a week. A lake with no valid pixel in a week has "no data". Under "More options" you can require a minimum coverage before a week counts. A median computed from very few pixels is noisy.</p><p>The CyAN land mask can mark parts of a lake as land, for example parts that were dry. Those pixels never have a value, so such a lake never reaches 100 percent coverage. The Lake tab\'s coverage bars show them in dark gray.</p>'],
+  ['How do I use the lists and states?', '<p>Pick a state on the Map tab to zoom to it and to limit the counts and the list to its lakes. The list shows the lakes at or above the bloom line in the selected week. Click a column name to sort by location, state, bloom duration, or value, and again to reverse the order.</p>'],
+  ['What are the pixels?', '<p>Zoom in past level 8 with "show the newest week\'s pixels" ticked, as it is when the page opens, or open a lake on the Lake tab. Each square is one 300 m pixel from the newest weekly file, colored on the same index scale. Squares at full strength are wholly inside the outline and count toward the lake\'s numbers. Faded squares touch the outline but do not count. Only the newest week is available as pixels. "Wholly inside" is decided on an 8 by 8 sub-grid of each pixel, so a square whose corner is clipped by a sliver of shore thinner than 40 m can still count.</p>'],
   ['How do I read a single pixel?', '<p>With the pixels on, move the mouse over a lake. The box at the bottom left of the map, or under the small map on the Lake tab, shows the lake, the pixel\'s code, the index it converts to, and whether the pixel is wholly inside the outline and counted, touches the outline and is not counted, or is land or has no value.</p>'],
-  ['Are the outlines exact?', '<p>Yes. From zoom 9 the map draws each lake\'s outline exactly as published with the CyAN lake set, at about 10 cm precision, and the Lake tab\'s small map does the same. The same polygons decide which pixels count. An earlier version of this page drew outlines simplified by 300 m, which put the drawn line up to one pixel away from the true shore and made the pixels look mislabelled.</p>'],
-  ['What is the satellite imagery?', '<p>The imagery basemap is Esri World Imagery, streamed from Esri when the page has an internet connection. It is context only and is not the data. Untick "satellite imagery basemap" to work offline or to see the plain outlines. Attribution: Esri, Vantor, Earthstar Geographics, and the GIS User Community.</p>'],
+  ['How do I compare weeks or years?', '<p>On the Lake tab, the plot "Each year\'s weekly median" puts every year on one calendar axis. Under "Compare weeks", add any weeks by clicking a point on either plot or by picking from the list. "Same date in every year" adds, for each year, the week that covers the middle date of the week selected in the list. Clicking a plot selects that week too. Each row is a week as observed, with its coverage, no-value, and land shares. Nothing is averaged. A compared week without data shows as a dotted line on the weekly plot and an × on the year plot.</p>'],
+  ['Are the outlines exact?', '<p>Yes. From zoom 9 the map draws each lake\'s outline exactly as published with the CyAN lake set, at about 10 cm precision, and the Lake tab\'s small map does the same. The same polygons decide which pixels count.</p>'],
+  ['What is the satellite imagery?', '<p>The imagery basemap is Esri World Imagery, streamed from Esri when the page has an internet connection. It is context only and is not the data. Untick "satellite imagery" to work offline or to see the plain outlines. Attribution: Esri, Vantor, Earthstar Geographics, and the GIS User Community.</p>'],
   ['Where do the names come from?', '<p>Most names come with the lake outlines. Where an outline has no name, the page uses the US Geological Survey\'s names database by location, and when several named features lie inside one outline the choice is a best guess that the Lake tab flags with the alternatives. Some lakes have no name anywhere and show their COMID, the lake\'s identifier in the national hydrography dataset.</p>'],
   ['How current is this?', '<p>The newest weekly file covers '+D.newest_week+' to '+endOf(D.newest_week)+'. The page was built on '+D.built_at.slice(0,10)+'. NASA publishes a new weekly file a few days after each week ends.</p>'],
   ['What are the limits?', '<ul><li>Shoreline pixels are excluded, so a bloom confined to a shore is invisible here.</li><li>No value on this page has been checked against a water sample.</li><li>The satellite sees the surface. It does not see under ice or clouds, and it cannot tell toxin from no toxin.</li><li>Names chosen by location can be wrong for lakes that contain several named features.</li></ul>'],
@@ -318,29 +383,34 @@ function syncOutlines(){
 var markers = {};
 function radius(l){ var z=map.getZoom(), f = z<=4 ? 0.5 : z<=5 ? 0.65 : z<=6 ? 0.8 : 1; return Math.max(2.2, Math.min(14, (3 + 2.2*Math.log2(1+l.a))*f)); }
 LAKES.forEach(function(l){
-  var m = L.circleMarker([l.y,l.x], {pane:'outlines', radius:radius(l), color:'#33555b', weight:0.8, fillColor:UNSEEN, fillOpacity:0.9});
+  var m = L.circleMarker([l.y,l.x], {pane:'outlines', radius:radius(l), color:'#33555b', weight:0.8, fillColor:ZERO_C, fillOpacity:0.9});
   m.on('click', function(){ select(l.c, true); });
   m.addTo(map); markers[l.c]=m;
 });
 function colorFor(l){
   var s = stateOf(l,k);
-  if(s==='unseen') return UNSEEN;
-  if(mode==='median') return rampColor(l.m[k]/253);
+  if(s==='unseen') return '#ffffff';
+  if(mode==='median') return codeColor(l.m[k]);
   return s==='above' ? bucketColor(run(l,k)) : BELOW;
 }
 function popupHtml(l){
   var s = stateOf(l,k), r = run(l,k);
   var h = '<div class="pop"><b>'+name(l)+'</b>'+(l.st? ', '+(STATE_NAMES[l.st]||l.st):'')+'<br>week '+WEEKS[k]+' to '+endOf(WEEKS[k])+'<br>';
   if(s==='unseen') h += l.m[k]==null ? 'no valid pixel this week' : 'coverage '+(100*l.v[k]).toFixed(0)+'% under the minimum';
-  else h += 'median code '+l.m[k]+' · coverage '+(100*l.v[k]).toFixed(0)+'%<br>'+(s==='above' ? '<b style="color:#8c3b12">at or above '+T+'</b> for '+r+(r>=NW?'+':'')+' week'+(r===1?'':'s') : 'below '+T);
+  else h += 'median code '+l.m[k]+(l.m[k]>0 ? ', index '+ciText(l.m[k]) : ', below detection')+' · coverage '+(100*l.v[k]).toFixed(0)+'%<br>'+(s==='above' ? '<b style="color:#8c3b12">at or above the bloom line '+T+'</b>, bloom duration '+r+(r>=NW?'+':'')+' week'+(r===1?'':'s') : 'below the bloom line '+T);
   h += (l.ns!=='shapefile' && l.n ? '<br><span style="color:#6b7f83">name by location'+(l.na?', other names inside: '+l.na:'')+'</span>' : '');
   h += '<br>area '+l.a+' km²<br><a href="#lake='+l.c+'" onclick="window.openLake('+l.c+');return false;">open the Lake tab →</a></div>';
   return h;
 }
 function restyle(){
   var n={above:0,below:0,unseen:0}, hide = pixelsActive();
-  LAKES.forEach(function(l){ var s=stateOf(l,k); n[s]++; markers[l.c].setStyle({fillColor:colorFor(l), fillOpacity: hide?0:0.9, opacity: hide?0:1}); });
+  LAKES.forEach(function(l){
+    var s=stateOf(l,k); if(inMapState(l)) n[s]++;
+    var none = s==='unseen';
+    markers[l.c].setStyle({fillColor:colorFor(l), fillOpacity: hide?0:(none?0.35:0.9), opacity: hide?0:1, color: none?'#6b7f83':'#33555b', dashArray: none?'2 2':null});
+  });
   ['above','below','unseen'].forEach(function(s){ document.getElementById('c-'+s).textContent = fmt(n[s]); });
+  document.getElementById('countnote').textContent = mapState==='all' ? 'All lakes, week of '+WEEKS[k]+'.' : 'Lakes in '+(STATE_NAMES[mapState]||mapState)+', week of '+WEEKS[k]+'.';
   if(!hide) Object.keys(markers).forEach(function(id){ var l=byId[id]; if(stateOf(l,k)==='above') markers[id].bringToFront(); });
   syncOutlines();
   renderLegend(); renderList(); syncPixels();
@@ -350,26 +420,45 @@ function restyle(){
 function renderLegend(){
   var lg=document.getElementById('legend'), h='';
   if(mode==='run'){
+    h+='<span style="flex-basis:100%">bloom duration at or above the line</span>';
     BUCKETS.slice().reverse().forEach(function(b){ h+='<span><span class="sw" style="background:'+b[1]+'"></span>'+b[2]+'</span>'; });
     h+='<span><span class="sw" style="background:'+BELOW+'"></span>below the line</span>';
   } else {
-    h+='<span style="flex-basis:100%">median index code, 0 to 253</span><span style="flex-basis:100%"><span class="ramp" style="display:block"></span></span>';
+    h+='<span><span class="sw" style="background:'+ZERO_C+'"></span>median 0, below detection</span>';
+    h+='<span><span class="ramp" style="background:'+HEAT_CSS+'"></span>median, low to high</span>';
   }
-  h+='<span><span class="sw" style="background:'+UNSEEN+'"></span>no data</span>';
-  if(pixelsActive()) h+='<span style="flex-basis:100%;margin-top:4px">pixels, code 0 to 253</span><span style="flex-basis:100%"><span class="ramp" style="display:block"></span></span><span><span class="sw" style="background:#bfc9cb"></span>land</span><span><span class="sw" style="background:#e8ecec"></span>no value</span>';
+  h+='<span><span class="sw hollow"></span>no data</span>';
+  if(pixelsActive()) h+='<span style="flex-basis:100%;margin-top:4px">pixels: index scale as above, and</span><span><span class="sw" style="background:'+ZERO_C+'"></span>below detection</span><span><span class="sw" style="background:'+NOVAL_C+'"></span>no value</span><span><span class="sw" style="background:'+LAND_C+'"></span>land</span>';
   lg.innerHTML=h;
 }
+var SORTS = {
+  name: function(a,b){ return sortName(a.l)<sortName(b.l)?-1:sortName(a.l)>sortName(b.l)?1:0; },
+  state: function(a,b){ var x=STATE_NAMES[a.l.st]||a.l.st||'~', y=STATE_NAMES[b.l.st]||b.l.st||'~'; return x<y?-1:x>y?1:(b.l.m[k]-a.l.m[k]); },
+  dur: function(a,b){ return (a.r-b.r) || (a.l.m[k]-b.l.m[k]); },
+  val: function(a,b){ return (a.l.m[k]-b.l.m[k]) || (a.r-b.r); }
+};
+function currentSort(){ return sortKey || (mode==='run' ? 'dur' : 'val'); }
+function currentDir(){ if(sortKey) return sortDir; return -1; }
 function renderList(){
-  var rows = LAKES.filter(function(l){ return stateOf(l,k)==='above'; }).map(function(l){ return {l:l, r:run(l,k)}; });
-  rows.sort(function(a,b){ return b.r-a.r || b.l.m[k]-a.l.m[k]; });
-  document.getElementById('listhead').textContent = fmt(rows.length)+' lakes at or above '+T+', week of '+WEEKS[k];
+  var rows = LAKES.filter(function(l){ return inMapState(l) && stateOf(l,k)==='above'; }).map(function(l){ return {l:l, r:run(l,k)}; });
+  var key = currentSort(), dir = currentDir(), f = SORTS[key];
+  rows.sort(function(a,b){ return dir * f(a,b); });
+  document.getElementById('listhead').textContent = fmt(rows.length)+' lakes at or above '+T+(mapState==='all'?'':' in '+(STATE_NAMES[mapState]||mapState))+', week of '+WEEKS[k];
   var el=document.getElementById('list'); el.innerHTML='';
-  if(!rows.length){ el.innerHTML='<div class="lrow">none</div>'; return; }
-  el.innerHTML='<div class="lrow lhead"><span class="sw" style="visibility:hidden"></span><span class="nm">location</span><span class="n wk" title="consecutive weeks at or above the bloom line, ending with the selected week">wks in bloom</span><span class="n val" title="median index code in the selected week">value</span></div>';
+  var arrow = function(x){ return x===key ? (dir<0?' ▾':' ▴') : ''; };
+  var head='<div class="lrow lhead"><span class="sw" style="visibility:hidden"></span>'
+    +'<span class="nm'+(key==='name'?' on':'')+'" data-sort="name" title="sort by lake name">location'+arrow('name')+'</span>'
+    +'<span class="stc'+(key==='state'?' on':'')+'" data-sort="state" title="sort by state">state'+arrow('state')+'</span>'
+    +'<span class="n wk'+(key==='dur'?' on':'')+'" data-sort="dur" title="bloom duration: consecutive weeks at or above the bloom line, ending with the selected week">bloom wks'+arrow('dur')+'</span>'
+    +'<span class="n val'+(key==='val'?' on':'')+'" data-sort="val" title="median index code in the selected week">value'+arrow('val')+'</span></div>';
+  el.innerHTML = head;
+  el.querySelectorAll('.lhead [data-sort]').forEach(function(s){ s.onclick=function(){ var x=s.dataset.sort; if(currentSort()===x) sortDir = -currentDir(); else sortDir = (x==='name'||x==='state') ? 1 : -1; sortKey=x; renderList(); }; });
+  if(!rows.length){ el.insertAdjacentHTML('beforeend','<div class="lrow">none</div>'); return; }
   var frag=document.createDocumentFragment();
   rows.forEach(function(o){
     var d=document.createElement('div'); d.className='lrow'+(o.l.c===selected?' sel':''); d.dataset.c=o.l.c;
-    d.innerHTML='<span class="sw" style="background:'+bucketColor(o.r)+'"></span><span class="nm">'+name(o.l)+(o.l.st?' <span style="color:#6b7f83">'+o.l.st+'</span>':'')+'</span><span class="n wk">'+o.r+(o.r>=NW?'+':'')+'</span><span class="n val">'+o.l.m[k]+'</span>';
+    var swc = mode==='run' ? bucketColor(o.r) : codeColor(o.l.m[k]);
+    d.innerHTML='<span class="sw" style="background:'+swc+'"></span><span class="nm">'+name(o.l)+'</span><span class="stc">'+(o.l.st||'–')+'</span><span class="n wk">'+o.r+(o.r>=NW?'+':'')+'</span><span class="n val">'+o.l.m[k]+'</span>';
     d.title='median '+o.l.m[k]+', coverage '+(100*o.l.v[k]).toFixed(0)+'%, COMID '+o.l.c;
     d.onclick=function(){ select(o.l.c, true); };
     frag.appendChild(d);
@@ -384,7 +473,7 @@ function select(c, pan){
   m.bindPopup(popupHtml(l)).openPopup();
 }
 
-/* pixel overlays, on demand */
+/* pixel overlays, on demand. The page colors them from the raw codes with the shared table. */
 var pxCache={}, pxWaiting={}, pxLayers={}, pxGroup=L.layerGroup().addTo(map);
 window.CYAN_PIXELS=function(c,data){ pxCache[c]=data; var cbs=pxWaiting[c]||[]; delete pxWaiting[c]; cbs.forEach(function(cb){ cb(data); }); };
 function loadPixels(c, cb){
@@ -395,15 +484,28 @@ function loadPixels(c, cb){
   s.onerror=function(){ pxCache[c]=null; var cbs=pxWaiting[c]||[]; delete pxWaiting[c]; cbs.forEach(function(f){ f(null); }); };
   document.body.appendChild(s);
 }
-var pxSamples={};
+var pxSamples={}, pxSampleWait={};
 function pixelSamples(c, cb){
   if(pxSamples[c]) return cb(pxSamples[c]);
   var d=pxCache[c]; if(!d || !d.codes) return cb(null);
+  if(pxSampleWait[c]){ pxSampleWait[c].push(cb); return; }
+  pxSampleWait[c]=[cb];
   var im1=new Image(), im2=new Image(), n=0;
   function done(){ if(++n<2) return; var w=im1.width, h=im1.height, cv=document.createElement('canvas'); cv.width=w; cv.height=h; var g=cv.getContext('2d', {willReadFrequently:true});
     g.drawImage(im1,0,0); var kind=g.getImageData(0,0,w,h).data; g.clearRect(0,0,w,h); g.drawImage(im2,0,0); var code=g.getImageData(0,0,w,h).data;
-    pxSamples[c]={w:w, h:h, kind:kind, code:code}; cb(pxSamples[c]); }
+    pxSamples[c]={w:w, h:h, kind:kind, code:code}; var cbs=pxSampleWait[c]; delete pxSampleWait[c]; cbs.forEach(function(f){ f(pxSamples[c]); }); }
   im1.onload=done; im2.onload=done; im1.src=d.png; im2.src=d.codes;
+}
+var pxColored={};
+function coloredPixels(c, cb){
+  if(pxColored[c]) return cb(pxColored[c]);
+  pixelSamples(c, function(s){
+    if(!s) return cb(null);
+    var cv=document.createElement('canvas'); cv.width=s.w; cv.height=s.h; var g=cv.getContext('2d');
+    var img=g.createImageData(s.w, s.h), o=img.data, n=s.w*s.h;
+    for(var p=0;p<n;p++){ var q=p*4, j=s.code[q]*3; o[q]=LUT[j]; o[q+1]=LUT[j+1]; o[q+2]=LUT[j+2]; o[q+3]=s.kind[q+3]; }
+    g.putImageData(img,0,0); pxColored[c]=cv.toDataURL('image/png'); cb(pxColored[c]);
+  });
 }
 function sampleAt(m, c, latlng){
   var d=pxCache[c], s=pxSamples[c]; if(!d || !s) return null;
@@ -412,7 +514,7 @@ function sampleAt(m, c, latlng){
   var p=m.project(latlng, 12), p0=m.project(L.latLng(ne.lat, sw.lng), 12), p1=m.project(L.latLng(sw.lat, ne.lng), 12);
   var i=Math.floor((p.x-p0.x)/(p1.x-p0.x)*s.w), j=Math.floor((p.y-p0.y)/(p1.y-p0.y)*s.h);
   if(i<0||j<0||i>=s.w||j>=s.h) return null;
-  var k=(j*s.w+i)*4; return {code:s.code[k], kind:s.kind[k+3]};
+  var q=(j*s.w+i)*4; return {code:s.code[q], kind:s.kind[q+3]};
 }
 function describe(l, r){
   var what = r.kind>=200 ? 'wholly inside, counted' : (r.kind>0 ? 'touches the outline, not counted' : 'outside the outline');
@@ -437,7 +539,9 @@ function syncPixels(){
   Object.keys(pxLayers).forEach(function(c){ if(!want[c]){ pxGroup.removeLayer(pxLayers[c]); delete pxLayers[c]; } });
   inView.forEach(function(l){
     if(pxLayers[l.c]) return;
-    loadPixels(l.c, function(d){ if(!d || !pixelsActive() || pxLayers[l.c]) return; if(!map.getBounds().pad(0.2).contains([l.y,l.x])) return; pxLayers[l.c]=L.imageOverlay(d.png, d.bounds, {pane:'pixels', interactive:false, opacity:1}); pxGroup.addLayer(pxLayers[l.c]); pixelSamples(l.c, function(){}); });
+    loadPixels(l.c, function(d){ if(!d) return; coloredPixels(l.c, function(url){
+      if(!url || !pixelsActive() || pxLayers[l.c]) return; if(!map.getBounds().pad(0.2).contains([l.y,l.x])) return;
+      pxLayers[l.c]=L.imageOverlay(url, d.bounds, {pane:'pixels', interactive:false, opacity:1}); pxGroup.addLayer(pxLayers[l.c]); }); });
   });
 }
 map.on('zoomend', function(){ LAKES.forEach(function(l){ markers[l.c].setRadius(radius(l)); }); restyle(); });
@@ -454,12 +558,36 @@ document.getElementById('prev').onclick=function(){ setWeek(k-1); };
 document.getElementById('next').onclick=function(){ setWeek(k+1); };
 document.getElementById('newest').onclick=function(){ setWeek(NW-1); };
 var thr=document.getElementById('thr');
-function setThr(v){ T=Math.max(1,Math.min(253,Math.round(v)||130)); thr.value=T; document.getElementById('thrnote').textContent = T===130 ? 'the EPA forecast\'s line' : 'index '+ciText(T); restyle(); if(currentLake) drawLake(currentLake); }
-thr.onchange=function(){ setThr(+thr.value); };
+thr.style.background = HEAT_CSS;
+document.getElementById('epamark').style.left = 'calc(4px + (100% - 8px) * '+((130-1)/252)+')';
+var thrFrame = null;
+function thrText(){
+  document.getElementById('thrval').textContent = 'code '+T+', index '+ciText(T);
+  document.getElementById('thrnote').textContent = (T===130 ? 'The EPA forecast\'s line. ' : '') + 'Drag along the scale. A lake whose median is at or above the line counts as blooming.';
+}
+function setThr(v, redrawLake){ T=Math.max(1,Math.min(253,Math.round(v)||130)); thr.value=T; thrText(); restyle(); if(redrawLake && currentLake && lakeRendered) drawLake(currentLake, false); }
+thr.oninput=function(){ var v=+thr.value; T=v; thrText(); if(thrFrame) return; thrFrame=requestAnimationFrame(function(){ thrFrame=null; setThr(+thr.value, false); }); };
+thr.onchange=function(){ setThr(+thr.value, true); };
 var cov=document.getElementById('cov');
 cov.oninput=function(){ C=(+cov.value)/100; document.getElementById('covlabel').textContent = C>0 ? (100*C).toFixed(0)+'% of the lake\'s pixels' : 'any valid pixel'; restyle(); };
 document.getElementById('bridge').onchange=function(e){ bridge=e.target.checked; restyle(); };
-document.getElementById('mode').onchange=function(e){ mode=e.target.value; restyle(); };
+var modeSel=document.getElementById('mode');
+modeSel.onchange=function(e){ mode=e.target.value; sortKey=null; restyle(); };
+
+/* states, shared by both tabs */
+var states = {}; LAKES.forEach(function(l){ if(l.st) states[l.st]=(states[l.st]||0)+1; });
+var stateOptions = '<option value="all">all states</option>' + Object.keys(states).sort(function(a,b){ return (STATE_NAMES[a]||a).localeCompare(STATE_NAMES[b]||b); }).map(function(s){ return '<option value="'+s+'">'+(STATE_NAMES[s]||s)+' ('+states[s]+')</option>'; }).join('');
+var mState=document.getElementById('m-state'); mState.innerHTML = stateOptions;
+mState.onchange=function(){
+  mapState = mState.value;
+  if(mapState!=='all'){
+    var pts = LAKES.filter(inMapState).map(function(l){ return [l.y,l.x]; });
+    if(pts.length) map.fitBounds(L.latLngBounds(pts).pad(0.15), {maxZoom:9});
+  } else map.setView([38.5,-96.5], 4);
+  fState.value = mapState; fFind.value = '';
+  restyle();
+  if(currentLake && !filtered().some(function(l){ return l.c===currentLake; })){ currentLake=null; lakeRendered=false; }
+};
 
 /* lake tab */
 var cache={}, waiting={}, currentLake=null, lakeRendered=false, lakeMap=null, lakeMapLayers=[];
@@ -471,8 +599,7 @@ function loadLake(c, cb){
   document.body.appendChild(s);
 }
 var fState=document.getElementById('f-state'), fStatus=document.getElementById('f-status'), fLake=document.getElementById('f-lake'), fFind=document.getElementById('f-find');
-var states = {}; LAKES.forEach(function(l){ if(l.st) states[l.st]=(states[l.st]||0)+1; });
-fState.innerHTML = '<option value="all">all states</option>' + Object.keys(states).sort(function(a,b){ return (STATE_NAMES[a]||a).localeCompare(STATE_NAMES[b]||b); }).map(function(s){ return '<option value="'+s+'">'+(STATE_NAMES[s]||s)+' ('+states[s]+')</option>'; }).join('');
+fState.innerHTML = stateOptions;
 function filtered(){
   var st=fState.value, su=fStatus.value, q=fFind.value.trim().toLowerCase();
   return LAKES.filter(function(l){
@@ -488,13 +615,26 @@ function fillLakeFilter(){
   document.getElementById('f-count').textContent = fmt(rows.length)+' lakes';
   if(currentLake && rows.some(function(l){ return l.c===currentLake; })) fLake.value=String(currentLake);
 }
-function onFilter(){ fillLakeFilter(); var c=+fLake.value; if(c && c!==currentLake) openLake(c, true); }
+/* When the filters match no lake, clear the lake's views instead of leaving the last one up. */
+function clearLake(msg){
+  currentLake=null; lakeRendered=false;
+  ['p-weekly','p-weekly-cov','p-years','p-daily'].forEach(function(id){ var gd=document.getElementById(id); if(gd.data) Plotly.purge(gd); gd.innerHTML=''; });
+  ['lakerows','cmp-table','facts'].forEach(function(id){ document.getElementById(id).innerHTML=''; });
+  document.getElementById('lake-title').textContent='Weekly index, 7-day maximum composites';
+  if(lakeMap){ lakeMapLayers.forEach(function(x){ lakeMap.removeLayer(x); }); lakeMapLayers=[]; }
+  document.getElementById('lakestatus').innerHTML='<span class="flag">'+msg+'</span>';
+}
+function onFilter(){
+  fillLakeFilter(); var c=+fLake.value;
+  if(!c){ clearLake('No lake matches these filters. Change the state, the status, or the find box.'); return; }
+  if(c!==currentLake) openLake(c, true);
+}
 fState.onchange=onFilter; fStatus.onchange=onFilter; fFind.oninput=onFilter;
 fLake.onchange=function(){ openLake(+fLake.value, true); };
 window.openLake=openLake;
 function ensureLake(){
   if(!lakeMap){ lakeMap = L.map('lakemap', {preferCanvas:true, zoomControl:true, attributionControl:true, fadeAnimation:false}); addPanes(lakeMap); addContext(lakeMap); }
-  if(!currentLake){ var first=filtered()[0]; if(first) openLake(first.c, true); }
+  if(!currentLake){ var first=filtered()[0]; if(first) openLake(first.c, true); else clearLake('No lake matches these filters. Change the state, the status, or the find box.'); }
   else if(!lakeRendered) openLake(currentLake, true);
   setTimeout(function(){ if(lakeMap) lakeMap.invalidateSize(); }, 50);
 }
@@ -505,62 +645,184 @@ function openLake(c, stay){
   fLake.value=String(c);
   document.getElementById('lakestatus').textContent='loading';
   if(history.replaceState) history.replaceState(null,'','#lake='+c);
-  loadLake(c, function(){ if(currentLake!==c) return; document.getElementById('lakestatus').textContent=''; drawLake(c); });
+  loadLake(c, function(){ if(currentLake!==c) return; document.getElementById('lakestatus').textContent=''; drawLake(c, true); });
 }
-function drawLake(c){
+
+/* Weeks the reader picked to compare, kept by start date so they carry across lakes.
+   cmpRef is the week selected in the list, which a click on a plot also sets. */
+var cmp = [], cmpRef = null, CMP_MAX = 24, DAY_MS = 864e5;
+function cmpNote(msg){ document.getElementById('cmp-note').textContent = msg || 'Pick the weeks to compare. Each row is one week as observed. Nothing is averaged. The choice stays when you open another lake.'; }
+function weekIndex(w, start){ for(var i=0;i<w.start.length;i++){ if(w.start[i]===start) return i; } return -1; }
+function addCmp(start){
+  if(!start) return; cmpRef = start;
+  if(cmp.indexOf(start)<0){ if(cmp.length>=CMP_MAX){ cmpNote('Up to '+CMP_MAX+' weeks. Remove one to add another.'); } else { cmp.push(start); cmp.sort(); cmpNote(); } }
+  if(currentLake) drawLake(currentLake, false);
+}
+function sameDateEveryYear(w){
+  var ref = cmpRef || w.start[w.start.length-1];
+  var mid = new Date(ref+'T00:00:00Z'); mid.setUTCDate(mid.getUTCDate()+3); var md = mid.toISOString().slice(5,10);
+  var years = {}; w.start.forEach(function(s){ years[s.slice(0,4)] = true; });
+  var added = 0, none = [], full = false;
+  Object.keys(years).forEach(function(y){
+    var target = y+'-'+md, hit = null;
+    for(var i=0;i<w.start.length;i++){ if(w.start[i]<=target && target<=w.end[i]){ hit = w.start[i]; break; } }
+    if(!hit){ none.push(y); return; }
+    if(cmp.indexOf(hit)>=0) return;
+    if(cmp.length>=CMP_MAX){ full = true; return; }
+    cmp.push(hit); added++;
+  });
+  cmp.sort();
+  cmpNote('Added '+added+' week'+(added===1?'':'s')+' covering '+md+' of each year, from the week of '+ref+'.'
+    + (none.length ? ' No weekly file covers that date in '+none.join(', ')+'.' : '')
+    + (full ? ' The list is full at '+CMP_MAX+' weeks, so some years were left out.' : ''));
+}
+function bindClick(id, pick){ var gd=document.getElementById(id); if(gd.removeAllListeners) gd.removeAllListeners('plotly_click'); gd.on('plotly_click', function(ev){ var p=ev.points && ev.points[0]; if(p) addCmp(pick(p)); }); }
+/* A missing weekly file becomes a gap: a null point one week after the last file before it. */
+function gapped(w, key){
+  var xs=[], ys=[];
+  for(var i=0;i<w.start.length;i++){
+    if(i>0 && Date.parse(w.start[i])-Date.parse(w.start[i-1]) > 8*DAY_MS){ var g=new Date(Date.parse(w.start[i-1])+7*DAY_MS); xs.push(g.toISOString().slice(0,10)); ys.push(null); }
+    xs.push(w.start[i]); ys.push(w[key][i]);
+  }
+  return {x:xs, y:ys};
+}
+function hasValue(w, j){ return w.n_valid[j]>0 && (C>0 ? w.valid_frac[j]>=C : true); }
+/* Bloom duration over the whole record, with the same rules as the map: a week without a value
+   ends it unless bridging is on. A weekly file absent from the pulled record is skipped, as the
+   map's week list skips it. */
+function fullRun(w){
+  var n=0;
+  for(var j=w.start.length-1;j>=0;j--){
+    var has = hasValue(w, j);
+    if(has && w.median[j]!=null && w.median[j]>=T) n++;
+    else if(bridge && !has) continue;
+    else break;
+  }
+  return n;
+}
+
+function drawLake(c, withMap){
   var l=byId[c], s=cache[c]; if(!s) return; lakeRendered=true;
-  var w=s['7D']||{start:[]}, d=s['DAY'];
+  var w=s['7D']||{start:[], end:[], median:[], p90:[], max:[], valid_frac:[], detect_frac:[], n_valid:[]}, d=s['DAY'];
   var seenW=w.n_valid.filter(function(n){return n>0;}).length;
-  var newestRun=run(l,NW-1);
+  var newestRun=fullRun(w);
   document.getElementById('lake-title').textContent = name(l)+(l.st?', '+(STATE_NAMES[l.st]||l.st):'')+' · weekly index, 7-day maximum composites';
   var f=document.getElementById('facts');
-  f.innerHTML=[['Name',name(l)],['Name source',l.ns==='shapefile'?'lake outlines':(l.ns==='none'?'no name in any source':'USGS names by location'+(l.na?'. Other names inside the outline: '+l.na:''))],['State',l.st?(STATE_NAMES[l.st]||l.st):'–'],['COMID',l.c],['Area, km²',l.a],['Centroid',l.y.toFixed(3)+', '+l.x.toFixed(3)],['Pixels wholly inside the outline',fmt(l.ni)],['Pixels the outline touches',fmt(l.nt)],['Weeks with a value',fmt(seenW)+' of '+fmt(w.start.length)],['Newest week, median code',l.m[NW-1]==null?'no data':l.m[NW-1]],['Consecutive weeks at or above the bloom line, ending with the newest week',newestRun+(newestRun>=NW?'+':'')]]
+  f.innerHTML=[['Name',name(l)],['Name source',l.ns==='shapefile'?'lake outlines':(l.ns==='none'?'no name in any source':'USGS names by location'+(l.na?'. Other names inside the outline: '+l.na:''))],['State',l.st?(STATE_NAMES[l.st]||l.st):'–'],['COMID',l.c],['Area, km²',l.a],['Centroid',l.y.toFixed(3)+', '+l.x.toFixed(3)],['Pixels wholly inside the outline',fmt(l.ni)],['Pixels the outline touches',fmt(l.nt)],['Weeks with a value',fmt(seenW)+' of '+fmt(w.start.length)],['Newest week, median code',l.m[NW-1]==null?'no data':l.m[NW-1]],['Bloom duration to the newest week, whole record, weeks',newestRun]]
     .map(function(p){ return '<div>'+p[0]+'<b>'+p[1]+'</b></div>'; }).join('');
-  var shapes=[{type:'line', xref:'paper', x0:0, x1:1, y0:T, y1:T, line:{color:'#8c3b12', dash:'dash', width:1}}];
-  var base={margin:{l:48,r:12,t:8,b:36}, paper_bgcolor:'#fff', plot_bgcolor:'#fff', font:{size:11}, legend:{orientation:'h', y:1.12}, hovermode:'x unified'};
+  var line={type:'line', xref:'paper', x0:0, x1:1, y0:T, y1:T, line:{color:'#8c3b12', dash:'dash', width:1}};
+  var base={margin:{l:52,r:12,t:8,b:36}, paper_bgcolor:'#fff', plot_bgcolor:'#fff', font:{size:11, color:'#12343b'}, legend:{orientation:'h', y:1.14}, hovermode:'x unified'};
+  var cfg={displaylogo:false, responsive:true};
+  var sel = cmp.map(function(st){ return weekIndex(w, st); }).filter(function(i){ return i>=0; });
+  var valued = sel.filter(function(i){ return w.median[i]!=null; });
+  /* Every compared week gets a dotted vertical line. Only weeks with a value get a ring on the value axis. */
+  var cmpLines = sel.map(function(i){ return {type:'line', xref:'x', yref:'paper', x0:w.start[i], x1:w.start[i], y0:0, y1:1, line:{color:'#12343b', width:1, dash:'dot'}}; });
+  var med=gapped(w,'median'), p90=gapped(w,'p90');
   Plotly.newPlot('p-weekly',[
     {x:w.start, y:w.max, name:'maximum', mode:'markers', marker:{size:3, color:'#9fb0b5'}},
-    {x:w.start, y:w.p90, name:'90th percentile', mode:'lines', line:{color:'#e9a03b', width:1}},
-    {x:w.start, y:w.median, name:'median', mode:'lines', line:{color:'#0f6e78', width:2}}
-  ], Object.assign({}, base, {yaxis:{title:'index code, 0 to 253', range:[0,260]}, xaxis:{title:'week start'}, shapes:shapes}), {displaylogo:false, responsive:true});
-  Plotly.newPlot('p-weekly-cov',[{x:w.start, y:w.valid_frac, name:'coverage', type:'bar', marker:{color:'#7fb3b8'}}],
-    Object.assign({}, base, {yaxis:{title:'coverage', range:[0,1]}, xaxis:{title:'week start'}, showlegend:false}), {displaylogo:false, responsive:true});
+    {x:p90.x, y:p90.y, name:'90th percentile', mode:'lines', connectgaps:false, line:{color:'#e9a03b', width:1}},
+    {x:med.x, y:med.y, name:'median', mode:'lines', connectgaps:false, line:{color:'#0f6e78', width:2}},
+    {x:valued.map(function(i){ return w.start[i]; }), y:valued.map(function(i){ return w.median[i]; }), name:'compared weeks', mode:'markers', marker:{size:10, color:'rgba(0,0,0,0)', line:{color:'#12343b', width:2}}, hoverinfo:'skip'}
+  ], Object.assign({}, base, {yaxis:{title:'index code, 0 to 253', range:[0,260]}, xaxis:{title:'week start'}, shapes:[line].concat(cmpLines)}), cfg);
+  bindClick('p-weekly', function(p){ return String(p.x).slice(0,10); });
+  var ni = l.ni || 1, hasCounts = !!w.n_land;
+  var covTraces = hasCounts ? [
+    {x:w.start, y:w.n_valid.map(function(n){ return n/ni; }), name:'with a value', type:'bar', marker:{color:VALID_C}, hovertemplate:'%{y:.0%}'},
+    {x:w.start, y:w.n_nodata.map(function(n){ return n/ni; }), name:'no value', type:'bar', marker:{color:NOVAL_C}, hovertemplate:'%{y:.0%}'},
+    {x:w.start, y:w.n_land.map(function(n){ return n/ni; }), name:'land in the CyAN mask', type:'bar', marker:{color:LAND_C}, hovertemplate:'%{y:.0%}'}
+  ] : [{x:w.start, y:w.valid_frac, name:'with a value', type:'bar', marker:{color:VALID_C}, hovertemplate:'%{y:.0%}'}];
+  Plotly.newPlot('p-weekly-cov', covTraces,
+    Object.assign({}, base, {barmode:'stack', bargap:0, yaxis:{title:'share of pixels', range:[0,1.04], tickformat:'.0%', dtick:0.25, gridcolor:'#eef3f3'}, xaxis:{title:'week start'},
+      shapes:[{type:'line', xref:'paper', x0:0, x1:1, y0:1, y1:1, line:{color:'#12343b', width:1.2}}],
+      annotations:[{xref:'paper', x:1, y:1, yanchor:'bottom', xanchor:'right', text:'100%', showarrow:false, font:{size:10, color:'#6b7f83'}}]}), cfg);
+  drawYears(w);
+  drawCmp(w, ni);
   if(d && d.start.length){
     Plotly.newPlot('p-daily',[
       {x:d.start, y:d.max, name:'maximum', mode:'markers', marker:{size:4, color:'#9fb0b5'}},
       {x:d.start, y:d.median, name:'median', mode:'lines+markers', line:{color:'#0f6e78', width:1.5}, marker:{size:4}},
       {x:d.start, y:d.valid_frac.map(function(v){return v*253;}), name:'coverage × 253', mode:'lines', line:{color:'#7fb3b8', width:1, dash:'dot'}}
-    ], Object.assign({}, base, {yaxis:{title:'index code, 0 to 253', range:[0,260]}, xaxis:{title:'day'}, shapes:shapes}), {displaylogo:false, responsive:true});
+    ], Object.assign({}, base, {yaxis:{title:'index code, 0 to 253', range:[0,260]}, xaxis:{title:'day'}, shapes:[line]}), cfg);
   } else { document.getElementById('p-daily').innerHTML='<div class="note">no daily rows for this lake</div>'; }
   var rows=[], n=w.start.length;
-  for(var i=Math.max(0,n-16); i<n; i++){ rows.push('<tr><td>'+w.start[i]+'</td><td>'+w.end[i]+'</td><td class="n">'+fmt(w.n_valid[i])+'</td><td class="n">'+(100*w.valid_frac[i]).toFixed(0)+'%</td><td class="n">'+(w.median[i]==null?'–':w.median[i])+'</td><td class="n">'+(w.p90[i]==null?'–':w.p90[i])+'</td><td class="n">'+(w.max[i]==null?'–':w.max[i])+'</td><td class="n">'+(w.detect_frac[i]==null?'–':(100*w.detect_frac[i]).toFixed(0)+'%')+'</td><td>'+(w.n_valid[i]===0?'no data':(w.median[i]>=T?'<b style="color:#8c3b12">at or above</b>':'below'))+'</td></tr>'); }
-  document.getElementById('lakerows').innerHTML='<tr><th>start</th><th>end</th><th>pixels with a value</th><th>coverage</th><th>median</th><th>90th pct</th><th>max</th><th>share above zero</th><th>state at '+T+'</th></tr>'+rows.reverse().join('');
-  drawLakeMap(l);
+  for(var i=Math.max(0,n-16); i<n; i++){ rows.push(weekRow(w, i, ni, false)); }
+  document.getElementById('lakerows').innerHTML=weekHead(false)+rows.reverse().join('');
+  if(withMap!==false) drawLakeMap(l);
 }
+function pct(v){ return v==null ? '–' : (100*v).toFixed(0)+'%'; }
+function weekHead(withRemove){ return '<tr><th>start</th><th>end</th><th>pixels with a value</th><th>coverage</th><th>no value</th><th>land</th><th>median</th><th>90th pct</th><th>max</th><th>share above zero</th><th>bloom line '+T+'</th>'+(withRemove?'<th></th>':'')+'</tr>'; }
+function weekRow(w, i, ni, withRemove){
+  var nv = w.n_nodata ? w.n_nodata[i]/ni : null, ld = w.n_land ? w.n_land[i]/ni : null;
+  return '<tr><td>'+w.start[i]+'</td><td>'+w.end[i]+'</td><td class="n">'+fmt(w.n_valid[i])+'</td><td class="n">'+pct(w.valid_frac[i])+'</td><td class="n">'+pct(nv)+'</td><td class="n">'+pct(ld)+'</td><td class="n">'+(w.median[i]==null?'–':w.median[i])+'</td><td class="n">'+(w.p90[i]==null?'–':w.p90[i])+'</td><td class="n">'+(w.max[i]==null?'–':w.max[i])+'</td><td class="n">'+pct(w.detect_frac[i])+'</td><td>'+(w.n_valid[i]===0?'no data':(w.median[i]>=T?'<b style="color:#8c3b12">at or above</b>':'below'))+'</td>'
+    +(withRemove?'<td><button data-rm="'+w.start[i]+'" title="remove this week">×</button></td>':'')+'</tr>';
+}
+function drawYears(w){
+  var years = {}, order = [];
+  for(var i=0;i<w.start.length;i++){
+    var y = w.start[i].slice(0,4);
+    if(!years[y]){ years[y] = {x:[], y:[], cd:[]}; order.push(y); }
+    var t = years[y], prev = t.cd.length ? t.cd[t.cd.length-1] : null;
+    if(prev && (Date.parse(w.start[i]) - Date.parse(prev)) > 8*DAY_MS){ t.x.push(null); t.y.push(null); t.cd.push(null); }
+    t.x.push('2000-'+w.start[i].slice(5)); t.y.push(w.median[i]); t.cd.push(w.start[i]);
+  }
+  var newest = order[order.length-1], past = order.slice(0,-1);
+  var lo = hex('#d3dadc'), hi = hex('#6b7f83');
+  var traces = order.map(function(y, j){
+    var isNew = y===newest, u = past.length>1 ? j/(past.length-1) : 1;
+    var col = isNew ? '#0f6e78' : 'rgb('+Math.round(lo[0]+(hi[0]-lo[0])*u)+','+Math.round(lo[1]+(hi[1]-lo[1])*u)+','+Math.round(lo[2]+(hi[2]-lo[2])*u)+')';
+    return {x:years[y].x, y:years[y].y, customdata:years[y].cd, name:y, mode:'lines', connectgaps:false, line:{color:col, width:isNew?2.5:1.2}, hovertemplate:'week of %{customdata}<br>median %{y}<extra>'+y+'</extra>'};
+  });
+  var sel = cmp.map(function(st){ return weekIndex(w, st); }).filter(function(i){ return i>=0; });
+  var valued = sel.filter(function(i){ return w.median[i]!=null; }), empty = sel.filter(function(i){ return w.median[i]==null; });
+  traces.push({x:valued.map(function(i){ return '2000-'+w.start[i].slice(5); }), y:valued.map(function(i){ return w.median[i]; }), customdata:valued.map(function(i){ return w.start[i]; }), name:'compared weeks', mode:'markers', marker:{size:10, color:'rgba(0,0,0,0)', line:{color:'#12343b', width:2}}, hovertemplate:'compared: week of %{customdata}<extra></extra>'});
+  if(empty.length) traces.push({x:empty.map(function(i){ return '2000-'+w.start[i].slice(5); }), y:empty.map(function(){ return 252; }), customdata:empty.map(function(i){ return w.start[i]; }), name:'compared, no data', mode:'markers', marker:{size:9, symbol:'x-thin-open', color:'#12343b', line:{width:2}}, hovertemplate:'compared: week of %{customdata}, no data<extra></extra>'});
+  Plotly.newPlot('p-years', traces, {margin:{l:52,r:12,t:8,b:36}, paper_bgcolor:'#fff', plot_bgcolor:'#fff', font:{size:11, color:'#12343b'}, hovermode:'closest',
+    legend:{orientation:'h', y:1.14}, yaxis:{title:'median index code', range:[0,260]}, xaxis:{title:'time of year, by week start', type:'date', range:['2000-01-01','2000-12-31'], tickformat:'%b'},
+    shapes:[{type:'line', xref:'paper', x0:0, x1:1, y0:T, y1:T, line:{color:'#8c3b12', dash:'dash', width:1}}]}, {displaylogo:false, responsive:true});
+  bindClick('p-years', function(p){ return p.customdata; });
+}
+var cmpSel=document.getElementById('cmp-week');
+cmpSel.onchange=function(){ cmpRef = cmpSel.value; };
+function drawCmp(w, ni){
+  cmpSel.innerHTML = w.start.slice().reverse().map(function(s){ return '<option value="'+s+'">'+s+' to '+endOf(s)+'</option>'; }).join('');
+  if(cmpRef && weekIndex(w, cmpRef)>=0) cmpSel.value = cmpRef;
+  var el=document.getElementById('cmp-table');
+  if(!cmp.length){ el.innerHTML='<tr><td class="note">No weeks chosen yet.</td></tr>'; return; }
+  var rows = cmp.map(function(st){ var i=weekIndex(w, st); return i>=0 ? weekRow(w, i, ni, true) : '<tr><td>'+st+'</td><td>'+endOf(st)+'</td><td colspan="9" class="note">no file for this week for this lake</td><td><button data-rm="'+st+'">×</button></td></tr>'; });
+  el.innerHTML = weekHead(true) + rows.join('');
+  el.querySelectorAll('[data-rm]').forEach(function(b){ b.onclick=function(){ cmp = cmp.filter(function(x){ return x!==b.dataset.rm; }); cmpNote(); if(currentLake) drawLake(currentLake, false); }; });
+}
+document.getElementById('cmp-add').onclick=function(){ addCmp(cmpSel.value); };
+document.getElementById('cmp-years').onclick=function(){ var s=currentLake && cache[currentLake]; if(!s || !s['7D']) return; if(!cmpRef) cmpRef = cmpSel.value; sameDateEveryYear(s['7D']); drawLake(currentLake, false); };
+document.getElementById('cmp-clear').onclick=function(){ cmp=[]; cmpNote(); if(currentLake) drawLake(currentLake, false); };
 function drawLakeMap(l){
   if(!lakeMap) return;
   lakeMapLayers.forEach(function(x){ lakeMap.removeLayer(x); }); lakeMapLayers=[];
   lakeMap.setView([l.y,l.x], 11);
   var title=document.getElementById('lakemap-title'), note=document.getElementById('lakemap-note');
+  document.getElementById('lakemap-legend').innerHTML='<span><span class="sw" style="background:'+ZERO_C+'"></span>below detection</span><span><span class="ramp" style="background:'+HEAT_CSS+'"></span>index, low to high</span><span><span class="sw" style="background:'+NOVAL_C+'"></span>no value</span><span><span class="sw" style="background:'+LAND_C+'"></span>land</span>';
   if(!PX){ title.textContent='Pixels not built'; return; }
   title.textContent='Pixels, week of '+PX.start+' to '+PX.end;
   loadPixels(l.c, function(d){
     if(currentLake!==l.c) return;
     if(!d){ note.textContent='No pixel file for this lake. Rebuild the dashboard data.'; return; }
-    var ov=L.imageOverlay(d.png, d.bounds, {pane:'pixels', interactive:false}).addTo(lakeMap); lakeMapLayers.push(ov);
-    if(d.outline){ var ol=L.geoJSON(d.outline, {pane:'outlines', style:{color:'#33555b', weight:1.5, fill:false}, interactive:false}).addTo(lakeMap); lakeMapLayers.push(ol); }
-    lakeMap.fitBounds(d.bounds);
-    pixelSamples(l.c, function(){});
-    lakeMap.off('mousemove'); lakeMap.on('mousemove', function(e){ hoverReadout(lakeMap, document.getElementById('lakemap-readout'), [l.c], e.latlng); });
+    coloredPixels(l.c, function(url){
+      if(currentLake!==l.c || !url) return;
+      var ov=L.imageOverlay(url, d.bounds, {pane:'pixels', interactive:false}).addTo(lakeMap); lakeMapLayers.push(ov);
+      if(d.outline){ var ol=L.geoJSON(d.outline, {pane:'outlines', style:{color:'#33555b', weight:1.5, fill:false}, interactive:false}).addTo(lakeMap); lakeMapLayers.push(ol); }
+      lakeMap.fitBounds(d.bounds);
+      lakeMap.off('mousemove'); lakeMap.on('mousemove', function(e){ hoverReadout(lakeMap, document.getElementById('lakemap-readout'), [l.c], e.latlng); });
+    });
   });
 }
 
 /* start */
 fillLakeFilter();
-setThr(D.threshold); setWeek(NW-1);
+thrText(); setThr(D.threshold, false); setWeek(NW-1);
 var v=/[#&]view=(-?[\d.]+),(-?[\d.]+),(\d+)/.exec(location.hash); if(v) map.setView([+v[1],+v[2]], +v[3]);
 if(/[#&]px=0/.test(location.hash)){ pxBox.checked=false; showPx=false; restyle(); }
 if(/[#&]imagery=0/.test(location.hash)) setImagery(false);
+if(/[#&]color=duration/.test(location.hash)){ modeSel.value='run'; mode='run'; restyle(); }
 var pr=/[#&]probe=(-?[\d.]+),(-?[\d.]+)/.exec(location.hash);
 if(pr){ var probeAt=L.latLng(+pr[1],+pr[2]); var tries=0; (function poll(){ var ids=Object.keys(pxLayers); var ready=ids.length && ids.every(function(c){ return pxSamples[c]; }); if(ready || tries++>40){ hoverReadout(map, document.getElementById('readout'), ids, probeAt); } else setTimeout(poll, 250); })(); }
 var h=/[#&]lake=(\d+)/.exec(location.hash); if(h){ currentLake=+h[1]; showTab('lake'); } else if(/[#&]tab=lake/.test(location.hash)) showTab('lake');

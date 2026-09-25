@@ -1,0 +1,1101 @@
+{
+ "measured_at": "2026-09-25T16:15:09Z",
+ "table": "data/cyan/derived/cyan_lake_table-2026-09-23T1436Z.parquet",
+ "table_sha256": "4df1ccab548f8742c3573184129af0619e3649d563024f02f01537dfecbb6a3c",
+ "rows": {
+  "all": 1387958,
+  "weekly": 1257982,
+  "dropped_daily": 129976
+ },
+ "zero": {
+  "weekly_rows": 1257982,
+  "rows_with_a_value": 1040186,
+  "median_zero": 824157,
+  "median_zero_share": 0.7923,
+  "every_valid_pixel_zero": 512444,
+  "every_valid_pixel_zero_share": 0.4926,
+  "every_interior_pixel_zero": 174009,
+  "every_interior_pixel_zero_share": 0.1673
+ },
+ "land": {
+  "lakes": 2321,
+  "lakes_with_land_in_every_file": 517,
+  "lakes_with_a_constant_land_count": 497,
+  "ceiling_under_0_9": 118,
+  "ceiling_under_0_5": 12,
+  "lakes_under_0_9": [
+   {
+    "comid": 21117203,
+    "gnis_name": null,
+    "n_interior": 168,
+    "min_land": 148,
+    "max_land": 148,
+    "max_valid": 16,
+    "ceiling": 0.119
+   },
+   {
+    "comid": 166414857,
+    "gnis_name": null,
+    "n_interior": 640,
+    "min_land": 527,
+    "max_land": 527,
+    "max_valid": 113,
+    "ceiling": 0.1766
+   },
+   {
+    "comid": 19916060,
+    "gnis_name": "Lake Iatt",
+    "n_interior": 145,
+    "min_land": 106,
+    "max_land": 106,
+    "max_valid": 39,
+    "ceiling": 0.269
+   },
+   {
+    "comid": 5702167,
+    "gnis_name": "Twin Buttes Reservoir",
+    "n_interior": 127,
+    "min_land": 91,
+    "max_land": 91,
+    "max_valid": 36,
+    "ceiling": 0.2835
+   },
+   {
+    "comid": 10988999,
+    "gnis_name": null,
+    "n_interior": 556,
+    "min_land": 390,
+    "max_land": 390,
+    "max_valid": 161,
+    "ceiling": 0.2986
+   },
+   {
+    "comid": 167300249,
+    "gnis_name": "North Fork Buffalo Creek Reservoir",
+    "n_interior": 43,
+    "min_land": 28,
+    "max_land": 28,
+    "max_valid": 15,
+    "ceiling": 0.3488
+   },
+   {
+    "comid": 21477508,
+    "gnis_name": null,
+    "n_interior": 71,
+    "min_land": 45,
+    "max_land": 45,
+    "max_valid": 26,
+    "ceiling": 0.3662
+   },
+   {
+    "comid": 120051895,
+    "gnis_name": "Paz Ramirez Lake",
+    "n_interior": 1075,
+    "min_land": 653,
+    "max_land": 653,
+    "max_valid": 422,
+    "ceiling": 0.3926
+   },
+   {
+    "comid": 21477494,
+    "gnis_name": null,
+    "n_interior": 143,
+    "min_land": 86,
+    "max_land": 86,
+    "max_valid": 57,
+    "ceiling": 0.3986
+   },
+   {
+    "comid": 5722027,
+    "gnis_name": "E V Spence Reservoir",
+    "n_interior": 325,
+    "min_land": 183,
+    "max_land": 183,
+    "max_valid": 142,
+    "ceiling": 0.4369
+   },
+   {
+    "comid": 120052367,
+    "gnis_name": "Humboldt Lake",
+    "n_interior": 143,
+    "min_land": 79,
+    "max_land": 79,
+    "max_valid": 64,
+    "ceiling": 0.4476
+   },
+   {
+    "comid": 120053389,
+    "gnis_name": "O C Fisher Lake",
+    "n_interior": 73,
+    "min_land": 38,
+    "max_land": 38,
+    "max_valid": 35,
+    "ceiling": 0.4795
+   },
+   {
+    "comid": 1135442,
+    "gnis_name": "Black Bayou Lake",
+    "n_interior": 112,
+    "min_land": 52,
+    "max_land": 52,
+    "max_valid": 60,
+    "ceiling": 0.5357
+   },
+   {
+    "comid": 167245870,
+    "gnis_name": "Alkali Lake",
+    "n_interior": 73,
+    "min_land": 33,
+    "max_land": 33,
+    "max_valid": 40,
+    "ceiling": 0.5479
+   },
+   {
+    "comid": 166757573,
+    "gnis_name": "Orange Lake",
+    "n_interior": 451,
+    "min_land": 198,
+    "max_land": 198,
+    "max_valid": 251,
+    "ceiling": 0.561
+   },
+   {
+    "comid": 21318615,
+    "gnis_name": null,
+    "n_interior": 260,
+    "min_land": 111,
+    "max_land": 111,
+    "max_valid": 149,
+    "ceiling": 0.5731
+   },
+   {
+    "comid": 120053896,
+    "gnis_name": "Tadpole Lake",
+    "n_interior": 484,
+    "min_land": 201,
+    "max_land": 201,
+    "max_valid": 283,
+    "ceiling": 0.5847
+   },
+   {
+    "comid": 120052363,
+    "gnis_name": "Horseshoe Tank",
+    "n_interior": 999,
+    "min_land": 398,
+    "max_land": 398,
+    "max_valid": 601,
+    "ceiling": 0.6016
+   },
+   {
+    "comid": 11431851,
+    "gnis_name": "Lahontan Reservoir",
+    "n_interior": 362,
+    "min_land": 137,
+    "max_land": 137,
+    "max_valid": 225,
+    "ceiling": 0.6215
+   },
+   {
+    "comid": 1475947,
+    "gnis_name": null,
+    "n_interior": 55,
+    "min_land": 20,
+    "max_land": 20,
+    "max_valid": 35,
+    "ceiling": 0.6364
+   },
+   {
+    "comid": 16944276,
+    "gnis_name": "Lake Rousseau",
+    "n_interior": 83,
+    "min_land": 30,
+    "max_land": 30,
+    "max_valid": 52,
+    "ceiling": 0.6386
+   },
+   {
+    "comid": 4472023,
+    "gnis_name": "Mud Lake",
+    "n_interior": 76,
+    "min_land": 27,
+    "max_land": 27,
+    "max_valid": 49,
+    "ceiling": 0.6447
+   },
+   {
+    "comid": 2241295,
+    "gnis_name": "Pate Lake",
+    "n_interior": 20,
+    "min_land": 7,
+    "max_land": 7,
+    "max_valid": 13,
+    "ceiling": 0.65
+   },
+   {
+    "comid": 166757576,
+    "gnis_name": "Lake Ocklawaha",
+    "n_interior": 246,
+    "min_land": 84,
+    "max_land": 84,
+    "max_valid": 159,
+    "ceiling": 0.6585
+   },
+   {
+    "comid": 14930103,
+    "gnis_name": "Lake Success",
+    "n_interior": 50,
+    "min_land": 17,
+    "max_land": 17,
+    "max_valid": 33,
+    "ceiling": 0.66
+   },
+   {
+    "comid": 21437925,
+    "gnis_name": "Lost Lake",
+    "n_interior": 118,
+    "min_land": 40,
+    "max_land": 40,
+    "max_valid": 78,
+    "ceiling": 0.661
+   },
+   {
+    "comid": 19980072,
+    "gnis_name": null,
+    "n_interior": 474,
+    "min_land": 158,
+    "max_land": 158,
+    "max_valid": 313,
+    "ceiling": 0.6667
+   },
+   {
+    "comid": 120052275,
+    "gnis_name": "Amistad Reservoir",
+    "n_interior": 273,
+    "min_land": 88,
+    "max_land": 88,
+    "max_valid": 180,
+    "ceiling": 0.6777
+   },
+   {
+    "comid": 166758657,
+    "gnis_name": null,
+    "n_interior": 216,
+    "min_land": 69,
+    "max_land": 69,
+    "max_valid": 142,
+    "ceiling": 0.6806
+   },
+   {
+    "comid": 3528295,
+    "gnis_name": "Lake Powell",
+    "n_interior": 4090,
+    "min_land": 1291,
+    "max_land": 1291,
+    "max_valid": 2678,
+    "ceiling": 0.6844
+   },
+   {
+    "comid": 23761332,
+    "gnis_name": null,
+    "n_interior": 46,
+    "min_land": 14,
+    "max_land": 14,
+    "max_valid": 32,
+    "ceiling": 0.6957
+   },
+   {
+    "comid": 23783629,
+    "gnis_name": null,
+    "n_interior": 90,
+    "min_land": 27,
+    "max_land": 27,
+    "max_valid": 63,
+    "ceiling": 0.7
+   },
+   {
+    "comid": 20818104,
+    "gnis_name": null,
+    "n_interior": 89,
+    "min_land": 26,
+    "max_land": 26,
+    "max_valid": 63,
+    "ceiling": 0.7079
+   },
+   {
+    "comid": 24252436,
+    "gnis_name": "Silver Lake",
+    "n_interior": 98,
+    "min_land": 28,
+    "max_land": 28,
+    "max_valid": 70,
+    "ceiling": 0.7143
+   },
+   {
+    "comid": 120052617,
+    "gnis_name": "Mud Lake",
+    "n_interior": 161,
+    "min_land": 46,
+    "max_land": 46,
+    "max_valid": 115,
+    "ceiling": 0.7143
+   },
+   {
+    "comid": 167300362,
+    "gnis_name": "Black Lake",
+    "n_interior": 275,
+    "min_land": 78,
+    "max_land": 78,
+    "max_valid": 197,
+    "ceiling": 0.7164
+   },
+   {
+    "comid": 23761342,
+    "gnis_name": null,
+    "n_interior": 29,
+    "min_land": 8,
+    "max_land": 8,
+    "max_valid": 21,
+    "ceiling": 0.7241
+   },
+   {
+    "comid": 2161664,
+    "gnis_name": null,
+    "n_interior": 207,
+    "min_land": 57,
+    "max_land": 57,
+    "max_valid": 150,
+    "ceiling": 0.7246
+   },
+   {
+    "comid": 120052274,
+    "gnis_name": "Amistad Reservoir",
+    "n_interior": 471,
+    "min_land": 128,
+    "max_land": 128,
+    "max_valid": 338,
+    "ceiling": 0.7282
+   },
+   {
+    "comid": 7989989,
+    "gnis_name": "Black Butte Lake",
+    "n_interior": 122,
+    "min_land": 33,
+    "max_land": 33,
+    "max_valid": 89,
+    "ceiling": 0.7295
+   },
+   {
+    "comid": 2277833,
+    "gnis_name": "Tuttle Creek Lake",
+    "n_interior": 90,
+    "min_land": 24,
+    "max_land": 24,
+    "max_valid": 66,
+    "ceiling": 0.7333
+   },
+   {
+    "comid": 127819344,
+    "gnis_name": "Spinney Mountain Reservoir",
+    "n_interior": 75,
+    "min_land": 20,
+    "max_land": 20,
+    "max_valid": 55,
+    "ceiling": 0.7333
+   },
+   {
+    "comid": 11064981,
+    "gnis_name": null,
+    "n_interior": 169,
+    "min_land": 44,
+    "max_land": 44,
+    "max_valid": 125,
+    "ceiling": 0.7396
+   },
+   {
+    "comid": 13732800,
+    "gnis_name": "Lake Kemp",
+    "n_interior": 423,
+    "min_land": 110,
+    "max_land": 110,
+    "max_valid": 313,
+    "ceiling": 0.74
+   },
+   {
+    "comid": 2554943,
+    "gnis_name": "Tule Lake",
+    "n_interior": 351,
+    "min_land": 91,
+    "max_land": 98,
+    "max_valid": 260,
+    "ceiling": 0.7407
+   },
+   {
+    "comid": 20277691,
+    "gnis_name": "Tinemaha Reservoir",
+    "n_interior": 27,
+    "min_land": 7,
+    "max_land": 7,
+    "max_valid": 20,
+    "ceiling": 0.7407
+   },
+   {
+    "comid": 166757574,
+    "gnis_name": "Right Arm Lochloosa Lake",
+    "n_interior": 303,
+    "min_land": 78,
+    "max_land": 78,
+    "max_valid": 225,
+    "ceiling": 0.7426
+   },
+   {
+    "comid": 120053201,
+    "gnis_name": "Proctor Lake",
+    "n_interior": 110,
+    "min_land": 28,
+    "max_land": 28,
+    "max_valid": 82,
+    "ceiling": 0.7455
+   },
+   {
+    "comid": 9310897,
+    "gnis_name": "Kezar Pond",
+    "n_interior": 57,
+    "min_land": 14,
+    "max_land": 14,
+    "max_valid": 43,
+    "ceiling": 0.7544
+   },
+   {
+    "comid": 16636112,
+    "gnis_name": null,
+    "n_interior": 491,
+    "min_land": 120,
+    "max_land": 120,
+    "max_valid": 359,
+    "ceiling": 0.7556
+   },
+   {
+    "comid": 1408803,
+    "gnis_name": "Many Farms Lake",
+    "n_interior": 41,
+    "min_land": 10,
+    "max_land": 10,
+    "max_valid": 31,
+    "ceiling": 0.7561
+   },
+   {
+    "comid": 20342929,
+    "gnis_name": "Lake Henshaw",
+    "n_interior": 53,
+    "min_land": 12,
+    "max_land": 12,
+    "max_valid": 41,
+    "ceiling": 0.7736
+   },
+   {
+    "comid": 15181865,
+    "gnis_name": null,
+    "n_interior": 390,
+    "min_land": 87,
+    "max_land": 87,
+    "max_valid": 303,
+    "ceiling": 0.7769
+   },
+   {
+    "comid": 7344817,
+    "gnis_name": "Kirwin Reservoir",
+    "n_interior": 153,
+    "min_land": 34,
+    "max_land": 34,
+    "max_valid": 119,
+    "ceiling": 0.7778
+   },
+   {
+    "comid": 11548284,
+    "gnis_name": "White Lake",
+    "n_interior": 54,
+    "min_land": 12,
+    "max_land": 12,
+    "max_valid": 42,
+    "ceiling": 0.7778
+   },
+   {
+    "comid": 167300381,
+    "gnis_name": "Clear Lake",
+    "n_interior": 777,
+    "min_land": 167,
+    "max_land": 167,
+    "max_valid": 608,
+    "ceiling": 0.7851
+   },
+   {
+    "comid": 23655210,
+    "gnis_name": null,
+    "n_interior": 28,
+    "min_land": 6,
+    "max_land": 6,
+    "max_valid": 22,
+    "ceiling": 0.7857
+   },
+   {
+    "comid": 12995134,
+    "gnis_name": null,
+    "n_interior": 40,
+    "min_land": 8,
+    "max_land": 8,
+    "max_valid": 32,
+    "ceiling": 0.8
+   },
+   {
+    "comid": 166997463,
+    "gnis_name": null,
+    "n_interior": 596,
+    "min_land": 119,
+    "max_land": 119,
+    "max_valid": 477,
+    "ceiling": 0.8003
+   },
+   {
+    "comid": 14188891,
+    "gnis_name": "Tunica Lake",
+    "n_interior": 81,
+    "min_land": 16,
+    "max_land": 16,
+    "max_valid": 65,
+    "ceiling": 0.8025
+   },
+   {
+    "comid": 7483614,
+    "gnis_name": null,
+    "n_interior": 52,
+    "min_land": 10,
+    "max_land": 10,
+    "max_valid": 42,
+    "ceiling": 0.8077
+   },
+   {
+    "comid": 15112679,
+    "gnis_name": null,
+    "n_interior": 52,
+    "min_land": 10,
+    "max_land": 10,
+    "max_valid": 42,
+    "ceiling": 0.8077
+   },
+   {
+    "comid": 24539574,
+    "gnis_name": "Washington, Lake",
+    "n_interior": 992,
+    "min_land": 190,
+    "max_land": 190,
+    "max_valid": 802,
+    "ceiling": 0.8085
+   },
+   {
+    "comid": 10996843,
+    "gnis_name": "Ashby, Lake",
+    "n_interior": 32,
+    "min_land": 6,
+    "max_land": 6,
+    "max_valid": 26,
+    "ceiling": 0.8125
+   },
+   {
+    "comid": 23655136,
+    "gnis_name": null,
+    "n_interior": 43,
+    "min_land": 8,
+    "max_land": 8,
+    "max_valid": 35,
+    "ceiling": 0.814
+   },
+   {
+    "comid": 14517861,
+    "gnis_name": "Turtle Lake",
+    "n_interior": 27,
+    "min_land": 5,
+    "max_land": 5,
+    "max_valid": 22,
+    "ceiling": 0.8148
+   },
+   {
+    "comid": 23756162,
+    "gnis_name": null,
+    "n_interior": 27,
+    "min_land": 5,
+    "max_land": 5,
+    "max_valid": 22,
+    "ceiling": 0.8148
+   },
+   {
+    "comid": 14434045,
+    "gnis_name": "Lake Ardoch",
+    "n_interior": 22,
+    "min_land": 4,
+    "max_land": 4,
+    "max_valid": 18,
+    "ceiling": 0.8182
+   },
+   {
+    "comid": 24252444,
+    "gnis_name": "Spirit Lake",
+    "n_interior": 28,
+    "min_land": 5,
+    "max_land": 5,
+    "max_valid": 23,
+    "ceiling": 0.8214
+   },
+   {
+    "comid": 22048371,
+    "gnis_name": "Courtright Reservoir",
+    "n_interior": 45,
+    "min_land": 8,
+    "max_land": 8,
+    "max_valid": 37,
+    "ceiling": 0.8222
+   },
+   {
+    "comid": 2822462,
+    "gnis_name": "Turlock Lake",
+    "n_interior": 79,
+    "min_land": 14,
+    "max_land": 14,
+    "max_valid": 65,
+    "ceiling": 0.8228
+   },
+   {
+    "comid": 167245892,
+    "gnis_name": null,
+    "n_interior": 41,
+    "min_land": 7,
+    "max_land": 7,
+    "max_valid": 34,
+    "ceiling": 0.8293
+   },
+   {
+    "comid": 22670080,
+    "gnis_name": "Isabella Lake",
+    "n_interior": 252,
+    "min_land": 42,
+    "max_land": 42,
+    "max_valid": 210,
+    "ceiling": 0.8333
+   },
+   {
+    "comid": 120051930,
+    "gnis_name": null,
+    "n_interior": 72,
+    "min_land": 12,
+    "max_land": 12,
+    "max_valid": 60,
+    "ceiling": 0.8333
+   },
+   {
+    "comid": 24260289,
+    "gnis_name": "Ross Lake",
+    "n_interior": 359,
+    "min_land": 59,
+    "max_land": 59,
+    "max_valid": 300,
+    "ceiling": 0.8357
+   },
+   {
+    "comid": 3140356,
+    "gnis_name": "Foss Reservoir",
+    "n_interior": 279,
+    "min_land": 45,
+    "max_land": 45,
+    "max_valid": 234,
+    "ceiling": 0.8387
+   },
+   {
+    "comid": 10988693,
+    "gnis_name": null,
+    "n_interior": 138,
+    "min_land": 22,
+    "max_land": 22,
+    "max_valid": 116,
+    "ceiling": 0.8406
+   },
+   {
+    "comid": 21475652,
+    "gnis_name": "Cypress Lake",
+    "n_interior": 151,
+    "min_land": 24,
+    "max_land": 24,
+    "max_valid": 127,
+    "ceiling": 0.8411
+   },
+   {
+    "comid": 18880944,
+    "gnis_name": "Tuttle Creek Lake",
+    "n_interior": 221,
+    "min_land": 35,
+    "max_land": 35,
+    "max_valid": 186,
+    "ceiling": 0.8416
+   },
+   {
+    "comid": 11758154,
+    "gnis_name": "Lewis and Clark Lake",
+    "n_interior": 1042,
+    "min_land": 163,
+    "max_land": 163,
+    "max_valid": 870,
+    "ceiling": 0.8436
+   },
+   {
+    "comid": 16946112,
+    "gnis_name": "Deaton, Lake",
+    "n_interior": 20,
+    "min_land": 3,
+    "max_land": 3,
+    "max_valid": 17,
+    "ceiling": 0.85
+   },
+   {
+    "comid": 15098763,
+    "gnis_name": "Deep Lake",
+    "n_interior": 27,
+    "min_land": 4,
+    "max_land": 4,
+    "max_valid": 22,
+    "ceiling": 0.8519
+   },
+   {
+    "comid": 5278062,
+    "gnis_name": "Lake Cherokee",
+    "n_interior": 68,
+    "min_land": 10,
+    "max_land": 10,
+    "max_valid": 58,
+    "ceiling": 0.8529
+   },
+   {
+    "comid": 16629010,
+    "gnis_name": null,
+    "n_interior": 41,
+    "min_land": 6,
+    "max_land": 6,
+    "max_valid": 35,
+    "ceiling": 0.8537
+   },
+   {
+    "comid": 166737717,
+    "gnis_name": null,
+    "n_interior": 219,
+    "min_land": 32,
+    "max_land": 32,
+    "max_valid": 187,
+    "ceiling": 0.8539
+   },
+   {
+    "comid": 1127701,
+    "gnis_name": "Wright Patman Lake",
+    "n_interior": 865,
+    "min_land": 122,
+    "max_land": 122,
+    "max_valid": 743,
+    "ceiling": 0.859
+   },
+   {
+    "comid": 3759766,
+    "gnis_name": "Cypress Bayou Reservoir",
+    "n_interior": 65,
+    "min_land": 9,
+    "max_land": 9,
+    "max_valid": 56,
+    "ceiling": 0.8615
+   },
+   {
+    "comid": 3123960,
+    "gnis_name": "Harris Reservoir",
+    "n_interior": 44,
+    "min_land": 6,
+    "max_land": 6,
+    "max_valid": 38,
+    "ceiling": 0.8636
+   },
+   {
+    "comid": 14024380,
+    "gnis_name": "White River Reservoir",
+    "n_interior": 22,
+    "min_land": 3,
+    "max_land": 3,
+    "max_valid": 19,
+    "ceiling": 0.8636
+   },
+   {
+    "comid": 166757656,
+    "gnis_name": null,
+    "n_interior": 18100,
+    "min_land": 2447,
+    "max_land": 2453,
+    "max_valid": 15349,
+    "ceiling": 0.8648
+   },
+   {
+    "comid": 120053749,
+    "gnis_name": null,
+    "n_interior": 148,
+    "min_land": 20,
+    "max_land": 20,
+    "max_valid": 128,
+    "ceiling": 0.8649
+   },
+   {
+    "comid": 167245973,
+    "gnis_name": null,
+    "n_interior": 148,
+    "min_land": 20,
+    "max_land": 20,
+    "max_valid": 128,
+    "ceiling": 0.8649
+   },
+   {
+    "comid": 120053367,
+    "gnis_name": null,
+    "n_interior": 239,
+    "min_land": 32,
+    "max_land": 32,
+    "max_valid": 207,
+    "ceiling": 0.8661
+   },
+   {
+    "comid": 13733582,
+    "gnis_name": "Lake Wichita",
+    "n_interior": 45,
+    "min_land": 6,
+    "max_land": 6,
+    "max_valid": 39,
+    "ceiling": 0.8667
+   },
+   {
+    "comid": 14852737,
+    "gnis_name": null,
+    "n_interior": 45,
+    "min_land": 6,
+    "max_land": 6,
+    "max_valid": 39,
+    "ceiling": 0.8667
+   },
+   {
+    "comid": 19647430,
+    "gnis_name": null,
+    "n_interior": 30,
+    "min_land": 4,
+    "max_land": 4,
+    "max_valid": 26,
+    "ceiling": 0.8667
+   },
+   {
+    "comid": 11473406,
+    "gnis_name": "Columbia Road Reservoir",
+    "n_interior": 158,
+    "min_land": 21,
+    "max_land": 21,
+    "max_valid": 137,
+    "ceiling": 0.8671
+   },
+   {
+    "comid": 21477420,
+    "gnis_name": null,
+    "n_interior": 469,
+    "min_land": 61,
+    "max_land": 61,
+    "max_valid": 408,
+    "ceiling": 0.8699
+   },
+   {
+    "comid": 167204997,
+    "gnis_name": null,
+    "n_interior": 240,
+    "min_land": 31,
+    "max_land": 31,
+    "max_valid": 209,
+    "ceiling": 0.8708
+   },
+   {
+    "comid": 5489185,
+    "gnis_name": "Fort Phantom Hill Lake",
+    "n_interior": 63,
+    "min_land": 8,
+    "max_land": 8,
+    "max_valid": 55,
+    "ceiling": 0.873
+   },
+   {
+    "comid": 20332372,
+    "gnis_name": "Sweetwater Reservoir",
+    "n_interior": 16,
+    "min_land": 2,
+    "max_land": 2,
+    "max_valid": 14,
+    "ceiling": 0.875
+   },
+   {
+    "comid": 166759387,
+    "gnis_name": "Cypress Lake",
+    "n_interior": 864,
+    "min_land": 107,
+    "max_land": 107,
+    "max_valid": 757,
+    "ceiling": 0.8762
+   },
+   {
+    "comid": 21491302,
+    "gnis_name": "Istokpoga, Lake",
+    "n_interior": 1115,
+    "min_land": 132,
+    "max_land": 132,
+    "max_valid": 983,
+    "ceiling": 0.8816
+   },
+   {
+    "comid": 166756746,
+    "gnis_name": "Lib Pines Lake",
+    "n_interior": 3010,
+    "min_land": 355,
+    "max_land": 355,
+    "max_valid": 2652,
+    "ceiling": 0.8821
+   },
+   {
+    "comid": 7470660,
+    "gnis_name": "Open Lake",
+    "n_interior": 34,
+    "min_land": 4,
+    "max_land": 4,
+    "max_valid": 30,
+    "ceiling": 0.8824
+   },
+   {
+    "comid": 17508452,
+    "gnis_name": "Lake Alice",
+    "n_interior": 17,
+    "min_land": 2,
+    "max_land": 2,
+    "max_valid": 15,
+    "ceiling": 0.8824
+   },
+   {
+    "comid": 19091673,
+    "gnis_name": "Swanson Lake",
+    "n_interior": 173,
+    "min_land": 20,
+    "max_land": 21,
+    "max_valid": 153,
+    "ceiling": 0.8844
+   },
+   {
+    "comid": 5495308,
+    "gnis_name": "Palo Pinto Creek Reservoir",
+    "n_interior": 44,
+    "min_land": 5,
+    "max_land": 5,
+    "max_valid": 39,
+    "ceiling": 0.8864
+   },
+   {
+    "comid": 20971700,
+    "gnis_name": null,
+    "n_interior": 555,
+    "min_land": 63,
+    "max_land": 63,
+    "max_valid": 492,
+    "ceiling": 0.8865
+   },
+   {
+    "comid": 16949596,
+    "gnis_name": "Panasoffkee, Lake",
+    "n_interior": 106,
+    "min_land": 12,
+    "max_land": 12,
+    "max_valid": 94,
+    "ceiling": 0.8868
+   },
+   {
+    "comid": 12729527,
+    "gnis_name": "War Horse Lake",
+    "n_interior": 45,
+    "min_land": 5,
+    "max_land": 5,
+    "max_valid": 40,
+    "ceiling": 0.8889
+   },
+   {
+    "comid": 1111211,
+    "gnis_name": "B A Steinhagen Lake",
+    "n_interior": 284,
+    "min_land": 31,
+    "max_land": 31,
+    "max_valid": 253,
+    "ceiling": 0.8908
+   },
+   {
+    "comid": 23740507,
+    "gnis_name": "Vancouver Lake",
+    "n_interior": 92,
+    "min_land": 10,
+    "max_land": 10,
+    "max_valid": 82,
+    "ceiling": 0.8913
+   },
+   {
+    "comid": 14296203,
+    "gnis_name": "Sweetwater Lake",
+    "n_interior": 158,
+    "min_land": 17,
+    "max_land": 17,
+    "max_valid": 141,
+    "ceiling": 0.8924
+   },
+   {
+    "comid": 513979,
+    "gnis_name": null,
+    "n_interior": 47,
+    "min_land": 5,
+    "max_land": 5,
+    "max_valid": 42,
+    "ceiling": 0.8936
+   },
+   {
+    "comid": 10996929,
+    "gnis_name": null,
+    "n_interior": 257,
+    "min_land": 27,
+    "max_land": 27,
+    "max_valid": 230,
+    "ceiling": 0.8949
+   },
+   {
+    "comid": 120053992,
+    "gnis_name": null,
+    "n_interior": 324,
+    "min_land": 33,
+    "max_land": 33,
+    "max_valid": 291,
+    "ceiling": 0.8981
+   },
+   {
+    "comid": 120053442,
+    "gnis_name": "Lake San Antonio",
+    "n_interior": 139,
+    "min_land": 14,
+    "max_land": 14,
+    "max_valid": 125,
+    "ceiling": 0.8993
+   }
+  ]
+ },
+ "code": {
+  "base_revision": "e24d9eb",
+  "working_tree_dirty": true,
+  "sources": {
+   "datasets/cyan/qaqc/measure_zero_and_land.py": "cf3a1c59e47870e42139400c0949a9e09deed7117750608b45b8ecd05bc376c3"
+  },
+  "inputs": {
+   "data/cyan/derived/cyan_lake_table-2026-09-23T1436Z.parquet": "4df1ccab548f8742c3573184129af0619e3649d563024f02f01537dfecbb6a3c"
+  }
+ }
+}

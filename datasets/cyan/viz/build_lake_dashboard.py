@@ -4,10 +4,13 @@
 Reads local files only. Contacts nothing. Outputs under docs/dashboards/cyan-lakes/:
   data/lakes.js       one record per lake with its centroid, size, the newest week's state,
                       the run of consecutive weeks at or above the threshold, and coverage
-  data/lakes/<comid>.js   the lake's full weekly and daily series, loaded on demand
+  data/lakes/<comid>.js   the lake's full weekly and daily series, with the per-file counts of
+                          valid, no-value, and land-coded interior pixels, loaded on demand
   data/pixels/<comid>.js  the lake's pixels from the newest weekly file, a colored PNG in Web
-                          Mercator with its bounds, a gray PNG carrying the raw codes for the
-                          hover readout, and the lake's exact outline in WGS84, loaded on demand
+                          Mercator with its bounds, a gray PNG carrying the raw codes, and the
+                          lake's exact outline in WGS84, loaded on demand. Since 2026-09-25 the
+                          page colors the pixels itself from the gray PNG and takes only the
+                          alpha channel, interior or touched, from the colored PNG
 It also writes the companion attribute table under data/cyan/derived/: one row per lake with
 centroid, bounds, pixel window, and the interior cell indices of decision 0002.
 
@@ -215,6 +218,8 @@ def lake_series(df) -> dict:
             "valid_frac": [round(float(v), 3) for v in sub["valid_frac"]],
             "detect_frac": [None if np.isnan(v) else round(float(v), 3) for v in detect],
             "n_valid": sub["n_valid"].astype(int).tolist(),
+            "n_nodata": sub["n_nodata"].astype(int).tolist(),
+            "n_land": sub["n_land"].astype(int).tolist(),
         }
     return out
 

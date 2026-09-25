@@ -5,6 +5,10 @@ Start with the latest review below.
 
 | Date | Review | Reviewer |
 |---|---|---|
+| 2026-09-25 | [Codex review of part 2 of the step 1f revision: data confirmed, five page defects, and an incomplete decision](2026-09-25-codex-review-lake-dashboard-revision-part-2.md) | Codex, requested by the implementer |
+| 2026-09-25 | [Step 1f revision, part 2: a heat scale, a bloom line slider, states, coverage by class, years, and compared weeks on the lake dashboard](2026-09-25-cyan-lake-dashboard-revision-part-2.md) | Claude Code (AI coding agent), directed by the repository owner |
+| 2026-09-25 | [Codex review of the plan for the step 1f revision: two scope errors, one missed hosting limit, and wording corrections](2026-09-25-codex-review-lake-dashboard-feedback-plan.md) | Codex, requested by the implementer |
+| 2026-09-25 | [Step 1f revision, part 1: a scientist's feedback on the CyAN lake dashboard, the owner's answers, and the plan](2026-09-25-cyan-lake-dashboard-scientist-feedback.md) | Claude Code (AI coding agent), directed by the repository owner |
 | 2026-09-23 | [CyAN lake dashboard prepared for Vercel: per-lake files committed once, hosting note](2026-09-23-cyan-lakes-hosting.md) | Claude Code (AI coding agent), directed by the repository owner |
 | 2026-09-23 | [Verification of the dispositions of the independent review of the CyAN pull and QA/QC: two gaps closed, one suggestion declined](2026-09-23-cyan-qa-review-verification.md) | Claude Code (AI coding agent), directed by the repository owner |
 | 2026-09-23 | [Step 1f, CyAN lake dashboard: every lake's weekly state under a movable bloom line, a ranked list, a per-lake deep dive, and the companion attribute table](2026-09-23-cyan-lake-dashboard.md) | Claude Code (AI coding agent), directed by the repository owner |

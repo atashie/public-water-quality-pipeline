@@ -56,10 +56,18 @@ Only the live deployment establishes routing, access, and the URL.
 
 - The non-commercial determination for the Hobby plan.
 - The Esri World Imagery terms for a public site, an open item in the [lake dashboard review](reviews/2026-09-23-cyan-lake-dashboard.md).
-- More years of pixel data. [Measurement 11](measurements.md#11-a-year-of-per-lake-pixel-images-what-it-costs-in-bytes-2026-09-23) gives the bytes per year for three encodings. The GitHub guidance above bounds what a git deployment can carry.
+- More years of pixel data. [Measurement 11](measurements.md#11-a-year-of-per-lake-pixel-images-what-it-costs-in-bytes-2026-09-23) gives the bytes per year for three encodings, and [measurement 12](measurements.md#12-the-whole-weekly-record-of-per-lake-pixel-images-what-it-costs-in-bytes-2026-09-24) the whole record. The GitHub guidance above bounds what a git deployment can carry. See the note of 2026-09-25 below.
 
 ## Updating
 
-Not planned. If a rebuild is ever committed and pushed, Vercel redeploys it, and the history grows by about 140 MB.
+Not planned on 2026-09-23. If a rebuild is ever committed and pushed, Vercel redeploys it, and the history grows by about 140 MB.
+
+## Note of 2026-09-25, a revision and historical pixel images
+
+A scientist's feedback led the owner to direct a revision of the page on 2026-09-25, so the page will be updated. The owner also set Vercel as the only deployment target. [The revision record](reviews/2026-09-25-cyan-lake-dashboard-scientist-feedback.md) weighs four ways to serve historical pixel images and recommends the newest 52 weeks plus one week per month, about 160 MB. Three readings of 2026-09-25 bear on it:
+
+- The limits page, updated 2026-09-16, still states its size and file caps for CLI uploads only. A Vercel changelog titled "CLI deployment limits removed" says "We've removed CLI-specific deployment limits". The excerpt read names no limit or plan and conflicts with the limits page. `unverified`
+- A Vercel changelog of 2026-09-16 states: "Hobby teams get 10GB of Deployment Storage". Each Hobby project keeps "its 3 most recent production deployments, plus its 3 most recent deployments of any type, regardless of age". Also: "going over the limit can block you from deploying until you free some up." `unverified`, [changelog](https://vercel.com/changelog/hobby-projects-now-retain-fewer-deployments-to-free-up-storage), read 2026-09-25
+- Vercel Blob on Hobby includes "1GB/month" of storage and the "First 2,000" advanced operations. Each upload counts as one. Over the limits, "you will not be able to access Vercel Blob" for 30 days. `unverified`, [Blob pricing](https://vercel.com/docs/vercel-blob/usage-and-pricing), updated 2026-09-23.
 
 Sources: [Vercel limits](https://vercel.com/docs/limits), [Vercel fair use](https://vercel.com/docs/limits/fair-use-guidelines), [Vercel static configuration](https://vercel.com/docs/project-configuration/vercel-json), [GitHub large files](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github).

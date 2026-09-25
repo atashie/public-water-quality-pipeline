@@ -186,4 +186,37 @@ Script `datasets/cyan/viz/estimate_pixel_history.py`. Result [pixel-history-2026
 | One lake, 52 weeks, as built, and as stacked codes | median 60,100 B and 5,522 B. 90th percentile 239,812 B and 44,326 B. Largest 5,894,796 B and 1,752,766 B, Lake Okeechobee |
 | The page and the up-front lake file | unchanged by any of this: `index.html` 46,957 B, `lakes.js` 3,122,780 B |
 
-What it shows. A year of pixels for every lake costs 281 MB as the page encodes them today, or 53 MB with the codes stacked per lake and colored in the browser, against 67 MB served today, most of it outlines. Split into one file per lake per week, what the browser fetches for one lake and one week stays what it is today. The page and the up-front data do not grow at all. What it does not show. The bytes for daily composites, or for the whole weekly record since 2016, which is 543 files and about ten times the year.
+What it shows. A year of pixels for every lake costs 281 MB as the page encodes them today, or 53 MB with the codes stacked per lake and colored in the browser, against 67 MB served today, most of it outlines. Split into one file per lake per week, what the browser fetches for one lake and one week stays what it is today. The page and the up-front data do not grow at all. What it does not show. The bytes for daily composites, or for the whole weekly record since 2016: 543 weekly periods and 542 files, measurement 2. Measurement 12 covers it.
+
+### 12. The whole weekly record of per-lake pixel images: what it costs in bytes, 2026-09-24
+
+Script `datasets/cyan/viz/estimate_pixel_history.py`, the script of measurement 11, run over all 542 weekly files, 2016-04-24 through 2026-09-19, for all 2,321 lakes. The record spans 543 weekly periods, and measurement 2 explains the absent one. 14 hours. Result [pixel-history-2026-09-24T1126Z.json](../datasets/cyan/outputs/pixel-history-2026-09-24T1126Z.json), written at revision `e24d9eb` with a clean working tree. `measured`. The result's key `year_bytes` holds the totals over every file the run encoded. Here that is the whole record, not one year.
+
+| Measure | Value |
+|---|---|
+| Images per weekly file, all lakes, as built | mean 5,263,410 B, from 4,380,264 B to 6,606,348 B. The gray code PNG alone: mean 1,658,785 B |
+| The whole record as built, all lakes | 2,852,768,760 B |
+| The whole record of gray code PNGs, with the alpha mask sent once per lake | 899,061,756 B of codes and 1,381,350 B of masks |
+| The whole record of gray code PNGs stacked into one PNG per lake | 515,666,746 B, a mean of 951,415 B per weekly file |
+| One lake, the whole record, stacked | median 49,290 B, 90th percentile 450,414 B. Largest 16,085,990 B, Lake Okeechobee, then Great Salt Lake at 11,568,434 B |
+| The exact outlines, sent once per lake | 60,993,186 B, as in measurement 11 |
+
+What it shows. The whole weekly record costs 516 MB with the codes stacked per lake and colored in the browser. That is ten times the 53 MB of the newest 52 weeks in measurement 11. Encoded as the page built images on 2026-09-24, the record costs 2.9 GB. What it does not show. The bytes for a selection of weeks, such as one week per month. A selection's size scales with its count of weeks only as an estimate. The daily composites are not measured.
+
+### 13. Zero medians and land-coded lake pixels in the weekly record, 2026-09-25
+
+Script `datasets/cyan/qaqc/measure_zero_and_land.py`. Result [zero-and-land-2026-09-25T1615Z.json](../datasets/cyan/outputs/zero-and-land-2026-09-25T1615Z.json). Input: the per-lake table of measurement 7, weekly rows only, 1,257,982 rows. `measured`. The run started from revision `e24d9eb` with uncommitted changes, which the result records.
+
+| Measure | Value |
+|---|---|
+| Weekly lake rows with a value | 1,040,186 |
+| Median of code 0 | 824,157, 79.2 percent |
+| Every valid pixel at code 0 | 512,444, 49.3 percent |
+| Every interior pixel valid and at code 0 | 174,009, 16.7 percent |
+| Lakes with land-coded interior pixels in every weekly file | 517 of 2,321. 497 of them have the same land count in every file |
+| Of those, lakes whose smallest land count keeps coverage under 90 percent | 118 |
+| Under 50 percent | 12 |
+| Lake Henshaw, COMID 20342929 | 53 interior pixels, 12 coded land in every file, at most 41 with a value. Coverage cannot pass 77.4 percent |
+
+What it shows. 79 percent of weekly lake medians with a value are code 0, below detection. A color scale that starts dark at code 0 therefore painted most lake-weeks dark blue. The share is pooled over lake-weeks and says nothing about any one lake. 517 lakes, 22 percent, carry interior pixels that the CyAN land mask marks as land in every week. For 118 of them that keeps coverage under 90 percent. What it does not show. Whether the same pixels are land in every file, only that the count never falls to zero. What those pixels are on the ground.
+

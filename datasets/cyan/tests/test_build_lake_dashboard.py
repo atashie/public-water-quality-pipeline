@@ -34,6 +34,8 @@ def weekly_frame(medians, n_valid=None):
             "end_date": starts,
             "n_interior": [10] * n,
             "n_valid": n_valid,
+            "n_nodata": [10 - v for v in n_valid],
+            "n_land": [0] * n,
             "n_detect": [5 if v else 0 for v in n_valid],
             "valid_frac": [v / 10 for v in n_valid],
             "dn_median": [np.nan if v == 0 else m for m, v in zip(medians, n_valid, strict=True)],
@@ -71,6 +73,7 @@ def test_lake_series_keeps_gaps_as_null():
     w = weekly_frame([100, 200], [10, 0])
     out = b.lake_series(w)
     assert out["7D"]["median"] == [100.0, None] and out["7D"]["detect_frac"] == [0.5, None]
+    assert out["7D"]["n_land"] == [0, 0] and out["7D"]["n_nodata"] == [0, 10]
     assert "DAY" not in out
 
 
@@ -158,6 +161,7 @@ def test_build_on_synthetic_table(tmp_path, monkeypatch):
     assert summary["pixels"]["n_files"] == 1 and summary["pixels"]["start"] == "2026-07-07"
     series = (out / "data" / "lakes" / "11.js").read_text(encoding="utf-8")
     assert series.startswith("CYAN_LAKE(11, ") and '"DAY"' in series
+    assert '"n_land":[0,0,0]' in series and '"n_nodata":[0,0,0]' in series
     assert not (out / "data" / "outlines.js").exists()
     assert '"outline":{"type":"Polygon"' in pixels
     attrs = pd.read_parquet(derived / summary["attributes"].split("/")[-1])
