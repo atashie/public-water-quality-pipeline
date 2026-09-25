@@ -1,0 +1,56 @@
+Lake Erie Harmful Algal Bloom Forecast
+
+2026-09-25
+
+Summary
+The cyanobacteria bloom is present in western Lake Erie but cloud cover or winds above 9.0 mph prevent determining the
+area. Imagery from Sep 24 shows the bloom has moved offshore into the center of the western basin, from Monroe to north of
+East Sister Island. Some patches may still be present in Maumee Bay. Weekly high resolution imagery of Maumee Bay can
+also be found at the Demonstration Great Lakes (20m) HAB Monitoring Page. No recent toxin data currently available for
+western Lake Erie. -- Owens, Yu 25 Sep. 2026
+The past few days of imagery can be seen at the HAB monitoring site. The Lake Erie Forecast is operated by the National
+Centers for Coastal Ocean Science. Contact hab@noaa.gov for technical Questions. Model Last Updated: 2026-09-25 12 PM
+EST
+
+Current Lake Erie Sentinel-3 satellite imagery from the Ocean and Land Color Imager (OLCI) on Sep 24, 2026, showing bloom
+location and extent in the western basin. Grey indicates clouds or missing data. The estimated threshold of cyanobacteria
+detection is 20,000 cells/mL. Inset shows an enhanced truecolor image of the entire lake. Data derived from Copernicus
+Sentinel-3.
+
+Wind speed and direction from SouthBassIs, OH. Blooms mix through water column at
+wind speeds > 15 knots.
+For more information visit: coastalscience.noaa.gov/science-areas/habs/hab-forecasts/lake-erie/
+
+Where the bloom is present in
+western Lake Erie, the potential
+risk of scum.
+
+Lake Erie Harmful Algal Bloom Forecast
+
+2026-09-25
+
+Forecast surface bloom position for Sep 26, modeled from the last satellite image with water currents estimated from the Lake
+Erie Operational Forecast System (LEOFS). Potential for bloom movement is forecast in 3-dimensions with a hydrodynamic
+model using satellite imagery and currents. The modeled output does not contain clouds. Black indicates the absence of
+chlorophyll and gray indicates area with no data. The arrows show forecasted currents. Water temperature and winds (in
+magenta) are the averages for the western basin from the model.
+
+Forecast surface bloom position for Sep 29. Black indicates the absence of chlorophyll and gray indicates area with no data.
+The arrows show forecasted currents. Water temperature and winds (in magenta) are the averages for the western basin from
+the model.
+
+Additional resources:
+●
+●
+●
+●
+●
+
+Archived Lake Erie Forecasts
+More information
+FAQs
+Contributors and Data Providers
+Lake Erie HAB Forecast Guide
+For more information visit: coastalscience.noaa.gov/science-areas/habs/hab-forecasts/lake-erie/
+
+

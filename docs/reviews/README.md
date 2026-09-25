@@ -5,6 +5,9 @@ Start with the latest review below.
 
 | Date | Review | Reviewer |
 |---|---|---|
+| 2026-09-25 | [Codex review of part 3 of the step 1f revision: a license conflict, an unsupported satellite cutoff, and half-code medians](2026-09-25-codex-review-lake-dashboard-revision-part-3.md) | Codex, requested by the implementer |
+| 2026-09-25 | [Step 1f revision, part 3: what the index means, the SFEI survey, and the single-satellite years on the lake dashboard](2026-09-25-cyan-lake-dashboard-revision-part-3.md) | Claude Code (AI coding agent), directed by the repository owner |
+| 2026-09-25 | [Codex check of 51 claims on what the CyAN index means in abundance terms: 35 confirmed, 16 corrected](2026-09-25-codex-check-cyan-abundance-claims.md) | Codex, requested by the implementer |
 | 2026-09-25 | [Codex review of part 2 of the step 1f revision: data confirmed, five page defects, and an incomplete decision](2026-09-25-codex-review-lake-dashboard-revision-part-2.md) | Codex, requested by the implementer |
 | 2026-09-25 | [Step 1f revision, part 2: a heat scale, a bloom line slider, states, coverage by class, years, and compared weeks on the lake dashboard](2026-09-25-cyan-lake-dashboard-revision-part-2.md) | Claude Code (AI coding agent), directed by the repository owner |
 | 2026-09-25 | [Codex review of the plan for the step 1f revision: two scope errors, one missed hosting limit, and wording corrections](2026-09-25-codex-review-lake-dashboard-feedback-plan.md) | Codex, requested by the implementer |

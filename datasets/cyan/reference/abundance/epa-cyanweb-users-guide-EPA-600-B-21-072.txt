@@ -1,0 +1,812 @@
+EPA/600/B-21/072
+April 2021
+
+CyANWeb Website User’s Guide
+M. Galvin
+Ecosystem Process Division
+Center for Environmental Measurement & Modeling
+Athens, GA 30605
+
+1
+
+Contents
+Introduction .................................................................................................................................................. 3
+Target Audience: .......................................................................................................................................... 4
+Navigating the CyANWeb Interface ............................................................................................................. 5
+Log into the web site: ....................................................................................................................... 5
+Create New User: ............................................................................................................................. 6
+CyAN - Home screen navigation: ...................................................................................................... 7
+Markers: .......................................................................................................................................... 8
+Markers – adding to the basemap dialog details: ............................................................................... 9
+Markers – adding to the basemap – coordinate entry: .................................................................... 10
+Markers – user configuration settings: .............................................................................................. 12
+Markers – selecting existing map pins............................................................................................... 12
+My Locations tab: ........................................................................................................................... 13
+My Locations  Overview tab:......................................................................................................... 14
+My Locations  Imagery tab: ............................................................................................................ 16
+My Locations  Chart tab: ................................................................................................................ 17
+Compare tab: ................................................................................................................................. 18
+Compare  Statistics tab: ................................................................................................................. 19
+Compare  Blooming Chart tab:....................................................................................................... 19
+Compare  Map tab: ......................................................................................................................... 20
+Notifications tab: ........................................................................................................................... 21
+Usage Tips: .................................................................................................................................................. 22
+Usage Tips for Display Issues: ......................................................................................................... 22
+Usage Tip for Access Issues: ........................................................................................................... 22
+Getting Help: .................................................................................................................................. 22
+Understanding the Data ............................................................................................................................. 23
+Temporal Aspects:.......................................................................................................................... 23
+Spatial Aspects: .............................................................................................................................. 23
+Opening Screen Message; Data Issues: ........................................................................................... 24
+What could go wrong? ................................................................................................................... 25
+FAQ ............................................................................................................................................................. 28
+Disclaimer Statement ................................................................................................................................. 30
+References .................................................................................................................................................. 30
+2
+
+Introduction
+The Cyanobacteria Assessment Network (CyAN) is a multi-agency (NASA, USGS, NOAA, EPA) project and
+its mission supports the environmental management and public use of US lakes and reservoirs by
+providing a capability of detecting and quantifying algal blooms using satellite data records and
+disseminating this information through CyAN, a mobile application developed and hosted by EPA.
+The app provides water quality managers and public health officials with a user-friendly tool that
+reduces the complexities associated with accessing satellite data to allow fast, efficient, initial
+assessments across lakes and reservoirs. Data from the European Space Agency (ESA) Copernicus
+Sentinel-3 satellites Ocean and Land Colour Instruments (OLCI) are used in near real-time to make initial
+water quality assessments and quickly alert managers to potential problems and emerging threats
+related to cyanobacteria.
+The CyAN mobile app (Schaeffer et al, 2018) was publicly released in July 2019 and, to-date, is well
+received by users, gaining a 4.1/5 star rating on Google Play with 1000+ installs; but CyAN is an app that
+runs only on Android devices. Android-only is a common complaint. People wanted to run CyAN on
+their iPhones in the field and on desktops/laptops/tablets in their offices. This project is an effort to
+reach a much wider user community of a valuable Harmful Algal Bloom (HAB) monitoring tool in
+waterbodies across the continental U.S.
+The initial goal of this project is to replicate, with minimal enhancement, the functional capabilities of
+the CyAN Android app in a browser-based application. Further, by using modern software technology
+and tools, design the web interface to be responsive - meaning that it’s designed to operate in most web
+browsers, on most operating systems, and on most devices (desktop, laptop, tablet, phone). A
+successful implementation of CyANWeb would eventually obviate the requirement of maintaining a
+separate Android application and supporting infrastructure and provide a clearer, simpler path to
+maintenance and enhancement of its functionality.
+
+3
+
+Target Audience:
+CyAN app users looking for a desktop alternative to the Android app. CyANWeb is a different interface
+to the same HAB data provided to the Android app. Minimal enhancements have been implemented to
+CyANWeb and it is meant to provide the same functionality as the Android app. It is a browser-based
+interface that has been tested and targeted for desktop browsers. It is certainly possible to use smaller
+devices to access the web interface (e.g., smart phones and tablets). This document’s screenshot
+images show how the CyANWeb interface looks on desktop browsers. Screenshots will appear
+differently on smaller device browsers but have the same functionality. Supported browsers include
+Chrome, Firefox, Opera and Safari. Issues have been identified with Edge (some versions may work,
+others not) and there is no intent to supporting Internet Explorer. If needed, refer to the EPA CyAN web
+page and its linked content for further information about the CyAN project:
+https://www.epa.gov/water-research/cyanobacteria-assessment-network-mobile-application-cyan-app
+
+4
+
+Navigating the CyANWeb Interface
+Conceptually, the web interface is simple to use. Using the basemap, zoom to a freshwater waterbody
+within the Conterminous United States (CONUS) that you have an interest in and tap or mouse-click the
+location to create a pin marker. If the marker location has any history of cyanobacteria detected by the
+OLCI sensors on the Sentinel satellites, the marker color will reflect the most recent cyanobacteria
+category status. Further capabilities of the web interface will provide access to plots and charts of the
+location’s cyanobacteria history and the satellite data maps (imagery) of the location.
+
+Log into the web site:
+
+Figure 1 - CyANWeb interface, login.
+
+If you’ve already registered as a user, simply enter your account name and password to proceed and
+gain access to the web interface via the Login button. Otherwise, select Create New User.
+If you’ve forgotten your account password, select Reset Password and follow the instruction in the email
+you’ll receive. The email will be sent to the email account you used to register your CyANWeb user
+account.
+
+5
+
+Create New User:
+
+Figure 2 - CyANWeb, create user account
+
+To register a new user account, enter a User Name, an Email account you want to use, a Password and
+password confirmation. Then select Register. You will then be able to login to the web interface with
+information you provided. Note the caution about using personally identifiable information for your
+account. CyANWeb accounts are used only for storing your marker locations and user-configurable
+settings of the interface.
+
+6
+
+CyAN - Home screen navigation:
+
+Figure 3 - CyANWeb home screen interface, user controls and information
+
+Controls and their function – along the top of the screen:
+
+•
+
+Informational – tells the user the version number of the web interface. Please report
+the version should you seek assistance or report issues.
+
+•
+
+From left to right, these icons represent location search function,
+online help to access document, the user settings configuration dialog and user account control.
+
+Controls and their function – second line along top of the screen:
+
+•
+
+Provides access to the list of your marked locations. Selection of a location
+from the list provides access to detailed history of cyanobacteria for the location, downloadable
+images, and plots.
+
+•
+
+Provides access to the website’s compare locations data features.
+Compare provides access to features to assess differences between locations you’ve selected.
+
+•
+
+User can view informative messages about new data availability and upcoming system maintenance/security issues that may impact data services.
+
+•
+
+A control that provides access to the ability to place map markers
+through geographic coordinate input.
+7
+
+Controls and their function – within the map area of the screen:
+
+•
+
+A map zoom control allowing users to view locations and data. The zoom function can
+also be controlled by mouse-wheel adjustment or screen double-tap and/or finger-pinch on
+haptic devices.
+
+•
+
+Users can choose the basemap to display via this control (Imagery, Street, or
+Topographic).
+
+Controls and their function – along the bottom of the screen:
+•
+
+Users can select this control to view markers and data for either daily or weekly
+cyanobacteria data.
+
+•
+
+This control is used to refresh the data and imagery for your markers. For the
+web interface, this is only necessary if new data is loaded to our system while the interface is inuse. Otherwise, data/imagery is updated every time a user logs into the system.
+
+Markers:
+
+Figure 4- Marker pin dialog, detail
+
+•
+
+Adding a marker to a discernable waterbody on the map, either by mouse-click or tapping
+(haptic devices), gives you a dialog:
+8
+
+•
+
+The location’s Google Map name (editable). If you want to name the location differently, select
+the Google Map name and type in your choice. If no cyanobacteria response has been detected,
+the dialog reports “Unknown Location, Counts of cyanobacteria=0”.
+
+•
+
+Shows the coordinates of the location.
+
+•
+
+Shows the latest cyanobacteria concentration at the location (value inside circle symbol), only If
+the location has a history of cyanobacteria response. The value displayed may be from the most
+current data or it may be from a previous date.
+
+•
+
+Shows an up/down arrow, value and date indicating a change in concentration.
+
+•
+
+A type-in textbox for any notes for the location.
+
+•
+
+And options to Mark Location, Select to Compare, View Latest Image or Remove.
+
+Markers – adding to the basemap dialog details:
+•
+
+Mark Location adds a pin marker to the basemap. Selecting this results in closure of the dialog
+and a pin marker with a check symbol being added. The dialog may also be dismissed by
+selecting the x symbol in the top-right corner of the dialog, or by clicking elsewhere on the
+basemap. Dismissal of the dialog in these instances result in a pin marker added to the basemap
+without a checkmark symbol. Checked pin markers may be listed separately in the My Locations
+list; otherwise there is no functional difference between checked and unchecked pin markers.
+
+•
+
+Select to Compare adds the location to the list of locations you want to view side-by-side. Select
+two or more locations to use this aspect of the app.
+
+•
+
+View Latest Image provides a mechanism to view the location’s latest tile imagery regardless of
+detectable cyanobacteria levels at the location.
+
+•
+
+Remove deletes the pin marker from the basemap.
+
+9
+
+Markers – adding to the basemap – coordinate entry:
+
+Figure 5 - Geographic coordinate entry, resulting dialog on the left.
+
+10
+
+Figure 6 - Coordinate entry dialog, detail
+
+Precise pin marker locations may be added to the basemap with coordinate entry. Degree-MinuteSecond latitude and longitude values can be used. Select UnitsDecimal Degrees if preferred. After
+numerical coordinate entry select the Mark Location button to add the pin marker to the basemap. Use
+the Select to Compare button to add the pin marker to the basemap and also add the location to the
+Compare list of markers. The coordinate entry dialog can be dismissed using the x symbol in the upperright corner.
+
+11
+
+Markers – user configuration settings:
+
+Figure 7 - User configuration controls dialog accessible from the main page gear icon.
+
+•
+
+Select the gear icon to access the marker color dialog. The colors used by pin marker symbology
+and text are binned into four categories of cyanobacteria concentration: low, medium, high, and
+very high. The default values for these categories are set to World Health Organization limits.
+
+•
+
+If you or your organization use different values, you can select the color categories by adjusting
+the sliders to your preferred values. When the slider does not have the sensitivity required for
+an exact number, hold the cursor over the number and use the up-down arrows for fine
+adjustment, or select the numerical value and type in your preferred setting.
+
+•
+
+You can also set an Alert value that puts a symbol next to markers (within the My Locations list
+of pin markers) that have a current cyanobacteria concentration exceeding the value you set.
+Select the checkbox and adjust the slider to use this feature.
+
+•
+
+Save any adjustments you make to your login account by selecting the diskette symbol at the
+top of the dialog. Failure to save preferred settings result in reversion to default values the next
+time you log in to the interface. The dialog can be dismissed by selecting the x symbol in the
+upper-right corner of the dialog.
+
+Markers – selecting existing map pins
+Mouse hover over a marker already placed on the map displays the location name and the date of the
+most recent cyanobacteria detection. Selecting the existing marker opens the pin marker dialog and
+allows you to select the View Latest Image button to view the latest tile image for the location
+regardless of the location’s current cyanobacteria status. This is a useful method to check the area
+around the marker for cyanobacteria detections that may not be evident at the marker pin itself.
+12
+
+You can also perform any actions the marker dialog allows; rename the location, add notes, select the
+location for comparison, remove the marker, and depending on marker check/uncheck status, to either
+mark or unmark the location. Note that Unmark Location and Mark Location only changes the
+check/uncheck location status; it does not remove the marker from the map. As stated before, checked
+pin markers may be listed separately in the My Locations list; otherwise there is no functional difference
+between checked and unchecked pin markers.
+
+My Locations tab:
+
+Figure 8 - My Locations tab, list of marked locations
+
+Select the My Locations tab to view a list of pin markers you’ve added to the basemap. The list is
+sortable by location name or cyanobacteria cell count. You can also exclude locations that are not
+marked (no checkmark in the pin marker symbol). The list shows:
+•
+
+Location name, location latitude/longitude, max areal cyanobacteria cell count value about
+the location (Max adjacent cells) , color coded symbol and cyanobacteria value (circle
+symbol with numerical value centered), and a color-coded directional symbol and value
+representing the change in cyanobacteria concentration since last reading (note the dates
+provided). Also, note that the basemap shown to the right of the list is interactive; pin
+markers can be added/removed using the map in this view and zoom/pan is enabled.
+
+•
+
+Locations with high cyanobacteria values designated (use the Gear Icon menu slider Alert
+when higher than control). The alert symbol is a red circle with centered ! (exclamation
+point).
+
+•
+
+Select a location list entry to access the location’s related imagery and plotted data. The
+location’s Overview screen is then displayed.
+
+•
+
+Dismiss the location list by selecting the x in the top-right corner of the dialog to return to
+the full basemap home screen.
+
+13
+
+My Locations  Overview tab:
+
+Figure 9 - Location list Overview screen
+
+The Overview screen is composed of five major sections:
+•
+
+The light blue bar across the top specifying the location name and x tab dismissal button. The
+location name sits between two controls, < and >, that allow cycling through all the locations
+you have marked without having to return to the location list. Note that the map and control
+sections (described below) are synched with the location you switch to.
+
+•
+
+A white bar with selectable tabs (Overview, Imagery, Chart).
+
+•
+
+A black bar specifying the data source satellite platform (OLCI) and the data product being
+shown (Daily or Weekly).
+
+•
+
+A map section at lower-left showing latest cyanobacteria tile image for the location and location
+pin marker. The map is pan/zoom enabled but pin markers cannot be manipulated here. To
+view an image legend, select the Toggle Map Legend button in the lower-left of the map area.
+
+•
+
+A control section to the right of the map. This section contains:
+o
+
+Information and symbology for the location (latitude, longitude, max adjacent cells,
+change in concentration between cyanobacteria detection dates).
+
+o
+
+An opacity slider that adjusts the visibility of the cyanobacteria data layer overlaying the
+map.
+14
+
+o
+
+The cyanobacteria data layer name and date.
+
+o
+
+A Slideshow checkbox that when selected sequentially overlays all the available
+cyanobacteria data layer images for the location on the map. Uncheck the checkbox to
+pause between images. Or select a thumbnail image to view the data for that
+associated date.
+
+o
+
+A scrollable list of thumbnail cyanobacteria data layer images available for the location;
+this is a date-oriented list of images that have a cyanobacteria response at the location.
+Select a thumbnail to overlay that image on the map and show cyanobacteria
+information for the date the image represents.
+
+o
+
+A blue colored Notes button that allows adding or editing any user supplied notes for
+the location.
+
+Figure 10 - User control section of Overview pane, detail
+
+15
+
+My Locations  Imagery tab:
+
+Figure 11 - Location list Imagery screen
+
+•
+
+Shows a thumbnail list of data images for the location; the most recent image is at the top-left,
+earliest at the bottom-right.
+
+•
+
+Select a date range to winnow or expand the list of viewable images.
+
+•
+
+Use the location control (< and >) to scroll through your list of locations and to access their
+imagery.
+
+•
+
+Select the desired image to download and save to your device. Note that images are georeferenced TIFF-formatted raster images in Web Mercator projection.
+
+16
+
+My Locations  Chart tab:
+
+•
+
+The chart shows a time-series plot of cyanobacteria levels. The entire stored online record of
+cyanobacteria level at the location is shown.
+
+•
+
+Note: the plot appears continuous through time but it likely is not; non-detects (i.e., below
+detection level) and missing detects (e.g., clouds) are not stored or shown. Selection of data
+points within the plot will show a date and cyanobacteria value the data point represents.
+
+•
+
+Use the location control (< and >) to scroll through your list of locations.
+
+•
+
+Dismiss the location details screens (Overview, Imagery, and Chart) by selecting the x in the topright corner to return to the full basemap home screen.
+
+17
+
+Compare tab:
+
+Figure 12 - Compare locations, list of selected locations. Add locations to the list by selecting the marker locations within the
+map and clicking “Select to Compare.
+
+•
+
+Much like the My Location tab, the Compare tab shows a list of locations. These locations have
+been user-selected from the Home screen marker location dialog via Select to Compare. The
+location data shown (location name, coordinates, max adjacent, cyanobacteria value, and
+change in cyanobacteria value/date) are for the most recent data dates available.
+
+•
+
+Tap x next to a location to remove a location from the compare list.
+
+•
+
+Use the lower-left Compare Locations button to proceed or x in the upper-right of the list to
+dismiss.
+
+18
+
+Compare  Statistics tab:
+
+Figure 13 Compare locations, statistics
+
+•
+
+The Statistics tab repeats the information shown in the Compare Locations tab. If necessary, use
+the scroll bar to view the entire list of information about all locations selected.
+
+Compare  Blooming Chart tab:
+
+Figure 14 -- Compare locations, blooming chart
+
+Select the Blooming Chart tab to see the plot of the cyanobacteria response for all the locations.
+
+19
+
+•
+
+The chart shows the individual location’s cyanobacteria response through time. Missing and
+below detection responses for the locations are not shown.
+
+•
+
+Individual location cyanobacteria level traces may be toggled off/on by selecting the location
+names in the plot title. The plot will adjust to selected locations.
+
+•
+
+Mouse hover over data points in the plot to show cyanobacteria level values and date of
+detection.
+
+Compare  Map tab:
+
+Figure 15 Compare locations, map tab.
+
+The map shows the geographic locations you’ve chosen to compare. You cannot add/remove markers
+from the map or access location imagery from here. You can still pan/zoom and change the base map.
+
+20
+
+Notifications tab:
+
+Figure 16 - Notifications tab.
+
+Notifications shows a list of messages sent to the community alert users of new data availability, system
+outages, app version upgrades, issues with data access or other topics of interest that impact the
+viability of the system.
+
+21
+
+Usage Tips:
+Any location markers you place are automatically saved to you user account. Marker color
+configurations and location alert level settings, you choose must be saved if they are to be preserved for
+the next time you access your account. To save, select the diskette symbol at the top of the user
+configuration dialog.
+Data latency may be significant if you’ve placed a lot of markers (~60), or if your locations have a
+significantly long history of cyanobacteria response. We now host more than 2 years of weekly data
+online (Jan 2019 – Feb 2021). Some US waterbodies (e.g., Apopka in FL, Grand in OH) seem perpetually
+polluted with HABs and it takes some time to retrieve 100+ data records for these types of locations.
+Please try to be patient with the interface.
+
+Usage Tips for Display Issues:
+There are a myriad of screen resolutions and aspect ratios utilized on desktop/laptop systems. We
+cannot custom code for all possibilities. The best user experience for desktop-based browsers is to
+maximize the browser window; even then you may encounter styling issues with overlapping visual
+components that make it difficult to access the individual controls. Try adjusting the zoom level in the
+browser to minimize overlap but still maintain the ability to easily read the displayed information. Your
+browser control/configuration menu (browser Settings) will provide access to zoom levels; in Firefox and
+Chrome shortcut keys for zoom-out and zoom-in are, respectively, “Ctrl–“, and “Ctrl+”.
+
+Usage Tip for Access Issues:
+If you get logged off for usage timeout, log back in. You should not have to revisit the password page to
+access CyANWeb again if the browser session you are using is still active. If you open a new browser
+session after you’ve been timed-out (or logged out), the password page will need to be revisited. If you
+cannot get past the password page having done so previously, retry after clearing your browser cache.
+Until such time that EPA approval for public release is achieved, use of the password page is necessary
+for CyANWeb usage.
+
+Getting Help:
+For assistance in using the application, report issues or leave comments, email CyAN@epa.gov
+
+22
+
+Understanding the Data
+The data the Cyan system reports are cyanobacteria concentrations. The data products as delivered by
+USGS/NASA are CI_cyano and include chlorophyll-a and phycocyanin in the response of the OLCI
+satellite sensors (Coffer et al, 2020, Mishra et al, 2019, Lunetta et al, 2015). Refer to the references for
+algorithm used for detection cyanobacteria.
+Be aware that OLCI weekly/daily data are separate data products the CyAN app/website is capable of
+handling. The two categories of data are handled separately. Your markers for Weekly data do not
+show if you’ve selected Daily; and vice-versa. Daily data are a snapshot of cyanobacteria at the time of
+detection, weekly data is a composite of daily maximums collected over a 7-day period.
+•
+
+The weekly data represents waterbody composite maximum cyanobacteria concentrations
+derived from 2-3 satellite overpasses per week (Sundays through Saturdays) at each detectable
+waterbody.
+
+•
+
+Weekly data are served by default. Daily data can be selected and viewed. Weekly data are
+typically available for the previous week by the following Monday. Daily data are uploaded
+daily; meaning yesterday’s data are available today.
+
+•
+
+What is a “discernable” waterbody? What is the minimum sized lake? The OLCI data resolution
+is 300 meters. Is that resolvable? Yes, but a valid cyanobacteria response should be from a 3x3
+raster matrix meaning the waterbody should be at least 900x900 meters for the center pixel
+considered valid. Currently, 2370 waterbodies across CONUS are resolvable.
+
+Temporal Aspects:
+The cyanobacteria concentration data reported in the CyAN Android app and the CyAN website are
+derived from ESA’s OLCI instruments on the Sentinel 3a and 3b satellites (S3A, S3B) and are delivered in
+two temporal classifications: weekly and daily data. Daily data prior to July 2020 were derived from the
+single S3A and have limited spatial coverage of CONUS. In late July 2020, the S3B satellite data stream
+came online and because of their separate orbital tracks, the spatial coverage of CONUS became much
+more extensive.
+Daily data are simply a snapshot of the cyanobacteria response and are derived from merged S3A and
+S3B data streams.
+Weekly data are a composite of maximum cyanobacteria response from a week-long collection of daily
+satellite overpasses (Sunday through Saturday). In general, S3A and S3B merged data streams (post July
+2020) will have between 2 and 4 observational cyanobacteria responses at each CONUS waterbody
+location. The maximum cyan response detected within the weekly time span is the value reported at
+each location.
+
+Spatial Aspects:
+Data are delivered from NASA to the EPA in TIFF-formatted raster image files (gridded images). Each
+image is composed of 4 million grid cells (pixels). Each grid cell represents a 300 x 300-meter area. Each
+23
+
+image is masked for land (and for oceans near the coasts) leaving waterbodies exposed. A waterbody
+pixel having a cyanobacteria response as detect by the OLCI instruments on ESA’s satellites is reported
+by CyAN. To get CONUS spatial extent, a collection of 37 raster images (tiles) is produced. It is
+important to note that the value reported is not representative for an entire waterbody; rather it’s the
+cyanobacteria response of the pixel that your location resides in.
+
+•
+
+Figure 17 - Data for 37 of 54 tiles are accessible via the CyANWeb app. Data for non-CONUS tiles are not processed.
+E.g. – all tiles in row 6 and all tiles in column 9 are absent. Each tile is a Geo-referenced TIFF formatted raster file
+containing 2000x2000 = 4000000 cells. Each pixel cell represents a 300mx300m area.
+
+Opening Screen Message; Data Issues:
+“This experimental web application provides provisional satellite derived measures of cyanobacteria,
+which may contain errors and should be considered a research tool. Users should refer to the app help
+menu for more details. The focus of this application is to provide cyanobacteria measures for larger
+lakes and reservoirs within the continental US. Data products are 7-day maximum cyanobacteria
+measures updated weekly and, beginning late July 2020, daily snapshots of cyanobacteria measure
+updated every day.”
+Possible data issues include:
+
+24
+
+•
+
+Near-shore response: mixed land/water pixels; may be reading land vegetation and/or shallow
+water bottom foliage. Not possible to discount reported concentration entirely as response may
+be valid due to wind action on a bloom resulting in shoreline accumulation. Data values
+reported should be considered in context of the local conditions about and within the
+waterbody. Data reported should be validated in-situ.
+
+•
+
+Estuaries: data has not been validated for brine/salt water.
+
+•
+
+Rivers: large flowing waterways are not masked and can have a cyanobacteria response.
+Cyanobacteria response not validated.
+
+•
+
+Ice: ice-covered waterbodies have high reflectance that read as a cyanobacteria response to the
+sensors. This issue has been resolved with delivery of OLCI data v3 (what CyANWeb now serves
+to the interface).
+
+•
+
+Unmasked land: This issue has also been resolved with the delivery of OLCI data v3.
+
+•
+
+Dry/ephemeral waterbodies: invalid cyanobacteria response is evident. Resolved in OLCI data
+v3. These areas now masked.
+
+•
+
+A resolvable waterbody is considered to have, at minimum, a 3x3 raster cell matrix size
+(900x900m) with the center pixel being considered valid. Smaller or irregularly shaped
+waterbodies (i.e., those not having the minimum 900x900m size) may be evident in the data and
+their cyanobacteria responses are suspect and open to interpretation. See “Near-shore
+response” above.
+
+What could go wrong?
+The CyAN/CyANWeb system shows cyanobacteria concentration data when and where the satellite data
+detects it. What we cannot store, or show, is non-detect events. Why is this important and how can
+this affect interpretation of the data we serve? How may the information displayed in the interface be
+misleading? Consider some scenarios:
+A – I have a marker in my waterbody, and it is now, for example, red, indicating a very high level of
+cyanobacteria concentration. Conversely, the maker is categorized in the green, indicating no
+appreciable HAB level.
+Conclusion: my waterbody is currently in a high HAB condition. Conversely, my waterbody is not worthy
+of immediate concern.
+Either conclusion may be true but be cognizant of dates associated with the marker symbology. The last
+satellite detection level may not represent current conditions. The last detection event may have been
+yesterday, last week, last month, or even years ago. Dates of detection are evident by mouse hover
+marker symbols on the basemaps.
+
+B – I have a currently high cyanobacteria concentration detection level reading at my waterbody marker.
+
+25
+
+Conclusion: the waterbody is toxic and should be avoided.
+There is no way to tell from our cyanobacteria data if the bloom is toxic. Cyanobacteria come in many
+forms; some produce toxins, some do not. The only way to tell is by water sampling and laboratory
+testing. CyANWeb says absolutely nothing about bloom toxicity. The data are only indicative of the
+need for toxicity sampling.
+
+C – I have a marker in a waterbody that indicates a cyanobacteria level of concern (example 1).
+Conclusion: the waterbody is unfit for recreation (swimming, fishing, etc) or other human usage of the
+water derived from the waterbody.
+Water conditions at a single monitoring marker is not indicative of the state of water conditions
+throughout the waterbody. A marker indicates the satellite detected cyanobacteria concentration
+within a 300x300 meter pixel location within the waterbody. If your waterbody is small (900x900m, or
+smaller), then the marker may indicate the HAB state of the waterbody. If the waterbody is larger, more
+markers distributed throughout the waterbody are warranted to determine its cyanobacteria state.
+Cyanobacteria blooms (HABs) are not static, and not uniform in distribution within the bloom area.
+
+D – I have a marker in a waterbody that indicates a cyanobacteria level of concern (example 2).
+Conclusion: the waterbody is unfit for recreation (drinking, swimming, fishing) or other human usage of
+the water derived from the waterbody.
+What is the shape of the waterbody you’ve marked for monitoring? And how close to the shoreline
+have you placed you monitoring marker? What is the depth of water in your marked waterbody?
+Cyanobacteria satellite detection may be fooled by a) shallow waters (< 6 ft depth in clear water, less
+depth in murky water) where non-cyanobacteria bottom vegetation is being detected, and b) by edge
+effect of shoreline vegetation, so called mixed pixel readings. A “valid” cyanobacteria value is
+considered to be free of mixed pixel readings and in “deep” water. Your waterbody cyanobacteria cell
+value should be the center pixel value in a 3x3 raster image (imagery is delivered in 300x300m raster
+cells) meaning your waterbody should be at least 900x900 meters for the center pixel value to be
+considered “valid”. However, you should not ignore cyanobacteria readings if your waterbody does not
+meet the 900x900m size due to shape of the waterbody or water depth. Use whatever cyanobacteria
+readings are provided as a guide for the need of in-situ sampling and testing. The user should know the
+morphology of their waterbody of interest and use CyAN data accordingly.
+
+E – The time series plots of cyanobacteria level concentrations on location charts and blooming charts
+(from the compare location) show a continuous increase (or decrease) of concentration through time.
+Conclusion: My waterbody is getting worse (or better) for HAB incidence over time.
+While the x-axis of the plots (the bottom axis) are linear (meaning time increments on this axis are
+equal), the data points on them representing cyanobacteria concentrations, are in all probability, not
+26
+
+available for all time intervals. Plot points appear continuous through time because data points are lineconnected. However, detections events are rarely evenly continuous through time. Cloud cover
+occlusion to the satellite sensors may prevent HAB detection at regular intervals. This might best be
+illustrated when comparing locations; data records may be longer or shorter than the compared
+location(s) and have different data points before, after, and/or within the timespan of the plot.
+
+27
+
+FAQ
+Q - What is the difference between a selected/unmarked location and a marked location?
+A - Selected locations are the markers that are unchecked. These unchecked markers indicate that these
+locations have not been marked. A marked location will appear on the map as a checked marker.
+
+Q - Why are selected/unmarked locations (unchecked pins) useful?
+A - Having unmarked locations are useful for one purpose which is that you can differentiate between
+your priority locations and your non-priority locations by keeping your non-priority locations unmarked
+and then control whether they appear in the “My Location” list using the “show checked locations”
+checkbox.
+Q - The pin location I selected is an “Unknown Location”.
+A - If you mark a location that has no satellite data in the current archive, the CyAN app will return
+“Unknown Location” and no count information. This is typical in areas extremely close to shore, lakes
+smaller than can be resolved by the satellite or if you place a pin marker on land.
+
+Q - Why is my data reloading slowly?
+A - Reloading data will be dependent on: (1) the speed of your wireless/internet service connection, (2)
+the number of markers you use, and (3) the number of satellite data records hosted on the servers.
+
+Q - What does “(Max:…)” indicate when comparing locations?
+A - The Max value is an attempt to provide a small areal view of the cyanobacteria conditions about the
+location raster cell. Max is the largest cyanobacteria value in a 900mx900m raster cell matrix about the
+location.
+
+Q - What is OLCI?
+A - OLCI (Ocean and Land Colour Instrument) are sensing instruments on ESA’s Sentinel-3 satellites that
+are used to detect cyanobacteria in waterbodies. Each Sentinel-3 satellite tile is a Geo-referenced TIFF
+formatted raster file containing 2000x2000 = 4000000 raster cells. Each pixel cell represents a
+300mx300m area.
+
+Q - When I switch from OLCI- Daily to OLCI-Weekly and vice-versa my pins disappear?
+A - OLCI weekly/daily data are separate data products that the CyAN web interface is capable of
+handling. The two categories of data are handled separately. Your markers for weekly data do not show
+28
+
+if you’ve selected Daily; and vice-versa. Daily data are a snapshot of cyanobacteria at the time of
+detection, weekly data are a composite of daily maxima.
+
+29
+
+Disclaimer Statement
+This document has been reviewed in accordance with U.S. Environmental Protection Agency policy and
+approved for publication.
+This application has been approved for release by the U.S. Environmental Protection Agency (USEPA).
+Although the software has been subjected to rigorous review, the USEPA reserves the right to update
+the software as needed pursuant to further analysis and review. No warranty, expressed or implied, is
+made by the USEPA or the U.S. Government as to the functionality of the software and related material
+nor shall the fact of release constitute any such warranty. Furthermore, the software is released on
+condition that neither the USEPA nor the U.S. Government shall be held liable for any damages resulting
+from its authorized or unauthorized use.
+
+References
+Blake A. Schaeffer, Sean W. Bailey, Robyn N. Conmy, Michael Galvin, Amber R. Ignatius, John M.
+Johnston, Darryl J. Keith, Ross S. Lunetta, Rajbir Parmar, Richard P. Stumpf, Erin A. Urquhart, P. Jeremy
+Werdell, Kurt Wolfe ; Mobile device application for monitoring cyanobacteria harmful algal blooms using
+Sentinel-3 satellite Ocean and Land Colour Instruments.; Environmental Modelling & Software Volume
+109, November 2018, Pages 93-103
+(https://www.sciencedirect.com/science/article/pii/S1364815218302482)
+Megan M. Coffer, Blake A. Schaeffer, John A. Darling, Erin A. Urquhart, Wilson B. Salls; Quantifying
+national and regional cyanobacterial occurrence in US lakes using satellite remote sensing.; Ecological
+Indicators, Volume 111, 2020, 105976, ISSN 1470-160X
+(https://www.sciencedirect.com/science/article/pii/S1470160X19309719)
+Mishra, S., Stumpf, R.P., Schaeffer, B.A. et al. Measurement of Cyanobacterial Bloom Magnitude using
+Satellite Remote Sensing. Sci Rep 9, 18310 (2019).
+(https://rdcu.be/cg6bI)
+Ross S. Lunetta, Blake A. Schaeffer, Richard P. Stumpf, Darryl Keith, Scott A. Jacobs, Mark S. Murphy;
+Evaluation of cyanobacteria cell count detection derived from MERIS imagery across the eastern USA,
+Remote Sensing of Environment; Volume 157, 2015, Pages 24-34, ISSN 0034-4257
+(https://www.sciencedirect.com/science/article/pii/S0034425714002211)
+
+30
+
+

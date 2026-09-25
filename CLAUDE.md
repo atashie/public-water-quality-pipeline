@@ -7,7 +7,7 @@ and the EPA experimental cyanoHAB forecast. Sentinel-2, other sensors, and in si
 
 ## Current phase
 
-Step 0, initialization, committed 2026-09-22 with the owner's authorization. Steps 1a to 1c are committed and approved. 598 files sit under `data/cyan/raw/`. Step 1d, the review dashboard at `docs/dashboards/cyan/index.html`, is approved. Step 1e is approved: the per-lake table is built under decision 0002. Step 1f, the user-facing lake dashboard at `docs/dashboards/cyan-lakes/index.html`, is approved and hosted on Vercel, [docs/vercel-hosting.md](docs/vercel-hosting.md). On 2026-09-25 the owner put a revision of 1f, after a scientist's feedback, ahead of step 1g, the AWS note for CyAN. Parts 1 and 2 are committed. Part 3 is next.
+Step 0, initialization, committed 2026-09-22 with the owner's authorization. Steps 1a to 1c are committed and approved. 598 files sit under `data/cyan/raw/`. Step 1d, the review dashboard at `docs/dashboards/cyan/index.html`, is approved. Step 1e is approved: the per-lake table is built under decision 0002. Step 1f, the user-facing lake dashboard at `docs/dashboards/cyan-lakes/index.html`, is approved and hosted on Vercel, [docs/vercel-hosting.md](docs/vercel-hosting.md). On 2026-09-25 the owner put a revision of 1f, after a scientist's feedback, ahead of step 1g, the AWS note for CyAN. Parts 1 to 3 are committed. Part 4 awaits authorization.
 Start with [docs/work-plan.md](docs/work-plan.md). The facts checked on 2026-09-22 are in
 [docs/probes/2026-09-22-dataset-facts.md](docs/probes/2026-09-22-dataset-facts.md). They await independent checks before any dataset METADATA calls them `documented`.
 

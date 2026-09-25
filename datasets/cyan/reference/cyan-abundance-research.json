@@ -1,0 +1,1301 @@
+{
+  "dataset": "cyan",
+  "researcher": {
+    "agent": "general-purpose subagent",
+    "model": "claude-opus-5-5 (1M context)",
+    "started_at": "2026-09-25T16:56:48Z",
+    "finished_at": "2026-09-25T17:27:51Z",
+    "note": "The parent agent, Claude Code, added claims cl-cyan-abundance-conversion-spectral-shape-681 and cl-cyan-abundance-conversion-phycocyanin-620 from the preserved copy of Mishra et al. 2019. Local copies were rewritten to repository paths on 2026-09-25."
+  },
+  "sources": [
+    {
+      "id": "src-nasa-earthdata-cyan-project",
+      "url": "https://www.earthdata.nasa.gov/data/projects/cyan",
+      "title": "CyAN - Cyanobacteria Assessment Network | NASA Earthdata (project page)",
+      "publisher": "NASA Earthdata / OB.DAAC",
+      "accessed_on": "2026-09-25",
+      "page_updated": "2026-04-06 (JSON-LD dateModified; datePublished 2025-12-09)",
+      "local_copy": "datasets/cyan/reference/abundance/nasa-earthdata-cyan-project.html",
+      "sha256": "8f4f8f35a815a0451b4017b7baf4b296dd32ce597ab9365685c31ce6e3d13eef",
+      "bytes": 168579,
+      "license": "US federal government work (NASA). No license statement on the page"
+    },
+    {
+      "id": "src-release-notes-v6",
+      "url": "https://oceancolor.gsfc.nasa.gov/images/cyan/version/6/CyAN_NASA_MERISOLCI_CI_release_notes_V6_Aug_2025.pdf",
+      "title": "Release notes for NASA-produced MERIS and OLCI cyanobacteria index (CIcyano) data product to support the Cyanobacteria Assessment Network (CyAN) Project",
+      "publisher": "NASA Ocean Biology Processing Group",
+      "accessed_on": "2026-09-25",
+      "page_updated": "August 2025 (Version 6 notes published February 2025)",
+      "local_copy": "datasets/cyan/reference/CyAN_NASA_MERISOLCI_CI_release_notes_V6_Aug_2025.pdf",
+      "sha256": "e48b56a192215394c74cad3429d3dd3d07ca2cae714dffcc5f5b807edf154f99",
+      "bytes": 1929326,
+      "license": "US federal government work (NASA). No license statement in the document. Byte-identical to datasets/cyan/reference/CyAN_NASA_MERISOLCI_CI_release_notes_V6_Aug_2025.pdf (sha256 e48b56a1...)"
+    },
+    {
+      "id": "src-mishra-2019",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6892802/fullTextXML",
+      "title": "Mishra, S. et al. (2019). Measurement of cyanobacterial bloom magnitude using satellite remote sensing. Scientific Reports 9, 18310. doi:10.1038/s41598-019-54453-y",
+      "publisher": "Nature Portfolio / Europe PMC full text",
+      "accessed_on": "2026-09-25",
+      "page_updated": "2019 (published article)",
+      "local_copy": "datasets/cyan/reference/mishra-2019-europepmc-PMC6892802.xml",
+      "sha256": "51de85305becea2fc9406dc0617858f8520144048595eb8043dbe4bba9ecfd03",
+      "bytes": 166140,
+      "license": "CC BY 4.0, (c) The Author(s) 2019. Byte-identical to datasets/cyan/reference/mishra-2019-europepmc-PMC6892802.xml"
+    },
+    {
+      "id": "src-coffer-2020",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8318153/fullTextXML",
+      "title": "Coffer, M. M. et al. (2020). Quantifying national and regional cyanobacterial occurrence in US lakes using satellite remote sensing. Ecological Indicators 111, 105976. doi:10.1016/j.ecolind.2019.105976 (author manuscript, NIHMS1549221)",
+      "publisher": "Elsevier / Europe PMC full text",
+      "accessed_on": "2026-09-25",
+      "page_updated": "2020 (published article)",
+      "local_copy": null,
+      "sha256": "3246db056bbb432c926e0d2d2aa7a5d1eb65a9223f08d058c1dcca797fdfab9b",
+      "bytes": 113350,
+      "license": "CC BY 4.0 (statement in the PMC record)",
+      "note_on_copy": "Not preserved in the repository. The XML's license text says CC BY but its license link points to CC BY-NC 4.0, found by Codex on 2026-09-25. Cited by URL, size, and sha256"
+    },
+    {
+      "id": "src-coffer-2021a",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=8908444",
+      "title": "Coffer, M. M. et al. (2021). Assessing cyanobacterial frequency and abundance at surface waters near drinking water intakes across the United States. Water Research 201, 117377. doi:10.1016/j.watres.2021.117377 (author manuscript, NIHMS1723972)",
+      "publisher": "Elsevier / PubMed Central (NCBI E-utilities)",
+      "accessed_on": "2026-09-25",
+      "page_updated": "2021 (published article)",
+      "local_copy": null,
+      "sha256": "e395f9716ed0910247676692b914ade9c7f608e8724fe245a6ae5ed6b7c22772",
+      "bytes": 159327,
+      "license": "CC BY-NC-ND 4.0 (statement in the PMC record)",
+      "note_on_copy": "Not preserved in the repository because of its license or size. Cited by URL, size, and sha256"
+    },
+    {
+      "id": "src-coffer-2021b",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=9088058",
+      "title": "Coffer, M. M. et al. (2021). Satellite remote sensing to assess cyanobacterial bloom frequency across the United States at multiple spatial scales. Ecological Indicators 128, 107822. doi:10.1016/j.ecolind.2021.107822",
+      "publisher": "Elsevier / PubMed Central (NCBI E-utilities)",
+      "accessed_on": "2026-09-25",
+      "page_updated": "2021 (published article)",
+      "local_copy": null,
+      "sha256": "44fa3ef30d8b7975b83af1b6e52bab696f178e10a835ae633ae9420f69bc9486",
+      "bytes": 142683,
+      "license": "CC BY-NC-ND 4.0 (statement in the PMC record)",
+      "note_on_copy": "Not preserved in the repository because of its license or size. Cited by URL, size, and sha256"
+    },
+    {
+      "id": "src-clark-2017-abstract",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=6145495",
+      "title": "Clark, J. M. et al. (2017). Satellite monitoring of cyanobacterial harmful algal bloom frequency in recreational waters and drinking source waters. Ecological Indicators 80, 84-95. doi:10.1016/j.ecolind.2017.04.046 (abstract only)",
+      "publisher": "Elsevier / PubMed Central (NCBI E-utilities)",
+      "accessed_on": "2026-09-25",
+      "page_updated": "2017 (published article)",
+      "local_copy": null,
+      "sha256": "2696aea252754732c40ef9c22777a7c16c0a4e7c297302d90e5e4fc3ea190525",
+      "bytes": 9458,
+      "license": "Publisher copyright (Elsevier). The record says the publisher does not allow full-text XML download. No license element in the file",
+      "note_on_copy": "Not preserved in the repository because of its license or size. Cited by URL, size, and sha256"
+    },
+    {
+      "id": "src-seegers-2021",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9680834/fullTextXML",
+      "title": "Seegers, B. N. et al. (2021). Satellites for long-term monitoring of inland U.S. lakes: The MERIS time series and application for chlorophyll-a. Remote Sensing of Environment 266, 112685. doi:10.1016/j.rse.2021.112685",
+      "publisher": "Elsevier / Europe PMC full text",
+      "accessed_on": "2026-09-25",
+      "page_updated": "2021 (published article)",
+      "local_copy": "datasets/cyan/reference/abundance/seegers-2021-PMC9680834.xml",
+      "sha256": "057a4d3ee672616760b42e1da2bfdbd87348dfa8aa7c4091cade27f7c289610e",
+      "bytes": 185598,
+      "license": "CC BY 4.0 (statement in the PMC record)"
+    },
+    {
+      "id": "src-schaeffer-2024",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=10842250",
+      "title": "Schaeffer, B. A. et al. (2024). Forecasting freshwater cyanobacterial harmful algal blooms for Sentinel-3 satellite resolved U.S. lakes and reservoirs. Journal of Environmental Management. doi:10.1016/j.jenvman.2023.119518 (author manuscript)",
+      "publisher": "Elsevier / PubMed Central (NCBI E-utilities)",
+      "accessed_on": "2026-09-25",
+      "page_updated": "2023-11 online (published article)",
+      "local_copy": null,
+      "sha256": "ece65cb999ae9818a0177ec7b2b3353c6765d781ce52fd4e2188bfe2b7578d4e",
+      "bytes": 194859,
+      "license": "CC BY-NC-ND 4.0 (statement in the PMC record)",
+      "note_on_copy": "Not preserved in the repository because of its license or size. Cited by URL, size, and sha256"
+    },
+    {
+      "id": "src-stumpf-2012",
+      "url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0042444&type=manuscript",
+      "title": "Stumpf, R. P., Wynne, T. T., Baker, D. B., Fahnenstiel, G. L. (2012). Interannual variability of cyanobacterial blooms in Lake Erie. PLoS ONE 7(8), e42444. doi:10.1371/journal.pone.0042444 (article XML)",
+      "publisher": "PLOS",
+      "accessed_on": "2026-09-25",
+      "page_updated": "2012 (published article)",
+      "local_copy": "datasets/cyan/reference/abundance/stumpf-2012-plosone.xml",
+      "sha256": "3ee03084404e117bc5060c5612ecfa1e1add7a056aa15528175c12d248e36964",
+      "bytes": 107017,
+      "license": "CC0 public domain dedication (statement in the article XML)"
+    },
+    {
+      "id": "src-epa-si-lunetta-2015",
+      "url": "https://cfpub.epa.gov/si/si_public_record_report.cfm?Lab=NERL&dirEntryId=304530",
+      "title": "Evaluation of cyanobacteria cell count detection derived from MERIS imagery across the eastern USA | Science Inventory | US EPA (Lunetta et al. 2015, Remote Sensing of Environment 157, 24-34)",
+      "publisher": "US EPA Science Inventory",
+      "accessed_on": "2026-09-25",
+      "page_updated": "Record Last Revised 03/26/2015; page footer 'Last updated on September 25, 2026'",
+      "local_copy": "datasets/cyan/reference/abundance/epa-si-304530-lunetta2015.html",
+      "sha256": "c24994a6fe720c5ccbd0b239cc9880ac5462d26cb5848490baae1a120f33172e",
+      "bytes": 21038,
+      "license": "US federal government web page (EPA). No license statement. The journal article itself is Elsevier copyright and was not reached"
+    },
+    {
+      "id": "src-epa-cyan-app",
+      "url": "https://www.epa.gov/water-research/cyanobacteria-assessment-network-application-cyan-app",
+      "title": "Cyanobacteria Assessment Network Application (CyAN app) | US EPA",
+      "publisher": "US EPA",
+      "accessed_on": "2026-09-25",
+      "page_updated": "March 31, 2026",
+      "local_copy": "datasets/cyan/reference/abundance/epa-cyan-app.html",
+      "sha256": "4099780cb0de809337bd21e2b907e3b67d61201d5e019636de85591d23f5ebef",
+      "bytes": 77846,
+      "license": "US federal government work (EPA). No license statement"
+    },
+    {
+      "id": "src-epa-cyanweb-guide",
+      "url": "https://cfpub.epa.gov/si/si_public_file_download.cfm?p_download_id=542484&Lab=CEMM",
+      "title": "CyANWeb Website User's Guide, EPA/600/B-21/072, April 2021 (M. Galvin)",
+      "publisher": "US EPA",
+      "accessed_on": "2026-09-25",
+      "page_updated": "April 2021",
+      "local_copy": "datasets/cyan/reference/abundance/epa-cyanweb-users-guide-EPA-600-B-21-072.txt",
+      "sha256": "b911a2a2894a3552afe57da5ed272174df5377a695716bf1555bc9a086e97996",
+      "bytes": 9202090,
+      "license": "US federal government work (EPA). No license statement. Linked from EPA Science Inventory record 351300 (saved as epa-si-351300-cyanweb-guide-record.html)",
+      "note_on_copy": "Text extraction preserved. The PDF is cited by URL, size, and sha256"
+    },
+    {
+      "id": "src-epa-android-guide",
+      "url": "https://cfpub.epa.gov/si/si_public_file_download.cfm?p_download_id=538521&Lab=NERL",
+      "title": "CyAN App User's Guide, Android Application Manual, EPA/600/B-19/086, 2019 (R. Boykin)",
+      "publisher": "US EPA",
+      "accessed_on": "2026-09-25",
+      "page_updated": "2019",
+      "local_copy": "datasets/cyan/reference/abundance/epa-cyan-android-users-guide.txt",
+      "sha256": "82a05401e701e440407a62f9b0713038700b6f888831703de7060357675c43c8",
+      "bytes": 2128046,
+      "license": "US federal government work (EPA). No license statement. Linked from EPA Science Inventory record 345498 (saved as epa-si-345498-android-guide-record.html)",
+      "note_on_copy": "Text extraction preserved. The PDF is cited by URL, size, and sha256"
+    },
+    {
+      "id": "src-epa-habs-recreation",
+      "url": "https://www.epa.gov/habs/protecting-human-health-cyanotoxin-exposure-during-recreation",
+      "title": "Protecting Human Health from Cyanotoxin Exposure During Recreation | US EPA",
+      "publisher": "US EPA",
+      "accessed_on": "2026-09-25",
+      "page_updated": "June 24, 2026",
+      "local_copy": "datasets/cyan/reference/abundance/epa-habs-cyanotoxin-recreation.html",
+      "sha256": "24e3c16e16aa4758ecab40a5ca5295998498b432ec5a16fb7aa9961ce3d3ce0e",
+      "bytes": 65624,
+      "license": "US federal government work (EPA). No license statement"
+    },
+    {
+      "id": "src-epa-rec-criteria-factsheet-2019",
+      "url": "https://www.epa.gov/sites/default/files/2019-05/documents/hh-rec-criteria-habs-factsheet-2019.pdf",
+      "title": "Recommended Human Health Recreational Ambient Water Quality Criteria or Swimming Advisories for Microcystins and Cylindrospermopsin (fact sheet), EPA 822-F-19-001, May 2019",
+      "publisher": "US EPA Office of Water",
+      "accessed_on": "2026-09-25",
+      "page_updated": "May 2019 (PDF metadata title still says 'Draft')",
+      "local_copy": "datasets/cyan/reference/abundance/epa-hh-rec-criteria-habs-factsheet-2019.pdf",
+      "sha256": "72cb6075ef9bb3ddd3d3049fb049b6d14cc72a31f5a326d889b9ff25174938bf",
+      "bytes": 151396,
+      "license": "US federal government work (EPA). No license statement"
+    },
+    {
+      "id": "src-who-2003",
+      "url": "https://iris.who.int/server/api/core/bitstreams/b677ea7d-f8f8-43fa-8374-77fb2eefc7eb/content",
+      "title": "Guidelines for safe recreational water environments. Volume 1: Coastal and fresh waters (WHO, 2003)",
+      "publisher": "World Health Organization",
+      "accessed_on": "2026-09-25",
+      "page_updated": "2003",
+      "local_copy": null,
+      "sha256": "24aaf0573b4bea5e8e5a1ac55fd9196e7fb9ba6c295fa2a12f1c09b370ff5389",
+      "bytes": 1381019,
+      "license": "(c) World Health Organization 2003. All rights reserved",
+      "note_on_copy": "Not preserved in the repository because of its license or size. Cited by URL, size, and sha256"
+    },
+    {
+      "id": "src-who-2021",
+      "url": "https://iris.who.int/server/api/core/bitstreams/a7571658-db94-4cc7-b6da-71ea654f927d/content",
+      "title": "Guidelines on recreational water quality. Volume 1: coastal and fresh waters (WHO, 2021)",
+      "publisher": "World Health Organization",
+      "accessed_on": "2026-09-25",
+      "page_updated": "2021",
+      "local_copy": null,
+      "sha256": "5705ba33c0f17ab20deb22ea2ddd6dc24ee7ce3930c5f9dd6b50a190de9d7f6a",
+      "bytes": 4159253,
+      "license": "CC BY-NC-SA 3.0 IGO. Download link found on https://www.who.int/publications/i/item/9789240031302 (saved as who-2021-recreational-landing.html)",
+      "note_on_copy": "Not preserved in the repository because of its license or size. Cited by URL, size, and sha256"
+    },
+    {
+      "id": "src-sfei-pixelvalues",
+      "url": "https://fhab-api.sfei.org/pixelvalues",
+      "title": "FHAB API - Pixel Values",
+      "publisher": "San Francisco Estuary Institute",
+      "accessed_on": "2026-09-25",
+      "page_updated": null,
+      "local_copy": null,
+      "sha256": "c9848e76949c1874204ed7c2093939bcaaf8176312d9b17fe768f303ca82626c",
+      "bytes": 98721,
+      "license": "(c) San Francisco Estuary Institute 2026 (footer on the API site)",
+      "note_on_copy": "Not preserved in the repository because of its license or size. Cited by URL, size, and sha256"
+    },
+    {
+      "id": "src-sfei-reference",
+      "url": "https://fhab-api.sfei.org/reference",
+      "title": "FHAB API - Reference",
+      "publisher": "San Francisco Estuary Institute",
+      "accessed_on": "2026-09-25",
+      "page_updated": null,
+      "local_copy": null,
+      "sha256": "7609bf02d90d9af0415c847a95ce62d4183a93a1cedc664c76a279c8e230364a",
+      "bytes": 62485,
+      "license": "(c) San Francisco Estuary Institute 2026 (footer)",
+      "note_on_copy": "Not preserved in the repository because of its license or size. Cited by URL, size, and sha256"
+    },
+    {
+      "id": "src-ca-sccwrp-2025",
+      "url": "https://www.waterboards.ca.gov/water_issues/programs/swamp/docs/2025/ca-satellite-tech-report-2025.pdf",
+      "title": "Smith, J., Van Dyke, M., Nilson, C., Lie, A., Sutula, M. (2025-03). Best Practices to Employ Satellite Remote Sensing to Assess Freshwater Harmful Algal Blooms in Inland Waters of California. SCCWRP",
+      "publisher": "Southern California Coastal Water Research Project, hosted by the California State Water Resources Control Board",
+      "accessed_on": "2026-09-25",
+      "page_updated": "March 2025 (PDF ModDate 2025-04-28)",
+      "local_copy": null,
+      "sha256": "8c24faaabe2fcac91417b95d128da02c71d6aa0869f5c8d940fc9fbd061958e0",
+      "bytes": 18568695,
+      "license": "No license or copyright statement found in the text. Secondary source for WHO, Lunetta, and Coffer statements",
+      "note_on_copy": "Not preserved in the repository because of its license or size. Cited by URL, size, and sha256"
+    },
+    {
+      "id": "src-noaa-lake-erie-bulletin",
+      "url": "https://cdn.coastalscience.noaa.gov/hab-data/forecasts/LErie_forecast/web_latest/current_bulletin.pdf",
+      "title": "Lake Erie Harmful Algal Bloom Forecast, 2026-09-25",
+      "publisher": "NOAA National Centers for Coastal Ocean Science",
+      "accessed_on": "2026-09-25",
+      "page_updated": "2026-09-25 (replaced at the same URL with each bulletin)",
+      "local_copy": "datasets/cyan/reference/abundance/noaa-lake-erie-hab-bulletin-current.txt",
+      "sha256": "bc62ea4b35598bda9ebe480da34f3c9d4187e186f4b25f5f5f5fd430747b1ab3",
+      "bytes": 5397025,
+      "license": "US federal government work (NOAA). No license statement. Contains 'Data derived from Copernicus Sentinel-3'",
+      "note_on_copy": "Text extraction preserved. The PDF is cited by URL, size, and sha256"
+    },
+    {
+      "id": "src-sentiwiki-s3-mission",
+      "url": "https://sentiwiki.copernicus.eu/web/s3-mission",
+      "title": "S3 Mission | SentiWiki",
+      "publisher": "European Space Agency (Copernicus SentiWiki)",
+      "accessed_on": "2026-09-25",
+      "page_updated": null,
+      "local_copy": null,
+      "sha256": "5e7c6d0a6c0a3ad6a21154f30d4904b7b749e31356b24889b528bb617f7b5149",
+      "bytes": 78445,
+      "license": "'Copyright European Space Agency' in the page footer. Terms and Conditions link not fetched",
+      "note_on_copy": "Not preserved in the repository because of its license or size. Cited by URL, size, and sha256"
+    },
+    {
+      "id": "src-ladsweb-olci",
+      "url": "https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/olci/",
+      "title": "Sentinel-3 Ocean and Land Colour Instrument (OLCI) | LAADS DAAC",
+      "publisher": "NASA LAADS DAAC",
+      "accessed_on": "2026-09-25",
+      "page_updated": null,
+      "local_copy": "datasets/cyan/reference/abundance/ladsweb-olci.html",
+      "sha256": "40d0a74d00e8897deba00d712b8c7ee57115bdde88ac9685925d3e02251d495a",
+      "bytes": 34410,
+      "license": "US federal government work (NASA). No license statement"
+    },
+    {
+      "id": "src-eumetsat-s3b-olci-release",
+      "url": "https://web.archive.org/web/20201018042952id_/https://www.eumetsat.int/website/home/News/DAT_4166827.html",
+      "title": "Release of Sentinel-3B Ocean and Land Colour Instrument (OLCI) Level-1 products - EUMETSAT (news item dated Thursday, 06 December 2018; Internet Archive capture of 2020-10-18)",
+      "publisher": "EUMETSAT (archived by the Internet Archive)",
+      "accessed_on": "2026-09-25",
+      "page_updated": "2018-12-06 (news date)",
+      "local_copy": null,
+      "sha256": "cb937cbb695d7386afdf33f5172003b4351d71a1e521df9727b869bb3d87e792",
+      "bytes": 44799,
+      "license": "EUMETSAT page; no license text captured. The live URL returns HTTP 404 on 2026-09-25, so this is an archived copy of the primary page",
+      "note_on_copy": "Not preserved in the repository because of its license or size. Cited by URL, size, and sha256"
+    },
+    {
+      "id": "src-cmr-s3b-l1-granules",
+      "url": "https://cmr.earthdata.nasa.gov/search/granules.json?collection_concept_id=C1615893450-OB_DAAC&page_size=3&sort_key=start_date",
+      "title": "CMR granule search, earliest granules of OLCIS3B_L1_EFR (Sentinel-3B OLCI Level-1B EFR, OB.DAAC)",
+      "publisher": "NASA Earthdata Common Metadata Repository",
+      "accessed_on": "2026-09-25",
+      "page_updated": null,
+      "local_copy": "datasets/cyan/reference/abundance/cmr-olcis3b-l1-efr-earliest-granules.json",
+      "sha256": "e67e8c1b28eed0419fb7e18177211c2af3298f0d2a3444f1d0c2367c030d36d6",
+      "bytes": 7272,
+      "license": "US federal government metadata (NASA). No license statement"
+    }
+  ],
+  "claims": [
+    {
+      "id": "cl-cyan-abundance-conversion-factor-1e8-mishra",
+      "section": "conversion",
+      "value": "Cells per mL = CI_cyano x 10^8, termed Microcystis-equivalent cells; developed for Microcystis (Wynne et al. 2010), validated for total cyanobacteria cells in eight eastern states (Clark et al. 2017, Lunetta et al. 2015); MAPE 28.6%",
+      "unit": "cells mL^-1 per unit CI_cyano",
+      "note": "Reference 11 is Wynne, Stumpf, Tomlinson, Dyble (2010) Limnol. Oceanogr. 55:2025-2036; 15 is Clark et al. (2017) Ecol. Indic. 80:84-95; 41 is Lunetta et al. (2015) RSE 157:24-34 (ref-list elements CR11, CR15, CR41). Par28 repeats the factor: 'As noted above, CI-cyano can be converted to Microcystis-equivalent cells by multiplying by the factor 10<sup>8</sup> (cells mL<sup>−1</sup>)<sup>11,15,41</sup>, to provide a more intuitive biomass metric.' The MAPE is Mishra's report of Clark 2017, not checked against Clark 2017 itself (full text not reachable).",
+      "source_ids": [
+        "src-mishra-2019"
+      ],
+      "quote": "For purposes of setting risk thresholds, we applied a relationship between CI and cyanobacterial cell concentration of 10<sup>8</sup> cells mL<sup>−1</sup> per 1 unit of CI-cyano<sup>11</sup>. While the relationship<sup>11</sup> was developed for Microcystis (so we term the value as “Microcystis-equivalent cells”), it was validated by<sup>15,41</sup> for unspecified total cell concentrations of cyanobacteria in eight U.S. eastern states across New England (Connecticut, Massachusetts, Maine, New Hampshire, Rhode Island, and Vermont), Ohio, and Florida. Mean absolute percent error (MAPE) of 28.6% was reported between field-measured cyanobacteria biomass data (cells mL<sup>−1</sup>) and satellite-derived cell biomass<sup>15</sup>.",
+      "locator": "Data and Methods > Cyanobacteria estimation algorithm, <p id=\"Par18\">",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-conversion-factor-intuitive-metric",
+      "section": "conversion",
+      "value": "The 10^8 factor is offered to provide a more intuitive biomass metric; bloom magnitude itself is expressed in dimensionless CI units",
+      "unit": null,
+      "note": "Supports presenting cells/mL as a derived, secondary display value.",
+      "source_ids": [
+        "src-mishra-2019"
+      ],
+      "quote": "Bloom magnitude was expressed in CI units, which is dimensionless. As noted above, CI-cyano can be converted to Microcystis-equivalent cells by multiplying by the factor 10<sup>8</sup> (cells mL<sup>−1</sup>)<sup>11,15,41</sup>, to provide a more intuitive biomass metric.",
+      "locator": "Data and Methods > Annual or seasonal bloom magnitude metric, <p id=\"Par20\"> (paragraph after Eq. 2)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-conversion-origin-lake-erie-microcystis",
+      "section": "conversion",
+      "value": "The factor was defined from satellite CI against surface-water Microcystis spp. cell counts in western Lake Erie; applied as CI-cyano x 10^8 'as described in Lunetta et al. (2015)'",
+      "unit": "cells/mL",
+      "note": "EPA-led paper (Coffer et al. 2021a). Consistent with Mishra 2019 naming Wynne et al. 2010 as the origin.",
+      "source_ids": [
+        "src-coffer-2021a"
+      ],
+      "quote": "The standard CI-cyano product was converted to cyanobacterial abundance, in units of cells/mL, as CI-cyano × 10<sup>8</sup> as described in Lunetta et al. (2015). This conversion factor was defined based on a relationship between the satellite-derived cyanobacterial index and surface water samples of Microcystis spp. cell counts in western Lake Erie.",
+      "locator": "Data and methods > Satellite observations, <p id=\"P13\">",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-conversion-wynne2010-fit-r2",
+      "section": "conversion",
+      "value": "The Wynne et al. (2010) CI-to-cell relationship is based on Microcystis, r2 = 0.42 (p<0.001), with a potential to underestimate by as much as a factor of 2",
+      "unit": null,
+      "note": "Stumpf et al. 2012 is written by NOAA co-authors of Wynne 2010 and cites it as reference [15] (ref id pone.0042444-Wynne1). It is a secondary report of Wynne 2010's statistics, since Wynne 2010 itself returned HTTP 403. MERIS-era CI on Lake Erie, not the CyAN v6 OLCI product.",
+      "source_ids": [
+        "src-stumpf-2012"
+      ],
+      "quote": "The relationship between CI and cell concentration reported in [15] is based on Microcystis. The r<sup>2</sup> of 0.42, while highly significant statistically (p<0.001) is probably reduced by the comparison of different spatial scales: pixels against water samples in these highly patchy blooms (Figure 4). Cyanobacteria blooms often have concentrations varying orders of magnitude in the space of a 1-km pixel [25]. However, in the context of this study, the relationship of CI to concentration [15] is sufficiently accurate, although with a potential to underestimate as much as a factor of 2.",
+      "locator": "Methods > Satellite, paragraph beginning 'Blooms in Lake Erie in summer are predominately Microcystis'",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-conversion-ci-0001-1e5-twofold",
+      "section": "conversion",
+      "value": "CI 0.001 corresponds to about 10^5 cells/mL (Wynne 2010), with a conversion uncertainty of about two-fold",
+      "unit": "cells mL^-1",
+      "note": "Same scale as the 10^8 factor (0.001 x 10^8 = 10^5). Secondary report of Wynne 2010 by its co-authors.",
+      "source_ids": [
+        "src-stumpf-2012"
+      ],
+      "quote": "A CI of 0.001 corresponds to a concentration of about 10<sup>5</sup> cells mL<sup>−1</sup> [15] ... Current uncertainty in the conversion of CI to cell concentration of about two-fold means that a bloom of CI = 1.0 could contain up to 84 m.tons P.",
+      "locator": "Methods > Bloom Phosphorus Calculation",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-conversion-uncertainty-over-30pct",
+      "section": "conversion",
+      "value": "Satellite cell estimates are expected to differ from field point counts by more than 30%; the relationship is an added uncertainty when scaled to CONUS lakes; spatial patchiness can reach two orders of magnitude",
+      "unit": "percent",
+      "note": "Mishra 2019 Discussion. Names manual cell-count error (20-30% or more) and bloom patchiness as sources.",
+      "source_ids": [
+        "src-mishra-2019"
+      ],
+      "quote": "Another source of uncertainty could come from the use of the CI-cyanobacteria cell count relationship when the analysis would be scaled up to the CONUS lakes. ... Similarly, variability in the spatial distribution of biomass in a bloom can add up to two orders of magnitude difference in biomass, as observed by<sup>59</sup> in a cyanobacteria bloom in the Gulf of Finland. ... Therefore, after considering errors from multiple sources, it is expected to have greater than 30% error or difference in satellite estimates, when compared with field measured cell density from a point source in a bloom event.",
+      "locator": "Discussion, <p id=\"Par38\">",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-conversion-lunetta-accuracy-by-range",
+      "section": "conversion",
+      "value": "MERIS-derived cell counts were robust for Low (10,000-109,000; about 90%) and Very High (>1,000,000; about 83%) ranges, substandard for 110,000-299,000 (about 28%) and 300,000-1,000,000 (about 40%); confusion attributed to missing taxonomic data needed to convert cell counts to cell volumes",
+      "unit": "cells/mL; percent agreement",
+      "note": "Abstract text as shown on the EPA Science Inventory record (Description field). The journal full text returned HTTP 403 in the earlier probe and is closed access per OpenAlex. MERIS era, eight eastern states, 2009-2012.",
+      "source_ids": [
+        "src-epa-si-lunetta-2015"
+      ],
+      "quote": "Results indicated that MERIS provided robust estimates for Low (10,000–109,000 cells/mL) and Very High (>1,000,000 cells/mL) cell enumeration ranges (approximately 90% and 83%, respectively). However, the results for two intermediate ranges (110,000–299,000 and 300,000–1,000,000 cells/mL) were substandard, at approximately 28% and 40%, respectively. The confusion associated with intermediate Cyano cell count ranges was largely attributed to the lack of available Cyano taxonomic data for the in situ measurements that would have facilitated conversions between cell counts and cell volumes.",
+      "locator": "Record page, 'Description:' field",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-conversion-who2021-cell-size-biovolume",
+      "section": "conversion",
+      "value": "WHO 2021: cell counts are a weaker biomass indicator than biovolume because cyanobacterial cell sizes differ strongly between species; satellite data may be used if calibrated with occasional toxin analyses",
+      "unit": null,
+      "note": "Speaks to the species and cell-size dependence of any cells/mL figure.",
+      "source_ids": [
+        "src-who-2021"
+      ],
+      "quote": "A measure of biomass is best for triggering action – either biovolume or the concentration of chlorophyll a (the latter needs to be combined with a brief visual assessment by microscopy to check whether this mainly represents cyanobacteria, or whether eukaryotic algae dominate). THis is because of the pronounced differences in the cell sizes of cyanobacterial species. Biovolume (i.e. cells/L multiplied by mean cell volume of the species) provides a much better indication of biomass and thus of toxin concentration than mere cell counts. ... Cell counts can nonetheless continue to be used, as can any other locally convenient indicator of the presence and amount of potentially toxic cyanobacteria (e.g. in situ fluorescence, turbidity, satellite data), provided that such a parameter is calibrated with occasional toxin analyses.",
+      "locator": "Chapter 5 Harmful algal blooms, printed page 68 (PDF page 92). 'THis' is verbatim",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-conversion-release-notes-no-factor",
+      "section": "conversion",
+      "value": "The producer's release notes say DN converts to 'an estimated cyanobacteria abundance' but give only the DN-to-CI_cyano formula; no cells/mL factor or citation",
+      "unit": null,
+      "note": "Absence of a factor confirmed by searching the extracted text for 'cells' (no match).",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "Digital numbers (DN) can be converted to an estimated cyanobacteria abundance derived from CIcyano. CIcyano = 10**(DN * 0.011714 - 4.1870866)",
+      "locator": "Page 6 (PDF page 6), top",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-conversion-version-shift-v5",
+      "section": "conversion",
+      "value": "CI_cyano values changed between processing versions: version 5 raised them by 15-20% on average; version 6 slightly reduces high-end values. Any fixed cells/mL factor inherits these shifts",
+      "unit": "percent",
+      "note": "Version 6 summary on page 8: 'The changes have minor impact at the low-end and tends to slightly reduces CIcyanovalues at the high-end.'",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "Version 5 shows on average a 15-20% increase in CIcyano values. This is driven by gain changes (using updated ESA gains)",
+      "locator": "Version 5 improvements/changes, Summary of Analysis, page 12",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-conversion-ci-to-chla-seegers",
+      "section": "conversion",
+      "value": "Chl = 6620(±646) x CI_cyano − 3.07(±5), cyanobacterial chlorophyll-a from CI_cyano, CONUS MERIS match-ups",
+      "unit": "µg L^-1 chlorophyll-a",
+      "note": "Section 3.4 equation (6) gives the intercept as 3.1 (±5.2) in MathML; Table 1 header gives 3.07(±5). Schaeffer et al. 2024 uses 3.07. An alternative abundance scale that links to the WHO 2021 chlorophyll-a alert levels.",
+      "source_ids": [
+        "src-seegers-2021"
+      ],
+      "quote": "Chl = 6620(±646) * CI<sub>Cyano</sub> − 3.07(±5)",
+      "locator": "Table 1 header row, Chl<sub>BS</sub> column",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-conversion-ci-uncertainty-1e-4",
+      "section": "conversion",
+      "value": "Suggested CI_cyano uncertainty is 1 x 10^-4, equivalent to 0.66 µg/L chlorophyll-a; with the 10^8 factor that is 10,000 cells/mL",
+      "unit": "CI (unitless)",
+      "note": "The 10,000 cells/mL equivalence is arithmetic (1e-4 x 1e8), not stated by the source. Cites Mishra et al. 2023 and Stumpf et al. 2016, not fetched.",
+      "source_ids": [
+        "src-schaeffer-2024"
+      ],
+      "quote": "(unitless) was suggested to be 1 × 10<sup>−4</sup> (Mishra et al., 2023; Stumpf et al., 2016) or the equivalent of a chlorophyll-a change equal to 0.66 μg L<sup>−1</sup>.",
+      "locator": "Material and methods > Forecast threshold CIcyano uncertainty, <p id=\"P19\"> (sentence begins 'The uncertainty in CIcyano', CIcyano in MathML)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-conversion-cyanweb-reports-concentrations",
+      "section": "conversion",
+      "value": "EPA's CyANWeb guide calls the served values cyanobacteria concentrations and says the delivered product is CI_cyano, which includes chlorophyll-a and phycocyanin in the sensor response",
+      "unit": null,
+      "note": "Previously marked 'agent' in docs/probes/2026-09-23-cyan-vs-clms-assertions.md; now fetched and quoted.",
+      "source_ids": [
+        "src-epa-cyanweb-guide"
+      ],
+      "quote": "The data the Cyan system reports are cyanobacteria concentrations. The data products as delivered by USGS/NASA are CI_cyano and include chlorophyll-a and phycocyanin in the response of the OLCI satellite sensors (Coffer et al, 2020, Mishra et al, 2019, Lunetta et al, 2015).",
+      "locator": "'Understanding the Data', printed page 22 (PDF page 23)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-conversion-sfei-multiplier-not-verified-ca",
+      "section": "conversion",
+      "value": "SFEI's FHAB API relates CI to Microcystis sp. cells/mL by a multiplier of 100,000,000, borrowed from NOAA Lake Erie work, not field verified for California",
+      "unit": "cells/mL per CI",
+      "note": "SFEI serves NOAA-encoded rasters, not CyAN DNs. Two quotes: reference page and pixel-values page.",
+      "source_ids": [
+        "src-sfei-reference",
+        "src-sfei-pixelvalues"
+      ],
+      "quote": "Pixel values converted to cyano index, which has a range of 0.00006-0.06. Values are unitless by can be related to estimated Microcystis sp. cell concentration (in cells/mL) by a multiplier of 100,000,000.",
+      "locator": "Reference page, '# Value type' table, row 'ci'. Pixel-values page, second paragraph: 'These conversions have not be field verified for water bodies in California and are provided only for reference.'",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-conversion-ca-report-not-recommended",
+      "section": "conversion",
+      "value": "California's FHAB program discourages specific cell densities from OLCI imagery; cell conversions not recommended without further validation",
+      "unit": null,
+      "note": "Secondary state report (SCCWRP 2025). A policy position, not a primary scientific source.",
+      "source_ids": [
+        "src-ca-sccwrp-2025"
+      ],
+      "quote": "FHAB Monitoring Strategy discourages the use of specific cell densities estimated from OLCI satellite imagery (Smith et al., 2021). While published methods to estimate cyanobacterial cell abundances exist, there are a multitude of associated caveats with the approach that lead to this recommendation, which is continued in this report. Due to the uncertainty associated with cell abundance conversions and limitations of the currently published studies on the topic, cell abundance conversions are generally not recommended for application without additional validation and study.",
+      "locator": "Section 3.1.3 Cell abundances, printed page 21 (PDF page 32)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-conversion-ca-report-mixed-assemblages",
+      "section": "conversion",
+      "value": "CI and CI_cyano were developed on Microcystis-dominated Lake Erie; performance of the cell conversion is less understood in mixed cyanobacterial communities",
+      "unit": null,
+      "note": "Secondary (SCCWRP 2025). Same report also states Lunetta's R2 of 0.87 with n = 579 of 2068 samples retained; that is not checked against Lunetta 2015.",
+      "source_ids": [
+        "src-ca-sccwrp-2025"
+      ],
+      "quote": "An additional confounding factor is that the CI and later the CIcyano algorithms were developed from observations of Lake Erie which is primarily dominated by Microcystis spp., whereas the lakes used for comparison to CIcyano values in Lunetta et al. (2015) were often mixed assemblages of cyanobacterial taxa (though extensive documentation of community composition was not presented), thus the performance of the cell conversion is less well understood in mixed cyanobacterial communities, which are often documented in California waterbodies.",
+      "locator": "Section 3.1.3 Cell abundances, printed page 21 (PDF page 32)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-range-nasa-10000-7000000",
+      "section": "range",
+      "value": "NASA: DN range corresponds to ~10,000 to 7,000,000 cells/ml",
+      "unit": "cells/ml",
+      "note": "No factor or citation on the page. See discrepancy on the arithmetic. Characters ∗ (U+2217) and − (U+2212) are verbatim. <br> elements rendered as spaces.",
+      "source_ids": [
+        "src-nasa-earthdata-cyan-project"
+      ],
+      "quote": "To convert Digital Number (DN) to CI_cyano: CIcyano=10^(DN∗0.011714−4.1870866) That range is ~10,000 to 7,000,000 cells/ml.",
+      "locator": "Section with heading 'DN Guide', paragraph after the list of DN values",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-range-detection-limit-10000-20000",
+      "section": "range",
+      "value": "Sensor detection limit preliminarily estimated at 10,000-20,000 cells/mL",
+      "unit": "cells/mL",
+      "note": "EPA-led paper. The CA report repeats it, citing Coffer et al. 2021a, as 'the best estimate provided by the CyAN project' (section 6.2, printed page 65).",
+      "source_ids": [
+        "src-coffer-2021a"
+      ],
+      "quote": "Throughout this study, a bloom detected by satellite imagery is defined as any cyanobacterial abundance that exceeds the detection limit of the sensor, which is preliminarily estimated to be between 10,000 and 20,000 cells/mL.",
+      "locator": "Data and methods > Satellite observations, <p id=\"P13\">",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-range-ca-report-dn-range",
+      "section": "range",
+      "value": "DN 1-253 roughly ~10-20,000 to 7,000,000 cells/mL; the conversion is a very rough estimation",
+      "unit": "cells/mL",
+      "note": "Secondary (SCCWRP 2025).",
+      "source_ids": [
+        "src-ca-sccwrp-2025"
+      ],
+      "quote": "DNs of 1 – 253 are roughly equivalent to ~10-20,000 – 7,000,000 cells/mL. It should be noted though that the conversion of CIcyano to cell abundance data is currently a very rough estimation (more details in Chapter 3).",
+      "locator": "Section 6.2 Detection Limit, printed page 66 (PDF page 77)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-range-noaa-detection-20000",
+      "section": "range",
+      "value": "NOAA's Lake Erie bulletin: estimated threshold of cyanobacteria detection 20,000 cells/mL",
+      "unit": "cells/mL",
+      "note": "NOAA's own Lake Erie OLCI product and encoding, not CyAN. Bulletin dated 2026-09-25; the URL is overwritten with each bulletin.",
+      "source_ids": [
+        "src-noaa-lake-erie-bulletin"
+      ],
+      "quote": "The estimated threshold of cyanobacteria detection is 20,000 cells/mL.",
+      "locator": "Page 1, caption of the satellite image",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-categories-lunetta-four-ranges",
+      "section": "categories",
+      "value": "Lunetta et al. 2015 enumeration ranges: Low 10,000-109,000; 110,000-299,000; 300,000-1,000,000; Very High >1,000,000",
+      "unit": "cells/mL (in situ enumeration ranges)",
+      "note": "The abstract names only Low and Very High. The EPA Android app screenshot labels the middle two Medium and High (see categories-epa-android-app-defaults-figure).",
+      "source_ids": [
+        "src-epa-si-lunetta-2015"
+      ],
+      "quote": "Results indicated that MERIS provided robust estimates for Low (10,000–109,000 cells/mL) and Very High (>1,000,000 cells/mL) cell enumeration ranges (approximately 90% and 83%, respectively). However, the results for two intermediate ranges (110,000–299,000 and 300,000–1,000,000 cells/mL) were substandard",
+      "locator": "Record page, 'Description:' field",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-categories-mishra-who-classes",
+      "section": "categories",
+      "value": "Low ≤20,000; Moderate 20,000-100,000; High >100,000; added Very High >1,000,000",
+      "unit": "cells mL^-1 (via CI x 10^8)",
+      "note": "Mishra cites WHO via reference 48, Chorus and Bartram 1999. Very High is Mishra's addition, not WHO's. The area-normalized CI thresholds in the same paragraph are per 0.09 km2 pixel, not per-pixel CI.",
+      "source_ids": [
+        "src-mishra-2019"
+      ],
+      "quote": "Based on the World Health Organization’s (WHO) cell abundance threshold<sup>48</sup>, three magnitude classes were considered for categorizing lakes as Low (≤20,000 cells mL<sup>−1</sup>), Moderate (20,000 ≤ cells mL<sup>−1</sup> ≤ 100,000), and High (>100,000 cells mL<sup>−1</sup>) exposure health risk. ... We have also added ‘Very High’ (V.High) category when estimated cyanobacteria concentration and area-normalized magnitude exceeded 1,000,000 cell mL<sup>−1</sup> and 0.111, respectively.",
+      "locator": "Data and Methods > Annual or seasonal bloom magnitude metric, <p id=\"Par22\">",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-categories-who2003-guideline-levels",
+      "section": "categories",
+      "value": "WHO 2003: 20,000 cyanobacterial cells/ml (relatively low probability of adverse effects; or 10 µg/L chlorophyll-a with cyanobacterial dominance); 100,000 cells/ml (moderate; about 50 µg/L chlorophyll-a); scum in swimming areas (high)",
+      "unit": "cells/ml; chlorophyll-a µg/L",
+      "note": "The PDF text layer renders the micro sign as 'm' ('10 mg chlorophyll-a/litre'); the rendered glyph is presumably µ, as Figure 8.1 on PDF page 172 extracts as '50 µg/l chlorophyll-a'. A checker should view the page. Same levels in Chapter 8, section 8.7 and Table 8.3 (PDF pages 182-183, printed 149-150). Coffer et al. 2021b P20 restates them citing WHO 2003.",
+      "source_ids": [
+        "src-who-2003"
+      ],
+      "quote": "a guideline level of 20 000 cyanobacterial cells/ml (corresponding to 10 mg chlorophyll-a/litre under conditions of cyanobacterial dominance) can be derived. A level of 100 000 cyanobacterial cells/ml (equivalent to approximately 50 mg chlorophyll-a/litre if cyanobacteria dominate) represents a guideline value for a moderate health alert in recreational waters. The presence of cyanobacterial scum in swimming areas represents the highest risk of adverse health effects",
+      "locator": "Executive summary, printed page xxvii (PDF page 28)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-categories-who2021-alert-levels",
+      "section": "categories",
+      "value": "WHO 2021: Vigilance 1-4 mm³/L biovolume or 1-12 µg/L chl-a; Alert Level 1 4-8 mm³/L or 12-24 µg/L chl-a; Alert Level 2 scum or transparency <0.5-1 m (with cyanobacterial dominance)",
+      "unit": "biovolume mm³/L; chlorophyll-a µg/L; Secchi transparency m",
+      "note": "No cells/mL thresholds in the 2021 framework. The Fig. 5.1 layout text on PDF page 17 extracts as 'Up to 3-12 µg/L' for vigilance, which differs from the executive-summary '1–12'; not resolved.",
+      "source_ids": [
+        "src-who-2021"
+      ],
+      "quote": "Cyanobacterial biomass indicator values (thresholds in Fig. 5.1 alert level framework): • Vigilance level – 1–4 mm³/L biovolume or 1–12 µg/L chlorophyll a (with dominance of cyanobacteria). • Alert Level 1 – 4–8 mm³/L biovolume or 12–24 µg/L chlorophyll a (with dominance of cyanobacteria). • Alert Level 2 – scum or transparency <0.5–1 m.",
+      "locator": "Executive summary, Chapter 5 box 'Indicators and guideline values', printed page xvii (PDF page 19)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-categories-who2021-replaces-2003-table",
+      "section": "categories",
+      "value": "WHO 2021's alert level framework replaces the three-tiered 2003 table",
+      "unit": null,
+      "note": "The 2021 text cites 'Table 8.1 in WHO, 2003'; in the fetched 2003 PDF the guideline table is Table 8.3 and Table 8.1 lists toxins. Cell-count tiers of 20,000 and 100,000 are therefore superseded guidance.",
+      "source_ids": [
+        "src-who-2021"
+      ],
+      "quote": "The alert level framework (ALF) given in Fig. 5.1 replaces the three-tiered table given in the 2003 guidelines (Table 8.1 in WHO, 2003).",
+      "locator": "Chapter 5, printed page 68 (PDF page 92)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-categories-clark2017-who-high",
+      "section": "categories",
+      "value": "Clark et al. 2017 ranked lakes by frequency above the WHO high threshold of 100,000 cells/mL",
+      "unit": "cells mL^-1",
+      "note": "Abstract only. The CA report and Coffer 2021b describe Clark 2017's use of 100,000 cells/mL as a demonstration threshold.",
+      "source_ids": [
+        "src-clark-2017-abstract"
+      ],
+      "quote": "Recreational and drinking water sources in Florida and Ohio were ranked from 2008 through 2011 by cyanoHAB frequency above the World Health Organization’s (WHO) high threshold for risk of 100,000 cells mL<sup>−1</sup>.",
+      "locator": "Abstract",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-categories-cyanweb-four-categories-text",
+      "section": "categories",
+      "value": "CyANWeb bins markers into low, medium, high, very high; the guide says defaults are set to WHO limits; users can change them",
+      "unit": null,
+      "note": "No numbers in the text. See the figure claim below.",
+      "source_ids": [
+        "src-epa-cyanweb-guide"
+      ],
+      "quote": "The colors used by pin marker symbology and text are binned into four categories of cyanobacteria concentration: low, medium, high, and very high. The default values for these categories are set to World Health Organization limits.",
+      "locator": "'Markers – user configuration settings', printed page 12 (PDF page 12)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-categories-cyanweb-figure7-values",
+      "section": "categories",
+      "value": "CyANWeb Figure 7 dialog shows Low to 100000; Medium 100000-300000; High 300000-1000000; Very High higher than 1000000; Alert when higher than 1000000",
+      "unit": "cells/mL (unit not shown in the dialog; inferred from the app's display unit)",
+      "note": "Values read visually from the raster screenshot (JPEG, 2545 x 1510 px, PDF page 12). They are not in the PDF text layer, so the quote is the caption only. Whether the screenshot shows defaults or user-edited values is not stated. The values match neither WHO 20,000/100,000 nor Lunetta exactly.",
+      "source_ids": [
+        "src-epa-cyanweb-guide"
+      ],
+      "quote": "Figure 7 - User configuration controls dialog accessible from the main page gear icon.",
+      "locator": "Figure 7, printed page 12 (PDF page 12), dialog 'Modify Marker Color Configuration'",
+      "proposed_status": "probe"
+    },
+    {
+      "id": "cl-cyan-abundance-categories-epa-android-app-defaults-figure",
+      "section": "categories",
+      "value": "CyAN Android app (version B.3.0.0-2017.12.1) dialog shows Low 10,000-109,000; Medium 110,000-299,000; High 300,000-1,000,000; Very High higher than 1,001,000; Alert when higher than 100,000; the guide text calls these defaults '[WHO thresholds]'",
+      "unit": "cells/mL (the app's chart axis is cells per milliliter, PDF page 27)",
+      "note": "Numbers read visually from the Step 2 screenshot on PDF page 10. They equal Lunetta et al. 2015's enumeration ranges, not WHO's 20,000/100,000. The quote is the text above the screenshots. App display unit: 'Y Axis—the concentration of cyanobacteria in cells per milliliter (cells/mL).' (PDF page 27).",
+      "source_ids": [
+        "src-epa-android-guide"
+      ],
+      "quote": "You can change the default color coded values [WHO thresholds] that represent the latest cyanobacteria levels of the markers you have added:",
+      "locator": "Section 3 'How to Adjust the Symbology of Your Markers', printed page 9 (PDF page 10), Step 2 screenshot",
+      "proposed_status": "probe"
+    },
+    {
+      "id": "cl-cyan-abundance-categories-epa-app-user-thresholds",
+      "section": "categories",
+      "value": "EPA: users of CyANWeb can set their own concentration thresholds because states and localities address blooms differently",
+      "unit": null,
+      "note": null,
+      "source_ids": [
+        "src-epa-cyan-app"
+      ],
+      "quote": "Because states and localities may address harmful algal blooms differently, users can determine their own thresholds for cyanobacteria concentrations.",
+      "locator": "Section 'Capabilities'",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-categories-sfei-thresholds",
+      "section": "categories",
+      "value": "SFEI FHAB table (NOAA encoding): raw 0 CI ≤6.310e-05 ≤6,310 cells 'Background Level / Non-Detect'; raw 42 CI 2.015e-04, 20,147 cells 'NOAA Minimum Risk Threshold / Moderate'; raw 100 CI 1.001e-03, 100,111 'High'; raw 130 CI 2.294e-03, 229,416 'FHAB Notification Threshold' (WHO Alert Level 1); raw 184 CI 1.021e-02, 1,020,666 'Very High'; raw 250 >6.327e-02, >6,327,038 'Maximum Detectable Level'",
+      "unit": "CI and Microcystis sp. cells/mL; raw pixel codes are NOAA-encoded (0-250 data), not CyAN DNs",
+      "note": "Row cells quoted in the order Pixel Value, CI, cells/mL, chlorophyll-a, Comments, joined by single spaces. The comment on raw 130 reads '36CI FHAB Notification Threshold', verbatim, with an unexplained '36CI'. The chlorophyll column applies only to SFEI's separate chlorophyll product. Map to CyAN codes only through CI or cells, never through the raw code.",
+      "source_ids": [
+        "src-sfei-pixelvalues"
+      ],
+      "quote": "42 2.015e-04 20,147 2.42 NOAA Minimum Risk Threshold<sup>1</sup> / 'Moderate' Estimated Abundance Threshold<sup>1</sup> ... 100 1.001e-03 100,111 7.70 'High' Estimated Abundance Threshold<sup>1</sup> ... 130 2.294e-03 229,416 12.10 36CI FHAB Notification Threshold<sup>3</sup> ... 184 1.021e-02 1,020,666 27.20 'Very High' Estimated Abundance Threshold<sup>1</sup> ... 250 >6.327e-02 >6,327,038 ≥134.60 Maximum Detectable Level",
+      "locator": "Table id 'ci-conversion-table', rows for pixel values 42, 100, 130, 184, 250",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-categories-sfei-al1-footnote",
+      "section": "categories",
+      "value": "SFEI's FHAB notification threshold corresponds with the WHO Alert Level 1 threshold (linked to doi 10.1016/j.jenvman.2023.119518)",
+      "unit": null,
+      "note": "Footnote 3 of the pixel-values table.",
+      "source_ids": [
+        "src-sfei-pixelvalues"
+      ],
+      "quote": "Threshold for this notification corresponds with the World Health Organization Alert Level 1 threshold .",
+      "locator": "Footnotes above table 'ci-conversion-table', footnote 3 (space before the period comes from the link tag)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-categories-epa-forecast-who-al1",
+      "section": "categories",
+      "value": "EPA's cyanoHAB forecast uses WHO Alert Level 1, >12 µg/L chlorophyll-a with cyanobacteria dominance, converting CI_cyano to chlorophyll-a with Seegers et al. 2021",
+      "unit": "µg L^-1 chlorophyll-a",
+      "note": "Relevant to this repository's third dataset, the EPA experimental forecast. Equation (1) in MathML: Chl = 6620 × CI_cyano − 3.07.",
+      "source_ids": [
+        "src-schaeffer-2024"
+      ],
+      "quote": "The WHO Alert Level 1 serves as a threshold demonstration in this study, defined as > 12 μg L<sup>−1</sup> chlorophyll-a with cyanobacteria dominance.",
+      "locator": "Material and methods > Satellite cyanobacteria response variable, <p id=\"P9\">",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-categories-ca-report-dn132",
+      "section": "categories",
+      "value": "12 µg/L chlorophyll-a is approximately CyAN DN 132 using the Seegers et al. 2021 equation",
+      "unit": "CyAN DN",
+      "note": "Secondary (SCCWRP 2025). Arithmetic check: (12 + 3.07)/6620 = 2.276e-3 gives DN 131.8; (12 + 3.1)/6620 gives DN 131.9. Consistent.",
+      "source_ids": [
+        "src-ca-sccwrp-2025"
+      ],
+      "quote": "A Chl-a concentration of 12 µg/L is approximately equivalent to a DN of 132 using the Seegers et al. (2021) equation.",
+      "locator": "Section 3.1.5, printed page 23 (PDF page 34)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-categories-ca-report-who1999",
+      "section": "categories",
+      "value": "WHO 1999 per the CA report: ≤20,000 cells/mL low; 20,000-100,000 moderate; ≥100,000 high",
+      "unit": "cells/mL",
+      "note": "Secondary restatement of Chorus and Bartram 1999, which could not be fetched. Uses ≥100,000 for high where Mishra uses >100,000.",
+      "source_ids": [
+        "src-ca-sccwrp-2025"
+      ],
+      "quote": "WHO associates bloom abundances of ≤20,000 cells/mL with a low risk of adverse health impacts. A moderate risk of adverse health impacts is defined as between 20,000 cells/mL - 100,000 cells/mL and high risk is defined as ≥100,000 cells/mL (Chorus and Bartram, 1999).",
+      "locator": "Section 3.1.3 Cell abundances, printed page 21 (PDF page 32)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-toxins-epa-criteria-values",
+      "section": "toxins",
+      "value": "EPA recommended recreational criteria or swimming advisory magnitudes: microcystins 8 µg/L; cylindrospermopsin 15 µg/L",
+      "unit": "µg/L toxin concentration",
+      "note": "The EPA web page table gives 8 and 15 without a unit. The fact sheet table gives the unit. Table cells extract in column order.",
+      "source_ids": [
+        "src-epa-rec-criteria-factsheet-2019",
+        "src-epa-habs-recreation"
+      ],
+      "quote": "Table. Recommended magnitude for cyanotoxins. ... Microcystins Cylindrospermopsin 8 µg/L 15 µg/L",
+      "locator": "Fact sheet EPA 822-F-19-001, page 1, 'Table. Recommended magnitude for cyanotoxins.'",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-toxins-epa-values-are-toxin-concentrations",
+      "section": "toxins",
+      "value": "The EPA values are recommended concentrations of the cyanotoxins themselves",
+      "unit": null,
+      "note": null,
+      "source_ids": [
+        "src-epa-habs-recreation"
+      ],
+      "quote": "The Agency has identified recommended concentrations of these cyanotoxins at or below which human health is protected while swimming or participating in other recreational activities in and on the water.",
+      "locator": "Introductory paragraph above the 'Microcystins' table",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-toxins-cyanweb-says-nothing-about-toxicity",
+      "section": "toxins",
+      "value": "EPA: CyAN data cannot tell whether a bloom is toxic; only sampling can; the data indicate the need for toxicity sampling",
+      "unit": null,
+      "note": null,
+      "source_ids": [
+        "src-epa-cyanweb-guide"
+      ],
+      "quote": "There is no way to tell from our cyanobacteria data if the bloom is toxic. Cyanobacteria come in many forms; some produce toxins, some do not. The only way to tell is by water sampling and laboratory testing. CyANWeb says absolutely nothing about bloom toxicity. The data are only indicative of the need for toxicity sampling.",
+      "locator": "'What could go wrong?', scenario B, printed page 26 (PDF page 26)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-toxins-satellite-detects-cyanobacteria-not-toxins",
+      "section": "toxins",
+      "value": "Satellite imagery detects cyanobacteria, not cyanotoxins; blooms without toxins and toxins without visible blooms both occur",
+      "unit": null,
+      "note": "Coffer et al. 2020 Introduction (P5) says the same: 'While satellite technology cannot currently be used to detect toxins (Stumpf et al., 2016)'.",
+      "source_ids": [
+        "src-coffer-2021a",
+        "src-coffer-2020"
+      ],
+      "quote": "Moreover, satellite imagery can only detect cyanobacteria, not the presence of cyanotoxins (Stumpf et al., 2016a), and it is possible for both a visible bloom to be present without cyanotoxins and cyanotoxins to be present without a visible bloom.",
+      "locator": "Discussion > Limitations, <p id=\"P53\">",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-toxins-near-surface-only",
+      "section": "toxins",
+      "value": "Satellite algorithms detect cyanobacteria only near the surface; wind mixing can hide biomass",
+      "unit": null,
+      "note": "Coffer 2021a P22: 'the satellite signal in our spectral region of interest also only represents the water’s surface.' Seegers 2021 P5: 'ocean color measurements are restricted by nature to a spectrally-dependent near-surface layer'.",
+      "source_ids": [
+        "src-mishra-2019",
+        "src-coffer-2021a",
+        "src-seegers-2021"
+      ],
+      "quote": "Satellite algorithms, in bloom conditions, detect cyanobacteria concentration only near the surface. Previous studies have reported that wind stress can increase vertical mixing of cyanobacteria cells and thereby reduce the ability of the ocean or water color sensor to detect the majority of the biomass<sup>12</sup>.",
+      "locator": "Discussion, <p id=\"Par38\">",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-toxins-ci-bands-depth-one-meter",
+      "section": "toxins",
+      "value": "In clear water the CI bands see no deeper than about one meter; particles reduce the depth further",
+      "unit": "m",
+      "note": "Cites Wynne et al. 2010 [15]. MERIS bands, same wavelengths used by OLCI CI.",
+      "source_ids": [
+        "src-stumpf-2012"
+      ],
+      "quote": "Under clear water conditions, the bands used for the CI do not detect light from deeper than one meter [15]; adding particulate matter will increase light attenuation, further reducing depth penetration.",
+      "locator": "Methods > Satellite, first paragraph after the image-processing description",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-toxins-who2021-guideline-values",
+      "section": "toxins",
+      "value": "WHO 2021 recreational guideline values: microcystin 24 µg/L (provisional); cylindrospermopsin 6 µg/L (provisional)",
+      "unit": "µg/L toxin concentration",
+      "note": "Differs from EPA's 8 and 15 µg/L. Both are toxin concentrations.",
+      "source_ids": [
+        "src-who-2021"
+      ],
+      "quote": "Microcystin GVrecreation – 24 µg/L (provisional). • Cylindrospermopsin GVrecreation – 6 µg/L (provisional).",
+      "locator": "Executive summary, Chapter 5 box, printed page xvii (PDF page 19)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-sensors-release-notes-merged-2018",
+      "section": "sensors",
+      "value": "OLCI products are merged Sentinel-3A and 3B from 2018-present; the merge (version 3) keeps the per-pixel maximum",
+      "unit": null,
+      "note": "Version 3 item 1 on page 16: 'This version includes a merged OLCI CIcyano product combining the data from Sentinel-3A and Sentinel-3B from 2018-present. The merged product is the maximum value for each pixel.' No month or day is given.",
+      "source_ids": [
+        "src-release-notes-v6"
+      ],
+      "quote": "The OLCI products are merged Sentinel-3A and 3B from 2018-present.",
+      "locator": "Page 6",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-sensors-s3b-launch-2018-04-25",
+      "section": "sensors",
+      "value": "Sentinel-3B launched 25 April 2018 (Sentinel-3A 16 February 2016)",
+      "unit": "date",
+      "note": "NASA LAADS page agrees: 'Sentinel-3A was launched on February 16th 2016 and Sentinel-3B was launched on April 25th 2018.'",
+      "source_ids": [
+        "src-sentiwiki-s3-mission",
+        "src-ladsweb-olci"
+      ],
+      "quote": "Sentinel-3A was launched on 16 February 2016 and Sentinel-3B was launched on 25 April 2018.",
+      "locator": "S3 Mission page, mission overview paragraph",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-sensors-s3b-olci-l1-release-2018-12-12",
+      "section": "sensors",
+      "value": "Sentinel-3B OLCI Level-1 products released to users from 12 December 2018, the first S3B OLCI data after commissioning",
+      "unit": "date",
+      "note": "Archived copy of the EUMETSAT news item dated 2018-12-06; the live URL is 404.",
+      "source_ids": [
+        "src-eumetsat-s3b-olci-release"
+      ],
+      "quote": "From 12 December 2018, Sentinel-3B OLCI Level-1 Products will be available at Near Real Time (NRT) and Non Time Critical (NTC) timeliness. ... These data are the first Sentinel-3B OLCI data to be released after the successful completion of the Sentinel-3B commissioning phase.",
+      "locator": "News item body, first two paragraphs",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-sensors-obdaac-earliest-s3b-l1-granule",
+      "section": "sensors",
+      "value": "Earliest Sentinel-3B OLCI L1B EFR granule in the OB.DAAC collection starts 2018-05-08T00:56:33Z (reprocessed file of 2024-06-20)",
+      "unit": "UTC timestamp",
+      "note": "A catalog observation, not a statement of when S3B enters CyAN. Collection OLCIS3B_L1_EFR, concept C1615893450-OB_DAAC.",
+      "source_ids": [
+        "src-cmr-s3b-l1-granules"
+      ],
+      "quote": "S3B_OL_1_EFR____20180508T005621_20180508T005836_20240620T112111_0135_002_175_1260_MAR_R_NT_004.zip",
+      "locator": "feed.entry[0].producer_granule_id; feed.entry[0].time_start = 2018-05-08T00:56:33.000Z",
+      "proposed_status": "probe"
+    },
+    {
+      "id": "cl-cyan-abundance-sensors-cyanweb-s3b-july-2020",
+      "section": "sensors",
+      "value": "EPA CyANWeb guide (2021): daily data before July 2020 came from S3A only; the S3B data stream came online in late July 2020",
+      "unit": null,
+      "note": "Describes the app's data stream at the time, possibly an earlier processing version. Conflicts in wording with the release notes' '2018-present'. See discrepancies.",
+      "source_ids": [
+        "src-epa-cyanweb-guide"
+      ],
+      "quote": "Daily data prior to July 2020 were derived from the single S3A and have limited spatial coverage of CONUS. In late July 2020, the S3B satellite data stream came online and because of their separate orbital tracks, the spatial coverage of CONUS became much more extensive.",
+      "locator": "'Temporal Aspects', printed page 23 (PDF page 23)",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-sensors-nasa-page-s3b-2018",
+      "section": "sensors",
+      "value": "NASA project page: OLCI on Sentinel-3A (2016-present) and Sentinel-3B (2018-present)",
+      "unit": null,
+      "note": "Same page: 'The temporal resolution depends on the sensor and date with best coverage since 2018, as images utilize sensors on two Sentinel-3 satellites.'",
+      "source_ids": [
+        "src-nasa-earthdata-cyan-project"
+      ],
+      "quote": "The CI data products available are GeoTIFF dailies and a 7-day maximum value composites from different ESA sensors: MERIS (2002-2012) and the Ocean and Land Colour Instrument (OLCI) on Sentinel-3A (2016-present) and OLCI on Sentinel-3B (2018-present).",
+      "locator": "Project overview paragraph under 'Data Centers OB.DAAC'",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-sensors-coffer2020-s3a-only",
+      "section": "sensors",
+      "value": "Coffer et al. 2020 used Sentinel-3A OLCI only for 2017-2018 and expected S3B in future analyses",
+      "unit": null,
+      "note": "Coffer et al. 2021b P12 also used Sentinel-3A only for 2017-2019. These studies predate the merged reprocessing.",
+      "source_ids": [
+        "src-coffer-2020",
+        "src-coffer-2021b"
+      ],
+      "quote": "With the inclusion of Sentinel-3B data in future analyses, temporal coverage will increase to near-daily across CONUS.",
+      "locator": "Data and methods > Satellite observations, <p id=\"P12\">",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-conversion-spectral-shape-681",
+      "section": "conversion",
+      "value": "The cyanobacteria index is the negative of a spectral shape centered at 681 nm and evaluates chlorophyll-a absorption at 681 nm",
+      "unit": null,
+      "note": "Drafted by the parent agent from the preserved copy datasets/cyan/reference/mishra-2019-europepmc-PMC6892802.xml, for one sentence of the page. Quoted in docs/probes/2026-09-23-cyan-vs-clms-assertions.md A2 as checked.",
+      "source_ids": [
+        "src-mishra-2019"
+      ],
+      "quote": "Cyanobacteria Index (CI) is calculated by centering the spectral shape at 681 nm and changing the sign of SS, or CI = −SS (681).The CI evaluates Chl-a absorption at 681 nm.",
+      "locator": "Data and Methods > Cyanobacteria estimation algorithm, paragraph after the spectral shape equation",
+      "proposed_status": "documented"
+    },
+    {
+      "id": "cl-cyan-abundance-conversion-phycocyanin-620",
+      "section": "conversion",
+      "value": "A second spectral shape over 620, 665, and 681 nm tests for phycocyanin, a pigment characteristic of cyanobacteria, and 620 nm is its absorption peak",
+      "unit": null,
+      "note": "Drafted by the parent agent from the same preserved copy. The sign convention of this test differs between Mishra 2019 and Coffer 2020, see discrepancies. The page names the test without its sign.",
+      "source_ids": [
+        "src-mishra-2019"
+      ],
+      "quote": "For more specific identification of cyanobacteria, a SS using 620, 665, and 681 nm was used to identify the presence of PC, a characteristic pigment in this taxonomic division ... Inclusion of 620 nm, which is the absorption peak of PC, a characteristic photopigment in cyanobacteria, reduces the false detection issue.",
+      "locator": "Data and Methods > Cyanobacteria estimation algorithm",
+      "proposed_status": "documented"
+    }
+  ],
+  "not_found": [
+    {
+      "topic": "Wynne et al. 2010, the original derivation of the CI-to-cells relationship",
+      "sources_tried": [
+        "https://aslopubs.onlinelibrary.wiley.com/doi/pdf/10.4319/lo.2010.55.5.2025 (HTTP 403)",
+        "https://aslopubs.onlinelibrary.wiley.com/doi/10.4319/lo.2010.55.5.2025 (HTTP 403)",
+        "OpenAlex: closed access, no repository copy"
+      ],
+      "note": "The fit statistics (Microcystis, r2 0.42, possible two-fold underestimate, CI 0.001 about 10^5 cells/mL) come from Stumpf et al. 2012 by the same NOAA group. The sample size (n = 12, per the CA report) and the regression form were not seen in a primary copy."
+    },
+    {
+      "topic": "Lunetta et al. 2015 full text (equation, R2, sample counts)",
+      "sources_tried": [
+        "https://api.openalex.org/works/https://doi.org/10.1016/j.rse.2014.06.008 (closed access, no repository copy)",
+        "Europe PMC search by DOI (0 full-text hits)"
+      ],
+      "note": "Only the abstract on the EPA Science Inventory record was reached. The CA report's R2 0.87, n = 2068 and n = 579 remain secondary."
+    },
+    {
+      "topic": "Clark et al. 2017 full text (MAPE 28.6%)",
+      "sources_tried": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6145495/fullTextXML (HTTP 500)",
+        "https://repository.library.noaa.gov/view/noaa/20523/noaa_20523_DS1.pdf (HTTP 403)",
+        "NCBI efetch PMC6145495 (abstract only; publisher disallows full-text XML)"
+      ],
+      "note": "MAPE 28.6% is known only through Mishra 2019."
+    },
+    {
+      "topic": "Schaeffer et al. 2018 CyAN app paper (would document app defaults)",
+      "sources_tried": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6781247/fullTextXML (HTTP 500)",
+        "https://repository.library.noaa.gov/view/noaa/22326/noaa_22326_DS1.pdf (HTTP 403)",
+        "NCBI efetch PMC6781247 (abstract only; nothing on categories; file deleted)"
+      ],
+      "note": "App category defaults are known only from the user-guide screenshots."
+    },
+    {
+      "topic": "WHO 1999, Chorus and Bartram, Toxic Cyanobacteria in Water (primary text of the 20,000 and 100,000 cells/mL levels)",
+      "sources_tried": [
+        "https://www.nrc.gov/docs/ML1130/ML11301A227.pdf (HTTP 403)"
+      ],
+      "note": "WHO 2003 (Guidelines for safe recreational water environments, Vol. 1) carries the same levels and was fetched. The 1999 text was not fetched from WHO IRIS in this pass."
+    },
+    {
+      "topic": "WHO 2021 Toxic Cyanobacteria in Water, 2nd edition (Chorus and Welker)",
+      "sources_tried": [],
+      "note": "Not fetched. The WHO 2021 recreational guidelines, which carry the alert levels, were fetched instead."
+    },
+    {
+      "topic": "WHO 2021 executive summary on NCBI Bookshelf",
+      "sources_tried": [
+        "https://www.ncbi.nlm.nih.gov/books/NBK572625/ (HTTP 200 but a reCAPTCHA 'Checking your browser' page; file deleted)"
+      ],
+      "note": "Used the WHO IRIS PDF instead."
+    },
+    {
+      "topic": "Coffer et al. 2021a and 2021b NOAA repository PDFs",
+      "sources_tried": [
+        "https://repository.library.noaa.gov/view/noaa/50747/noaa_50747_DS1.pdf (HTTP 403)",
+        "https://repository.library.noaa.gov/view/noaa/50748/noaa_50748_DS1.pdf (HTTP 403)"
+      ],
+      "note": "Full texts obtained from PubMed Central through NCBI efetch instead."
+    },
+    {
+      "topic": "SFEI satellite portal https://fhab.sfei.org/",
+      "sources_tried": [],
+      "note": "Not attempted, per the coordinator: Cloudflare bot check (HTTP 403 in headless Chrome). The public API documentation pages were used."
+    },
+    {
+      "topic": "A primary NOAA definition of a 'Minimum Risk Threshold' at about 20,000 cells/mL",
+      "sources_tried": [
+        "https://cdn.coastalscience.noaa.gov/hab-data/forecasts/LErie_forecast/web_latest/current_bulletin.pdf (HTTP 200)",
+        "https://coastalscience.noaa.gov/science-areas/habs/hab-forecasts/lake-erie/faqs/ (HTTP 200; no threshold text; file deleted)"
+      ],
+      "note": "NOAA's bulletin calls 20,000 cells/mL 'The estimated threshold of cyanobacteria detection'. The phrase 'Minimum Risk Threshold' appears only on the SFEI table."
+    },
+    {
+      "topic": "EUMETSAT live news page for the Sentinel-3B OLCI Level-1 release",
+      "sources_tried": [
+        "https://www.eumetsat.int/website/home/News/DAT_4166827.html?lang=EN&pState=1 (HTTP 404)",
+        "https://www.eumetsat.int/website/home/News/DAT_4166827.html (HTTP 404)"
+      ],
+      "note": "Used the Internet Archive capture of 2020-10-18 (id_ raw mode)."
+    },
+    {
+      "topic": "ESA 'Sentinel-3B launched' article and a 2018 OLCI L1B product notice",
+      "sources_tried": [
+        "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-3/Sentinel-3B_launched (HTTP 404)",
+        "https://sentinels.copernicus.eu/documents/247904/2702575/Sentinel-3-OLCI-Product-Notice-Level-1B (HTTP 200, but a 2023 issue without the 2018 release date; file deleted)"
+      ],
+      "note": "Launch date taken from SentiWiki and NASA LAADS."
+    },
+    {
+      "topic": "EPA web page for the 2019 recreational criteria at /wqc/",
+      "sources_tried": [
+        "https://www.epa.gov/wqc/recommended-human-health-recreational-ambient-water-quality-criteria-or-swimming-advisories (HTTP 404)"
+      ],
+      "note": "Used the EPA HABs recreation page and the 2019 fact sheet."
+    },
+    {
+      "topic": "Date Sentinel-3B first enters the CyAN merged files",
+      "sources_tried": [
+        "src-release-notes-v6",
+        "src-nasa-earthdata-cyan-project",
+        "src-epa-cyanweb-guide",
+        "src-epa-cyan-app"
+      ],
+      "note": "No page gives a month or day. See the discrepancy entry."
+    }
+  ],
+  "discrepancies": [
+    {
+      "topic": "NASA's stated cells/mL range versus the arithmetic of the DN formula and the 10^8 factor",
+      "statements": [
+        {
+          "source_id": "src-nasa-earthdata-cyan-project",
+          "quote": "To convert Digital Number (DN) to CI_cyano: CIcyano=10^(DN∗0.011714−4.1870866) That range is ~10,000 to 7,000,000 cells/ml."
+        },
+        {
+          "source_id": "src-mishra-2019",
+          "quote": "we applied a relationship between CI and cyanobacterial cell concentration of 10<sup>8</sup> cells mL<sup>−1</sup> per 1 unit of CI-cyano<sup>11</sup>"
+        },
+        {
+          "source_id": "src-coffer-2021a",
+          "quote": "which is preliminarily estimated to be between 10,000 and 20,000 cells/mL"
+        }
+      ],
+      "note": "Computed with the documented formula and factor: DN 1 gives CI_cyano 6.677708e-05, 6,678 cells/mL. DN 253 gives CI_cyano 5.977993e-02, 5,977,993 cells/mL. 10,000 cells/mL corresponds to DN 15.97 (DN 16 gives 10,008). 7,000,000 cells/mL corresponds to DN 258.85, outside the 1-253 data range. So the page's range is about 1.5 times too high at the low end and about 1.17 times too high at the high end. No fetched source explains it. Two unconfirmed readings: the low end may be the detection-limit estimate of 10,000-20,000 cells/mL rather than DN 1; the high end matches a NOAA-style scaling, 10^(0.012 x code - 4.2) x 10^8 at code 253 = 6,854,882. SFEI's NOAA-encoded table tops out at code 250, >6,327,038. The CA report repeats '~10-20,000 – 7,000,000 cells/mL'. Unresolved."
+    },
+    {
+      "topic": "Sign of the SS(665) phycocyanin test that separates cyanobacteria",
+      "statements": [
+        {
+          "source_id": "src-mishra-2019",
+          "quote": "In this case, a conditional negative SS (665) value indicates the presence of PC."
+        },
+        {
+          "source_id": "src-coffer-2020",
+          "quote": "Accordingly, when SS (665) < 0, cyanobacteria are presumed absent, and when SS (665) > 0, cyanobacteria are presumed present."
+        },
+        {
+          "source_id": "src-ca-sccwrp-2025",
+          "quote": "(SS(665); λ- = 620 nm; λ+ = 781 nm) that is sensitive to phycocyanin absorption at 681 nm."
+        }
+      ],
+      "note": "Mishra 2019 and Coffer 2020 give opposite signs for cyanobacteria presence. The sign likely depends on whether SS or -SS is reported, but neither paper says so. The CA report follows Coffer 2020 and also gives λ+ = 781 nm and phycocyanin absorption at 681 nm, where Mishra and Coffer give 681 nm and 620 nm. Not needed for the dashboard text. It bears on any sentence that explains how the index separates cyanobacteria."
+    },
+    {
+      "topic": "Units of CI_cyano",
+      "statements": [
+        {
+          "source_id": "src-release-notes-v6",
+          "quote": ":units = \"CI_stumpf:sr^-1,CI_cyano:sr^-1"
+        },
+        {
+          "source_id": "src-mishra-2019",
+          "quote": "Bloom magnitude was expressed in CI units, which is dimensionless."
+        },
+        {
+          "source_id": "src-sfei-reference",
+          "quote": "Values are unitless by can be related to estimated Microcystis sp. cell concentration"
+        }
+      ],
+      "note": "The binned-file metadata lists inverse steradians. The papers and SFEI call the index dimensionless or unitless. Schaeffer 2024 P19 also says '(unitless)'. The 10^8 factor is stated as cells mL^-1 per unit CI, so the page can present CI as unitless and cells/mL as derived."
+    },
+    {
+      "topic": "Coffer et al. 2020 detection limit 'at or above a CI value of 1'",
+      "statements": [
+        {
+          "source_id": "src-coffer-2020",
+          "quote": "The minimum detection limit for cyanobacteria is currently estimated to be at or above a CI value of 1. For reference, this corresponds to the World Health Organization (WHO) low-risk threshold"
+        },
+        {
+          "source_id": "src-schaeffer-2024",
+          "quote": "(unitless) was suggested to be 1 × 10<sup>−4</sup> (Mishra et al., 2023; Stumpf et al., 2016)"
+        }
+      ],
+      "note": "With the 10^8 factor, CI_cyano = 1 is 100,000,000 cells/mL, far above any DN (maximum CI 0.0598). The sentence cannot refer to CI_cyano on the release-notes scale. It may refer to DN 1 or a rescaled index. Treat as doubtful and do not cite it for a detection limit."
+    },
+    {
+      "topic": "EPA app default categories: 'WHO' in the text, Lunetta-like numbers in the screenshots",
+      "statements": [
+        {
+          "source_id": "src-epa-android-guide",
+          "quote": "You can change the default color coded values [WHO thresholds] that represent the latest cyanobacteria levels of the markers you have added:"
+        },
+        {
+          "source_id": "src-epa-cyanweb-guide",
+          "quote": "The default values for these categories are set to World Health Organization limits."
+        },
+        {
+          "source_id": "src-who-2003",
+          "quote": "a guideline level of 20 000 cyanobacterial cells/ml"
+        },
+        {
+          "source_id": "src-epa-si-lunetta-2015",
+          "quote": "Low (10,000–109,000 cells/mL) and Very High (>1,000,000 cells/mL)"
+        }
+      ],
+      "note": "Read visually from the screenshots: the Android dialog shows 10,000-109,000 / 110,000-299,000 / 300,000-1,000,000 / >1,001,000, which are Lunetta's enumeration ranges. The CyANWeb dialog shows to 100000 / 100000-300000 / 300000-1000000 / >1000000. WHO's cell guidance levels are 20,000 and 100,000. Either the guides' 'WHO' label is loose, or the screenshots show non-default values. The live CyANWeb defaults were not checked. The CyANWeb site needs a login per its guide."
+    },
+    {
+      "topic": "When Sentinel-3B data enter the CyAN merged product",
+      "statements": [
+        {
+          "source_id": "src-release-notes-v6",
+          "quote": "The OLCI products are merged Sentinel-3A and 3B from 2018-present."
+        },
+        {
+          "source_id": "src-epa-cyanweb-guide",
+          "quote": "In late July 2020, the S3B satellite data stream came online"
+        },
+        {
+          "source_id": "src-eumetsat-s3b-olci-release",
+          "quote": "From 12 December 2018, Sentinel-3B OLCI Level-1 Products will be available"
+        },
+        {
+          "source_id": "src-sentiwiki-s3-mission",
+          "quote": "Sentinel-3B was launched on 25 April 2018."
+        },
+        {
+          "source_id": "src-sfei-reference",
+          "quote": "Starting in 2024, daily imagery from either/both Sentinel-3A and Sentinel-3B were merged."
+        }
+      ],
+      "note": "No fetched page gives the first date of Sentinel-3B data in the merged CyAN files. Bounds: launch 2018-04-25; earliest OB.DAAC S3B L1B granule 2018-05-08 (probe); public L1 release 2018-12-12; release notes say 2018 without a month. The 2021 CyANWeb guide says S3B entered the app's daily stream in late July 2020, which likely describes the pre-reprocessing stream, not the version 6 archive. SFEI's 2024 date is for SFEI's own processing. A file-level check, for example the L3b 'input_sources' of a 2018 daily file, would settle it."
+    },
+    {
+      "topic": "WHO 2021 cites the wrong 2003 table number, and its vigilance chlorophyll-a range differs between the summary and the figure",
+      "statements": [
+        {
+          "source_id": "src-who-2021",
+          "quote": "replaces the three-tiered table given in the 2003 guidelines (Table 8.1 in WHO, 2003)."
+        },
+        {
+          "source_id": "src-who-2021",
+          "quote": "Vigilance level – 1–4 mm³/L biovolume or 1–12 µg/L chlorophyll a (with dominance of cyanobacteria)."
+        },
+        {
+          "source_id": "src-who-2021",
+          "quote": "Microscopy showing dominance of cyanobacteria with up to 1-4 mm3/L, or Up to 3-12 µg/L chlorophyll-a with dominance of cyanobacteria."
+        }
+      ],
+      "note": "In the fetched WHO 2003 PDF the three-tier guideline table is Table 8.3 (PDF page 183); Table 8.1 lists toxins. The Fig. 5.1 text (PDF page 15) extracts as 'Up to 3-12 µg/L' for vigilance, while the executive summary says 1-12. Alert Level 1 is 12 µg/L in both places, which is the value the EPA forecast and SFEI use."
+    },
+    {
+      "topic": "Size of the uncertainty in the cell conversion",
+      "statements": [
+        {
+          "source_id": "src-stumpf-2012",
+          "quote": "Current uncertainty in the conversion of CI to cell concentration of about two-fold"
+        },
+        {
+          "source_id": "src-mishra-2019",
+          "quote": "with more meaningful error estimates (MAPE = 28.6%)"
+        },
+        {
+          "source_id": "src-epa-si-lunetta-2015",
+          "quote": "were substandard, at approximately 28% and 40%, respectively."
+        }
+      ],
+      "note": "Different metrics, not a direct contradiction: a two-fold bias for the Lake Erie Microcystis fit (r2 0.42); MAPE 28.6% for the Clark 2017 revision (reported by Mishra); category agreement of 28-90% across Lunetta's ranges. The page can say the factor is uncertain by up to about a factor of two and is species-dependent."
+    },
+    {
+      "topic": "Pigment specificity claimed by SFEI",
+      "statements": [
+        {
+          "source_id": "src-sfei-reference",
+          "quote": "phycocyanin, an accessory pigment in photosynthesis specific to Microcystis sp."
+        },
+        {
+          "source_id": "src-mishra-2019",
+          "quote": "to identify the presence of PC, a characteristic pigment in this taxonomic division"
+        }
+      ],
+      "note": "Mishra describes phycocyanin as characteristic of cyanobacteria as a division, not of Microcystis. The SFEI sentence looks wrong. Do not reuse it."
+    }
+  ],
+  "limitations": [
+    "Quote rendering from XML and HTML: all tags are removed except <sup> and <sub>, which are kept literally as '<sup>' and '<sub>'. Entities are decoded. No-break space (U+00A0), thin space (U+2009), and hair space (U+200A) become ordinary spaces. Runs of whitespace collapse to one space. In HTML, tags are replaced by a space before collapsing; in XML, tags are removed without a space, so '<xref>' citation numbers inside <sup> join the text. MathML becomes '[MATH]', and no quote spans a [MATH] token.",
+    "Quotes from PDFs come from pdftotext (poppler) default-mode text, whitespace collapsed. ' ... ' in a quote joins two verbatim segments from the same locator. Each segment was checked by script as an exact substring of the normalized saved file (49 claims, 0 failures).",
+    "The WHO 2003 PDF text layer encodes the micro sign as 'm' in several places ('10 mg chlorophyll-a/litre'). Quotes keep the extracted 'mg'; the rendered page presumably shows µg. Figure 8.1 in the same PDF extracts as 'µg/l'.",
+    "The two app-default category claims are figure readings from raster screenshots (PDF page 12 of EPA/600/B-21/072, PDF page 10 of EPA/600/B-19/086). Their numbers are not in any text layer. The quote field holds the adjacent verbatim text. They are proposed as 'probe', not 'documented'.",
+    "The CA report (SCCWRP 2025), the SFEI API pages, and Stumpf et al. 2012 on Wynne 2010 are secondary for the statements they relay from WHO, Lunetta, Coffer, or Wynne. The notes say so claim by claim.",
+    "The NOAA bulletin URL is overwritten with each new bulletin. The saved copy is the 2026-09-25 bulletin.",
+    "The EUMETSAT release notice is an Internet Archive capture, because the live page returns 404.",
+    "The arithmetic in the discrepancy notes (DN to CI to cells, thresholds to DN) is computed from the documented formula and factor. It is not a source statement. First CyAN DN at or above each threshold: 10,000 cells/mL DN 16; 20,000 DN 42 (20,179); 100,000 DN 102 (101,799); 1,000,000 DN 187 (1,007,932); 12 µg/L chl-a via Seegers DN 132 (228,645 cells/mL-equivalent).",
+    "Mishra 2019 and the release notes are byte-identical re-fetches of the repository's existing reference copies. The sha256 values are in sources-manifest.json.",
+    "Access times are 2026-09-25 between 16:57 and 17:18 UTC. Every source was fetched with curl and the user agent 'public-water-quality-pipeline/0.1 (research)'. WebSearch was used only to find URLs. No quote comes from a search snippet or from WebFetch."
+  ]
+}

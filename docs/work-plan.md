@@ -5,7 +5,7 @@ A checked box means the work exists in this repository with evidence. Every step
 
 ## Next session
 
-Step 1f approved and committed 2026-09-23 after five rounds of feedback, and deployed on Vercel the same day, [hosting note](vercel-hosting.md). On 2026-09-25 a scientist's feedback led the owner to put a revision of 1f ahead of 1g. Part 1, the record and plan, is approved, [record](reviews/2026-09-25-cyan-lake-dashboard-scientist-feedback.md). Part 2, the page changes, is committed, [record](reviews/2026-09-25-cyan-lake-dashboard-revision-part-2.md). Part 3, what the index means and the SFEI survey, is authorized and next. Pushing, which redeploys the Vercel site, awaits the owner. Then 1g, the AWS note for CyAN, and a Codex check of the probe record on the EPA and Copernicus assertions. Step 1b needs an Earthdata Login token in `.env` before any download. The dry run needs none.
+Step 1f approved and committed 2026-09-23 after five rounds of feedback, and deployed on Vercel the same day, [hosting note](vercel-hosting.md). On 2026-09-25 a scientist's feedback led the owner to put a revision of 1f ahead of 1g. Part 1, the record and plan, is approved, [record](reviews/2026-09-25-cyan-lake-dashboard-scientist-feedback.md). Part 2, the page changes, is committed, [record](reviews/2026-09-25-cyan-lake-dashboard-revision-part-2.md). Part 3, what the index means and the SFEI survey, is committed, [record](reviews/2026-09-25-cyan-lake-dashboard-revision-part-3.md). Part 4 awaits the owner's authorization. Pushing, which redeploys the Vercel site, awaits the owner. Then 1g, the AWS note for CyAN, and a Codex check of the probe record on the EPA and Copernicus assertions. Step 1b needs an Earthdata Login token in `.env` before any download. The dry run needs none.
 
 ## How a dataset is judged
 
@@ -46,7 +46,7 @@ Each sub-step is one authorized unit.
 - [ ] 1f revision, after a scientist's feedback of 2026-09-25. Each part is one authorized unit. [Record](reviews/2026-09-25-cyan-lake-dashboard-scientist-feedback.md).
   - [x] Part 1, delivered 2026-09-25, corrected after a Codex review, and approved the same day. Feedback, dispositions, the hosting analysis for historical pixels, the baseline question, [measurement 12](measurements.md#12-the-whole-weekly-record-of-per-lake-pixel-images-what-it-costs-in-bytes-2026-09-24), and a Codex review request.
   - [x] Part 2, delivered 2026-09-25, corrected after a Codex review, and committed on the owner's authorization the same day. Bloom duration, the heat scale by default, a slider for the bloom line, US states and sorting, coverage per week by class, a year-over-year plot, and weeks the reader compares. [Record](reviews/2026-09-25-cyan-lake-dashboard-revision-part-2.md), [decision 0003](decisions/0003-comparisons-across-time.md), [measurement 13](measurements.md#13-zero-medians-and-land-coded-lake-pixels-in-the-weekly-record-2026-09-25).
-  - [ ] Part 3. What the index means, researched and checked, and a survey of the SFEI map.
+  - [x] Part 3, delivered 2026-09-25, corrected after two Codex passes, and committed on the owner's authorization the same day. What the index means, researched by an agent and checked by Codex, estimates and named levels on the page, the single-satellite years, and a survey of the SFEI map through its documentation. [Record](reviews/2026-09-25-cyan-lake-dashboard-revision-part-3.md), [probe record](probes/2026-09-25-sfei-fhab-survey.md), [measurement 14](measurements.md#14-weekly-lake-coverage-by-year-before-and-after-the-second-satellite-2026-09-25).
   - [ ] Part 4. Historical pixel images on Vercel, option B chosen by the owner on 2026-09-25: the newest 52 weeks and one week per month back to 2016. Stepping through time, and the compared weeks as pixel maps.
   - [x] Part 5, a baseline, replaced on 2026-09-25 by decision 0003: the reader chooses the weeks, and nothing is computed across them.
 - [ ] 1g. AWS note. In-region read from the Earthdata Cloud bucket, weekly schedule, Lambda unit, provenance, backfill, reprocessing watch, costs from dated pages.
@@ -79,3 +79,9 @@ Each sub-step is one authorized unit.
 - [ ] Engineering review with the platform team.
 
 Later datasets, Sentinel-2 and in situ sources, are out of scope until the owner adds them, assumption A1.
+
+## Candidates, not scheduled
+
+Ideas the owner has put on hold. Each waits for a specific request from a user.
+
+- Lake dashboard features S3 and S5 to S9 from the survey of the SFEI map, held on 2026-09-25. The list, with what each would need, is in [the probe record](probes/2026-09-25-sfei-fhab-survey.md#candidate-features-for-the-lake-dashboard).

@@ -18,6 +18,7 @@ Every fact carries a status. `documented [cl-...]` cites a claim in [reference/c
 | Nodata, fill, detection limit | 255 is no data. 0 is below the detection limit and is a measurement. The catalog variable declares no fill value | documented [cl-cyan-encoding-dn-table] [cl-cyan-encoding-band1-int8] |
 | Access | Search through the OB.DAAC `cyan_file_search` endpoint. Download with an Earthdata Login through `getfile`, or read in region from the Earthdata Cloud bucket with temporary credentials | documented [cl-cyan-access-file-search-endpoint] [cl-cyan-access-edl-required] [cl-cyan-access-s3-bucket] |
 | Full-archive size and the subset, assumption A16 | Daily whole-region files are about 4.5 MB and weekly ones about 5.9 MB. The weekly whole-region record from 2016 is a few gigabytes. The daily record is over the local limit. Scope is assumption A8 | probe and `prior`, section 6 |
+| What the index means | Near-surface cyanobacterial biomass, not toxin. Times 10^8 it estimates Microcystis-equivalent cells per mL, with about twofold uncertainty in earlier Lake Erie work | documented, section 4 and section 9 |
 | Likely role | The observed bloom signal. Per-lake statistics keyed by COMID become the target and features. Never validate it against the EPA forecast, which derives from it | section 9 |
 
 ## 1. What it is
@@ -44,6 +45,9 @@ EPA describes its own CyANWeb application over these data as experimental and pr
 | OLCI on Sentinel-3A and 3B | Catalog extent starts 2016-04-25, open-ended. The earliest weekly file covers 2016-04-24 to 2016-04-30 and the earliest daily file 2016-04-25. See discrepancy D1 | Daily and 7-day composites at 300 m | documented [cl-cyan-temporal-olci-collection-start] [cl-cyan-temporal-daily-and-7day], probe [record](../../docs/probes/2026-09-22-cyan-format-and-start.md) |
 
 The OLCI products are merged Sentinel-3A and 3B from 2018 onward. The merged value is the maximum for each pixel. documented [cl-cyan-temporal-merged-s3a-s3b-2018] [cl-cyan-temporal-merged-max-per-pixel]
+Sentinel-3B launched on 2018-04-25. Its first OLCI Level-1 data after commissioning were released to users from 2018-12-12. No source gives the first week with Sentinel-3B data in these files. documented [cl-cyan-abundance-sensors-s3b-launch-2018-04-25] [cl-cyan-abundance-sensors-s3b-olci-l1-release-2018-12-12] [cl-cyan-abundance-sensors-release-notes-merged-2018]
+From May to October, the share of lake-weeks with a value steps up between 2018 and 2019. 2018 sits with 2016 and 2017. measured, [measurement 14](../../docs/measurements.md#14-weekly-lake-coverage-by-year-before-and-after-the-second-satellite-2026-09-25)
+EPA's CyANWeb guide of 2021 says its daily stream added Sentinel-3B in late July 2020. That describes the application at the time, not the version 6 archive. documented [cl-cyan-abundance-sensors-cyanweb-s3b-july-2020], discrepancy D11
 Both the daily and the 7-day composite hold the maximum index over their period. documented [cl-cyan-temporal-maximum-composite]
 
 Latency. No fetched page states when a new composite appears. On the pull of 2026-09-22 the newest weekly file was 3 days past its window end and the newest daily file 1 day. Those ages at retrieval bound the publication delay from above. The delay itself stays `unverified`. measured, [measurement 4](../../docs/measurements.md#4-the-assumption-a8-pull-598-files-335-gb-no-failure-newest-weekly-file-3-days-old-at-retrieval-2026-09-22)
@@ -89,7 +93,25 @@ The upstream binned file carries `CI_stumpf`, `CI_cyano`, `CI_noncyano`, `MCI_st
 A snow and ice flag and a mixed-pixel flag have been applied but are not yet verified, section 5.
 A separate lake biophysical water quality flag dataset is cited in the release notes. The notes do not say that it ships with these files. documented [cl-cyan-issues-biophysical-flag-dataset]
 
-Cell counts. The project page says the digital-number range corresponds to roughly 10,000 to 7,000,000 cells per milliliter. It gives no conversion factor. The release notes give none either. documented [cl-cyan-encoding-cells-per-ml-range], `unverified` factor. Any cell-count statement in this repository names its own source and its uncertainty.
+What the index reads. The index is the negative of a spectral shape centered at 681 nm, where chlorophyll-a absorbs. A second shape over 620, 665, and 681 nm tests for phycocyanin, a pigment characteristic of cyanobacteria. documented [cl-cyan-abundance-conversion-spectral-shape-681] [cl-cyan-abundance-conversion-phycocyanin-620]. The papers disagree on the sign of the second test, discrepancy D9.
+
+Cell counts. The release notes say codes convert to an estimated cyanobacteria abundance, but they give only the index formula. documented [cl-cyan-abundance-conversion-release-notes-no-factor]
+Multiplying the index by 10^8 gives Microcystis-equivalent cells per mL. The factor was developed from satellite index values and Microcystis counts in western Lake Erie. documented [cl-cyan-abundance-conversion-factor-1e8-mishra] [cl-cyan-abundance-conversion-origin-lake-erie-microcystis] [cl-cyan-abundance-conversion-factor-intuitive-metric]
+Earlier Lake Erie work reported about twofold uncertainty in the conversion. Mishra et al. 2019 expected more than 30 percent difference from point samples of cell density. documented [cl-cyan-abundance-conversion-ci-0001-1e5-twofold] [cl-cyan-abundance-conversion-wynne2010-fit-r2] [cl-cyan-abundance-conversion-uncertainty-over-30pct]
+With the formula and the factor, code 1 gives about 6,678 and code 253 about 5,977,993 cells per mL. The project page says roughly 10,000 to 7,000,000, discrepancy D8. documented [cl-cyan-encoding-cells-per-ml-range] [cl-cyan-abundance-range-nasa-10000-7000000]. The endpoints are arithmetic, confirmed by Codex, [check record](reference/cyan-abundance-checks.json).
+One EPA-led study preliminarily estimated the sensor's detection limit at 10,000 to 20,000 cells per mL. documented [cl-cyan-abundance-range-detection-limit-10000-20000]
+California's program discourages cell densities estimated from OLCI imagery without further validation and study. The conversion is less understood where several cyanobacteria mix than in Microcystis-dominated Lake Erie. documented [cl-cyan-abundance-conversion-ca-report-not-recommended] [cl-cyan-abundance-conversion-ca-report-mixed-assemblages]
+Cell sizes differ between species, so the WHO's 2021 guidance prefers biovolume or chlorophyll-a to cell counts. documented [cl-cyan-abundance-conversion-who2021-cell-size-biovolume]
+Processing versions shift the index. Version 5 raised it by 15 to 20 percent on average, and a fixed factor inherits such shifts. documented [cl-cyan-abundance-conversion-version-shift-v5]
+Chlorophyll-a. Seegers et al. 2021 fit cyanobacterial chlorophyll-a as 6620 times the index minus 3.07, in micrograms per liter, on MERIS match-ups. documented [cl-cyan-abundance-conversion-ci-to-chla-seegers]
+
+Named levels. Mishra et al. 2019 used four classes of cells per mL. Low is up to 20,000, moderate to 100,000, and high above 100,000. Very high, above 1,000,000, is their addition to WHO-based classes. documented [cl-cyan-abundance-categories-mishra-who-classes]
+WHO's 2003 guidance gave levels at 20,000 and 100,000 cells per mL and at scum. WHO's 2021 alert level framework replaces that table and uses biovolume, chlorophyll-a, and visual signs. documented [cl-cyan-abundance-categories-who2003-guideline-levels] [cl-cyan-abundance-categories-who2021-replaces-2003-table] [cl-cyan-abundance-categories-who2021-alert-levels]
+Lunetta et al. 2015 used four ranges. MERIS estimates were robust for the lowest and the highest only. documented [cl-cyan-abundance-categories-lunetta-four-ranges] [cl-cyan-abundance-conversion-lunetta-accuracy-by-range]
+EPA's CyAN applications let users set their own thresholds. Their guides call the defaults WHO limits, but their screenshots show other values, discrepancy D10. documented [cl-cyan-abundance-categories-epa-app-user-thresholds] [cl-cyan-abundance-categories-cyanweb-four-categories-text] [cl-cyan-abundance-categories-cyanweb-figure7-values] [cl-cyan-abundance-categories-epa-android-app-defaults-figure]
+The lake dashboard adapts Mishra's four classes. Each level starts at the first code whose estimate reaches its boundary, codes 42, 102, and 187. Codex confirmed the codes, [check record](reference/cyan-abundance-checks.json).
+The EPA forecast study flags a lake median above 12 micrograms per liter of chlorophyll-a, converted with Seegers et al. It calls that level WHO Alert Level 1. documented [cl-cyan-abundance-categories-epa-forecast-who-al1]. California's report puts 12 micrograms per liter at about code 132. documented [cl-cyan-abundance-categories-ca-report-dn132]. The forecast's code deposit uses 130, `probe`, [record](../../docs/probes/2026-09-23-epa-forecast-code-deposit.md).
+SFEI's California map uses the same factor and levels near the same cells per mL on NOAA's encoding. Its codes do not carry over to CyAN codes. documented [cl-cyan-abundance-conversion-sfei-multiplier-not-verified-ca] [cl-cyan-abundance-categories-sfei-thresholds], [probe record](../../docs/probes/2026-09-25-sfei-fhab-survey.md)
 
 ## 5. Known issues and limitations, from the producer
 
@@ -171,7 +193,7 @@ On 2026-09-22 the cloud HTTPS endpoint served 529 of the 560 weekly whole-region
 
 ## 8. Sources, all accessed 2026-09-22
 
-Full records with titles, publishers, and page dates are in [reference/cyan-research.json](reference/cyan-research.json).
+Full records with titles, publishers, and page dates are in [reference/cyan-research.json](reference/cyan-research.json). The sources of section 4's cell counts and named levels, section 9's toxin and depth statements, and section 2's Sentinel-3B dates were accessed 2026-09-25. They are listed with sizes, hashes, and licenses in [reference/cyan-abundance-research.json](reference/cyan-abundance-research.json).
 
 1. Release notes for the NASA-produced MERIS and OLCI cyanobacteria index, version 6, 2025-02, known-issues update 2025-08. `https://oceancolor.gsfc.nasa.gov/images/cyan/version/6/CyAN_NASA_MERISOLCI_CI_release_notes_V6_Aug_2025.pdf`. Local copy and text extraction under [reference/](reference/README.md).
 2. Earthdata collection page, `https://www.earthdata.nasa.gov/data/catalog/ob-cloud-merged-s3-olci-l3m-cyan-6.0`.
@@ -194,6 +216,9 @@ The index is the observed bloom signal for every lake in the universe of assumpt
 Step 1e computed it on 2026-09-23 under [decision 0002](../../docs/decisions/0002-per-lake-table-recipe.md). The EPA forecast's own operationalization, a weekly lake median of 130 or more over pixels wholly inside the polygon, is read from the official code deposit, [probe record of 2026-09-23](../../docs/probes/2026-09-23-epa-forecast-code-deposit.md), `probe`. It was `prior` before that. Step 1f serves the table on [the lake dashboard](../../docs/dashboards/cyan-lakes/README.md).
 The EPA cyanoHAB forecast is built from this signal. Validating a model that uses this signal against that forecast is circular. Ground truth for bloom presence comes from independent in situ sources or from this index treated as an observation.
 The index is not a toxin measurement and not a cell count. Any link from index to cells or toxins carries its own source and uncertainty.
+EPA's CyANWeb guide says its data say nothing about bloom toxicity. Satellites detect cyanobacteria, not cyanotoxins. documented [cl-cyan-abundance-toxins-cyanweb-says-nothing-about-toxicity] [cl-cyan-abundance-toxins-satellite-detects-cyanobacteria-not-toxins]
+EPA's recommended recreational values are toxin concentrations, 8 micrograms per liter of microcystins and 15 of cylindrospermopsin. documented [cl-cyan-abundance-toxins-epa-criteria-values] [cl-cyan-abundance-toxins-epa-values-are-toxin-concentrations]
+The signal comes from near the surface. In MERIS-era work the bands saw no deeper than about 1 m in clear water. documented [cl-cyan-abundance-toxins-near-surface-only] [cl-cyan-abundance-toxins-ci-bands-depth-one-meter]
 
 ## 10. Reproducibility and version pinning
 
@@ -224,9 +249,14 @@ The owner ruled on 2026-09-22 that O1 to O4 are unknowns to uncover when their s
 | D5 | DOI | Catalog: `L3M/CYAN/CI/6.0`. Release notes file metadata: `L3B/CYAN/CI/6T` | Two products, mapped and binned. Cite the catalog DOI for the distributed files |
 | D6 | Reprocessing cadence | Release notes: every 10 to 16 months. EPA page: annually | Both recorded. Step 1g plans a version watch either way |
 | D7 | Cloud copy completeness | Measured on 2026-09-22: two samples byte-identical, the endpoint's newest file 7 weeks behind, 6 older weekly paths unavailable through it, bucket listing refused from outside the region | A Discovery input to the AWS route choice, [docs/aws/cyan.md](../../docs/aws/cyan.md), [measurement 1](../../docs/measurements.md#1-the-cloud-https-endpoint-served-529-of-560-listed-weekly-files-7-weeks-behind-two-samples-byte-identical-2026-09-22). A listing from inside us-west-2 remains open |
+| D8 | Cells per mL range | Project page: roughly 10,000 to 7,000,000. Formula times 10^8: about 6,678 at code 1 and 5,977,993 at code 253. 7,000,000 would need code 259 | Unresolved. No source explains the page's figures. The dashboard uses the formula |
+| D9 | Sign of the phycocyanin test | Mishra et al. 2019: a negative SS(665) indicates phycocyanin. Coffer et al. 2020: SS(665) above 0 means cyanobacteria present | Unresolved. The dashboard names the test without its sign |
+| D10 | Named levels in EPA's applications | Guides: defaults set to WHO limits. Screenshots: 100,000, 300,000, and 1,000,000 in CyANWeb, and ranges near Lunetta's in the Android app | The screenshots show displayed settings, not verified defaults. Users set their own |
+| D11 | When Sentinel-3B enters | Release notes: merged from 2018. CyANWeb guide of 2021: the daily stream added Sentinel-3B in late July 2020 | Different contexts: the version 6 archive and the application's stream at the time. Measurement 14 places the step in coverage between 2018 and 2019 |
+| D12 | Units of the index | Binned-file metadata: inverse steradians. Mishra et al. 2019 and SFEI: dimensionless | Recorded as stated. The dashboard gives the index without a unit |
 | O1 | Weekly update timing | Not on any fetched page. Not needed now | Bounded from above by the age at retrieval of the newest pulled file, 3 days weekly and 1 day daily on 2026-09-22. The delay itself needs first-availability observations |
 | O2 | EPSG code and tile pixel dimensions | Not on any page | Resolved for the whole-region files on 2026-09-22: EPSG:5070, 26,328 by 15,138 pixels, [measurement 5](../../docs/measurements.md#5-qaqc-of-the-pulled-files-2026-09-22). Tile dimensions stay `prior` until a tile is pulled |
 | O3 | COMID in the lake shapefile | Not on any page | Resolved on 2026-09-23: the shapefile carries COMID, 2,321 distinct values, [datasets/cyan_lakes/](../cyan_lakes/README.md) |
 | O4 | Flag bands in the GeoTIFF | Not on any page. The catalog lists one band | Resolved on 2026-09-22: one band, two tags, no flag band, [measurement 5](../../docs/measurements.md#5-qaqc-of-the-pulled-files-2026-09-22) |
-| O5 | Cells per milliliter factor | Range only, no factor, no citation | Any factor used later names its own source |
+| O5 | Cells per milliliter factor | Range only, no factor, no citation | Resolved on 2026-09-25. The factor 10^8 and its origin are documented from Mishra et al. 2019 and Coffer et al. 2021a, section 4 |
 | O6 | Known Issues item 6 | Absent from the document | None. Recorded as published |

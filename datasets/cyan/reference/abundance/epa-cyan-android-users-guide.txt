@@ -1,0 +1,674 @@
+EPA/600/B-19/086
+
+2019
+
+CyAN App User’s Guide
+ANDROID APPLICATION MANUAL
+RANDA BOYKIN, US EPA
+
+Contents
+Getting Started ............................................................................................................................... 3
+Replacing Old Version with Newest Version ............................................................................... 3
+Downloading the Cyano Android App Installation File ............................................................... 4
+1. Familiarizing Yourself .................................................................................................................. 5
+a. Home Screen Navigation ......................................................................................................... 5
+b. Marker Options Menu ............................................................................................................. 6
+Markers ........................................................................................................................................... 7
+2. How to Mark a Location .............................................................................................................. 7
+a. Option 1: Using “Mark Location” button ................................................................................ 7
+b. Option 2: Using “Geographic Coordinates” tab ...................................................................... 8
+3. How to Adjust the Symbology of Your Markers ......................................................................... 9
+4. How to Unmark a Location ....................................................................................................... 11
+5. How to Remove a Marked or Selected Location ...................................................................... 12
+My Location Tab ........................................................................................................................... 14
+6. How to View My List of Marked Locations ............................................................................... 14
+7. How to Access a Location’s Imagery ......................................................................................... 16
+a. Option 1: Using “View Latest Image” button ........................................................................ 16
+b. Option 2: Using “Overview” within the “My Location” tab .................................................. 17
+c. Option 3: Using “Imagery” within the “My Location” tab ..................................................... 18
+8. How to Download a Locations Imagery .................................................................................... 20
+a. Option 1: Using “Overview” within the “My Location” tab .................................................. 20
+b. Option 2: Using “Imagery” within the “My Location” tab .................................................... 22
+c. Finding Downloaded File on Android (specific for EPA Samsung phones) ........................... 23
+d. Sharing Downloaded PNG Files ............................................................................................. 25
+9. How to Access a Location’s Blooming Chart ............................................................................. 26
+a. Viewing My Locations: Blooming Chart ................................................................................ 26
+Compare Tab ................................................................................................................................ 27
+10. How to Compare Two or More Locations............................................................................... 27
+1|Page
+
+a. Adding Locations to the “Compare” Tab ............................................................................... 27
+b. Comparing Locations: Statistics ............................................................................................ 29
+c. Comparing Locations: Blooming Charts ................................................................................ 30
+d. Comparing Locations: Map ................................................................................................... 31
+Notifications ................................................................................................................................. 32
+11. How to View and Sort My App Notifications .......................................................................... 32
+Search ........................................................................................................................................... 33
+12. How to Search a Location ....................................................................................................... 33
+Help ............................................................................................................................................... 34
+13. How to Find Help with Using the CyAN App ........................................................................... 34
+a. Finding help inside the CyAN App ......................................................................................... 34
+b. Finding help outside the CyAN App ....................................................................................... 34
+FAQ................................................................................................................................................ 35
+What is the difference between a selected/unmarked location and a marked location? ........... 35
+Why are selected/unmarked locations (unchecked pins) useful? ............................................... 35
+The pin location I selected is an “Unknown Location”? ............................................................... 35
+Why is my data is reloading slow? ................................................................................................ 35
+What does “(Max:…)” and “(Valid cells:…)” indicate when comparing locations? ...................... 35
+What is OLCI? ................................................................................................................................ 35
+When I switch from OLCI- Daily to OLCI-Weekly and vice-versa my pins disappear?.................. 36
+References .................................................................................................................................... 36
+
+2|Page
+
+Getting Started
+Replacing Old Version with Newest Version
+IMPORTANT: If you have already installed a previous version of the app, you must delete it
+before proceeding with installing a new version of the app.
+
+Step 1—Go to your Apps and find the Cyano App.
+
+Step 2—Long press on the EPA icon.
+
+Step 3—Move the EPA icon to App Info near the top of the phone and let go.
+
+Step 4—A prompt appears where you can then select "Uninstall". Please follow these steps to
+Uninstall. Because "Removing" an app is not the same as "Uninstalling" it for Android.
+
+3|Page
+
+Downloading the Cyano Android App Installation File
+Step 1—Download the Android install file to your Android device by clicking here:
+https://drive.google.com/file/d/1S7g3zSa1A45RQBjbvWQNYSJog4ST0hfU/view?usp=sharing.
+
+Follow the on-screen prompts to install the app.
+
+4|Page
+
+1. Familiarizing Yourself
+Help icon—allows user to view on-board help.
+
+a. Home Screen Navigation
+My Location—
+allows user to
+view list of
+marked
+locations.
+
+Search icon—allows user to search for a
+location.
+Gear icon—allows user to adjust the
+symbology of pins/markers.
+
+Compare—
+allows user to
+compare 2 or
+more locations.
+Notifications—
+allows user to
+receive updates
+about new data
+availability,
+system outages,
+app version
+upgrades, issues
+with data access,
+etc.
+Hide all—allows
+user to “hide”
+selected/marked
+locations to view
+map without any
+pins/markers, tap
+on this icon again
+to return
+markers.
+OLCI Weekly/Daily—allows user to place markers for daily
+data and/or place markers for weekly data. Note: cannot view
+daily data markers and weekly data markers simultaneously.
+
+Geographic
+Coordinates—
+allows user to
+enter the
+coordinates of
+desired locations
+to add to map.
+Zoom in/out—
+allows user to
+make the map
+view look larger
+or smaller on
+screen, can also
+pinch the screen
+to zoom in/out,
+or double-tap
+screen to zoom
+in.
+Google
+Maps/Google
+Earth—allows user
+to set the base
+map to be either
+Google Maps or
+Google Earth.
+
+5|Page
+
+b. Marker Options Menu
+
+Coordinates of the
+Location—shows
+the latitude and
+longitude of the
+selected pin’s
+location.
+
+Naming/Renaming Marker—shows the location’s
+Google Map name that can be renamed by the user.
+
+Change in
+Concentration—
+shows the trend
+(increasing or
+decreasing) in the
+number of
+cyanobacteria cells
+per milliliter
+compared to an
+earlier date.
+
+Latest
+Concentrations—
+shows the most
+updated number of
+cyanobacteria cells
+per milliliter at the
+pin’s location.
+Add notes—
+allows user to
+insert notes
+unique to that
+location (if
+desired).
+
+Mark Location—
+allows user to mark
+location which then
+automatically adds
+location to the list
+with in the “My
+Location” tab.
+
+Select to
+Compare—allows
+user to add
+location to the
+list with in the
+“Compare” tab to
+view two or more
+locations side-byside.
+
+View Latest
+Image—allows
+user to view the
+location’s latest
+tile imagery and a
+quick areal about
+location.
+Remove—allows user to remove/undo
+the selected or marked pin from the map.
+
+6|Page
+
+Markers
+2. How to Mark a Location
+a. Option 1: Using “Mark Location” button
+
+….
+Step 1—Tap on screen at
+the desired location on
+map.
+
+…
+Step 2—The marker menu
+will appear on your
+screen. Rename location
+and add notes if needed,
+then select the “Mark
+Location” button.
+
+Step 3—The location has
+been marked.
+
+7|Page
+
+b. Option 2: Using “Geographic Coordinates” tab
+Step 1—Select “Geographic Coordinates” to
+add a marker.
+
+Step 2—Fill in the latitude and longitude
+coordinates of the location you to mark.
+
+Step 3—Select “Mark Location” to mark and
+add location to the map.
+
+8|Page
+
+3. How to Adjust the Symbology of Your Markers
+You can change the default color coded values [WHO thresholds] that represent the latest
+cyanobacteria levels of the markers you have added:
+
+Swipe to Left
+
+…………..……….……
+Step 1—Select Gear icon on top
+OR swipe left from right of
+screen
+
+Step 2—Slide the color bars left
+or right to change the default
+values of cyan to values you’ve
+selected
+
+9|Page
+
+Step 3—Use “Reload Data” button weekly to have latest cyano levels shown.
+
+10 | P a g e
+
+4. How to Unmark a Location
+
+..…
+Step 1—Select a marked
+location/checked pin.
+
+.…
+Step 2—The marker
+menu will appear on your
+screen. Select the
+“Unmark Location”
+button.
+
+Step 3—The location has
+been unmarked.
+
+11 | P a g e
+
+5. How to Remove a Marked or Selected Location
+
+………………….……..
+Step 1—Select a marked
+location/checked pin. The marker
+menu will appear.
+
+OR
+
+Step 1—Select an unmarked
+location/unchecked pin. The marker
+menu will appear.
+
+12 | P a g e
+
+Step 2—Select the “Remove” Button on the marker menu.
+
+Step 3—Select “Yes” to remove selected or marked pin from the map (or select “No” to cancel).
+13 | P a g e
+
+My Location Tab
+6. How to View My List of Marked Locations
+
+NOT
+
+………
+Step 1—Select the “My
+Location” tab.
+
+Step 2—You can now
+view your list of marked
+locations.
+
+..…
+Step 3 (Optional)—Check
+box to show only marked
+locations/checked pins on
+map and “My Location” list.
+
+14 | P a g e
+
+Step 4 (Optional)—Select the drop-down menu to sort the list
+by location name OR cyano value.
+
+15 | P a g e
+
+7. How to Access a Location’s Imagery
+a. Option 1: Using “View Latest Image” button
+
+……
+Step 1— Select an
+unmarked
+…location/unchecked pin.
+The marker menu will
+appear.
+
+……
+Step 2—Select the “View
+Latest Image” button.
+
+16 | P a g e
+
+b. Option 2: Using “Overview” within the “My Location” tab
+
+Step 1—Select the “My Location” tab at the
+home screen.
+
+Step 2—Select a listed entry to access the
+location’s related imagery.
+
+Step 3—Select the “Overview” tab.
+
+Step 4—Tap the marker to overlay the latest imagery
+on the base map. You can pan/zoom and adjust
+image opacity from the resultant screen.
+
+Step 5 (Optional)—Select “Notes” button to add any
+comments/notes about location.
+
+17 | P a g e
+
+c. Option 3: Using “Imagery” within the “My Location” tab
+
+Step 1—Select the “Imagery” within “My
+Location” tab
+
+Step 2—Select image to overlay
+
+Step 3—Select “Overlay on map”
+
+Step 4 (Optional)—Slide the dial left or right on
+the “Transparency” slider to adjust the opacity of
+the image and make the base map more visible.
+
+Step 5 (Optional)—Change the base map from
+Google Map to Google Earth.
+
+Step 6—Swipe right or select “Legend” to view
+the image legend.
+
+18 | P a g e
+
+L Legend—OLCI data V1 image and color ramp
+C for CyAN app imagery.
+
+Step 7—Swipe left to leave the legend go back to imagery.
+
+19 | P a g e
+
+8. How to Download a Locations Imagery
+a. Option 1: Using “Overview” within the “My Location” tab
+
+Step 1— This is a date-oriented list of images that have a
+cyano response at the location. Select one of the
+thumbnail images to view the image selected. Note: that
+the image is not overlain on the base map and the
+location marker is not shown but pan/zoom is available.
+
+20 | P a g e
+
+Step 2—Select “Download”
+
+Step 3—Type a file name with the file
+extension. We recommend using .PNG to
+identify the file as an image.
+
+Step 4—Select “Save”
+
+21 | P a g e
+
+b. Option 2: Using “Imagery” within the “My Location” tab
+
+Step 1—Select the image to download.
+
+Step 2—Select “Download”
+
+Step 3—Type a file name with the file
+extension. We recommend using .PNG to
+identify the file as an image.
+
+Step 4—Select “Save”
+
+22 | P a g e
+
+c. Finding Downloaded File on Android (specific for EPA Samsung phones)
+
+Step 1--Go to your Apps screen and find Samsung apps
+
+Step 2—Select “My Files”
+23 | P a g e
+
+Step 3—Select “Internal storage”
+
+Step 4—Select “Download”
+
+24 | P a g e
+
+d. Sharing Downloaded PNG Files
+Step 1—All downloaded files from the app will be located here. You can select the file for
+transfer.
+Step 2—Select the Share Icon
+Step 3—Select an option for sharing the PNG file.
+
+25 | P a g e
+
+9. How to Access a Location’s Blooming Chart
+a. Viewing My Locations: Blooming Chart
+You can view location’s cyanobacteria concentrations in a chart by using the “Chart” tab. The
+chart shows a time-series plot of cyano levels through time. The entire record stored online of
+cyano level at the location is shown.
+Note: The plot appears continuous through time but it likely is not; non-detects (i.e.; below
+detection level) and missing detects (e.g., clouds) are not stored nor shown.
+
+Step 1—Select the “Chart” tab that is within the
+“My Location” tab.
+
+Y Axis—the concentration of cyanobacteria in
+cells per milliliter (cells/mL).
+
+X Axis—the date (day/month/year) on which
+data was recorded.
+
+26 | P a g e
+
+Compare Tab
+10. How to Compare Two or More Locations
+a. Adding Locations to the “Compare” Tab
+
+…………………………..
+Step 1—Select a marked
+location/checked pin. The marker
+menu will appear.
+
+OR
+
+Step 1—Select an unmarked
+location/unchecked pin. The
+marker menu will appear.
+
+27 | P a g e
+
+.
+Step 2—Select the “Select to Compare” button on the marker menu to add location to the
+list with in the “Compare” tab.
+
+Step 3—Select the “Compare” tab to view the list of
+selected locations for comparing.
+Step 4 (Optional)—Select the “x” to
+remove a location from the list.
+Step 5—Select the “Compare
+Locations” button to view the listed
+locations side-by-side.
+
+28 | P a g e
+
+b. Comparing Locations: Statistics
+Location Name and Coordinates—the name of
+each location (either given to by the user or from
+google maps) and each location’s corresponding
+coordinates.
+
+Latest Concentration—the most updated
+number of cyanobacteria cells per milliliter at
+the pin’s location.
+
+Swipe Left or Right
+Max Value—the largest cyano value in a 3x3
+raster cell matrix about the location.
+Valid Cells-- the number of cells that have a
+cyano response. Valid values range from 0 to
+9.
+
+Change in Concentration—the trend (increasing or
+decreasing) in the number of cyanobacteria cells
+per milliliter compared to an earlier date.
+
+Step 1—Select the “Statistics” tab that is within the “Compare” tab.
+Step 2—Swipe left or right to view columns containing information about each location being
+compared.
+
+29 | P a g e
+
+c. Comparing Locations: Blooming Charts
+You can compare two or more location’s cyanobacteria concentrations in a chart by using the
+“Blooming Chart” tab. Like the blooming chart in “My Location”, the chart shows a time-series
+plot of cyano levels through time. The entire record stored online of cyano level at the location
+is shown.
+Note: The plot appears continuous through time but it likely is not; non-detects (i.e.; below
+detection level) and missing detects (e.g., clouds) are not stored nor shown.
+
+Step 1—Select the “Blooming Chart” tab that is
+within the “Compare” tab.
+
+Y Axis—the concentration of cyanobacteria in
+cells per milliliter (cells/mL).
+
+X Axis—the date (day/month/year) on which
+data was recorded.
+
+Legend—the locations being
+compared with an assigned color.
+
+30 | P a g e
+
+d. Comparing Locations: Map
+You can view a map that shows only the locations you’ve chosen to compare. Note: You cannot
+add/remove markers from the map nor access location imagery from here.
+
+Step 1—Select the “Map” tab that is within
+the “Compare” tab.
+
+Step 2 (Optional)—Zoom In/Out or change
+the base map from Google Maps to Google
+Earth.
+
+31 | P a g e
+
+Notifications
+11. How to View and Sort My App Notifications
+
+Step 1—Select the “Notifications” Tab
+when a number pop-up is indicating
+that you have new notifications.
+
+Step 2 (Optional)—Check the box to
+allow you to see only new/unread
+notification messages.
+
+Step 3 (Optional)—Select the “Clear”
+button to remove all messages from
+the notifications tab.
+
+32 | P a g e
+
+Search
+12. How to Search a Location
+Step 1—Select the “Search” icon.
+
+Step 2—Start typing in the search the name
+of the desired location and the location will
+begin to appear of the top of the list.
+
+33 | P a g e
+
+Help
+13. How to Find Help with Using the CyAN App
+a. Finding help inside the CyAN App
+
+Step 1—Select the Help icon to access more
+information about the CyAN app’s features and
+how to use them.
+
+b. Finding help outside the CyAN App
+eMail comments and concerns about app usage to:
+CyAN@epa.gov
+
+Visit the EPA CyAN project page for further information here:
+https://www.epa.gov/water-research/cyanobacteria-assessment-network-cyan
+
+34 | P a g e
+
+FAQ
+What is the difference between a selected/unmarked location and a
+marked location?
+Answer—Selected locations are the pins that are unchecked. These unchecked pins
+indicate that these locations have not been marked. A marked location will appear on the map
+as a checked pin.
+
+Why are selected/unmarked locations (unchecked pins) useful?
+Answer—Having unmarked locations are useful to two main purposes:
+1) You can differentiate between your priority locations and your non-priority locations by
+keeping your non-priority locations unmarked and then control whether they appear in the “My
+Location” list using the “show checked locations” checkbox.
+2) Only selecting an unmarked location allows you to access the “view latest image” function.
+
+The pin location I selected is an “Unknown Location”?
+Answer—If you mark a location that has no satellite data in the current archive, the
+CyAN app will return “Unknown Location” and no count information. This is typical in areas
+extremely close to shore or lakes smaller than can be resolved by the satellite.
+
+Why is my data is reloading slow?
+Answer—Reloading data will be dependent on (1) the speed of your wireless
+connection, (2) the number of pins you use, and (3) the number of satellite data records we
+host on the servers. Initial test suggests <30 seconds with 1 pin and ~1 minute with 20 pins.
+
+What does “(Max:…)” and “(Valid cells:…)” indicate when comparing
+locations?
+Answer—The Max and Valid cell count are an attempt to provide a small areal view of
+the cyano conditions about the location raster cell. Max is the largest cyano value in a
+300mx300m raster cell matrix about the location and Valid is the number of cells that have a
+cyano response. Depending on the location in the waterbody and the conditions under which it
+was detected Valid values range from 0 to 9.
+
+What is OLCI?
+Answer— OLCI (Ocean and Land Colour Instrument) is a sensing instrument on ESA’s
+Sentinel-3 satellite that is used to detect cyanobacteria in waterbodies. Each Sentinel-3 satellite
+tile is a Geo-referenced TIFF formatted raster file containing 2000x2000 = 4000000 cells. Each
+pixel cell represents a 300mx300m area.
+35 | P a g e
+
+When I switch from OLCI- Daily to OLCI-Weekly and vice-versa my pins
+disappear?
+Answer—OLCI weekly/daily data are separate data products the CyAN app is capable of
+handling. The two categories of data are handled completely separately. Your markers for
+weekly data do not show if you’ve selected “Daily”; and vice-versa. Daily data is a snapshot of
+cyanobacteria at the time of detection, weekly data is a composite of daily maximums.
+
+References
+Blake A. Schaeffer, Sean W. Bailey, Robyn N. Conmy, Michael Galvin, Amber R. Ignatius, John M.
+Johnston, Darryl J. Keith, Ross S. Lunetta, Rajbir Parmar, Richard P. Stumpf, Erin A. Urquhart, P.
+Jeremy Werdell, Kurt Wolfe ; Mobile device application for monitoring cyanobacteria harmful
+algal blooms using Sentinel-3 satellite Ocean and Land Colour Instruments.; Environmental
+Modelling & Software Volume 109, November 2018, Pages 93-103
+
+36 | P a g e
+
+

@@ -1,0 +1,1008 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article
+  PUBLIC "-//NLM//DTD Journal Publishing DTD v3.0 20080202//EN" "http://dtd.nlm.nih.gov/publishing/3.0/journalpublishing3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" article-type="research-article" dtd-version="3.0" xml:lang="en">
+  <front>
+    <journal-meta><journal-id journal-id-type="nlm-ta">PLoS ONE</journal-id><journal-id journal-id-type="publisher-id">plos</journal-id><journal-id journal-id-type="pmc">plosone</journal-id><issn pub-type="epub">1932-6203</issn><publisher>
+        <publisher-name>Public Library of Science</publisher-name>
+        <publisher-loc>San Francisco, USA</publisher-loc>
+      </publisher></journal-meta>
+    <article-meta><article-id pub-id-type="publisher-id">PONE-D-12-08623</article-id><article-id pub-id-type="doi">10.1371/journal.pone.0042444</article-id><article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Research Article</subject>
+        </subj-group>
+        <subj-group subj-group-type="Discipline-v2">
+          <subject>Biology</subject>
+          <subj-group>
+            <subject>Ecology</subject>
+            <subj-group>
+              <subject>Community ecology</subject>
+              <subj-group>
+                <subject>Ecological remediation</subject>
+                <subject>Ecological risk</subject>
+              </subj-group>
+            </subj-group>
+            <subj-group>
+              <subject>Ecological environments</subject>
+              <subj-group>
+                <subject>Freshwater environments</subject>
+              </subj-group>
+            </subj-group>
+            <subj-group>
+              <subject>Microbial ecology</subject>
+            </subj-group>
+          </subj-group>
+          <subj-group>
+            <subject>Marine biology</subject>
+            <subj-group>
+              <subject>Freshwater ecology</subject>
+            </subj-group>
+          </subj-group>
+          <subj-group>
+            <subject>Microbiology</subject>
+            <subj-group>
+              <subject>Bacteriology</subject>
+              <subject>Microbial ecology</subject>
+            </subj-group>
+          </subj-group>
+        </subj-group>
+        <subj-group subj-group-type="Discipline-v2">
+          <subject>Earth sciences</subject>
+          <subj-group>
+            <subject>Geography</subject>
+            <subj-group>
+              <subject>Geoinformatics</subject>
+              <subj-group>
+                <subject>Remote sensing imagery</subject>
+              </subj-group>
+            </subj-group>
+          </subj-group>
+          <subj-group>
+            <subject>Limnology</subject>
+            <subj-group>
+              <subject>Limnectic ecology</subject>
+            </subj-group>
+          </subj-group>
+          <subj-group>
+            <subject>Marine and aquatic sciences</subject>
+            <subj-group>
+              <subject>Freshwater ecology</subject>
+              <subject>Marine monitoring</subject>
+              <subject>Water quality</subject>
+            </subj-group>
+          </subj-group>
+        </subj-group>
+        <subj-group subj-group-type="Discipline">
+          <subject>Microbiology</subject>
+          <subject>Marine and Aquatic Sciences</subject>
+          <subject>Ecology</subject>
+          <subject>Computer Science</subject>
+        </subj-group>
+      </article-categories><title-group><article-title>Interannual Variability of Cyanobacterial Blooms in Lake Erie</article-title><alt-title alt-title-type="running-head">Cyanobacterial Blooms in Lake Erie</alt-title></title-group><contrib-group>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name name-style="western">
+            <surname>Stumpf</surname>
+            <given-names>Richard P.</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">
+            <sup>1</sup>
+          </xref>
+          <xref ref-type="corresp" rid="cor1">
+            <sup>*</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name name-style="western">
+            <surname>Wynne</surname>
+            <given-names>Timothy T.</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">
+            <sup>1</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name name-style="western">
+            <surname>Baker</surname>
+            <given-names>David B.</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff2">
+            <sup>2</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name name-style="western">
+            <surname>Fahnenstiel</surname>
+            <given-names>Gary L.</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff3">
+            <sup>3</sup>
+          </xref>
+        </contrib>
+      </contrib-group><aff id="aff1">
+        <label>1</label>
+        <addr-line>National Oceanic and Atmospheric Administration (NOAA), National Centers for Coastal Ocean Science, Silver Spring, Maryland, United States of America</addr-line>
+      </aff><aff id="aff2">
+        <label>2</label>
+        <addr-line>Heidelberg University, National Center for Water Quality Research, Tiffin, Ohio, United States of America</addr-line>
+      </aff><aff id="aff3">
+        <label>3</label>
+        <addr-line>NOAA, Great Lakes Environmental Research Laboratory, Muskegon, Michigan, United States of America</addr-line>
+      </aff><contrib-group>
+        <contrib contrib-type="editor" xlink:type="simple">
+          <name name-style="western">
+            <surname>Álvarez</surname>
+            <given-names>Inés</given-names>
+          </name>
+          <role>Editor</role>
+          <xref ref-type="aff" rid="edit1"/>
+        </contrib>
+      </contrib-group><aff id="edit1">
+        <addr-line>University of Vigo, Spain</addr-line>
+      </aff><author-notes>
+        <corresp id="cor1">* E-mail: <email xlink:type="simple">Richard.stumpf@noaa.gov</email></corresp>
+        <fn fn-type="conflict">
+          <p>The authors have declared that no competing interests exist.</p>
+        </fn>
+        <fn fn-type="con">
+          <p>Conceived and designed the experiments: TTW RPS GLF. Performed the experiments: TTW RPS. Analyzed the data: TTW RPS DBB. Contributed reagents/materials/analysis tools: TTW RPS DBB GLF. Wrote the paper: RPS TTW. Design satellite analysis algorithms: TTW RPS.</p>
+        </fn>
+      </author-notes><pub-date pub-type="collection">
+        <year>2012</year>
+      </pub-date><pub-date pub-type="epub">
+        <day>1</day>
+        <month>8</month>
+        <year>2012</year>
+      </pub-date><volume>7</volume><issue>8</issue><elocation-id>e42444</elocation-id><history>
+        <date date-type="received">
+          <day>23</day>
+          <month>3</month>
+          <year>2012</year>
+        </date>
+        <date date-type="accepted">
+          <day>6</day>
+          <month>7</month>
+          <year>2012</year>
+        </date>
+      </history><permissions>
+        
+        <copyright-holder/>
+        <license xlink:type="simple">
+          <license-p>This is an open-access article, free of all copyright, and may be freely reproduced, distributed, transmitted, modified, built upon, or otherwise used by anyone for any lawful purpose. The work is made available under the Creative Commons CC0 public domain dedication.</license-p>
+        </license>
+      </permissions><abstract>
+        <p>After a 20-year absence, severe cyanobacterial blooms have returned to Lake Erie in the last decade, in spite of negligible change in the annual load of total phosphorus (TP). Medium-spectral Resolution Imaging Spectrometer (MERIS) imagery was used to quantify intensity of the cyanobacterial bloom for each year from 2002 to 2011. The blooms peaked in August or later, yet correlate to discharge (Q) and TP loads only for March through June. The influence of the spring TP load appears to have started in the late 1990 s, after Dreissenid mussels colonized the lake, as hindcasts prior to 1998 are inconsistent with the observed blooms. The total spring Q or TP load appears sufficient to predict bloom magnitude, permitting a seasonal forecast prior to the start of the bloom.</p>
+      </abstract><funding-group>
+        <funding-statement>This study was partially funded by NASA Applied Science Program announcement NNH08ZDA001N, contract NNH09AL53I, and the NOAA Oceans and Human Health Initiative. MERIS imagery was provided by the European Space Agency (Category-1 Proposal C1P.9975). The funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.</funding-statement>
+      </funding-group><counts>
+        <page-count count="11"/>
+      </counts></article-meta>
+  </front>
+  <body>
+    <sec id="s1">
+      <title>Introduction</title>
+      <p>Lake Erie suffered from intense blooms of cyanobacteria in the 1970 s. Following phosphorus abatement strategies these blooms disappeared in the 1980 s <xref ref-type="bibr" rid="pone.0042444-US1">[1]</xref>–<xref ref-type="bibr" rid="pone.0042444-Makarewicz1">[3]</xref>. The blooms reappeared in the 1990 s, with blooms dominated by <italic>Microcystis aeruginosa</italic> common in the last decade <xref ref-type="bibr" rid="pone.0042444-Millie1">[4]</xref>–<xref ref-type="bibr" rid="pone.0042444-RintaKantoJ1">[5]</xref>. During this time the annual total phosphorus (TP) load has not changed, but annual soluble reactive phosphorus (SRP) loads have increased <xref ref-type="bibr" rid="pone.0042444-Joosse1">[6]</xref>. In addition, the 1990 s saw ecological disruptions caused by invasive mussels of the genus <italic>Dreissena</italic>, which have been hypothesized to promote cyanobacterial blooms <xref ref-type="bibr" rid="pone.0042444-Budd1">[7]</xref>–<xref ref-type="bibr" rid="pone.0042444-Conroy1">[9]</xref>. The Maumee River (<xref ref-type="fig" rid="pone-0042444-g001">Figure 1</xref>), the single largest watershed draining into the Laurentian Great Lakes, has also been hypothesized to supply the needed nutrients to fuel the <italic>Microcystis</italic> spp. blooms <xref ref-type="bibr" rid="pone.0042444-RintaKantoJ1">[5]</xref>. Over 80% of the land within the watershed is used for agriculture <xref ref-type="bibr" rid="pone.0042444-Richards1">[10]</xref>, and it discharges into the shallowest portion of Lake Erie.</p>
+      <fig id="pone-0042444-g001" orientation="portrait" position="float">
+        <object-id pub-id-type="doi">10.1371/journal.pone.0042444.g001</object-id>
+        <label>Figure 1</label>
+        <caption>
+          <title>Map of western Lake Erie.</title>
+        </caption>
+        <graphic mimetype="image" orientation="portrait" position="float" xlink:href="info:doi/10.1371/journal.pone.0042444.g001" xlink:type="simple"/>
+      </fig>
+      <p><italic>Microcystis</italic> produce noxious and toxic compounds that cause a variety of detrimental impacts <xref ref-type="bibr" rid="pone.0042444-Carmichael1">[11]</xref>. These impacts include animal mortalities and human health risks from the toxin microcystin, as well as taste and odor problems in finished drinking water, if not specifically treated <xref ref-type="bibr" rid="pone.0042444-Carmichael1">[11]</xref>–<xref ref-type="bibr" rid="pone.0042444-Graham1">[12]</xref>. Therefore a seasonal prediction of the blooms would aid managers in planning mitigation strategies. Warmer temperatures may exacerbate blooms, increasing the severity of these impacts <xref ref-type="bibr" rid="pone.0042444-Paerl1">[13]</xref>.</p>
+      <p>Satellite imagery can provide data on the areal extent of cyanobacterial blooms <xref ref-type="bibr" rid="pone.0042444-Kahru1">[14]</xref>–<xref ref-type="bibr" rid="pone.0042444-Binding1">[16]</xref>. Of the several instruments, the Medium-spectral resolution imaging spectrometer (MERIS) permits quantification of blooms even in water with suspended sediments <xref ref-type="bibr" rid="pone.0042444-RuizVerd1">[17]</xref>–<xref ref-type="bibr" rid="pone.0042444-Hunter1">[18]</xref>, including Lake Erie <xref ref-type="bibr" rid="pone.0042444-Wynne1">[15]</xref>, <xref ref-type="bibr" rid="pone.0042444-Wynne2">[19]</xref>. MERIS data is available since 2002, allowing a comparison of the bloom intensity with Maumee River loads for each of the last ten years. With several bands in the red and the “red edge” portion of the near-infrared, MERIS data allow spectral shape algorithms that can target severe blooms <xref ref-type="bibr" rid="pone.0042444-Wynne2">[19]</xref>–<xref ref-type="bibr" rid="pone.0042444-Gower2">[21]</xref>. Spectral shape methods use a computational equivalent to the second derivative <xref ref-type="bibr" rid="pone.0042444-Wynne1">[15]</xref>; these include fluorescent line height (FLH) <xref ref-type="bibr" rid="pone.0042444-Gower1">[20]</xref>; maximum chlorophyll index (MCI) <xref ref-type="bibr" rid="pone.0042444-Gower2">[21]</xref>, and the cyanobacteria index (CI) <xref ref-type="bibr" rid="pone.0042444-Wynne2">[19]</xref>. The MCI was demonstrated to be effective in coastal ocean blooms with data that has not been atmospherically corrected <xref ref-type="bibr" rid="pone.0042444-Gower2">[21]</xref>. This power of spectral shape algorithms means that far more data can be retrieved under thin cloud and glint conditions than with standard algorithms based on water-leaving radiance. The CI, which is the negative of the FLH <xref ref-type="bibr" rid="pone.0042444-Gower1">[20]</xref>, has been quite effective at identifying cyanobacterial blooms in Lake Erie <xref ref-type="bibr" rid="pone.0042444-Wynne1">[15]</xref>, <xref ref-type="bibr" rid="pone.0042444-Wynne2">[19]</xref>, and appears to be less sensitive to high sediment loads than the MCI.</p>
+    </sec>
+    <sec id="s2" sec-type="methods">
+      <title>Methods</title>
+      <sec id="s2a">
+        <title>Satellite</title>
+        <p>MERIS reduced resolution (nominal 1.1 km width) daily imagery was acquired from the European Space Agency (ESA) as standard level 2 water reflectance created by the second reprocessing <xref ref-type="bibr" rid="pone.0042444-European1">[22]</xref>. The imagery was mapped to a 1.1 km Sinusoidal equal area projection using nearest neighbor sampling. The Cyanobacterial Index (CI) was calculated as described by Wynne et al. <xref ref-type="bibr" rid="pone.0042444-Wynne1">[15]</xref>, <xref ref-type="bibr" rid="pone.0042444-Wynne2">[19]</xref> using the spectral shape around 681 nm band:</p>
+        <disp-formula id="pone.0042444.e001"><graphic orientation="portrait" position="anchor" xlink:href="info:doi/10.1371/journal.pone.0042444.e001" xlink:type="simple"/><label>(1)</label></disp-formula>
+        <p>The spectral shape (<italic>SS</italic>), or curvature is determined as a nominal second derivative around the band of interest:</p>
+        <disp-formula id="pone.0042444.e002"><graphic orientation="portrait" position="anchor" xlink:href="info:doi/10.1371/journal.pone.0042444.e002" xlink:type="simple"/><label>(2)</label></disp-formula>
+        <p>where <italic>λ</italic> = 681 nm (MERIS band 8), <italic>λ</italic><sup>+</sup> = 709 nm (band 9), and <italic>λ</italic><sup>−</sup> = 665 nm (band 7). An equivalent computation with these bands also produces the FLH <xref ref-type="bibr" rid="pone.0042444-Gower1">[20]</xref>. L2 reflectances are used for the analysis, these are normalized water-leaving reflectances for pixels identified as water. The method could be applied to the L1 (radiance) products, but use of L2 allows use of the ancillary products, like the cloud mask, as well as simplifying comparisons to other sensors or field instruments.</p>
+        <p>Using the individual CI images, 10-day composites were calculated by taking the highest CI at each pixel available from any of the daily images within a given 10-day time period to remove clouds and capture the areal biomass; the latter because <italic>Microcystis</italic> will aggregate at the surface providing effective detection with remote sensing <xref ref-type="bibr" rid="pone.0042444-Wynne1">[15]</xref>, <xref ref-type="bibr" rid="pone.0042444-Hunter1">[18]</xref>, <xref ref-type="bibr" rid="pone.0042444-Wynne2">[19]</xref>. Under clear water conditions, the bands used for the CI do not detect light from deeper than one meter <xref ref-type="bibr" rid="pone.0042444-Wynne1">[15]</xref>; adding particulate matter will increase light attenuation, further reducing depth penetration. Images that showed artifacts from atmospheric correction failure were not used for analysis (6 daily images from over 400 used in the entire time series).</p>
+        <fig id="pone-0042444-g002" orientation="portrait" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pone.0042444.g002</object-id>
+          <label>Figure 2</label>
+          <caption>
+            <title>Time series of bloom intensity (black) and area &gt;0.001 CI (blue) from the cumulative CI for each 10-day composites.</title>
+            <p>The intensity is the sum of CI-values at all pixels within the image. The area is determined from the total number of pixels with CI &gt;0.001. Circles mark the three composites used to determine the annual severity. Each year has 15 composites, from June 1–10 to October 19–28. The dashed grid line marks the August 10–19 period.</p>
+          </caption>
+          <graphic mimetype="image" orientation="portrait" position="float" xlink:href="info:doi/10.1371/journal.pone.0042444.g002" xlink:type="simple"/>
+        </fig>
+        <table-wrap id="pone-0042444-t001" orientation="portrait" position="float"><object-id pub-id-type="doi">10.1371/journal.pone.0042444.t001</object-id><label>Table 1</label><caption>
+            <title>Annual CI, and bloom area (&gt;0.001 CI equivalent to &gt;10<sup>5</sup> cells mL<sup>−1</sup>) for each year, the average Q for March to June, and the total TP and SRP loads for March to June, and total TP load for June only.</title>
+          </caption><alternatives>
+            <graphic id="pone-0042444-t001-1" mimetype="image" orientation="portrait" position="float" xlink:href="info:doi/10.1371/journal.pone.0042444.t001" xlink:type="simple"/>
+            <table>
+              <colgroup span="1">
+                <col align="left" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+              </colgroup>
+              <thead>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">year</td>
+                  <td align="left" colspan="1" rowspan="1">CI</td>
+                  <td align="left" colspan="1" rowspan="1">Bloom area km<sup>2</sup></td>
+                  <td align="left" colspan="1" rowspan="1">Q average Mar-Jun m<sup>3</sup> s<sup>−1</sup></td>
+                  <td align="left" colspan="1" rowspan="1">TP total Mar-Jun m.tons</td>
+                  <td align="left" colspan="1" rowspan="1">TP total Jun m.tons</td>
+                  <td align="left" colspan="1" rowspan="1">SRP totalMar-Jun m.tons</td>
+                  <td align="left" colspan="1" rowspan="1">Ratio TP<sub>June</sub>/TP<sub>March-May</sub></td>
+                  <td align="left" colspan="1" rowspan="1">CI predicted from exponential Q</td>
+                  <td align="left" colspan="1" rowspan="1">CI predicted from TP for Jun</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">1995</td>
+                  <td align="left" colspan="1" rowspan="1"/>
+                  <td align="left" colspan="1" rowspan="1">Bloom reported</td>
+                  <td align="left" colspan="1" rowspan="1">200</td>
+                  <td align="left" colspan="1" rowspan="1">867</td>
+                  <td align="left" colspan="1" rowspan="1">73</td>
+                  <td align="left" colspan="1" rowspan="1">68</td>
+                  <td align="left" colspan="1" rowspan="1">0.09</td>
+                  <td align="left" colspan="1" rowspan="1">0.58</td>
+                  <td align="left" colspan="1" rowspan="1">1.68</td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">1996</td>
+                  <td align="left" colspan="1" rowspan="1"/>
+                  <td align="left" colspan="1" rowspan="1"/>
+                  <td align="left" colspan="1" rowspan="1">311</td>
+                  <td align="left" colspan="1" rowspan="1">1303</td>
+                  <td align="left" colspan="1" rowspan="1">304</td>
+                  <td align="left" colspan="1" rowspan="1">144</td>
+                  <td align="left" colspan="1" rowspan="1">0.30</td>
+                  <td align="left" colspan="1" rowspan="1">3.05</td>
+                  <td align="left" colspan="1" rowspan="1">5.68<xref ref-type="table-fn" rid="nt101">*</xref></td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">1997</td>
+                  <td align="left" colspan="1" rowspan="1"/>
+                  <td align="left" colspan="1" rowspan="1"/>
+                  <td align="left" colspan="1" rowspan="1">310</td>
+                  <td align="left" colspan="1" rowspan="1">1303</td>
+                  <td align="left" colspan="1" rowspan="1">445</td>
+                  <td align="left" colspan="1" rowspan="1">187</td>
+                  <td align="left" colspan="1" rowspan="1">0.52</td>
+                  <td align="left" colspan="1" rowspan="1">3.02</td>
+                  <td align="left" colspan="1" rowspan="1">8.10<xref ref-type="table-fn" rid="nt101">*</xref></td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">1998</td>
+                  <td align="left" colspan="1" rowspan="1"/>
+                  <td align="left" colspan="1" rowspan="1">Bloom reported</td>
+                  <td align="left" colspan="1" rowspan="1">262</td>
+                  <td align="left" colspan="1" rowspan="1">1306</td>
+                  <td align="left" colspan="1" rowspan="1">161</td>
+                  <td align="left" colspan="1" rowspan="1">171</td>
+                  <td align="left" colspan="1" rowspan="1">0.14</td>
+                  <td align="left" colspan="1" rowspan="1">1.61</td>
+                  <td align="left" colspan="1" rowspan="1">3.19</td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">1999</td>
+                  <td align="left" colspan="1" rowspan="1"/>
+                  <td align="left" colspan="1" rowspan="1"/>
+                  <td align="left" colspan="1" rowspan="1">235</td>
+                  <td align="left" colspan="1" rowspan="1">803</td>
+                  <td align="left" colspan="1" rowspan="1">61</td>
+                  <td align="left" colspan="1" rowspan="1">105</td>
+                  <td align="left" colspan="1" rowspan="1">0.08</td>
+                  <td align="left" colspan="1" rowspan="1">1.06</td>
+                  <td align="left" colspan="1" rowspan="1">1.47</td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">2000</td>
+                  <td align="left" colspan="1" rowspan="1"/>
+                  <td align="left" colspan="1" rowspan="1"/>
+                  <td align="left" colspan="1" rowspan="1">226</td>
+                  <td align="left" colspan="1" rowspan="1">941</td>
+                  <td align="left" colspan="1" rowspan="1">396</td>
+                  <td align="left" colspan="1" rowspan="1">145</td>
+                  <td align="left" colspan="1" rowspan="1">0.73</td>
+                  <td align="left" colspan="1" rowspan="1">0.92</td>
+                  <td align="left" colspan="1" rowspan="1">7.26<xref ref-type="table-fn" rid="nt101">*</xref></td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">2001</td>
+                  <td align="left" colspan="1" rowspan="1"/>
+                  <td align="left" colspan="1" rowspan="1"/>
+                  <td align="left" colspan="1" rowspan="1">181</td>
+                  <td align="left" colspan="1" rowspan="1">489</td>
+                  <td align="left" colspan="1" rowspan="1">93</td>
+                  <td align="left" colspan="1" rowspan="1">107</td>
+                  <td align="left" colspan="1" rowspan="1">0.24</td>
+                  <td align="left" colspan="1" rowspan="1">0.40</td>
+                  <td align="left" colspan="1" rowspan="1">2.02<xref ref-type="table-fn" rid="nt101">*</xref></td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">2002</td>
+                  <td align="left" colspan="1" rowspan="1">0.64</td>
+                  <td align="left" colspan="1" rowspan="1">170</td>
+                  <td align="left" colspan="1" rowspan="1">262</td>
+                  <td align="left" colspan="1" rowspan="1">870</td>
+                  <td align="left" colspan="1" rowspan="1">27</td>
+                  <td align="left" colspan="1" rowspan="1">150</td>
+                  <td align="left" colspan="1" rowspan="1">0.03</td>
+                  <td align="left" colspan="1" rowspan="1">1.60</td>
+                  <td align="left" colspan="1" rowspan="1">0.87</td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">2003</td>
+                  <td align="left" colspan="1" rowspan="1">2.20</td>
+                  <td align="left" colspan="1" rowspan="1">705</td>
+                  <td align="left" colspan="1" rowspan="1">297</td>
+                  <td align="left" colspan="1" rowspan="1">1409</td>
+                  <td align="left" colspan="1" rowspan="1">121</td>
+                  <td align="left" colspan="1" rowspan="1">322</td>
+                  <td align="left" colspan="1" rowspan="1">0.09</td>
+                  <td align="left" colspan="1" rowspan="1">2.55</td>
+                  <td align="left" colspan="1" rowspan="1">2.50</td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">2004</td>
+                  <td align="left" colspan="1" rowspan="1">1.38</td>
+                  <td align="left" colspan="1" rowspan="1">451</td>
+                  <td align="left" colspan="1" rowspan="1">255</td>
+                  <td align="left" colspan="1" rowspan="1">892</td>
+                  <td align="left" colspan="1" rowspan="1">508</td>
+                  <td align="left" colspan="1" rowspan="1">196</td>
+                  <td align="left" colspan="1" rowspan="1">1.32</td>
+                  <td align="left" colspan="1" rowspan="1">1.44</td>
+                  <td align="left" colspan="1" rowspan="1">9.20<xref ref-type="table-fn" rid="nt101">*</xref></td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">2005</td>
+                  <td align="left" colspan="1" rowspan="1">0.59</td>
+                  <td align="left" colspan="1" rowspan="1">198</td>
+                  <td align="left" colspan="1" rowspan="1">119</td>
+                  <td align="left" colspan="1" rowspan="1">309</td>
+                  <td align="left" colspan="1" rowspan="1">14</td>
+                  <td align="left" colspan="1" rowspan="1">84</td>
+                  <td align="left" colspan="1" rowspan="1">0.05</td>
+                  <td align="left" colspan="1" rowspan="1">0.08</td>
+                  <td align="left" colspan="1" rowspan="1">0.66</td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">2006</td>
+                  <td align="left" colspan="1" rowspan="1">0.87</td>
+                  <td align="left" colspan="1" rowspan="1">293</td>
+                  <td align="left" colspan="1" rowspan="1">175</td>
+                  <td align="left" colspan="1" rowspan="1">577</td>
+                  <td align="left" colspan="1" rowspan="1">58</td>
+                  <td align="left" colspan="1" rowspan="1">124</td>
+                  <td align="left" colspan="1" rowspan="1">0.11</td>
+                  <td align="left" colspan="1" rowspan="1">0.35</td>
+                  <td align="left" colspan="1" rowspan="1">1.41</td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">2007</td>
+                  <td align="left" colspan="1" rowspan="1">0.83</td>
+                  <td align="left" colspan="1" rowspan="1">288</td>
+                  <td align="left" colspan="1" rowspan="1">222</td>
+                  <td align="left" colspan="1" rowspan="1">1048</td>
+                  <td align="left" colspan="1" rowspan="1">13</td>
+                  <td align="left" colspan="1" rowspan="1">258</td>
+                  <td align="left" colspan="1" rowspan="1">0.01</td>
+                  <td align="left" colspan="1" rowspan="1">0.86</td>
+                  <td align="left" colspan="1" rowspan="1">0.64</td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">2008</td>
+                  <td align="left" colspan="1" rowspan="1">4.30</td>
+                  <td align="left" colspan="1" rowspan="1">1047</td>
+                  <td align="left" colspan="1" rowspan="1">318</td>
+                  <td align="left" colspan="1" rowspan="1">1315</td>
+                  <td align="left" colspan="1" rowspan="1">219</td>
+                  <td align="left" colspan="1" rowspan="1">265</td>
+                  <td align="left" colspan="1" rowspan="1">0.20</td>
+                  <td align="left" colspan="1" rowspan="1">3.32</td>
+                  <td align="left" colspan="1" rowspan="1">4.20</td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">2009</td>
+                  <td align="left" colspan="1" rowspan="1">2.86</td>
+                  <td align="left" colspan="1" rowspan="1">992</td>
+                  <td align="left" colspan="1" rowspan="1">310</td>
+                  <td align="left" colspan="1" rowspan="1">1327</td>
+                  <td align="left" colspan="1" rowspan="1">88</td>
+                  <td align="left" colspan="1" rowspan="1">203</td>
+                  <td align="left" colspan="1" rowspan="1">0.07</td>
+                  <td align="left" colspan="1" rowspan="1">3.02</td>
+                  <td align="left" colspan="1" rowspan="1">1.93</td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">2010</td>
+                  <td align="left" colspan="1" rowspan="1">3.75</td>
+                  <td align="left" colspan="1" rowspan="1">1050</td>
+                  <td align="left" colspan="1" rowspan="1">330</td>
+                  <td align="left" colspan="1" rowspan="1">1269</td>
+                  <td align="left" colspan="1" rowspan="1">205</td>
+                  <td align="left" colspan="1" rowspan="1">312</td>
+                  <td align="left" colspan="1" rowspan="1">0.19</td>
+                  <td align="left" colspan="1" rowspan="1">3.82</td>
+                  <td align="left" colspan="1" rowspan="1">3.97</td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">2011</td>
+                  <td align="left" colspan="1" rowspan="1">14.18</td>
+                  <td align="left" colspan="1" rowspan="1">2968</td>
+                  <td align="left" colspan="1" rowspan="1">473</td>
+                  <td align="left" colspan="1" rowspan="1">2240</td>
+                  <td align="left" colspan="1" rowspan="1">102</td>
+                  <td align="left" colspan="1" rowspan="1">419</td>
+                  <td align="left" colspan="1" rowspan="1">0.05</td>
+                  <td align="left" colspan="1" rowspan="1">14.9</td>
+                  <td align="left" colspan="1" rowspan="1">2.18</td>
+                </tr>
+              </tbody>
+            </table>
+          </alternatives><table-wrap-foot>
+            <fn id="nt101">
+              <label>*</label>
+              <p>indicates TP<sub>June</sub>/TP<sub>March-May</sub> ratio of &gt;0.2.</p>
+            </fn>
+          </table-wrap-foot></table-wrap>
+        <p>Creating the composites served two purposes. The first is to establish an image set that is virtually free of clouds, thereby negating the need to account for missing (cloud-obscured) pixels. The second is to best approximate the areal biomass through the season. <italic>Microcystis</italic> is typically positively buoyant, especially during morning (when MERIS collects data), such that it accumulates at the surface during calm conditions <xref ref-type="bibr" rid="pone.0042444-Wynne1">[15]</xref>, <xref ref-type="bibr" rid="pone.0042444-Hunter1">[18]</xref>, although mixes through the water column during substantial winds (&gt;7.7 m s<sup>−1</sup> in Lake Erie) <xref ref-type="bibr" rid="pone.0042444-Wynne1">[15]</xref>. The CI is an estimate of surface concentration, which includes all the biomass during calm winds, but underestimates the bloom biomass under high winds. In western Lake Erie, 2–4 days of calm weather are common each week in the summer, allowing the cells to concentrate at the surface <xref ref-type="bibr" rid="pone.0042444-Wynne1">[15]</xref>. The maximum CI during the 10-day period provides a measure of the total biomass at each pixel.</p>
+        <fig id="pone-0042444-g003" orientation="portrait" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pone.0042444.g003</object-id>
+          <label>Figure 3</label>
+          <caption>
+            <title>Mean of the three 10-day composites (identified by circles in <xref ref-type="fig" rid="pone-0042444-g002"><bold>Figure 2</bold></xref>) used to compute intensities for each year for western Lake.</title>
+            <p>Black indicates CI&lt; = 0. Brown is land. Maumee River input is the far western end of the lake (see <xref ref-type="fig" rid="pone-0042444-g001">Figure 1</xref>).</p>
+          </caption>
+          <graphic mimetype="image" orientation="portrait" position="float" xlink:href="info:doi/10.1371/journal.pone.0042444.g003" xlink:type="simple"/>
+        </fig>
+        <p>We calculated intensity (biomass), for each of the 10-day composite images. The intensity was derived by summing the value of the CI at all pixels within the potential bloom area of the each composite. Only a few composites had missing data because of clouds, but these did not coincide with peak bloom concentrations. The data from 2006 was particularly gappy with some 10-day composites having no available imagery. However, the gaps did not impact the analysis owing to the early timing of the missing images and the relatively low cyanobacterial biomass that was present that year. While cyanobacteria may dominate for a few months, the intense bloom typically lasted 30–40 days (<xref ref-type="fig" rid="pone-0042444-g002">Figure 2</xref>). The annual bloom severity (<xref ref-type="table" rid="pone-0042444-t001">Table 1</xref>) was determined by averaging the highest three consecutive 10 day composites (<xref ref-type="fig" rid="pone-0042444-g003">Figure 3</xref>). From July to October, cyanobacteria overwhelmingly dominated the biomass in areas with measurable CI <xref ref-type="bibr" rid="pone.0042444-Millie1">[4]</xref>, <xref ref-type="bibr" rid="pone.0042444-RintaKantoJ1">[5]</xref>, <xref ref-type="bibr" rid="pone.0042444-Wynne1">[15]</xref>, <xref ref-type="bibr" rid="pone.0042444-Wynne2">[19]</xref>. We also determined the bloom area by counting the total number of pixels which had CI &gt;0.001, nominally equivalent to bloom concentration of 10<sup>5</sup> cells mL<sup>−1</sup> <xref ref-type="bibr" rid="pone.0042444-Wynne1">[15]</xref>, the threshold for severe blooms <xref ref-type="bibr" rid="pone.0042444-Graham2">[23]</xref>. For the annual peak blooms, the average density was 301 km<sup>2</sup> CI<sup>−1</sup> with a standard deviation of 48 km<sup>2</sup> CI<sup>−1</sup>.</p>
+        <fig id="pone-0042444-g004" orientation="portrait" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pone.0042444.g004</object-id>
+          <label>Figure 4</label>
+          <caption>
+            <title>Aerial photograph of <italic>Microcystis</italic> bloom in western Lake Erie, early in the 2009 bloom, showing the spatial variability during intense blooms.</title>
+            <p>“A” shows less dense and mixed bloom, “B” shows denser bloom aggregating at the water surface. Mixing can be seeing within the boat wake. Image width is approximately 400 m (credit Tom Archer).</p>
+          </caption>
+          <graphic mimetype="image" orientation="portrait" position="float" xlink:href="info:doi/10.1371/journal.pone.0042444.g004" xlink:type="simple"/>
+        </fig>
+        <p>The intensity estimate is a more robust statistic than the area because it gives the total biomass of the bloom. For this reason all statistical analysis will be done with intensities; however <xref ref-type="fig" rid="pone-0042444-g002">Figure 2</xref> and <xref ref-type="table" rid="pone-0042444-t001">Table 1</xref> show that the area and biomass exhibit similar trends, so the area relationships can be inferred with the density model.</p>
+        <table-wrap id="pone-0042444-t002" orientation="portrait" position="float"><object-id pub-id-type="doi">10.1371/journal.pone.0042444.t002</object-id><label>Table 2</label><caption>
+            <title>R<sup>2</sup> for all 10 years between maximum CI and the load of interest for months with positive correlation.</title>
+          </caption><alternatives>
+            <graphic id="pone-0042444-t002-2" mimetype="image" orientation="portrait" position="float" xlink:href="info:doi/10.1371/journal.pone.0042444.t002" xlink:type="simple"/>
+            <table>
+              <colgroup span="1">
+                <col align="left" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+              </colgroup>
+              <thead>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">Time</td>
+                  <td align="left" colspan="1" rowspan="1">Q r<sup>2</sup></td>
+                  <td align="left" colspan="1" rowspan="1">TP r<sup>2</sup></td>
+                  <td align="left" colspan="1" rowspan="1">SRP r<sup>2</sup></td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">February</td>
+                  <td align="left" colspan="1" rowspan="1">0.003</td>
+                  <td align="left" colspan="1" rowspan="1">0.033</td>
+                  <td align="left" colspan="1" rowspan="1">0.023</td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">March</td>
+                  <td align="left" colspan="1" rowspan="1">0.401</td>
+                  <td align="left" colspan="1" rowspan="1">0.319</td>
+                  <td align="left" colspan="1" rowspan="1">0.329</td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">April</td>
+                  <td align="left" colspan="1" rowspan="1">0.283</td>
+                  <td align="left" colspan="1" rowspan="1">0.336</td>
+                  <td align="left" colspan="1" rowspan="1">0.094</td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">May</td>
+                  <td align="left" colspan="1" rowspan="1">0.550</td>
+                  <td align="left" colspan="1" rowspan="1">0.519</td>
+                  <td align="left" colspan="1" rowspan="1">0.481</td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">June</td>
+                  <td align="left" colspan="1" rowspan="1">0.011</td>
+                  <td align="left" colspan="1" rowspan="1">0.0011</td>
+                  <td align="left" colspan="1" rowspan="1">0.003</td>
+                </tr>
+              </tbody>
+            </table>
+          </alternatives><table-wrap-foot>
+            <fn id="nt102">
+              <label/>
+              <p>March-May and March-June are the average of the months for Q and the cumulative for TP and SRP.</p>
+            </fn>
+            <fn id="nt103">
+              <label/>
+              <p>p-values: r<sup>2</sup>&gt;0.3, p&lt;0.10; r<sup>2</sup>&gt;0.4, p&lt;0.05.</p>
+            </fn>
+          </table-wrap-foot></table-wrap>
+        <p>Blooms in Lake Erie in summer are predominately <italic>Microcystis</italic> <xref ref-type="bibr" rid="pone.0042444-Millie1">[4]</xref>, <xref ref-type="bibr" rid="pone.0042444-RintaKantoJ1">[5]</xref>, <xref ref-type="bibr" rid="pone.0042444-Wynne1">[15]</xref>. <italic>Planktothrix</italic> is common in Sandusky Bay, but has been found in significant concentrations in the western basin only in 2005, a non-bloom year <xref ref-type="bibr" rid="pone.0042444-Millie1">[4]</xref>. (From 2008 to 2011, field sampling as part of the Lake Erie Harmful Algal Bloom Bulletin, identified <italic>Microcystis</italic> as the bloom-forming organism <xref ref-type="bibr" rid="pone.0042444-NOAA1">[24]</xref>.) Sandusky Bay was not included in the analyses, as its blooms are locally driven and typically remain within the Bay. The relationship between CI and cell concentration reported in <xref ref-type="bibr" rid="pone.0042444-Wynne1">[15]</xref> is based on <italic>Microcysti</italic>s. The r<sup>2</sup> of 0.42, while highly significant statistically (p&lt;0.001) is probably reduced by the comparison of different spatial scales: pixels against water samples in these highly patchy blooms (<xref ref-type="fig" rid="pone-0042444-g004">Figure 4</xref>). Cyanobacteria blooms often have concentrations varying orders of magnitude in the space of a 1-km pixel <xref ref-type="bibr" rid="pone.0042444-Kutser1">[25]</xref>. However, in the context of this study, the relationship of CI to concentration <xref ref-type="bibr" rid="pone.0042444-Wynne1">[15]</xref> is sufficiently accurate, although with a potential to underestimate as much as a factor of 2. As more data is collected in the future, the relationship should be better constrained. Our use of CI in this study, rather than cell concentration, will assure that any future adjustments in the relationship will not significantly alter these results.</p>
+        <table-wrap id="pone-0042444-t003" orientation="portrait" position="float"><object-id pub-id-type="doi">10.1371/journal.pone.0042444.t003</object-id><label>Table 3</label><caption>
+            <title>R<sup>2</sup> and residual standard error (RSE) for all 10 years and bloom years between maximum CI and the combined loads of March to May, March to June (in bold), and March to July.</title>
+          </caption><alternatives>
+            <graphic id="pone-0042444-t003-3" mimetype="image" orientation="portrait" position="float" xlink:href="info:doi/10.1371/journal.pone.0042444.t003" xlink:type="simple"/>
+            <table>
+              <colgroup span="1">
+                <col align="left" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+              </colgroup>
+              <thead>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">Time</td>
+                  <td align="left" colspan="1" rowspan="1">Q r<sup>2</sup></td>
+                  <td align="left" colspan="1" rowspan="1">Q RSE (as CI)</td>
+                  <td align="left" colspan="1" rowspan="1">TP r<sup>2</sup></td>
+                  <td align="left" colspan="1" rowspan="1">TP RSE (as CI)</td>
+                  <td align="left" colspan="1" rowspan="1">SRP r<sup>2</sup></td>
+                  <td align="left" colspan="1" rowspan="1">SRP RSE (as CI)</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">Mar-May all years</td>
+                  <td align="left" colspan="1" rowspan="1">0.75</td>
+                  <td align="left" colspan="1" rowspan="1">2.2</td>
+                  <td align="left" colspan="1" rowspan="1">0.71</td>
+                  <td align="left" colspan="1" rowspan="1">2.3</td>
+                  <td align="left" colspan="1" rowspan="1">0.57</td>
+                  <td align="left" colspan="1" rowspan="1">2.9</td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">
+                    <bold>Mar-June all years</bold>
+                  </td>
+                  <td align="left" colspan="1" rowspan="1">
+                    <bold>0.74</bold>
+                  </td>
+                  <td align="left" colspan="1" rowspan="1">
+                    <bold>2.2</bold>
+                  </td>
+                  <td align="left" colspan="1" rowspan="1">
+                    <bold>0.75</bold>
+                  </td>
+                  <td align="left" colspan="1" rowspan="1">
+                    <bold>2.2</bold>
+                  </td>
+                  <td align="left" colspan="1" rowspan="1">
+                    <bold>0.60</bold>
+                  </td>
+                  <td align="left" colspan="1" rowspan="1">
+                    <bold>2.8</bold>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">Mar-July all years</td>
+                  <td align="left" colspan="1" rowspan="1">0.64</td>
+                  <td align="left" colspan="1" rowspan="1">2.6</td>
+                  <td align="left" colspan="1" rowspan="1">0.63</td>
+                  <td align="left" colspan="1" rowspan="1">2.7</td>
+                  <td align="left" colspan="1" rowspan="1">0.40</td>
+                  <td align="left" colspan="1" rowspan="1">3.4</td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">Feb-June all years</td>
+                  <td align="left" colspan="1" rowspan="1">0.68</td>
+                  <td align="left" colspan="1" rowspan="1">2.4</td>
+                  <td align="left" colspan="1" rowspan="1">0.64</td>
+                  <td align="left" colspan="1" rowspan="1">2.6</td>
+                  <td align="left" colspan="1" rowspan="1">0.54</td>
+                  <td align="left" colspan="1" rowspan="1">2.9</td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">Mar-May bloom years</td>
+                  <td align="left" colspan="1" rowspan="1">0.84</td>
+                  <td align="left" colspan="1" rowspan="1">2.1</td>
+                  <td align="left" colspan="1" rowspan="1">0.75</td>
+                  <td align="left" colspan="1" rowspan="1">2.7</td>
+                  <td align="left" colspan="1" rowspan="1">0.61</td>
+                  <td align="left" colspan="1" rowspan="1">3.3</td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">
+                    <bold>Mar-June bloom years</bold>
+                  </td>
+                  <td align="left" colspan="1" rowspan="1">
+                    <bold>0.97</bold>
+                  </td>
+                  <td align="left" colspan="1" rowspan="1">
+                    <bold>0.96</bold>
+                  </td>
+                  <td align="left" colspan="1" rowspan="1">
+                    <bold>0.89</bold>
+                  </td>
+                  <td align="left" colspan="1" rowspan="1">
+                    <bold>1.7</bold>
+                  </td>
+                  <td align="left" colspan="1" rowspan="1">
+                    <bold>0.65</bold>
+                  </td>
+                  <td align="left" colspan="1" rowspan="1">
+                    <bold>3.1</bold>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">Mar-July bloom years</td>
+                  <td align="left" colspan="1" rowspan="1">0.58</td>
+                  <td align="left" colspan="1" rowspan="1">3.4</td>
+                  <td align="left" colspan="1" rowspan="1">0.63</td>
+                  <td align="left" colspan="1" rowspan="1">2.7</td>
+                  <td align="left" colspan="1" rowspan="1">0.26</td>
+                  <td align="left" colspan="1" rowspan="1">4.5</td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">Feb-June bloom years</td>
+                  <td align="left" colspan="1" rowspan="1">0.69</td>
+                  <td align="left" colspan="1" rowspan="1">2.9</td>
+                  <td align="left" colspan="1" rowspan="1">0.56</td>
+                  <td align="left" colspan="1" rowspan="1">3.5</td>
+                  <td align="left" colspan="1" rowspan="1">0.43</td>
+                  <td align="left" colspan="1" rowspan="1">4.0</td>
+                </tr>
+              </tbody>
+            </table>
+          </alternatives><table-wrap-foot>
+            <fn id="nt104">
+              <label/>
+              <p>P-value thresholds, for all years: r<sup>2</sup>&gt;0.4, p&lt;0.05; r<sup>2</sup>&gt;0.58, p&lt;0.01; r<sup>2</sup>&gt;0.74, p&lt;0.0014.</p>
+            </fn>
+            <fn id="nt105">
+              <label/>
+              <p>P-value thresholds for bloom years: r<sup>2</sup>&gt;0.66, p&lt;0.05; r<sup>2</sup>&gt;0.84, p&lt;0.01; r<sup>2</sup>&gt;0.84, p&lt;0.01.</p>
+            </fn>
+            <fn id="nt106">
+              <label/>
+              <p>June has a strong influence on the statistics for the bloom years.</p>
+            </fn>
+          </table-wrap-foot></table-wrap>
+      </sec>
+      <sec id="s2b">
+        <title>Water Temperature</title>
+        <p>There are no buoys that have routinely collected temperature data in the western basin over the ten years. Water temperature was obtained from monthly mean 4-km data sets of the standard 11-micron night-time sea surface temperature algorithm of the Moderate Resolution Imaging Spectro-radiometer (MODIS) on the AQUA satellite. Averages for each month for the western basin (west of 82.5W) were obtained from NASA’s Giovanni web site with an accuracy of +/−0.4°C <xref ref-type="bibr" rid="pone.0042444-NASA1">[26]</xref>. The temperature data shows that July and August are the hottest months, and the temperature does not rise above 20°C until June. This may partly explain the lag in development of the blooms, the water temperatures until June are not optimal for <italic>Microcystis</italic> growth.</p>
+        <fig id="pone-0042444-g005" orientation="portrait" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pone.0042444.g005</object-id>
+          <label>Figure 5</label>
+          <caption>
+            <title>Bloom intensity from 2002 to 2011 compared to loads with CI of 1 equivalent to 300 km<sup>2</sup> of 10<sup>5</sup> cells mL<sup>−1</sup> (A) TP for June, with regression for eight years excluding 2004 and 2011; (B) cumulative TP for March to June with regression (and regression confidence interval) for bloom years (filled squares); (C) cumulative SRP for March to June like (B) with regression line and confidence for bloom years; (D) average Q for March to June, with linear and exponential regression for bloom years.</title>
+            <p>Shading in (d) indicates the RSE for each of the two regressions, which closely matches the regression confidence (except near 2011).</p>
+          </caption>
+          <graphic mimetype="image" orientation="portrait" position="float" xlink:href="info:doi/10.1371/journal.pone.0042444.g005" xlink:type="simple"/>
+        </fig>
+      </sec>
+      <sec id="s2c">
+        <title>River Discharge</title>
+        <p>River discharge (Q) was obtained from the United States Geologic Survey (USGS) Waterville, Ohio Station on the Maumee River (Station 04193500) <xref ref-type="bibr" rid="pone.0042444-USGS1">[27]</xref>. Monthly average discharge was calculated from the daily averages. For water years (October 1 of the previous year to September 30) of 2010 and 2011, the monthlies were determined from USGS provisional data, as official data was not yet available.</p>
+        <fig id="pone-0042444-g006" orientation="portrait" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pone.0042444.g006</object-id>
+          <label>Figure 6</label>
+          <caption>
+            <title>Monthly mean water temperature in western Lake Erie from 2002–2011. Tick marks indicate July of each year.</title>
+          </caption>
+          <graphic mimetype="image" orientation="portrait" position="float" xlink:href="info:doi/10.1371/journal.pone.0042444.g006" xlink:type="simple"/>
+        </fig>
+      </sec>
+      <sec id="s2d">
+        <title>Phosphorus and Nitrogen Loads</title>
+        <p>A refrigerated autosampler is used to collect samples near the Waterville United States Geological Survey (USGS) Stream Gage. Samples are returned to Heidelberg University’s National Center for Water Quality Research (NCWQR) at weekly intervals, where three samples per day are analyzed during high flow periods and one per day during low flows. Total phosphorus (TP) and soluble reactive phosphorus (SRP) are analyzed using EPA Method 365.1 and nitrogen as nitrate + nitrite (NOx) is analyzed using EPA Method 300.1 <xref ref-type="bibr" rid="pone.0042444-NCWQR1">[28]</xref>, <xref ref-type="bibr" rid="pone.0042444-ODell1">[29]</xref>. Nitrite is negligible compared to nitrate <xref ref-type="bibr" rid="pone.0042444-NCWQR1">[28]</xref>. Additional details of the sample collection and analytical methods are presented at the tributary loading section of the NCWQR’s website <xref ref-type="bibr" rid="pone.0042444-NCWQR1">[28]</xref>.</p>
+        <p>Monthly loads (m.tons) were calculated from daily loads determined from flow-weighted concentration <xref ref-type="bibr" rid="pone.0042444-Richards2">[30]</xref>. <xref ref-type="table" rid="pone-0042444-t001">Table 1</xref> gives the totals for spring (March to June) used in this paper. CI was compared with Q, TP, and SRP using standard least squares regression, including determination of p-values and residual standard error (RSE) to determine significance of the models <xref ref-type="bibr" rid="pone.0042444-R1">[31]</xref>.</p>
+        <fig id="pone-0042444-g007" orientation="portrait" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pone.0042444.g007</object-id>
+          <label>Figure 7</label>
+          <caption>
+            <title>Spring (March to June) load of NOx nitrogen compared to CI showing the lack of a relationship (r<sup>2</sup> = 0.29, p = 0.11).</title>
+          </caption>
+          <graphic mimetype="image" orientation="portrait" position="float" xlink:href="info:doi/10.1371/journal.pone.0042444.g007" xlink:type="simple"/>
+        </fig>
+      </sec>
+      <sec id="s2e">
+        <title>Bloom Phosphorus Calculation</title>
+        <p>For comparison with TP values, the phosphorus load within a bloom was calculated based on literature values for phosphorus in cells and potential cells in the bloom. Phosphorus within the <italic>Microcystis</italic> cells in Lake Erie has been determined from measured intra-cellular phosphorus per dry weight <xref ref-type="bibr" rid="pone.0042444-Chaffin1">[32]</xref>. The calculation used phosphorus per cell (0.26 mmoles P per kg dry wt <xref ref-type="bibr" rid="pone.0042444-Chaffin1">[32]</xref>), which gives 8.1 mg P per g dry wt. The literature values for dry weight per cell are 17–43 pg <xref ref-type="bibr" rid="pone.0042444-Long1">[33]</xref>. The resulting phosphorus (given the range in dry weight per cell) is 143 to 352 fg P cell<sup>−1</sup>. We now need to equate the intra-cellular phosphorus to the phosphorus in the bloom observed from satellite. A CI of 0.001 corresponds to a concentration of about 10<sup>5</sup> cells mL<sup>−1</sup> <xref ref-type="bibr" rid="pone.0042444-Wynne1">[15]</xref>, which has phosphorus concentration of 14.3 to 35.2 ng P mL<sup>−1</sup>. If we assume the bloom is concentrated within 1 meter of the surface (because of buoyancy), there are 1.2 *10<sup>9</sup> L within the pixel of area 1.21 km<sup>2</sup>. This results in 17 to 42 kg intra-cellular P in the bloom for a CI of 0.001 (with a range varying based on the dry weight per cell). An accumulated CI of 1.0 would hold 17 to 42 m.tons P. Current uncertainty in the conversion of CI to cell concentration of about two-fold means that a bloom of CI = 1.0 could contain up to 84 m.tons P. A bloom concentrated closer to the surface would reduce the estimated phosphorus load in the bloom, but does not impact the subsequent conclusions (covered in the <xref ref-type="sec" rid="s4">Discussion</xref>).</p>
+        <table-wrap id="pone-0042444-t004" orientation="portrait" position="float"><object-id pub-id-type="doi">10.1371/journal.pone.0042444.t004</object-id><label>Table 4</label><caption>
+            <title>R<sup>2</sup> and residual standard error (RSE), excluding 2011 from the analysis. Q exp is exponential relationship, Q lin is linear relationship.</title>
+          </caption><alternatives>
+            <graphic id="pone-0042444-t004-4" mimetype="image" orientation="portrait" position="float" xlink:href="info:doi/10.1371/journal.pone.0042444.t004" xlink:type="simple"/>
+            <table>
+              <colgroup span="1">
+                <col align="left" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+              </colgroup>
+              <thead>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">Time</td>
+                  <td align="left" colspan="1" rowspan="1">Q lin r<sup>2</sup></td>
+                  <td align="left" colspan="1" rowspan="1">Q exp. RSE(as CI)</td>
+                  <td align="left" colspan="1" rowspan="1">Q lin r<sup>2</sup></td>
+                  <td align="left" colspan="1" rowspan="1">Q lin RSE(as CI)</td>
+                  <td align="left" colspan="1" rowspan="1">TP r<sup>2</sup></td>
+                  <td align="left" colspan="1" rowspan="1">TP RSE(as CI)</td>
+                  <td align="left" colspan="1" rowspan="1">SRP r<sup>2</sup></td>
+                  <td align="left" colspan="1" rowspan="1">SRP RSE(as CI)</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td align="left" colspan="1" rowspan="1">Mar-Jun 2002–2010</td>
+                  <td align="left" colspan="1" rowspan="1">0.62</td>
+                  <td align="left" colspan="1" rowspan="1">0.87</td>
+                  <td align="left" colspan="1" rowspan="1">0.64</td>
+                  <td align="left" colspan="1" rowspan="1">0.91</td>
+                  <td align="left" colspan="1" rowspan="1">0.57</td>
+                  <td align="left" colspan="1" rowspan="1">1.0</td>
+                  <td align="left" colspan="1" rowspan="1">0.44</td>
+                  <td align="left" colspan="1" rowspan="1">1.1</td>
+                </tr>
+              </tbody>
+            </table>
+          </alternatives><table-wrap-foot>
+            <fn id="nt107">
+              <label/>
+              <p>P-value thresholds: r<sup>2</sup>&gt;0.45, p&lt;0.05; r<sup>2</sup>&gt;0.63, p&lt;0.01.</p>
+            </fn>
+          </table-wrap-foot></table-wrap>
+      </sec>
+    </sec>
+    <sec id="s3">
+      <title>Results</title>
+      <p>The later years, 2008–2011, all show strong blooms (<xref ref-type="fig" rid="pone-0042444-g002">Figures 2</xref>, <xref ref-type="fig" rid="pone-0042444-g003">3</xref>); 2003 and 2004 were also considered to be bloom years owing to relatively high intensity (<xref ref-type="table" rid="pone-0042444-t001">Table 1</xref>, <xref ref-type="fig" rid="pone-0042444-g002">Figure 2</xref>). Peak blooms occurred in August or September in all years except 2011, which peaked in early October. Only March, April, and May had statistically significant correlations with the annual CI concentration (<xref ref-type="table" rid="pone-0042444-t002">Table 2</xref>). CI is correlated with Q and TP for March, April (at p = 0.06), and May; but only for March and May for SRP. These correlations indicate that spring loads should be examined more closely.</p>
+      <p>The role of the spring months is more evident in a linear model of the cumulative load for sequential months. For March to May, CI against the TP had an r<sup>2</sup> = 0.71 and RSE  = 2.32 CI, and Q had an r<sup>2</sup> = 0.75, with RSE  = 2.17 CI. When additional months were added to the March to May average, poorer correlations occurred, except for the addition of June (<xref ref-type="table" rid="pone-0042444-t003">Table 3</xref>). In particular, when examining the relationships for only the bloom years, the total TP or Q for March to June explained 89% and 97% of the variance, respectively.</p>
+      <p>June had a unique pattern between loads and CI. While CI was not correlated with June loads for all 10 years, if 2004 and 2011 are excluded, CI is highly correlated against TP (r<sup>2</sup> = 0.91, RSE  = 0.48 CI, <xref ref-type="fig" rid="pone-0042444-g005">Figure 5A</xref>), Q (r<sup>2</sup> = 0.86, RSE  = 0.61 CI), and SRP (r<sup>2</sup> = 0.82, RSE  = 0.69 CI). If 2004 and 2011 are excluded from the regression for any other month other than June, the correlation for that month (that is CI to Q, SRP, or TP) becomes lower (r<sup>2</sup>&lt;0.1) or negative. The two excluded years have extreme differences in the contribution of June loads to the cumulative spring (March to June) load. While 2004 had a high TP load in June (<xref ref-type="table" rid="pone-0042444-t001">Table 1</xref>, <xref ref-type="fig" rid="pone-0042444-g005">Figure 5a</xref>), it had the 2<sup>nd</sup> lowest TP load for March-May (after the non-bloom year of 2005), and a relatively low CI. 2011 had a moderate June TP load, but it saw the highest TP load for March to May–70% greater than the March to May load for the next highest year– and the highest observed CI of the time series. Therefore, the spring months are needed to fully explain bloom severity and variability.</p>
+      <p>Is the spring load of TP sufficient to support peak blooms? As described in the methods, an accumulated CI of 1 corresponds to 17–42 m.tons of intra-cellular P. The 2008–2010 blooms would have contained between 60 and 127 m.tons of P, up to 10% of the average spring TP load and less than the June TP load (<xref ref-type="table" rid="pone-0042444-t001">Table 1</xref>). This indicates that even with losses of TP to the sediments, the Maumee River provides sufficient P to support the blooms.</p>
+      <fig id="pone-0042444-g008" orientation="portrait" position="float">
+        <object-id pub-id-type="doi">10.1371/journal.pone.0042444.g008</object-id>
+        <label>Figure 8</label>
+        <caption>
+          <title>Observed and modeled CI. CI determined here (black squares) from 2002–2011.</title>
+          <p>Period of projected CI is shown in light gray, with black circles giving projected CI based on reports of blooms or not. 1995 and 1998 blooms are assumed to be equal to 2003, other years are assumed zero (no bloom) based on lack of reports. Red circles are CI estimated from exponential Q model. Green triangles are CI from TP for June. Triangles with an X have ratio of TP<sub>June</sub>/TP<sub>March-May</sub> &gt;0.2. Dark gray shade marks time period when the models fail to predict occurrence or absence of blooms.</p>
+        </caption>
+        <graphic mimetype="image" orientation="portrait" position="float" xlink:href="info:doi/10.1371/journal.pone.0042444.g008" xlink:type="simple"/>
+      </fig>
+      <sec id="s3a">
+        <title>Other Environmental Factors</title>
+        <p>Cyanobacterial blooms favor warm temperatures <xref ref-type="bibr" rid="pone.0042444-Paerl1">[13]</xref>. June is the first month when the temperature exceeds 20°C, and the warmest water occurs consistently from July to September (<xref ref-type="fig" rid="pone-0042444-g006">Figure 6</xref>). This means that the “lag” months between load and bloom are the warmest in the lake, certainly favoring development of <italic>Microcystis</italic> blooms. Interannual differences in summer temperatures, however, do not explain the variations in bloom intensity within this data set. Warm summers occurred in both non-bloom (2005–2006) and bloom (2010–2011) years. Confirming the lack of relationship, the r<sup>2</sup> of CI to the average summer temperature (July to September) or any month from May to August, had r<sup>2</sup> of &lt;0.1 (p values &gt;0.4).</p>
+        <p>Nitrogen (NOx) load does not show a significant influence on bloom intensity. March to June total load of NOx has r<sup>2</sup> = 0.29 (p-value of 0.11) and RSE  = 3.7 CI, which is much poorer than the phosphorus relationship (<xref ref-type="fig" rid="pone-0042444-g007">Figure 7</xref>). It also appears that ample nitrogen enters Lake Erie in the spring, an average of 15,930 m.tons as nitrate from 2002–2011. With blooms holding about 100 m.tons of P, 20-fold more nitrogen is provided than the 723 m.tons N that would be needed assuming the Redfield ratio of 16∶1 (molar).</p>
+      </sec>
+      <sec id="s3b">
+        <title>Model of Bloom Intensity</title>
+        <p>A predictor of bloom intensity should concentrate on the bloom years. For the six years with major blooms (<xref ref-type="fig" rid="pone-0042444-g005">Figures 5b, c, d</xref>), spring Q produced a stronger relationship to bloom intensity than TP or SRP (<xref ref-type="fig" rid="pone-0042444-g005">Figures 5b, c, d</xref>). Spring TP shows a strong correlation (r<sup>2</sup> = 0.89; p&lt;0.001), but a large uncertainty (RSE of 1.8 CI). In contrast, CI against the average spring Q has an RSE of 0.96 CI (1/2 of the error for TP) with an improved r<sup>2</sup> = 0.97. Fitting an exponential model of CI against Q (log CI vs. log Q) delivers than same r<sup>2</sup> = 0.97 (p = 0.0004) but an improved RSE of 0.58 CI. A CI of 0.58 is equivalent to 12% of the average intensity of the bloom years. (For reference a linear model using March to May for the bloom years has much greater error: for TP, March to May has r<sup>2</sup> = 0.75 and RSE  = 2.7 CI; and Q has r<sup>2</sup> = 0.84 and RSE  = 2.1 CI).</p>
+      </sec>
+      <sec id="s3c">
+        <title>2011 Bloom</title>
+        <p>The bloom in 2011 was so severe that it may appear as an outlier in the data set. To determine whether it would skew the results, we examined the data excluding 2011. As noted previously, TP for June can explain the annual peak CI if 2004 and 2011are excluded (because of the extreme difference in loads of March to May). The relationships of Q and TP against CI without 2001 have r<sup>2</sup>&gt;0.57 (<xref ref-type="table" rid="pone-0042444-t004">Table 4</xref>) and are statistically significant at p&lt;0.01 (while SRP has a r<sup>2</sup> = 0.44 and p = 0.051). We further used exponential and linear models of Q against CI determined from 2002–2010 bloom years to predict the 2011 event. These models were robust; the exponential model had r<sup>2</sup> = 0.90 (p = 0.013) and RSE  = 0.54 CI, and the linear model had r<sup>2</sup> = 0.81 (p = 0.037) and RSE  = 0.59 CI. These models (<italic>CI</italic>  = 5.84×10−<sup>11</sup>× <italic>Q</italic><sup>4</sup>.<sup>304</sup>; and <italic>CI</italic> = −8.07+0.0364 <italic>Q</italic>) predicted the 2011 bloom within 35%: a CI of 19.0 (exponential) and 9.15 (linear) vs 14.2 observed in 2011.</p>
+      </sec>
+    </sec>
+    <sec id="s4">
+      <title>Discussion</title>
+      <p>Spring flow and loads explain the severity of cyanobacterial blooms in Lake Erie. The lag of up to two months between the spring load and peak biomass allows sufficient time for recycling of TP and dispersion in the basin to support growth under optimal temperature (<xref ref-type="fig" rid="pone-0042444-g006">Figure 6</xref>) and light conditions. The results here show that the bloom severity can be modeled solely with nutrient influx, as argued by others <xref ref-type="bibr" rid="pone.0042444-Brookes1">[34]</xref>. This leads to a set of models that may permit prediction of these blooms:</p>
+      <p>CI from Q exponential:</p>
+      <disp-formula id="pone.0042444.e003"><graphic orientation="portrait" position="anchor" xlink:href="info:doi/10.1371/journal.pone.0042444.e003" xlink:type="simple"/><label>(3)</label></disp-formula>
+      <p>CI from TP<sub>June</sub> (without 2004 and 2011)</p>
+      <disp-formula id="pone.0042444.e004"><graphic orientation="portrait" position="anchor" xlink:href="info:doi/10.1371/journal.pone.0042444.e004" xlink:type="simple"/><label>(4)</label></disp-formula>
+      <p>The exponential model with Q captures the reasonable non-linear response at low loads. But why is Q the more effective predictor? SRP loads may promote spring blooms near the river mouth <xref ref-type="bibr" rid="pone.0042444-Bridgeman1">[35]</xref>. TP, which is not immediately usable and may settle, can be recycled to usable forms by bacteria and Dreissenid mussels <xref ref-type="bibr" rid="pone.0042444-Vanderploeg1">[8]</xref>–<xref ref-type="bibr" rid="pone.0042444-Conroy1">[9]</xref>. Subsequent spring discharge would disperse this bioavailable P across the western basin. The Maumee River may also be a source of cyanobacteria <xref ref-type="bibr" rid="pone.0042444-Bridgeman1">[35]</xref>, although this is debated <xref ref-type="bibr" rid="pone.0042444-Kutovaya1">[36]</xref>.</p>
+      <p>The model was applied to data going back to 1995 (<xref ref-type="fig" rid="pone-0042444-g008">Figure 8</xref>), the first of the recent blooms <xref ref-type="bibr" rid="pone.0042444-Budd2">[37]</xref>. The model correctly hindcasts negligible blooms from 1999–2001 and indicates a bloom of 1.6 CI in 1998 (size between the 2004 and 2003 blooms). Before 1998 the model fails; it hindcasts a 2003-size bloom in both 1996 and 1997 when none were reported, and no bloom for 1995, when one occurred <xref ref-type="bibr" rid="pone.0042444-Nalepa1">[38]</xref>. This change in predictive skill follows the colonization of the lake by Dreissenid mussels, which fundamentally altered the way carbon and nutrients are recycled and packaged <xref ref-type="bibr" rid="pone.0042444-Makarewicz1">[3]</xref>, <xref ref-type="bibr" rid="pone.0042444-Nalepa1">[38]</xref>. We hypothesize that the impact of the Dreissenid mussels on cyanobacteria took several years, beginning before 1995 and changing to a new ecological state by 1998 that increased the importance of the Maumee phosphorus loads on these blooms.</p>
+      <p>With the relatively short 10-year period of study, there are other questions of environmental variability. In the winter of 2011–2012, for example, Lake Erie did not freeze over. Could this influence the forecasts? While infrequent, lack of ice is not unusual; Lake Erie also had minimal ice cover in 1998, 2002, and 2006 <xref ref-type="bibr" rid="pone.0042444-Wang1">[39]</xref>. Of these years, 1998 had a reported bloom, while 2002 and 2006 had minor blooms. Ice cover does not point in either direction at this time. Of note, when the lake is ice covered, it can have dense winter diatom blooms under the ice <xref ref-type="bibr" rid="pone.0042444-Twiss1">[40]</xref>–<xref ref-type="bibr" rid="pone.0042444-Binding2">[41]</xref>. Without ice cover, there can be greater sediment resuspension, potentially further reducing light availability until spring.</p>
+      <sec id="s4a">
+        <title>Seasonal Forecast</title>
+        <p>A seasonal forecast of the bloom severity may be possible from the models presented here (equations 3 and 4). This forecast could be made in early July, nearly two months before the bloom reaches its peak. Q is available provisionally from the USGS within a day, and TP is available from NCWQR within a week. The exponential model with Q for March to June (equation 3) would provide the primary forecast. TP for June (equation 4) can provide a comparative reference, except when the June load is much larger than that for March to May (<xref ref-type="table" rid="pone-0042444-t001">Table 1</xref>). If the June TP load is much larger than the March-May load, namely the ratio of TP<sub>June</sub>/TP<sub>March-May</sub> &gt;0.2 (henceforth TP ratio), which occurred in 2004, 2001, and 2000, the June TP model appears to be inappropriate (<xref ref-type="fig" rid="pone-0042444-g008">Figure 8</xref>). (A relatively low TP in June may matter only when March-May is extremely high as in 2011).</p>
+        <p>As opposed to using only the exponential Q model (equation 3); blending the Q model with the TP<sub>June</sub> model can produce lower RMS error, and therefore a more robust model. For any year when the TP ratio &gt; = 0.2, the Q model may be used. For years that have a TP ratio &lt;0.2, the average of the two models may be more appropriate. Using the Q model alone on the 10 years had a Root Mean Square (RMS) error of 0.55 CI. By using the blended model (except for 2011, when TP<sub>June</sub> was severely low relative to the extreme March to May load), the RMS error decreases to 0.37 CI (an uncertainty in nominal area of 105 km<sup>2</sup> vs. 165 km<sup>2</sup> for the Q only model).</p>
+      </sec>
+      <sec id="s4b">
+        <title>Conclusions</title>
+        <p>Seasonal forecasts of significant ecological hazards are not common. Three noteworthy forecasts are the annual “red tide” in the Gulf of Maine, and the summer hypoxia in both the Chesapeake Bay and the Gulf of Mexico <xref ref-type="bibr" rid="pone.0042444-McGillicuddy1">[42]</xref>–<xref ref-type="bibr" rid="pone.0042444-Evans1">[43]</xref>. The results here indicate that spring nutrient load explains the cyanobacteria bloom in Lake Erie such that Q and TP allow for a new seasonal forecast. The importance of spring discharge and phosphorus loads may provide insight into strategies for targeted reductions of these loads <xref ref-type="bibr" rid="pone.0042444-Joosse1">[6]</xref>, rather than pursuing reductions of the annual load.</p>
+        <p>We propose to issue a forecast at the start of the season (shortly after July 1). The forecast will identify the intensity of the cyanobacteria bloom and the equivalent area covered by bloom conditions. The peak intensity and nominal area of the bloom will be predicted in both quantitative and qualitative forms. Qualitative categories could be minimal, moderate, and severe. Our ability to predict bloom extent is based on the models presented here, and is not dependent on additional ocean color data. Skill assessment of the model and adding additional data points, however, are important and will be dependent on the acquisition of new satellite imagery. With the loss of MERIS data in April 2012, validation will be more difficult until 2014 when the European Space Agency plans on launching a successor to MERIS, called the Ocean and Land Colour Instrument (OLCI), on the Sentinel-3 satellite. This new sensor would continue the capability demonstrated by MERIS into the future for further model development and skill assessment.</p>
+      </sec>
+    </sec>
+  </body>
+  <back>
+    <ack>
+      <p>Nutrient and discharge data are archived at <ext-link ext-link-type="uri" xlink:href="http://www.heidelberg.edu/NCWQR" xlink:type="simple">www.heidelberg.edu/NCWQR</ext-link>, water discharge data are available through the USGSWaterWatch site. The authors would like to thank Randy Balram and Lita Katz for assistance in data management. Comments by the reviewers provided important improvements to this paper.</p>
+    </ack>
+    <ref-list>
+      <title>References</title>
+      <ref id="pone.0042444-US1">
+        <label>1</label>
+        <mixed-citation publication-type="other" xlink:type="simple">US Environmental Protection Agency (1986) A Phosphorus diet for the lower lakes, Executive summary of the US Task Force Plans for the Phosphorus Load Reduction to Lake Erie, Lake Ontario and Saginaw Bay. Chicago, US Environmental Protection Agency. 20 p.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Culver1">
+        <label>2</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Culver</surname><given-names>DA</given-names></name>, <name name-style="western"><surname>Baker</surname><given-names>DB</given-names></name>, <name name-style="western"><surname>Richards</surname><given-names>RP</given-names></name>, <name name-style="western"><surname>Beeton</surname><given-names>AM</given-names></name>, <name name-style="western"><surname>Johengen</surname><given-names>TH</given-names></name>, <etal>et al</etal>. (<year>1999</year>) <article-title>Toxicity, ecological impact, monitoring, causes and public awareness of <italic>Microcystis</italic> blooms in Lake Erie: Final Report to the Lake Erie Commission. Columbus: Ohio State University</article-title>. <source>146 p</source>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Makarewicz1">
+        <label>3</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Makarewicz</surname><given-names>JC</given-names></name>, <name name-style="western"><surname>Bertram</surname><given-names>P</given-names></name> (<year>1991</year>) <article-title>Evidence for the restoration of the Lake Erie ecosystem</article-title>. <source>BioScience</source> <volume>41</volume>: <fpage>216</fpage>–<lpage>223</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Millie1">
+        <label>4</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Millie</surname><given-names>DF</given-names></name>, <name name-style="western"><surname>Fahnenstiel</surname><given-names>GL</given-names></name>, <name name-style="western"><surname>Dyble-Bressie</surname><given-names>J</given-names></name>, <name name-style="western"><surname>Pigg</surname><given-names>R</given-names></name>, <name name-style="western"><surname>Rediske</surname><given-names>R</given-names></name>, <etal>et al</etal>. (<year>2009</year>) <article-title>Late-summer phytoplankton in western Lake Erie (Laurentian Great Lakes): Bloom distributions, toxicity, and environmental influences</article-title>. <source>Aquat Ecol</source> <volume>43</volume>: <fpage>915</fpage>–<lpage>934</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-RintaKantoJ1">
+        <label>5</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Rinta-Kanto J</surname><given-names>M</given-names></name>, <name name-style="western"><surname>Ouellette</surname><given-names>AJA</given-names></name>, <name name-style="western"><surname>Boyer</surname><given-names>GL</given-names></name>, <name name-style="western"><surname>Twiss</surname><given-names>MR</given-names></name>, <name name-style="western"><surname>Bridgeman</surname><given-names>TB</given-names></name>, <etal>et al</etal>. (<year>2005</year>) <article-title>Quantification of Toxic <italic>Microcystis</italic> spp. during the 2003 and 2004 blooms in western Lake Erie using quantitative real-time PCR</article-title>. <source>Environ Sci Technol</source> <volume>39</volume>: <fpage>4198</fpage>–<lpage>4205</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Joosse1">
+        <label>6</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Joosse</surname><given-names>PJ</given-names></name>, <name name-style="western"><surname>Baker</surname><given-names>DB</given-names></name> (<year>2011</year>) <article-title>Context for re-evaluating agricultural source phosphorus loadings to the Great Lakes</article-title>. <source>Can J Soil Sci</source> <volume>91</volume>: <fpage>317</fpage>–<lpage>327</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Budd1">
+        <label>7</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Budd</surname><given-names>JW</given-names></name>, <name name-style="western"><surname>Drummer</surname><given-names>TD</given-names></name>, <name name-style="western"><surname>Nalepa</surname><given-names>TF</given-names></name>, <name name-style="western"><surname>Fahnenstiel</surname><given-names>GL</given-names></name> (<year>2001</year>) <article-title>Remote sensing of biotic effects: Zebra mussels (<italic>Dreissena polymorpha</italic>) influence on water clarity in Saginaw Bay, Lake Huron</article-title>. <source>Limnol Oceanogr</source> <volume>46</volume>: <fpage>213</fpage>–<lpage>223</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Vanderploeg1">
+        <label>8</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Vanderploeg</surname><given-names>HA</given-names></name>, <name name-style="western"><surname>Nalepa</surname><given-names>TF</given-names></name>, <name name-style="western"><surname>Jude</surname><given-names>DJ</given-names></name>, <name name-style="western"><surname>Mills</surname><given-names>EL</given-names></name>, <name name-style="western"><surname>Holeck</surname><given-names>KT</given-names></name>, <etal>et al</etal>. (<year>2002</year>) <article-title>Dispersal and emerging ecological impacts of Ponto-Caspian species in the Laurentian Great Lakes</article-title>. <source>Can J Fish Aquat Sci</source> <volume>59</volume>: <fpage>1209</fpage>–<lpage>1228</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Conroy1">
+        <label>9</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Conroy</surname><given-names>JD</given-names></name>, <name name-style="western"><surname>Kane</surname><given-names>DD</given-names></name>, <name name-style="western"><surname>Dolan</surname><given-names>DM</given-names></name>, <name name-style="western"><surname>Edwards</surname><given-names>WJ</given-names></name>, <name name-style="western"><surname>Charlton</surname><given-names>MN</given-names></name>, <etal>et al</etal>. (<year>2005</year>) <article-title>Temporal trends in Lake Erie plankton biomass: roles of external phosphorus loading and <italic>Dreissenid</italic> mussels</article-title>. <source>J. Great Lakes Res</source> <volume>31</volume>: <fpage>89</fpage>–<lpage>110</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Richards1">
+        <label>10</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Richards</surname><given-names>RP</given-names></name>, <name name-style="western"><surname>Calhoun</surname><given-names>FG</given-names></name>, <name name-style="western"><surname>Matisoff</surname><given-names>G</given-names></name> (<year>2002</year>) <article-title>The Lake Erie agricultural systems for environmental quality project: An introduction</article-title>. <source>J Environ Qual</source> <volume>31</volume>: <fpage>6</fpage>–<lpage>1 6</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Carmichael1">
+        <label>11</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Carmichael</surname><given-names>WW</given-names></name> (<year>2008</year>) <article-title>A world overview one-hundred, twenty-seven years of research on toxic cyanobacteria–where do we go from here?</article-title> <source>Adv Exp Med Biol</source> <volume>619</volume>: <fpage>105</fpage>–<lpage>125</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Graham1">
+        <label>12</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Graham</surname><given-names>JL</given-names></name>, <name name-style="western"><surname>Loftin</surname><given-names>KA</given-names></name>, <name name-style="western"><surname>Meyer</surname><given-names>MT</given-names></name>, <name name-style="western"><surname>Ziegler</surname><given-names>AC</given-names></name> (<year>2010</year>) <article-title>Cyanotoxin mixtures and taste-and-odor compounds in cyanobacterial blooms from the Midwestern United States</article-title>. <source>Environ Sci Technol</source> <volume>44</volume>: <fpage>7361</fpage>–<lpage>7368</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Paerl1">
+        <label>13</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Paerl</surname><given-names>HW</given-names></name>, <name name-style="western"><surname>Huisman</surname><given-names>J</given-names></name> (<year>2008</year>) <article-title>Blooms like it hot</article-title>. <source>Science</source> <volume>320</volume> <fpage>57</fpage>–<lpage>58</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Kahru1">
+        <label>14</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Kahru</surname><given-names>M</given-names></name>, <name name-style="western"><surname>Horstmann</surname><given-names>U</given-names></name>, <name name-style="western"><surname>Rud</surname><given-names>O</given-names></name> (<year>1994</year>) <article-title>Satellite detection of increased cyanobacteria blooms in the Baltic Sea: Natural fluctuation or ecosystem change?</article-title> <source>Ambio</source> <volume>23</volume>: <fpage>469</fpage>–<lpage>472</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Wynne1">
+        <label>15</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Wynne</surname><given-names>TT</given-names></name>, <name name-style="western"><surname>Stumpf</surname><given-names>RP</given-names></name>, <name name-style="western"><surname>Tomlinson</surname><given-names>MC</given-names></name>, <name name-style="western"><surname>Dyble</surname><given-names>J</given-names></name> (<year>2010</year>) <article-title>Characterizing a cyanobacterial bloom in western Lake Erie using satellite imagery and metrological data</article-title>. <source>Limnol Oceanogr</source> <volume>55</volume>: <fpage>2025</fpage>–<lpage>2036</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Binding1">
+        <label>16</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Binding</surname><given-names>CE</given-names></name>, <name name-style="western"><surname>Greenberg</surname><given-names>TA</given-names></name>, <name name-style="western"><surname>Bukata</surname><given-names>RP</given-names></name> (<year>2011</year>) <article-title>Time series of algal blooms in Lake of the Woods using the MERIS maximum chlorophyll index</article-title>. <source>J Plankton Res</source> <volume>33</volume>: <fpage>1847</fpage>–<lpage>1852</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-RuizVerd1">
+        <label>17</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Ruiz-Verdú</surname><given-names>A</given-names></name>, <name name-style="western"><surname>Simis</surname><given-names>SGH</given-names></name>, <name name-style="western"><surname>de Hoyos</surname><given-names>C</given-names></name>, <name name-style="western"><surname>Gons</surname><given-names>HJ</given-names></name>, <name name-style="western"><surname>Peña-Martínez</surname><given-names>R</given-names></name> (<year>2008</year>) <article-title>An evaluation of algorithms for the remote sensing of cyanobacterial biomass</article-title>. <source>Remote Sens of Environ</source> <volume>112</volume>: <fpage>3996</fpage>–<lpage>4008</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Hunter1">
+        <label>18</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Hunter</surname><given-names>PD</given-names></name>, <name name-style="western"><surname>Tyler</surname><given-names>AN</given-names></name>, <name name-style="western"><surname>Willby</surname><given-names>NJ</given-names></name>, <name name-style="western"><surname>Gilvear</surname><given-names>DJ</given-names></name> (<year>2008</year>) <article-title>The spatial dynamics of vertical migration by <italic>Microcystis aeruginosa</italic> in a eutrophic shallow lake: A case study using high spatial resolution time-series airborne remote sensing</article-title>. <source>Limnol Oceanogr</source> <volume>53</volume>: <fpage>2391</fpage>–<lpage>2406</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Wynne2">
+        <label>19</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Wynne</surname><given-names>TT</given-names></name>, <name name-style="western"><surname>Stumpf</surname><given-names>RP</given-names></name>, <name name-style="western"><surname>Tomlinson</surname><given-names>MC</given-names></name>, <name name-style="western"><surname>Warner</surname><given-names>RA</given-names></name>, <name name-style="western"><surname>Tester</surname><given-names>PA</given-names></name>, <etal>et al</etal>. (<year>2008</year>) <article-title>Relating spectral shape to cyanobacterial blooms in the Laurentian Great Lakes</article-title>. <source>Int J Remote Sens</source> <volume>29</volume>: <fpage>3665</fpage>–<lpage>3672</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Gower1">
+        <label>20</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Gower</surname><given-names>JFR</given-names></name>, <name name-style="western"><surname>Doerffer</surname><given-names>R</given-names></name>, <name name-style="western"><surname>Borstad</surname><given-names>GA</given-names></name> (<year>1999</year>) <article-title>Interpretation of the 685 nm peak in water-leaving radiance spectra in terms of fluorescence, absorption and scattering, and its observation by MERIS</article-title>. <source>Int J Remote Sens</source> <volume>20</volume>: <fpage>1771</fpage>–<lpage>1786</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Gower2">
+        <label>21</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Gower</surname><given-names>JFR</given-names></name>, <name name-style="western"><surname>King</surname><given-names>S</given-names></name>, <name name-style="western"><surname>Borstad</surname><given-names>GA</given-names></name>, <name name-style="western"><surname>Brown</surname><given-names>L</given-names></name> (<year>2005</year>) <article-title>Detection of intense plankton blooms using the 709 nm band of the MERIS imaging spectrometer</article-title>. <source>Int J Remote Sens</source> <volume>26</volume>: <fpage>2005</fpage>–<lpage>2012</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-European1">
+        <label>22</label>
+        <mixed-citation publication-type="book" xlink:type="simple">European Space Agency (2012) MERIS Products and algorithms. Available: <ext-link ext-link-type="uri" xlink:href="http://envisat.esa.int/handbooks/meris/CNTR2.htm" xlink:type="simple">http://envisat.esa.int/handbooks/meris/CNTR2.htm</ext-link>. Accessed: 2012 March 01..</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Graham2">
+        <label>23</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Graham</surname><given-names>JL</given-names></name>, <name name-style="western"><surname>Loftin</surname><given-names>KA</given-names></name>, <name name-style="western"><surname>Kamman</surname><given-names>N</given-names></name> (<year>2009</year>) <article-title>Monitoring recreational freshwaters</article-title>. <source>Lakelines</source> <volume>29</volume>: <fpage>18</fpage>–<lpage>24</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-NOAA1">
+        <label>24</label>
+        <mixed-citation publication-type="book" xlink:type="simple">NOAA (2012) Harmful Algal Blooms in Lake Erie – Experimental HAB Bulletin. Available: <ext-link ext-link-type="uri" xlink:href="http://www.glerl.noaa.gov/res/Centers/HABS/lake_erie_hab/lake_erie_hab.htm" xlink:type="simple">http://www.glerl.noaa.gov/res/Centers/HABS/lake_erie_hab/lake_erie_hab.htm</ext-link>. Accessed: 2012 March 01..</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Kutser1">
+        <label>25</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Kutser</surname><given-names>T</given-names></name> (<year>2004</year>) <article-title>Quantitative detection of chlorophyll in cyanobacterial blooms by satellite remote sensing</article-title>. <source>Limnol Oceanogr</source> <volume>49</volume>: <fpage>2179</fpage>–<lpage>2189</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-NASA1">
+        <label>26</label>
+        <mixed-citation publication-type="book" xlink:type="simple">NASA (2012) Giovanni Goddard Earth Sciences, Data &amp; Information Services Center. Available: <ext-link ext-link-type="uri" xlink:href="http://disc.sci.gsfc.nasa.gov/giovanni/overview/index.html" xlink:type="simple">http://disc.sci.gsfc.nasa.gov/giovanni/overview/index.html</ext-link>. Accessed: 2012 May 01..</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-USGS1">
+        <label>27</label>
+        <mixed-citation publication-type="book" xlink:type="simple">USGS (2012) <ext-link ext-link-type="uri" xlink:href="http://waterwatch.usgs.gov/" xlink:type="simple">http://waterwatch.usgs.gov/</ext-link>. Accessed: 2012 May 01.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-NCWQR1">
+        <label>28</label>
+        <mixed-citation publication-type="book" xlink:type="simple">NCWQR (2012) National Center for Water Quality Research. Available: <ext-link ext-link-type="uri" xlink:href="http://www.heidelberg.edu/NCWQR" xlink:type="simple">http://www.heidelberg.edu/NCWQR</ext-link>. Accessed: 2012 March 01..</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-ODell1">
+        <label>29</label>
+        <mixed-citation publication-type="book" xlink:type="simple">O’Dell J (1993) Determination of phosphorus by semi-automated colorimetry. Method 365.1. EPA 600/R-93/100: Environmental Monitoring Systems Laboratory, Office of Research and Development. Cincinnati: US Environmental Protection Agency. 17 p.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Richards2">
+        <label>30</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Richards</surname><given-names>RP</given-names></name>, <name name-style="western"><surname>Baker</surname><given-names>DB</given-names></name>, <name name-style="western"><surname>Crumrine</surname><given-names>JP</given-names></name>, <name name-style="western"><surname>Stearns</surname><given-names>AM</given-names></name> (<year>2010</year>) <article-title>Unusually large loads in 2007 from the Maumee and Sandusky Rivers, tributaries to Lake Erie</article-title>. <source>J Soil Water Conserv</source> <volume>65</volume>: <fpage>450</fpage>–<lpage>462</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-R1">
+        <label>31</label>
+        <mixed-citation publication-type="book" xlink:type="simple">R Development Core Team (2011) R: A language and environment for statistical computing. Vienna: R Foundation for Statistical Computing. ISBN 3–900051–07–0. 1706 p.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Chaffin1">
+        <label>32</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Chaffin</surname><given-names>JD</given-names></name>, <name name-style="western"><surname>Bridgeman</surname><given-names>TB</given-names></name>, <name name-style="western"><surname>Heckathorn</surname><given-names>SA</given-names></name>, <name name-style="western"><surname>Mishra</surname><given-names>S</given-names></name> (<year>2011</year>) <article-title>Assessment of <italic>Microcystis</italic> growth rate potential and nutrient status across a trophic gradient in western Lake Erie</article-title>. <source>J Great Lakes Res</source> <volume>37</volume>: <fpage>92</fpage>–<lpage>100</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Long1">
+        <label>33</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Long</surname><given-names>BM</given-names></name>, <name name-style="western"><surname>Jones</surname><given-names>GJ</given-names></name>, <name name-style="western"><surname>Orr</surname><given-names>PT</given-names></name> (<year>2001</year>) <article-title>Cellular microcystin content in N-limited <italic>Microcystis aeruginosa</italic> can be predicted from growth rate</article-title>. <source>Appl Environ Microbiol</source> <volume>67</volume>: <fpage>278</fpage>–<lpage>283</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Brookes1">
+        <label>34</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Brookes</surname><given-names>JD</given-names></name>, <name name-style="western"><surname>Carey</surname><given-names>CC</given-names></name> (<year>2011</year>) <article-title>Resilience to blooms</article-title>. <source>Science</source> <volume>334</volume>: <fpage>46</fpage>–<lpage>47</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Bridgeman1">
+        <label>35</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Bridgeman</surname><given-names>TB</given-names></name>, <name name-style="western"><surname>Chaffin</surname><given-names>JD</given-names></name>, <name name-style="western"><surname>Kane</surname><given-names>DD</given-names></name>, <name name-style="western"><surname>Conroy</surname><given-names>JD</given-names></name>, <name name-style="western"><surname>Panek</surname><given-names>SE</given-names></name>, <etal>et al</etal>. (<year>2012</year>) <article-title>J Great Lakes Res</article-title>. <volume>38</volume>: <fpage>90</fpage>–<lpage>97</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Kutovaya1">
+        <label>36</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Kutovaya</surname><given-names>OA</given-names></name>, <name name-style="western"><surname>McKay</surname><given-names>RML</given-names></name>, <name name-style="western"><surname>Beall</surname><given-names>BFN</given-names></name>, <name name-style="western"><surname>Wilhelm</surname><given-names>SW</given-names></name>, <name name-style="western"><surname>Kane</surname><given-names>DD</given-names></name>, <etal>et al</etal>. (<year>2012</year>) <article-title>Harmful Algae</article-title>. <volume>15</volume>: <fpage>71</fpage>–<lpage>77</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Budd2">
+        <label>37</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Budd</surname><given-names>JW</given-names></name>, <name name-style="western"><surname>Beeton</surname><given-names>AM</given-names></name>, <name name-style="western"><surname>Stumpf</surname><given-names>RP</given-names></name>, <name name-style="western"><surname>Culver</surname><given-names>DA</given-names></name>, <name name-style="western"><surname>Kerfoot</surname><given-names>WC</given-names></name> (<year>2001</year>) <article-title>Satellite observations of <italic>Microcystis</italic> blooms in western Lake Erie. Verh Internat Verein Limnol</article-title>. <volume>27</volume>: <fpage>3787</fpage>–<lpage>3793</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Nalepa1">
+        <label>38</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Nalepa</surname><given-names>TF</given-names></name>, <name name-style="western"><surname>Fahnenstiel</surname><given-names>GL</given-names></name> (<year>1995</year>) <article-title><italic>Dreissena polymorpha</italic> in the Saginaw Bay, Lake Huron ecosystem: overview and perspective</article-title>. <source>J Great Lakes Res</source> <volume>21</volume>: <fpage>411</fpage>–<lpage>416</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Wang1">
+        <label>39</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Wang</surname><given-names>J</given-names></name>, <name name-style="western"><surname>Bai</surname><given-names>Z</given-names></name>, <name name-style="western"><surname>Hu</surname><given-names>H</given-names></name>, <name name-style="western"><surname>Clites</surname><given-names>A</given-names></name>, <name name-style="western"><surname>Colton</surname><given-names>M</given-names></name>, <etal>et al</etal>. (<year>2012</year>) <article-title>Temporal and spatial variability of Great Lakes ice cover, 1973–2010</article-title>. <source>J Clim</source> <volume>25</volume>: <fpage>1318</fpage>–<lpage>1329</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Twiss1">
+        <label>40</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Twiss</surname><given-names>MR</given-names></name>, <name name-style="western"><surname>McKay</surname><given-names>RML</given-names></name>, <name name-style="western"><surname>Bourbonniere</surname><given-names>RA</given-names></name>, <name name-style="western"><surname>Bullerjahn</surname><given-names>GS</given-names></name>, <name name-style="western"><surname>Carrick</surname><given-names>HJ</given-names></name>, <etal>et al</etal>. (<year>2012</year>) <article-title>Diatoms abound in ice-covered Lake Erie: An investigation of offshore winter limnology in Lake Erie over the period 2007 to 2010</article-title>. <source>J Great Lakes Res</source> <volume>38</volume>: <fpage>18</fpage>–<lpage>30</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Binding2">
+        <label>41</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Binding</surname><given-names>CE</given-names></name>, <name name-style="western"><surname>Greenberg</surname><given-names>TA</given-names></name>, <name name-style="western"><surname>Bukata</surname><given-names>RP</given-names></name>, <name name-style="western"><surname>Smith</surname><given-names>DE</given-names></name>, <name name-style="western"><surname>Twiss</surname><given-names>MR</given-names></name> (<year>2012</year>) <article-title>The MERIS MCI and its potential for satellite detection of winter diatom blooms on partially ice-covered Lake Erie</article-title>. <source>J Plankton Res</source> <volume>34</volume>: <fpage>569</fpage>–<lpage>573</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-McGillicuddy1">
+        <label>42</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>McGillicuddy</surname><given-names>DJ</given-names></name>, <name name-style="western"><surname>Townsend</surname><given-names>DW</given-names></name>, <name name-style="western"><surname>He</surname><given-names>R</given-names></name>, <name name-style="western"><surname>Keafer</surname><given-names>BA</given-names></name>, <name name-style="western"><surname>Kleindinst</surname><given-names>JL</given-names></name>, <etal>et al</etal>. (<year>2011</year>) <article-title>Suppression of the 2010 <italic>Alexandrium fundyense</italic> bloom by changes in physical, biological, and chemical properties of the Gulf of Maine</article-title>. <source>Limnol Oceanogr</source> <volume>56</volume>: <fpage>2411</fpage>–<lpage>2426</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0042444-Evans1">
+        <label>43</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Evans</surname><given-names>MA</given-names></name>, <name name-style="western"><surname>Scavia</surname><given-names>D</given-names></name> (<year>2010</year>) <article-title>Forecasting hypoxia in the Chesapeake Bay and Gulf of Mexico: Model accuracy, precision, and sensitivity to ecosystem change</article-title>. <source>Environ Res Lett</source> <volume>6</volume>: <fpage>1</fpage>–<lpage>11</lpage>.</mixed-citation>
+      </ref>
+    </ref-list>
+  </back>
+</article>

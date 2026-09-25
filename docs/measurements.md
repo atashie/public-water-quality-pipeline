@@ -205,7 +205,7 @@ What it shows. The whole weekly record costs 516 MB with the codes stacked per l
 
 ### 13. Zero medians and land-coded lake pixels in the weekly record, 2026-09-25
 
-Script `datasets/cyan/qaqc/measure_zero_and_land.py`. Result [zero-and-land-2026-09-25T1615Z.json](../datasets/cyan/outputs/zero-and-land-2026-09-25T1615Z.json). Input: the per-lake table of measurement 7, weekly rows only, 1,257,982 rows. `measured`. The run started from revision `e24d9eb` with uncommitted changes, which the result records.
+A diagnostic measurement pooled across lakes and weeks, under the terms of [assumption A17](assumptions.md). Script `datasets/cyan/qaqc/measure_zero_and_land.py`. Result [zero-and-land-2026-09-25T1615Z.json](../datasets/cyan/outputs/zero-and-land-2026-09-25T1615Z.json). Input: the per-lake table of measurement 7, weekly rows only, 1,257,982 rows. `measured`. The run started from revision `e24d9eb` with uncommitted changes, which the result records.
 
 | Measure | Value |
 |---|---|
@@ -220,3 +220,26 @@ Script `datasets/cyan/qaqc/measure_zero_and_land.py`. Result [zero-and-land-2026
 
 What it shows. 79 percent of weekly lake medians with a value are code 0, below detection. A color scale that starts dark at code 0 therefore painted most lake-weeks dark blue. The share is pooled over lake-weeks and says nothing about any one lake. 517 lakes, 22 percent, carry interior pixels that the CyAN land mask marks as land in every week. For 118 of them that keeps coverage under 90 percent. What it does not show. Whether the same pixels are land in every file, only that the count never falls to zero. What those pixels are on the ground.
 
+
+### 14. Weekly lake coverage by year, before and after the second satellite, 2026-09-25
+
+A diagnostic measurement pooled across lakes and weeks, under the terms of [assumption A17](assumptions.md). Script `datasets/cyan/qaqc/measure_coverage_by_year.py`. Result [coverage-by-year-2026-09-25T1701Z.json](../datasets/cyan/outputs/coverage-by-year-2026-09-25T1701Z.json). Input: the per-lake table of measurement 7, weekly rows only, 1,257,982 rows. Every lake has a row in every weekly file, so each year pools the same 2,321 lakes. `measured`. The run started from revision `e808d82` with uncommitted changes, which the result records.
+
+May to October leaves out most ice and low sun. The first and last years are partial. 2016 starts at 2016-04-24, and 2026 ends at 2026-09-13.
+
+| Year | Weekly files, May to October | Lake-weeks with a value | Mean share of interior pixels valid |
+|---|---|---|---|
+| 2016 | 27 | 92.4 percent | 77.5 percent |
+| 2017 | 26 | 89.9 percent | 74.0 percent |
+| 2018 | 26 | 91.6 percent | 77.8 percent |
+| 2019 | 26 | 96.3 percent | 83.7 percent |
+| 2020 | 26 | 97.0 percent | 86.1 percent |
+| 2021 | 27 | 95.9 percent | 83.6 percent |
+| 2022 | 27 | 97.6 percent | 87.2 percent |
+| 2023 | 26 | 94.7 percent | 80.7 percent |
+| 2024 | 26 | 96.9 percent | 85.2 percent |
+| 2025 | 26 | 95.2 percent | 82.5 percent |
+| 2026 | 19 | 96.4 percent | 83.4 percent |
+
+What it shows. From May to October, 2016 to 2018 each have a smaller share of lake-weeks with a value than any year from 2019 to 2026. The mean valid share is lower too. It weights every lake-week equally, not every pixel. The step falls between 2018 and 2019, not between 2017 and 2018. 2026 has 19 files because the pull ends at 2026-09-13 and lacks the week of 2026-07-05, [measurement 2](#2-the-archive-listing-lacks-one-weekly-file-2026-09-22). The result also holds the same counts over all months.
+What it does not show. Why the step falls there. Weather also differs between years. Whether a second satellite raises a lake's weekly maximum, and by how much. That needs each satellite's daily files, which were not pulled.
